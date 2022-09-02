@@ -1,0 +1,28 @@
+{
+  "name": "upisa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./build/static/css/tailwind.scss -o ./build/static/css/tailwind.min.css --watch",
+    "scss": "sass --watch ./build/static/css/style.scss ./build/static/css/style.css"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rierangel/freelance-upisa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rierangel/freelance-upisa/issues"
+  },
+  "homepage": "https://github.com/rierangel/freelance-upisa#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "postcss-cli": "^10.0.0",
+    "scss": "^0.2.4",
+    "tailwindcss": "^3.1.8"
+  }
+}
