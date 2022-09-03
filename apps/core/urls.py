@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import index, subPage
+from .views import index
 
 
 
 urlpatterns = [
     path('', index, name='index'),
-    path('page/', subPage, name='subPage'),
 ]

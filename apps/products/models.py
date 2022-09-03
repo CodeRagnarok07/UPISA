@@ -5,26 +5,76 @@ from django.db import models
 
 
 class Ingrediente(models.Model):
-    name = models.CharField(max_length=500)
+    nombre = models.CharField(max_length=500)
+
 
     def __str__(self) -> str:
-        return self.name
+        return self.nombre
 
+class Valores(models.Model):
+    energetico = models.CharField(max_length=100, help_text="ejemplo 150 Kcal")
+    vd_energetico = models.IntegerField(help_text="%")
+
+    carbohidratos = models.CharField(max_length=100, help_text="1g")
+    vd_carbohidratos = models.IntegerField(help_text="%")
+
+    proteinas = models.CharField(max_length=100, help_text="1g")
+    vd_proteinas = models.IntegerField(help_text="%")
+
+    grasas = models.CharField(max_length=100, help_text="1g")
+    vd_grasas = models.IntegerField(help_text="%")
+
+    grasas_saturadas = models.CharField(max_length=100, help_text="1g")
+    vd_grasas_saturadas = models.IntegerField(help_text="%")
+
+    proteinas = models.CharField(max_length=100, help_text="1g")
+    vd_proteinas = models.IntegerField(help_text="%")
+
+    grasas_trans = models.CharField(max_length=100, help_text="1g")
+    vd_grasas_trans = models.IntegerField(help_text="%")
+
+    fibra = models.CharField(max_length=100, help_text="1g")
+    vd_fibra = models.IntegerField(help_text="%")
+
+    sodio = models.CharField(max_length=100, help_text="500mg")
+    vd_sodio = models.IntegerField(help_text="%")
+
+class Antioxidante(models.Model):
+    nombre = models.CharField(max_length=500)
+
+    def __str__(self) -> str:
+        return self.nombre
+
+class Estabilizante(models.Model):
+    nombre = models.CharField(max_length=500)
+    def __str__(self) -> str:
+        return self.nombre
+
+class Conservador(models.Model):
+    nombre = models.CharField(max_length=500)
+    def __str__(self) -> str:
+        return self.nombre
 
 class Product(models.Model):
-    name = models.CharField(max_length=500)
+    nombre = models.CharField(max_length=500)
 
-    porcion = models.IntegerField()
+    porcion = models.IntegerField(help_text="numerico g por unidad", blank=True, null=True)
 
+    destacado = models.BooleanField(default=True, blank=True, null=True)
+    ingredientes = models.ManyToManyField(
+        Ingrediente, blank=True, null=True, related_name="product")
 
-    destacado = models.BooleanField(default=True)
-    ingredientes = models.ManyToManyField(Ingrediente, blank=True)
-    galery = models.TextField()
+    galery = models.TextField(blank=True)
 
-    antioxidante = models.CharField(max_length=255, blank=True)
-    estabilizante = models.CharField(max_length=255, blank=True)
-    conservador = models.CharField(max_length=255, blank=True)
+    antioxidante = models.ForeignKey(
+        Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
+    estabilizante = models.ForeignKey(
+        Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
+    conservador = models.ForeignKey(
+        Conservador, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
 
+    valores_nutricionales = models.OneToOneField(
+        Valores, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
 
-    energetico = models.CharField(max_length=100)
-
+    def __str__(self) -> str:
+        return self.nombre

@@ -51,6 +51,10 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 # Application definition
 
 INSTALLED_APPS = [
+    #packages
+    'rosetta',
+    'modeltranslation',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,8 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #packages
-    'rosetta',
+
 
     #apps
     'core',
@@ -135,8 +138,12 @@ LANGUAGE_CODE = 'es'
 
 LANGUAGES = [
     ('es', gettext_lazy('Español')),
-    ('en', gettext_lazy('English')),
+    ('en', gettext_lazy('Ingles')),
+    ('ru', gettext_lazy('Ruso')),
+    ('zh-hans', gettext_lazy('Chino')),
 ]
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'
+# MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'zh-hans')
 
 TIME_ZONE = 'UTC'
 

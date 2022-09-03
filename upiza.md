@@ -1,3 +1,9 @@
+- [ ] traduccion
+  - [x] seleccion de idiomas
+  - [ ] poner español por default
+  - [ ] Traduccion de modelos sin usar la terminal para generar archivos
+
+
 - [ ] Base de datos
   - [ ] Productos
     - [ ] destacado
