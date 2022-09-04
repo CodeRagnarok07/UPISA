@@ -23,7 +23,6 @@ env = environ.Env(  # add this
     DEBUG=(bool, False)         # add this
 )
 
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,9 +38,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))  # add this
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #env('DEBUG')
+DEBUG = True  # env('DEBUG')
 
-ALLOWED_HOST = ['*']#[env('ALLOWED_HOSTS')]
+ALLOWED_HOST = ['*']  # [env('ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -51,7 +50,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 # Application definition
 
 INSTALLED_APPS = [
-    #packages
+    # packages
     'rosetta',
     'modeltranslation',
 
@@ -61,10 +60,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # packages
+    'django_summernote',
 
-
-
-    #apps
+    # apps
     'core',
     'products'
 ]
@@ -85,8 +85,8 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': ['templates/'],
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -168,5 +168,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-

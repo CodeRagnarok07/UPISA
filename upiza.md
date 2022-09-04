@@ -10,22 +10,22 @@
 - [ ] Base de datos
   - [x] Productos
     - [x] destacado
-    - [ ] galeria
+    - [x] galeria
     - [x] porcion unidad
-    - [ ] descripcion
-      - [ ] ingredientes
-      - [ ] antioxidantes
-      - [ ] estabilizante
-      - [ ] conservador
-      - [ ] valores nutricionales
-        - [ ] valor energetico
-        - [ ] Carbohidratos
-        - [ ] Proteínas
-        - [ ] Grasas totales
-        - [ ] Grasas saturadas
-        - [ ] Grasas trans
-        - [ ] Fibra alimentaria
-        - [ ] Sodio
+    - [x] descripcion
+      - [x] ingredientes
+      - [x] antioxidantes
+      - [x] estabilizante
+      - [x] conservador
+      - [x] valores nutricionales
+        - [x] valor energetico
+        - [x] Carbohidratos
+        - [x] Proteínas
+        - [x] Grasas totales
+        - [x] Grasas saturadas
+        - [x] Grasas trans
+        - [x] Fibra alimentaria
+        - [x] Sodio
   - [ ] Resetas
   - [ ] Post Tips
     - [ ] text rich

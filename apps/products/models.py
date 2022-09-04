@@ -7,7 +7,6 @@ from django.db import models
 class Ingrediente(models.Model):
     nombre = models.CharField(max_length=500)
 
-
     def __str__(self) -> str:
         return self.nombre
 
@@ -18,43 +17,70 @@ class Antioxidante(models.Model):
     def __str__(self) -> str:
         return self.nombre
 
+
 class Estabilizante(models.Model):
     nombre = models.CharField(max_length=500)
+
     def __str__(self) -> str:
         return self.nombre
+
 
 class Conservador(models.Model):
     nombre = models.CharField(max_length=500)
+
     def __str__(self) -> str:
         return self.nombre
 
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=500)
+
+    def __str__(self) -> str:
+        return self.nombre
+
+
+class CategoriaSub(models.Model):
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=500)
+
+    def __str__(self) -> str:
+        return self.nombre
+
+
 class Product(models.Model):
     nombre = models.CharField(max_length=500)
-    
-    video = models.URLField(blank=True, null=True)
+
     galery = models.TextField(blank=True, null=True)
 
     destacado = models.BooleanField(default=True)
 
-    porcion = models.IntegerField(help_text="numerico g por unidad", blank=True, null=True)
+    categoria = models.ForeignKey(
+        Categoria, on_delete=models.CASCADE, related_name="products")
+    sub_categoria = models.ForeignKey(
+        CategoriaSub, on_delete=models.CASCADE, related_name="products")
+
+    porcion = models.IntegerField(
+        help_text="numerico g por unidad", blank=True, null=True)
 
     ingredientes = models.ManyToManyField(
-        Ingrediente, blank=True, null=True, related_name="product")
+        Ingrediente, blank=True,  related_name="products")
 
     antioxidante = models.ForeignKey(
-        Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
+        Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
     estabilizante = models.ForeignKey(
-        Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
+        Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
     conservador = models.ForeignKey(
-        Conservador, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
-
-
+        Conservador, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
 
     def __str__(self) -> str:
         return self.nombre
 
 
 class ValoresNutricionales(models.Model):
+
+    product = models.OneToOneField(
+        Product, blank=True, null=True, on_delete=models.CASCADE, related_name="valores_nutricionales")
+
     energetico = models.CharField(max_length=100, help_text="ejemplo 150 Kcal")
     vd_energetico = models.IntegerField(help_text="%")
 
@@ -82,5 +108,10 @@ class ValoresNutricionales(models.Model):
     sodio = models.CharField(max_length=100, help_text="500mg")
     vd_sodio = models.IntegerField(help_text="%")
 
-    product = models.OneToOneField(
-        Product, blank=True, null=True, on_delete=models.CASCADE, related_name="valores_nutricionales")
+
+class Galeria(models.Model):
+
+    imagen = models.ImageField()
+    nombre = models.CharField(max_length=500,blank=True, null=True, help_text="ayuda al posicionamiento SEO")
+    product = models.ForeignKey(
+        Product, blank=True, null=True, on_delete=models.CASCADE, related_name="galeria")
