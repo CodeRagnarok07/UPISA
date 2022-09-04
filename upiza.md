@@ -1,14 +1,17 @@
-- [ ] traduccion
+- [x] traduccion
   - [x] seleccion de idiomas
-  - [ ] poner español por default
-  - [ ] Traduccion de modelos sin usar la terminal para generar archivos
+  - [x] poner español por default
+  - [x] Traduccion de modelos sin usar la terminal para generar archivos
 
+
+- [x] foreikey por buscador
+- [x] manytomany por radius input y buscador
 
 - [ ] Base de datos
-  - [ ] Productos
-    - [ ] destacado
+  - [x] Productos
+    - [x] destacado
     - [ ] galeria
-    - [ ] porcion unidad
+    - [x] porcion unidad
     - [ ] descripcion
       - [ ] ingredientes
       - [ ] antioxidantes
@@ -30,6 +33,8 @@
     - [ ] video link
 
 
+
+# componentes
 - [ ] carrusel 
   - [ ] estatico de caracteristicas
   - [ ] productos 
@@ -80,3 +85,7 @@
 Preguntas
 
 - [ ] certificaciones dinamicas?
+
+
+# procrastinado 
+- [ ] correccion de traduccion en zh
