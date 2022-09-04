@@ -42,17 +42,25 @@ class CategoriaSubAdmin(admin.ModelAdmin):
 
 class ValoresInline(admin.StackedInline):
     model = ValoresNutricionales
-    # fields = (
-    #     'field1',
-    #     ('field2', 'field3'),
-    #     'field4'
-    # )
-
+    fields = (
+        ('energetico','vd_energetico'),
+        ('carbohidratos','vd_carbohidratos'),
+        ('proteinas','vd_proteinas'),
+        ('grasas','vd_grasas'),
+        ('grasas_saturadas','vd_grasas_saturadas'),
+        ('grasas_trans','vd_grasas_trans'),
+        ('fibra','vd_fibra'),
+        ('sodio','vd_sodio'),
+        )
+    
+    classes = ('collapse',)
+    
 
 
 class GaleriaInline(admin.TabularInline):
     extra=1
     model = Galeria
+    classes = ('collapse',)
 
 
 @admin.register(Product)
@@ -62,17 +70,32 @@ class ProductAdmin(SummernoteModelAdmin):
     summernote_fields = 'galery'
     list_editable= ('nombre',)
     list_filter= ('categoria', 'sub_categoria')
-
-
     inlines = [ValoresInline,GaleriaInline ]
-    autocomplete_fields = ['ingredientes', 'antioxidante', 'estabilizante', 'conservador', 'categoria', 'sub_categoria']
+    autocomplete_fields = ['ingredientes', 'antioxidante', 'estabilizante', 'conservante', 'categoria', 'sub_categoria']
     def get_search_results(self, request, queryset, search_term):
         print("In get search results")
         results = super().get_search_results(request, queryset, search_term)
         return results
 
+    fieldsets = (
+        (None, {
+            'classes': ('wide',), # ('wide', 'extrapretty', collapse)
+            'fields': ('nombre','nombre_es','nombre_en','nombre_ru','nombre_zh_hans',)
+        }),
+        ("Categorias", {
+            'classes': ('wide',), # ('wide', 'extrapretty', collapse)
+            'fields': (('destacado','categoria','sub_categoria'))
+        }),
+        ("Ingredientes", {
+            'classes': ('wide',),
+            'fields': ('ingredientes', 'antioxidante', 'estabilizante', 'conservante', ),
+        }),
+        ("galery", {
+            'classes': ('justify-center',),
 
-
+            'fields': ('galery',)
+        }),
+    )
 
 
 

@@ -50,9 +50,9 @@ class CategoriaSub(models.Model):
 class Product(models.Model):
     nombre = models.CharField(max_length=500)
 
+    destacado = models.BooleanField(default=True)
     galery = models.TextField(blank=True, null=True)
 
-    destacado = models.BooleanField(default=True)
 
     categoria = models.ForeignKey(
         Categoria, on_delete=models.CASCADE, related_name="products")
@@ -69,7 +69,7 @@ class Product(models.Model):
         Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
     estabilizante = models.ForeignKey(
         Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
-    conservador = models.ForeignKey(
+    conservante = models.ForeignKey(
         Conservador, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
 
     def __str__(self) -> str:
@@ -95,9 +95,6 @@ class ValoresNutricionales(models.Model):
 
     grasas_saturadas = models.CharField(max_length=100, help_text="1g")
     vd_grasas_saturadas = models.IntegerField(help_text="%")
-
-    proteinas = models.CharField(max_length=100, help_text="1g")
-    vd_proteinas = models.IntegerField(help_text="%")
 
     grasas_trans = models.CharField(max_length=100, help_text="1g")
     vd_grasas_trans = models.IntegerField(help_text="%")
