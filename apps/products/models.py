@@ -11,7 +11,50 @@ class Ingrediente(models.Model):
     def __str__(self) -> str:
         return self.nombre
 
-class Valores(models.Model):
+
+class Antioxidante(models.Model):
+    nombre = models.CharField(max_length=500)
+
+    def __str__(self) -> str:
+        return self.nombre
+
+class Estabilizante(models.Model):
+    nombre = models.CharField(max_length=500)
+    def __str__(self) -> str:
+        return self.nombre
+
+class Conservador(models.Model):
+    nombre = models.CharField(max_length=500)
+    def __str__(self) -> str:
+        return self.nombre
+
+class Product(models.Model):
+    nombre = models.CharField(max_length=500)
+    
+    video = models.URLField(blank=True, null=True)
+    galery = models.TextField(blank=True, null=True)
+
+    destacado = models.BooleanField(default=True)
+
+    porcion = models.IntegerField(help_text="numerico g por unidad", blank=True, null=True)
+
+    ingredientes = models.ManyToManyField(
+        Ingrediente, blank=True, null=True, related_name="product")
+
+    antioxidante = models.ForeignKey(
+        Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
+    estabilizante = models.ForeignKey(
+        Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
+    conservador = models.ForeignKey(
+        Conservador, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
+
+
+
+    def __str__(self) -> str:
+        return self.nombre
+
+
+class ValoresNutricionales(models.Model):
     energetico = models.CharField(max_length=100, help_text="ejemplo 150 Kcal")
     vd_energetico = models.IntegerField(help_text="%")
 
@@ -39,42 +82,5 @@ class Valores(models.Model):
     sodio = models.CharField(max_length=100, help_text="500mg")
     vd_sodio = models.IntegerField(help_text="%")
 
-class Antioxidante(models.Model):
-    nombre = models.CharField(max_length=500)
-
-    def __str__(self) -> str:
-        return self.nombre
-
-class Estabilizante(models.Model):
-    nombre = models.CharField(max_length=500)
-    def __str__(self) -> str:
-        return self.nombre
-
-class Conservador(models.Model):
-    nombre = models.CharField(max_length=500)
-    def __str__(self) -> str:
-        return self.nombre
-
-class Product(models.Model):
-    nombre = models.CharField(max_length=500)
-
-    porcion = models.IntegerField(help_text="numerico g por unidad", blank=True, null=True)
-
-    destacado = models.BooleanField(default=True, blank=True, null=True)
-    ingredientes = models.ManyToManyField(
-        Ingrediente, blank=True, null=True, related_name="product")
-
-    galery = models.TextField(blank=True)
-
-    antioxidante = models.ForeignKey(
-        Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
-    estabilizante = models.ForeignKey(
-        Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
-    conservador = models.ForeignKey(
-        Conservador, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
-
-    valores_nutricionales = models.OneToOneField(
-        Valores, blank=True, null=True, on_delete=models.CASCADE, related_name="product")
-
-    def __str__(self) -> str:
-        return self.nombre
+    product = models.OneToOneField(
+        Product, blank=True, null=True, on_delete=models.CASCADE, related_name="valores_nutricionales")

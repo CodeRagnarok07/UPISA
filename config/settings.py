@@ -143,7 +143,7 @@ LANGUAGES = [
     ('zh-hans', gettext_lazy('Chino')),
 ]
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'
-# MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'zh-hans')
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'es'
 
 TIME_ZONE = 'UTC'
 
