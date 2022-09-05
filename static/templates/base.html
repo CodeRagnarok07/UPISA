@@ -12,14 +12,21 @@ lang="{{lang}}"
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/css/min/tailwind.css' %}">
-    <link rel="stylesheet" href="{% static '/css/min/style.css' %}">
-    <!-- <script src="{% static 'hello.js' %}"></script> -->
+    <link rel="stylesheet"  type="text/css"  href="{% static '/css/min/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static '/css/min/style.css' %}"> -->
+
+
     <title>Document</title>
 </head>
-<body class="">
-    <h1 class="">hola mundo</h1>
+<body >
     {% include './navbar.html' %}
+
+    <div class="content">
+        asda
+    </div>
+
     {% block cont %}
+
     {% endblock cont %}
 
 </body>

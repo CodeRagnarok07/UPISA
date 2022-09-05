@@ -11,7 +11,10 @@ def index(request):
 
 
     ctx = {
-        "ingre": ingredientes
+        "ingre": ingredientes,
+        "hola":"hola mundo"
     }
+
+
 
     return render(request, 'core/index.html', ctx)
