@@ -4,8 +4,8 @@ from django.db import models
 
 class TrucosYConsejos(models.Model):
     titulo = models.CharField(max_length=255)
+    video = models.URLField(blank=True, null=True, help_text="si este campo no esta vacío, las imágenes agregadas no serán usadas")
     contenido = models.TextField()
-    video = models.URLField(blank=True, null=True)
 
 class Galeria(models.Model):
     imagen = models.ImageField()

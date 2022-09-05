@@ -225,11 +225,19 @@ fieldset.collapsed {
 }
 
 fieldset.collapsed h2 {
+    font-size: 0.85rem;
+    background: var(--darkened-bg);
+    color: var(--body-quiet-color);
+}
+
+fieldset.collapse h2 {
+    font-size: 0.85rem;
     background: var(--darkened-bg);
     color: var(--body-quiet-color);
 }
 
 fieldset .collapse-toggle {
+    background: var(--darkened-bg);
     color: var(--header-link-color);
 }
 
@@ -390,15 +398,6 @@ body.popup .submit-row {
     margin: 12px 0px;
 }
 
-.inline-related h3 {
-    margin: 0;
-    color: var(--body-quiet-color);
-    padding: 5px;
-    font-size: 0.9rem;
-    background: var(--selected-row);
-    border-top: 1px solid var(--hairline-color);
-    border-bottom: 1px solid var(--hairline-color);
-}
 
 .inline-related h3 span.delete {
     float: right;
@@ -421,8 +420,7 @@ body.popup .submit-row {
     padding: 2px 5px 3px 5px;
     font-size: 0.6875rem;
     text-align: left;
-    font-weight: bold;
-    background: #bcd;
+    font-weight: bold;    
     color: var(--body-bg);
 }
 
@@ -526,4 +524,23 @@ form .related-widget-wrapper ul {
 
 .clearable-file-input input {
     margin-top: 0;
+}
+
+
+.inline-related h3 {
+    margin: 0;
+    color: var(--body-quiet-color);
+    padding: 5px;
+    font-size: 0.9rem;
+    background-color:transparent;
+    /* dita */
+    border-top: 1px solid var(--hairline-color);
+    border-bottom: 1px solid var(--hairline-color);
+}
+
+
+.module h2{
+    background: var(--secondary); 
+    font-size: 0.9rem;
+    font-weight: 700;
 }

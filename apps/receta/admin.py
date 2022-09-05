@@ -9,11 +9,11 @@ class GaleriaInline(admin.StackedInline):
     model = Galeria
     fieldsets = (
         (None, {
-            'classes': ('extrapretty',), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty',), # ('extrapretty', 'extrapretty', collapse)
             'fields': ('nombre', 'imagen')
         }),
         ("traducciones", {
-            'classes': ('extrapretty', 'collapse'), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty', 'collapse'), 
             'fields':(('nombre_es','nombre_en'),('nombre_ru','nombre_zh_hans'))
         }),
     )
@@ -23,11 +23,11 @@ class IngredientesInline(admin.StackedInline):
     model = Ingredientes
     fieldsets = (
         (None, {
-            'classes': ('extrapretty',), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty',), 
             'fields': ('nombre',)
         }),
         ("traducciones", {
-            'classes': ('extrapretty', 'collapse'), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty', 'collapse'), 
             'fields':(('nombre_es','nombre_en'),('nombre_ru','nombre_zh_hans'))
         }),
     )
@@ -37,11 +37,11 @@ class PreparacionInline(admin.StackedInline):
     model = Preparacion
     fieldsets = (
         (None, {
-            'classes': ('wide',), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty',), 
             'fields': ('nombre',)
         }),
         ("traducciones", {
-            'classes': ('wide', 'collapse'), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty', 'collapse'), 
             'fields':(('nombre_es','nombre_en'),('nombre_ru','nombre_zh_hans'))
         }),
     )
@@ -58,19 +58,19 @@ class ProductAdmin(admin.ModelAdmin):
         return results
     fieldsets = (
         (None, {
-            'classes': ('extrapretty',), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty',), 
             'fields': ('nombre',)
         }),
         ("traducciones", {
-            'classes': ('extrapretty', 'collapse'), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty', 'collapse'), 
             'fields':(('nombre_es','nombre_en'),('nombre_ru','nombre_zh_hans'))
         }),
         (None, {
-            'classes': ('extrapretty',), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty',), 
             'fields': ('descripcion',)
         }),
         ("traduccion Descripcion", {
-            'classes': ('extrapretty', 'collapse'), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty', 'collapse'), 
             'fields': ('descripcion_es','descripcion_en','descripcion_ru','descripcion_zh_hans')
         }),
     )

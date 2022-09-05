@@ -37,7 +37,6 @@ class CategoriaSubAdmin(admin.ModelAdmin):
     # list_display = ("title", "category")
     # list_filter = ('categoria__nombre',)
     search_fields = ['categoria__nombre']
-    list_filter = (("categoria__nombre", admin.RelatedOnlyFieldListFilter),)
 
 
 
@@ -59,7 +58,16 @@ class ValoresInline(admin.StackedInline):
 class GaleriaInline(admin.StackedInline):
     extra=1
     model = Galeria
-    classes = ('extrapretty',)
+    fieldsets = (
+        (None, {
+            'classes': ('extrapretty',), 
+            'fields': (('nombre', 'imagen'),)
+        }),
+        ("traducciones", {
+            'classes': ('extrapretty', 'collapse'), 
+            'fields':(('nombre_es','nombre_en'),('nombre_ru','nombre_zh_hans'))
+        }),
+    )
 
 
 @admin.register(Product)
@@ -79,16 +87,21 @@ class ProductAdmin(SummernoteModelAdmin):
         return results
 
     fieldsets = (
+        
         (None, {
-            'classes': ('wide',), # ('wide', 'extrapretty', collapse)
-            'fields': ('nombre','nombre_es','nombre_en','nombre_ru','nombre_zh_hans',)
+            'classes': ('extrapretty',), 
+            'fields': ('nombre',)
+        }),
+        ("traducciones", {
+            'classes': ('extrapretty', 'collapse'), 
+            'fields':(('nombre_es','nombre_en'),('nombre_ru','nombre_zh_hans'))
         }),
         ("Categorias", {
-            'classes': ('wide',), # ('wide', 'extrapretty', collapse)
+            'classes': ('extrapretty',), 
             'fields': (('destacado','categoria','sub_categoria'))
         }),
         ("Ingredientes", {
-            'classes': ('wide',),
+            'classes': ('extrapretty',),
             'fields': ('ingredientes', 'antioxidante', 'estabilizante', 'conservante', ),
         }),
         (None, {
