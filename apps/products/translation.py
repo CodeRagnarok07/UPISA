@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import Product, Ingrediente, Antioxidante, Estabilizante, Conservador
+from .models import Product, Ingrediente, Antioxidante, Estabilizante, Conservador, Galeria
 
 class nameTranslation(TranslationOptions):
     fields = ('nombre',)
@@ -9,3 +9,4 @@ translator.register(Product, nameTranslation)
 translator.register(Antioxidante, nameTranslation)
 translator.register(Estabilizante, nameTranslation)
 translator.register(Conservador, nameTranslation)
+translator.register(Galeria, nameTranslation)

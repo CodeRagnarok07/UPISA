@@ -35,8 +35,9 @@ class CategoriaAdmin(admin.ModelAdmin):
 @admin.register(CategoriaSub)
 class CategoriaSubAdmin(admin.ModelAdmin):
     # list_display = ("title", "category")
-    list_filter = ('categoria__nombre',)
-    search_fields = ['nombre']
+    # list_filter = ('categoria__nombre',)
+    search_fields = ['categoria__nombre']
+    list_filter = (("categoria__nombre", admin.RelatedOnlyFieldListFilter),)
 
 
 
@@ -55,21 +56,21 @@ class ValoresInline(admin.StackedInline):
     
     classes = ('collapse',)
     
-
-
-class GaleriaInline(admin.TabularInline):
+class GaleriaInline(admin.StackedInline):
     extra=1
     model = Galeria
-    classes = ('collapse',)
+    classes = ('extrapretty',)
 
 
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
     search_fields = ['nombre']
-    list_display= ('nombre_es','nombre', 'categoria', 'sub_categoria')
-    summernote_fields = 'galery'
     list_editable= ('nombre',)
     list_filter= ('categoria', 'sub_categoria')
+
+    list_display= ('nombre_es','nombre', 'categoria', 'sub_categoria')
+    summernote_fields = 'galery'
+
     inlines = [ValoresInline,GaleriaInline ]
     autocomplete_fields = ['ingredientes', 'antioxidante', 'estabilizante', 'conservante', 'categoria', 'sub_categoria']
     def get_search_results(self, request, queryset, search_term):
@@ -90,9 +91,7 @@ class ProductAdmin(SummernoteModelAdmin):
             'classes': ('wide',),
             'fields': ('ingredientes', 'antioxidante', 'estabilizante', 'conservante', ),
         }),
-        ("galery", {
-            'classes': ('justify-center',),
-
+        (None, {
             'fields': ('galery',)
         }),
     )

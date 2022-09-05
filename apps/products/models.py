@@ -108,7 +108,7 @@ class ValoresNutricionales(models.Model):
 
 class Galeria(models.Model):
 
-    imagen = models.ImageField()
     nombre = models.CharField(max_length=500,blank=True, null=True, help_text="ayuda al posicionamiento SEO")
+    imagen = models.ImageField()
     product = models.ForeignKey(
         Product, blank=True, null=True, on_delete=models.CASCADE, related_name="galeria")

@@ -387,14 +387,15 @@ body.popup .submit-row {
 
 .inline-related {
     position: relative;
+    margin: 12px 0px;
 }
 
 .inline-related h3 {
     margin: 0;
     color: var(--body-quiet-color);
     padding: 5px;
-    font-size: 0.8125rem;
-    background: var(--darkened-bg);
+    font-size: 0.9rem;
+    background: var(--selected-row);
     border-top: 1px solid var(--hairline-color);
     border-bottom: 1px solid var(--hairline-color);
 }
