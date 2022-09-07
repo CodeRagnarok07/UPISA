@@ -3,11 +3,13 @@
 
 * {
     box-sizing: border-box;
-    border: 1px red solid;
 }
 
-
-
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
     font-family: Inter;
@@ -19,9 +21,6 @@ body {
     background: v.$N10;
 
 }
-
-
-
 
 nav {
     // background-image: url("/static/imgs/header-texture.png");
@@ -45,6 +44,12 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        font-weight: 600;
+        font-size: 15px;
+
+        line-height: 100%;
+        text-transform: uppercase;
 
         li {
             display: none;

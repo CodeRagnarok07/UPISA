@@ -175,3 +175,46 @@
         }
     }
 }
+
+
+$select-border: #777;
+$select-focus: blue;
+$select-arrow: var($select-border);
+
+
+p{  
+
+
+    &.name{
+        display: none;  
+    }
+    &.code{
+        display: flex;
+    }
+
+    @media (min-width: v.$md ) {
+        &.name{
+            display: flex;  
+        }
+        &.code{
+            display: none;
+        }
+
+    }
+}
+
+.lang-selector{
+    padding: 12px 0px;
+    border-radius: 12px;
+    z-index: 400;
+    div{
+        text-transform: uppercase;
+        padding: 12px 24px;
+        font-weight: 700;
+     
+        &:hover{
+            font-weight: 700;
+            color: v.$N100;
+        }
+    }
+}
