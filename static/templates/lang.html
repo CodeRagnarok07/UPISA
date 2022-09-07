@@ -5,12 +5,12 @@
 
 {% get_current_language as LANGUAGE_CODE %}
 {% get_language_info for LANGUAGE_CODE as lang %}
-<li id="select-lang" class="flex justify-center items-center gap-4  relative">
+<li id="select-lang" class="flex justify-center items-center   langs">
     <p class="name">{{ lang.name_local }} </p>
     <p class="code">({{ lang.code }})</p>
 
 
-    <div id="togle-icon">
+    <div class="ml-[6.5px]" id="togle-icon">
         <svg class="hidden" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M6.00032 6.75008C5.80149 6.74922 5.61086 6.67072 5.46907 6.53133L0.469074 1.53133C0.328178 1.39043 0.249023 1.19934 0.249023 1.00008C0.249023 0.800823 0.328178 0.609726 0.469074 0.46883C0.609971 0.327934 0.801067 0.248779 1.00032 0.248779C1.19958 0.248779 1.39068 0.327934 1.53157 0.46883L6.00032 4.93758L10.4691 0.46883C10.61 0.327934 10.8011 0.248779 11.0003 0.248779C11.1996 0.248779 11.3907 0.327934 11.5316 0.46883C11.6725 0.609726 11.7516 0.800823 11.7516 1.00008C11.7516 1.19934 11.6725 1.39043 11.5316 1.53133L6.53157 6.53133C6.38979 6.67072 6.19916 6.74922 6.00032 6.75008Z"
@@ -23,8 +23,9 @@
         </svg>
     </div>
 
+    <div class="relative">
 
-    <div class="lang-selector absolute top-16 bg-white text-black " id="languages">
+    <div class="lang-selector absolute top-8 right-0 bg-white text-black " id="languages">
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
         {% for language in languages %}
@@ -37,6 +38,7 @@
 
         {% endfor %}
     </div>
+</div>
 
 </li>
 

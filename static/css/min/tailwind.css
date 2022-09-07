@@ -617,6 +617,34 @@ video {
   top: 4rem;
 }
 
+.top-8 {
+  top: 2rem;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.left-1 {
+  left: 0.25rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.ml-\[6\.5px\] {
+  margin-left: 6.5px;
+}
+
 .block {
   display: block;
 }
@@ -657,6 +685,12 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:absolute {
+    position: absolute;
+  }
 }
 
 
