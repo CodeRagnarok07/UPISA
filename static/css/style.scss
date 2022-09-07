@@ -3,7 +3,6 @@
 
 * {
     box-sizing: border-box;
-    border: 1px solid black;
 
 }
 
@@ -17,7 +16,7 @@ body {
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
-    background: v.$bg20;
+    background: v.$N10;
 
 }
 
@@ -25,12 +24,18 @@ body {
 
 
 nav {
-    background-image: url("/static/imgs/header-texture.png");
+    // background-image: url("/static/imgs/header-texture.png");
     background-repeat: repeat;
-    background-color: v.$p10;
-    padding-top: 48px;
+    background-color: v.$N100;
     padding-bottom: 68px;
     color: #ffffff;
+    padding-top: 11px;
+    height: auto;
+
+    @media (min-width: v.$md) {
+        padding-top: 48px;
+
+    }
 
     .btn-group {
         @extend .content;
@@ -39,18 +44,38 @@ nav {
         border: 1px solid black;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        align-items: center;
 
         li {
+            display: none;
             order: 0;
+            width: 100%;
+            list-style-type: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            border-radius: 8px;
+            border: solid 2px transparent;
+            padding: 16px;
+            cursor: pointer;
+
+            &:hover {
+                border-color: v.$N45;
+
+            }
         }
+
 
         .control {
             position: absolute;
             top: 0;
+            left: 0;
             height: 50px;
             display: flex;
             align-items: center;
+            cursor: pointer;
+            pointer-events: all;
+            z-index: 10;
 
 
         }
@@ -78,7 +103,6 @@ nav {
 
         @media (min-width: v.$md) {
             padding-top: 0px;
-
             flex-direction: row;
             justify-content: space-between;
 
@@ -87,8 +111,10 @@ nav {
             }
 
             .logo {
-                position: inherit;
+                position: static;
                 order: 0;
+                min-width: 136px;
+                height: 80px;
             }
 
             .langs {
@@ -97,14 +123,21 @@ nav {
                 right: 0;
 
             }
+
+            li {
+                display: flex;
+            }
         }
-
-
     }
+}
 
 
+button {
 
-
-
+    &.primary {
+        border-radius: 8px;
+        background-color: v.$V1;
+        padding: 16px 24px;
+    }
 
 }

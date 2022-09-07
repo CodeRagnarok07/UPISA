@@ -7,7 +7,7 @@
 - [x] foreikey por buscador
 - [x] manytomany por radius input y buscador
 
-- [ ] Base de datos
+- [x] Base de datos
   - [x] Productos
     - [x] destacado
     - [x] galeria
@@ -26,11 +26,11 @@
         - [x] Grasas trans
         - [x] Fibra alimentaria
         - [x] Sodio
-  - [ ] Resetas
-  - [ ] Post Tips
-    - [ ] text rich
-    - [ ] galery
-    - [ ] video link
+  - [x] Resetas
+  - [x] Post Tips
+    - [x] text rich
+    - [x] galery
+    - [x] video link
 
 
 

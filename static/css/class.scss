@@ -17,7 +17,6 @@
 
 // w-[89%] mx-auto md:w-[1325px]
 .content {
-    border: 1px solid black;
     margin: 0px auto;
     width: 88.2%;
 
@@ -25,4 +24,135 @@
         width: 1360px;
     }
 
+}
+
+
+
+
+.carrusel {
+    margin-top: 109px;
+    @extend .content;
+    position: relative;
+
+    .slider {
+        z-index: 2;
+        display: flex;
+        flex-direction: column-reverse;
+
+        .descrption {
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            gap: 24px;
+
+            h1 {
+                z-index: 2;
+                font-family: 'Bebas Neue';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 110%;
+                margin-bottom: -12px;
+            }
+        }
+
+
+
+        .img-cont {
+            z-index: 2;
+            margin: 0 auto;
+            width: auto;
+            height: 201px;
+
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+    }
+
+
+    .btn-control {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -100px;
+        left: -100px;
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            padding: 16px;
+            border-radius: 50%;
+            background-color: v.$N65;
+        }
+    }
+
+    @media (min-width: v.$md ) {
+        .slider {
+            flex-direction: row;
+            border: 1px solid red;
+
+            .descrption {
+                width: 640px;
+                justify-content: space-between;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+
+
+                h1 {
+                    font-weight: 700;
+                    font-size: 64px;
+                    line-height: 83px;
+                }
+                button{
+                    margin-right: auto;
+                }
+            }
+
+            .img-cont {
+                width: 700px;
+                height: 431px;
+            }
+        }
+
+        .btn-control {
+            display: flex;
+
+        }
+
+    }
+}
+
+
+.menu {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    gap: 16px;
+
+    div {
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: v.$N65;
+        cursor: pointer;
+
+        &:hover {
+            background-color: white;
+        }
+    }
 }

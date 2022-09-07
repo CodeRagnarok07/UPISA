@@ -7,12 +7,20 @@ from django.utils.translation import gettext
 
 def index(request):
 
+    carrusel = [
+        {
+            "titulo": "Variedades de embutidos con sabores únicos",
+            "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
+            "img": "Slider1.png"
+        }
+    ]
+
     ingredientes = Ingrediente.objects.all()
 
 
     ctx = {
         "ingre": ingredientes,
-        "hola":"hola mundo"
+        "carrusel":carrusel
     }
 
 
