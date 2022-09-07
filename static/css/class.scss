@@ -16,7 +16,7 @@
 
 
 // w-[89%] mx-auto md:w-[1325px]
-.content {
+.container {
     margin: 0px auto;
     width: 88.2%;
 
@@ -31,7 +31,7 @@
 
 .carrusel {
     margin-top: 109px;
-    @extend .content;
+    @extend .container;
     position: relative;
 
     .slider {
@@ -100,9 +100,12 @@
     }
 
     @media (min-width: v.$md ) {
+        margin-top: 9px;
+
         .slider {
             flex-direction: row;
             border: 1px solid red;
+            align-items: center;
 
             .descrption {
                 width: 640px;
@@ -117,14 +120,18 @@
                     font-size: 64px;
                     line-height: 83px;
                 }
-                button{
+
+                button {
                     margin-right: auto;
                 }
             }
 
             .img-cont {
-                width: 700px;
-                height: 431px;
+                height: 700px;
+
+                img {
+                    object-fit: cover;
+                }
             }
         }
 
@@ -138,13 +145,15 @@
 
 
 .menu {
-
+    @extend .container;
     display: flex;
     justify-content: center;
     margin-top: 24px;
     gap: 16px;
 
     div {
+        z-index: 50;
+
         height: 8px;
         width: 8px;
         border-radius: 50%;
@@ -153,6 +162,16 @@
 
         &:hover {
             background-color: white;
+        }
+    }
+
+
+    @media (min-width: v.$md ) {
+        margin-top: -4rem;
+
+        div {
+            width: 12px;
+            height: 12px;
         }
     }
 }

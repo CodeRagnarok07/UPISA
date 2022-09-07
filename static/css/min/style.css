@@ -13,12 +13,12 @@
   box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
 }
 
-.content, nav .btn-group, .carrusel {
+.container, nav .btn-group, .menu, .carrusel {
   margin: 0px auto;
   width: 88.2%;
 }
 @media (min-width: 1360px) {
-  .content, nav .btn-group, .carrusel {
+  .container, nav .btn-group, .menu, .carrusel {
     width: 1360px;
   }
 }
@@ -80,9 +80,13 @@
   background-color: #EF974A;
 }
 @media (min-width: 768px) {
+  .carrusel {
+    margin-top: 9px;
+  }
   .carrusel .slider {
     flex-direction: row;
     border: 1px solid red;
+    align-items: center;
   }
   .carrusel .slider .descrption {
     width: 640px;
@@ -100,8 +104,10 @@
     margin-right: auto;
   }
   .carrusel .slider .img-cont {
-    width: 700px;
-    height: 431px;
+    height: 700px;
+  }
+  .carrusel .slider .img-cont img {
+    object-fit: cover;
   }
   .carrusel .btn-control {
     display: flex;
@@ -115,6 +121,7 @@
   gap: 16px;
 }
 .menu div {
+  z-index: 50;
   height: 8px;
   width: 8px;
   border-radius: 50%;
@@ -124,9 +131,19 @@
 .menu div:hover {
   background-color: white;
 }
+@media (min-width: 768px) {
+  .menu {
+    margin-top: -4rem;
+  }
+  .menu div {
+    width: 12px;
+    height: 12px;
+  }
+}
 
 * {
   box-sizing: border-box;
+  border: 1px red solid;
 }
 
 body {
@@ -233,6 +250,11 @@ button.primary {
   border-radius: 8px;
   background-color: #0B9839;
   padding: 16px 24px;
+}
+button.carrusel-control {
+  padding: 16px;
+  border-radius: 50%;
+  background-color: #EF974A;
 }
 
 /*# sourceMappingURL=style.css.map */

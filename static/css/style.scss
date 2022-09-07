@@ -3,7 +3,7 @@
 
 * {
     box-sizing: border-box;
-
+    border: 1px red solid;
 }
 
 
@@ -38,7 +38,7 @@ nav {
     }
 
     .btn-group {
-        @extend .content;
+        @extend .container;
         position: relative;
         padding-top: 58px;
         border: 1px solid black;
@@ -138,6 +138,12 @@ button {
         border-radius: 8px;
         background-color: v.$V1;
         padding: 16px 24px;
+    }
+
+    &.carrusel-control {
+        padding: 16px;
+        border-radius: 50%;
+        background-color: v.$N65;
     }
 
 }
