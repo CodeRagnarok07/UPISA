@@ -32,10 +32,15 @@
     - [x] galery
     - [x] video link
 
+# Importante
+
+- [ ] Tumbnail para productos a partir de la primera imagen de su galeria, si este no existe toma un tumbnail prediseñado
+- [ ] Ver productos y miniatura de galeria de producto
+
 
 
 # componentes
-- [ ] carrusel 
+- [x] carrusel 
   - [ ] estatico de caracteristicas
   - [ ] productos 
   - [ ] carrusel de resetas

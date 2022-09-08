@@ -1,0 +1,64 @@
+{% extends '../base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}contacto{% endblock title %}
+
+{% block header %}
+<div class="nav-header">
+    <h1>• Productos •</h1>
+    <p>
+        Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único.
+        ¡Tenés que probarlo!
+        Elegí lo mejor, elegí sabor.
+    </p>
+</div>
+{% endblock header %}
+
+<!-- content -->
+
+{% block cont %}
+
+<div class="container">
+
+    <div class="categories">
+        <ul class="">
+            <a href="">
+                <li>categoria</li>
+            </a>
+            <li>categoria</li>
+            <li>categoria</li>
+            <li>categoria</li>
+            <li>categoria</li>
+        </ul>
+    </div>
+
+    <!-- filters -->
+    <div class="flex">
+
+        <div>
+
+        </div>
+
+    </div>
+
+    <!-- Productos -->
+    <div class="grid grid-cols-4 mt-9">
+        {% for i in products %}
+        <div class="bg-[#ffffff] rounded-2xl " style="box-shadow: 0px 0px 48px -3px rgba(156, 56, 0, 0.08);">
+           {{i.galeria.0}}
+           
+           
+            {{i.nombre}}
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock cont %}

@@ -1,6 +1,6 @@
 from itertools import product
 from django.shortcuts import render
-from products.models import Ingrediente
+from products.models import Product
 from django.utils.translation import gettext
 # Create your views here.
 
@@ -12,17 +12,19 @@ def index(request):
             "titulo": "Variedades de embutidos con sabores únicos",
             "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
             "img": "Slider1.png"
+        },
+        {
+            "titulo": "Variedades de embutidos con sabores únicos",
+            "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
+            "img": "Slider2.png"
         }
     ]
 
-    ingredientes = Ingrediente.objects.all()
-
+    ingredientes = Product.objects.all()
 
     ctx = {
         "ingre": ingredientes,
-        "carrusel":carrusel
+        "carrusel": carrusel
     }
-
-
 
     return render(request, 'core/index.html', ctx)

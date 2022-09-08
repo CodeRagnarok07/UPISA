@@ -4,32 +4,32 @@ from django.db import models
 # Create your models here.
 
 
-class Ingrediente(models.Model):
-    nombre = models.CharField(max_length=500)
+# class Ingrediente(models.Model):
+#     nombre = models.CharField(max_length=500)
 
-    def __str__(self) -> str:
-        return self.nombre
-
-
-class Antioxidante(models.Model):
-    nombre = models.CharField(max_length=500)
-
-    def __str__(self) -> str:
-        return self.nombre
+#     def __str__(self) -> str:
+#         return self.nombre
 
 
-class Estabilizante(models.Model):
-    nombre = models.CharField(max_length=500)
+# class Antioxidante(models.Model):
+#     nombre = models.CharField(max_length=500)
 
-    def __str__(self) -> str:
-        return self.nombre
+#     def __str__(self) -> str:
+#         return self.nombre
 
 
-class Conservador(models.Model):
-    nombre = models.CharField(max_length=500)
+# class Estabilizante(models.Model):
+#     nombre = models.CharField(max_length=500)
 
-    def __str__(self) -> str:
-        return self.nombre
+#     def __str__(self) -> str:
+#         return self.nombre
+
+
+# class Conservador(models.Model):
+#     nombre = models.CharField(max_length=500)
+
+#     def __str__(self) -> str:
+#         return self.nombre
 
 
 class Categoria(models.Model):
@@ -51,26 +51,27 @@ class Product(models.Model):
     nombre = models.CharField(max_length=500)
 
     destacado = models.BooleanField(default=True)
-    galery = models.TextField(blank=True, null=True)
-
+    # galery = models.TextField(blank=True, null=True)
 
     categoria = models.ForeignKey(
-        Categoria, on_delete=models.CASCADE, related_name="products")
+        Categoria, on_delete=models.CASCADE, related_query_name="products", related_name="products")
     sub_categoria = models.ForeignKey(
-        CategoriaSub, on_delete=models.CASCADE, related_name="products")
+        CategoriaSub, on_delete=models.CASCADE, related_query_name="products")
 
     porcion = models.IntegerField(
         help_text="numerico g por unidad", blank=True, null=True)
 
-    ingredientes = models.ManyToManyField(
-        Ingrediente, blank=True,  related_name="products")
+    descripcion = models.TextField()
 
-    antioxidante = models.ForeignKey(
-        Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
-    estabilizante = models.ForeignKey(
-        Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
-    conservante = models.ForeignKey(
-        Conservador, blank=True, null=True, on_delete=models.CASCADE, related_name="products")
+    # ingredientes = models.ManyToManyField( 
+    #     Ingrediente, blank=True,  related_query_name="products")
+
+    # antioxidante = models.ForeignKey(
+    #     Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_query_name="products")
+    # estabilizante = models.ForeignKey(
+    #     Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_query_name="products")
+    # conservante = models.ForeignKey(
+    #     Conservador, blank=True, null=True, on_delete=models.CASCADE, related_query_name="products")
 
     def __str__(self) -> str:
         return self.nombre
@@ -79,7 +80,7 @@ class Product(models.Model):
 class ValoresNutricionales(models.Model):
 
     product = models.OneToOneField(
-        Product, blank=True, null=True, on_delete=models.CASCADE, related_name="valores_nutricionales")
+        Product, blank=True, null=True, on_delete=models.CASCADE, related_query_name="valores_nutricionales", related_name="valores_nutricionales")
 
     energetico = models.CharField(max_length=100, help_text="ejemplo 150 Kcal")
     vd_energetico = models.IntegerField(help_text="%")
@@ -111,4 +112,4 @@ class Galeria(models.Model):
     nombre = models.CharField(max_length=500,blank=True, null=True, help_text="ayuda al posicionamiento SEO")
     imagen = models.ImageField()
     product = models.ForeignKey(
-        Product, blank=True, null=True, on_delete=models.CASCADE, related_name="galeria")
+        Product, blank=True, null=True, on_delete=models.CASCADE, related_query_name="galeria", related_name="galeria")

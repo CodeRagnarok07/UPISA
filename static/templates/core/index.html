@@ -1,36 +1,30 @@
 {% extends '../base.html' %}
 {% load i18n %}
 {% load static %}
-{% for i in carrusel %}
-{{i.titulo}}
-{% endfor %}
+
+{% block title %}contacto{% endblock title %}
 
 {% block header %}
-
-
 <div class="carrusel">
 
-    <div  id="main">
-
-        <div class="slider">
+    <div id="main">
+        {% for i in carrusel %}
+        <div class="slider w-full">
             <div class="descrption">
 
-                <h1>Variedades de embutidos con sabores únicos</h1>
+                <h1>{{i.titulo}}</h1>
                 <p>Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas
                     seleccionadas
                     y rigurosos controles de calidad.</p>
                 <button class="primary">VER PRODUCTOS</button>
             </div>
 
-            <div class="img-cont">
-                <img src="{% static '/imgs/lp-carrusel/Slider1.png' %}" alt="">
+            <div class="img-cont w-full">
+                <img src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
             </div>
         </div>
-
+        {% endfor %}
     </div>
-
-
-
 
     <div class="btn-control">
         <button onclick="btnControler(false)">
@@ -41,7 +35,7 @@
             </svg>
 
         </button>
-        <button onclick="btnControler(false)">
+        <button onclick="btnControler(true)">
             <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M19.0469 8.79687L12.2969 15.5469C12.0846 15.7564 11.7983 15.8739 11.5 15.8739C11.2017 15.8739 10.9154 15.7564 10.7031 15.5469C10.5982 15.4424 10.515 15.3182 10.4582 15.1814C10.4015 15.0447 10.3722 14.8981 10.3722 14.75C10.3722 14.6019 10.4015 14.4553 10.4582 14.3186C10.515 14.1818 10.5982 14.0576 10.7031 13.9531L15.5312 9.125H1.75C1.45163 9.125 1.16548 9.00647 0.954505 8.79549C0.743526 8.58451 0.625 8.29837 0.625 8C0.625 7.70163 0.743526 7.41548 0.954505 7.2045C1.16548 6.99352 1.45163 6.875 1.75 6.875H15.5312L10.7031 2.04687C10.4918 1.83553 10.373 1.54888 10.373 1.25C10.373 1.10201 10.4022 0.955461 10.4588 0.818733C10.5155 0.682005 10.5985 0.557771 10.7031 0.453123C10.8078 0.348476 10.932 0.265466 11.0687 0.208831C11.2055 0.152196 11.352 0.123047 11.5 0.123047C11.7989 0.123047 12.0855 0.241779 12.2969 0.453123L19.0469 7.20312C19.1518 7.30764 19.235 7.43183 19.2918 7.56858C19.3485 7.70532 19.3778 7.85193 19.3778 8C19.3778 8.14806 19.3485 8.29467 19.2918 8.43142C19.235 8.56816 19.1518 8.69236 19.0469 8.79687Z"
@@ -55,11 +49,28 @@
 </div>
 
 <div class="menu" id="control">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+
 </div>
+
+<script>
+    const main = $("#main")
+    const control = $("#control")
+
+    console.log()
+    function btnControler(bol){
+        const widthSlider = main.children[0].offsetWidth
+        if(bol){
+            main.scrollLeft += widthSlider
+        }else{
+            main.scrollLeft -= widthSlider
+        }
+    }
+
+    for (let index = 0; index < main.children.length; index++) {
+        // const element = main.children[index];
+        control.appendChild(document.createElement("div"))
+    }
+</script>
 
 
 {% endblock header %}

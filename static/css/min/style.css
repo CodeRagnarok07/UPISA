@@ -27,10 +27,17 @@
   margin-top: 109px;
   position: relative;
 }
+.carrusel #main {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
 .carrusel .slider {
   z-index: 2;
   display: flex;
   flex-direction: column-reverse;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 .carrusel .slider .descrption {
   z-index: 2;
@@ -51,17 +58,6 @@
   font-size: 36px;
   line-height: 110%;
   margin-bottom: -12px;
-}
-.carrusel .slider .img-cont {
-  z-index: 2;
-  margin: 0 auto;
-  width: auto;
-  height: 201px;
-}
-.carrusel .slider .img-cont img {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
 }
 .carrusel .btn-control {
   z-index: 0;
@@ -85,11 +81,9 @@
   }
   .carrusel .slider {
     flex-direction: row;
-    border: 1px solid red;
     align-items: center;
   }
   .carrusel .slider .descrption {
-    width: 640px;
     justify-content: space-between;
     font-weight: 500;
     font-size: 20px;
@@ -102,12 +96,6 @@
   }
   .carrusel .slider .descrption button {
     margin-right: auto;
-  }
-  .carrusel .slider .img-cont {
-    height: 700px;
-  }
-  .carrusel .slider .img-cont img {
-    object-fit: cover;
   }
   .carrusel .btn-control {
     display: flex;
@@ -171,8 +159,36 @@ p.code {
   color: #EA8215;
 }
 
+.categories {
+  margin: 96px 0px 80px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+.categories ul {
+  display: flex;
+  gap: 12px;
+}
+.categories ul a {
+  width: 100%;
+}
+.categories ul li {
+  text-transform: uppercase;
+  border: 2px #EA8215 solid;
+  border-radius: 80px;
+  padding: 16px 24px;
+  cursor: pointer;
+}
+.categories ul li:hover {
+  background-color: #EA8215;
+  color: white;
+  text-shadow: 0 0 0.9px #ffffff, 0 0 0.9px #ffffff, 0 0 0.9px #ffffff;
+  box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
+}
+
 * {
   box-sizing: border-box;
+  transition: all 0.5s ease;
 }
 
 *,
@@ -192,6 +208,7 @@ body {
 }
 
 nav {
+  position: relative;
   background-repeat: repeat;
   background-color: #EA8215;
   padding-bottom: 68px;
@@ -199,15 +216,27 @@ nav {
   padding-top: 11px;
   height: auto;
 }
+nav::before {
+  z-index: 0;
+  content: "";
+  background-image: url("/static/imgs/header-texture.png");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+}
 @media (min-width: 768px) {
   nav {
     padding-top: 48px;
   }
 }
 nav .btn-group {
+  z-index: 100;
   position: relative;
   padding-top: 58px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -280,6 +309,30 @@ nav .btn-group .langs {
   nav .btn-group li {
     display: flex;
   }
+}
+nav .nav-header {
+  position: relative;
+  margin-top: 100px;
+}
+nav .nav-header h1 {
+  font-family: "kalamaya";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 100%;
+  /* identical to box height, or 96px */
+  text-align: center;
+}
+nav .nav-header p {
+  width: 789px;
+  margin: 0px auto;
+  margin-top: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
 }
 
 button.primary {

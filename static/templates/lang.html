@@ -9,7 +9,6 @@
     <p class="name">{{ lang.name_local }} </p>
     <p class="code">({{ lang.code }})</p>
 
-
     <div class="ml-[6.5px]" id="togle-icon">
         <svg class="hidden" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -35,14 +34,27 @@
                 <p class="code">({{ language.code }})</p>
             </div>
         </a>
-
         {% endfor %}
     </div>
 </div>
 
+
 </li>
 
 
+<form onchange="this.submit()" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    </form>
 
 <script>
     const select_lang = $("#select-lang")

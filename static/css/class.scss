@@ -34,10 +34,19 @@
     @extend .container;
     position: relative;
 
+    #main {
+        display: flex;
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+
     .slider {
         z-index: 2;
         display: flex;
         flex-direction: column-reverse;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+
 
         .descrption {
             z-index: 2;
@@ -64,17 +73,8 @@
 
 
         .img-cont {
-            z-index: 2;
-            margin: 0 auto;
-            width: auto;
-            height: 201px;
 
-
-            img {
-                object-fit: contain;
-                width: 100%;
-                height: 100%;
-            }
+            img {}
 
         }
 
@@ -104,11 +104,9 @@
 
         .slider {
             flex-direction: row;
-            border: 1px solid red;
             align-items: center;
 
             .descrption {
-                width: 640px;
                 justify-content: space-between;
                 font-weight: 500;
                 font-size: 20px;
@@ -127,11 +125,9 @@
             }
 
             .img-cont {
-                height: 700px;
 
-                img {
-                    object-fit: cover;
-                }
+
+                img {}
             }
         }
 
@@ -177,44 +173,72 @@
 }
 
 
-$select-border: #777;
-$select-focus: blue;
-$select-arrow: var($select-border);
+p {
 
 
-p{  
-
-
-    &.name{
-        display: none;  
+    &.name {
+        display: none;
     }
-    &.code{
+
+    &.code {
         display: flex;
     }
 
     @media (min-width: v.$md ) {
-        &.name{
-            display: flex;  
+        &.name {
+            display: flex;
         }
-        &.code{
+
+        &.code {
             display: none;
         }
 
     }
 }
 
-.lang-selector{
+.lang-selector {
     padding: 12px 0px;
     border-radius: 12px;
     z-index: 400;
-    div{
+
+    div {
         text-transform: uppercase;
         padding: 12px 24px;
         font-weight: 700;
-     
-        &:hover{
+
+        &:hover {
             font-weight: 700;
             color: v.$N100;
+        }
+    }
+}
+
+
+.categories {
+    margin: 96px 0px 80px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        display: flex;
+        gap: 12px;
+        a{
+            width: 100%;
+        }
+
+        li {
+            text-transform: uppercase;
+            border: 2px v.$N100 solid;
+            border-radius: 80px;
+            padding: 16px 24px;
+            cursor: pointer;
+            &:hover {
+                background-color: v.$N100;
+                color: white;
+                text-shadow: 0 0 .9px #ffffff, 0 0 .9px #ffffff, 0 0 .9px #ffffff;
+                box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
+            }
         }
     }
 }
