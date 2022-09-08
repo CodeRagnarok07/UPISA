@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import Receta, Galeria, Ingredientes, Preparacion
+from .models import Receta, Ingredientes, Preparacion #, Galeria
 
 class nameTranslation(TranslationOptions):
     fields = ('nombre',)
@@ -8,7 +8,7 @@ class nameTranslation(TranslationOptions):
 class DescripcionTranslation(TranslationOptions):
     fields = ('nombre','descripcion')
 
-translator.register(Galeria, nameTranslation)
 translator.register(Ingredientes, nameTranslation)
 translator.register(Preparacion, nameTranslation)
 translator.register(Receta, DescripcionTranslation)
+# translator.register(Galeria, nameTranslation)

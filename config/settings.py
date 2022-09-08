@@ -139,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'es'
 
 LANGUAGES = [
-    ('es', gettext_lazy('Español')),
+    ('es', gettext_lazy('Español')), ## simepre comenzaba en chino :/
     ('en', gettext_lazy('Ingles')),
     ('ru', gettext_lazy('Ruso')),
     ('zh-hans', gettext_lazy('Chino')),
