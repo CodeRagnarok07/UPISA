@@ -1,36 +1,9 @@
 from operator import mod
 from django.db import models
-
+from io import BytesIO
+from PIL import Image
+from django.core.files import File
 # Create your models here.
-
-
-# class Ingrediente(models.Model):
-#     nombre = models.CharField(max_length=500)
-
-#     def __str__(self) -> str:
-#         return self.nombre
-
-
-# class Antioxidante(models.Model):
-#     nombre = models.CharField(max_length=500)
-
-#     def __str__(self) -> str:
-#         return self.nombre
-
-
-# class Estabilizante(models.Model):
-#     nombre = models.CharField(max_length=500)
-
-#     def __str__(self) -> str:
-#         return self.nombre
-
-
-# class Conservador(models.Model):
-#     nombre = models.CharField(max_length=500)
-
-#     def __str__(self) -> str:
-#         return self.nombre
-
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=500)
@@ -62,11 +35,13 @@ class Product(models.Model):
 
     porcion = models.IntegerField(
         help_text="numerico g por unidad", blank=True, null=True)
-
     descripcion = models.TextField()
 
     def __str__(self) -> str:
+
         return self.nombre
+
+
 
 
 class ValoresNutricionales(models.Model):
@@ -99,7 +74,7 @@ class ValoresNutricionales(models.Model):
     vd_sodio = models.IntegerField(help_text="%")
 
 
-class Galeria(models.Model):
+# class Galeria(models.Model):
 
     imagen = models.ImageField()
     product = models.ForeignKey(
