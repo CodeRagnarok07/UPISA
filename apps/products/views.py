@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Categoria
 # Create your views here.
 
 from django.shortcuts import get_object_or_404
@@ -7,13 +7,30 @@ from django.shortcuts import get_object_or_404
 
 def productos(request):
     products = Product.objects.all()
+    categorias = Categoria.objects.all()
     ctx = {
-        "products": products
+        "products": products,
+        "categorias": categorias
+    }
+    return render(request, 'products/index.html', ctx)
+
+def category_productos(request, category):
+    print("si")
+    products = Product.objects.filter(categoria__nombre=category)
+    print("no")
+
+    categorias = Categoria.objects.all()
+
+    ctx = {
+        "products": products,
+        "categorias": categorias,
+        "current_categoria": category
+
     }
     return render(request, 'products/index.html', ctx)
 
 
-def detail(request, url):
+def detail(request, category ,url):
     product = get_object_or_404(Product, url=url)
     ctx = {
         "product": product

@@ -15,7 +15,6 @@
 </div>
 {% endblock header %}
 
-<!-- content -->
 
 {% block cont %}
 
@@ -23,13 +22,18 @@
 
     <div class="categories">
         <ul class="">
-            <a href="">
-                <li>categoria</li>
+            {% for i in categorias %}
+            <a href="{% url 'category_productos' i %}">
+                
+                <li 
+                {% if i.nombre == current_categoria %}
+                class="active"
+                {% endif %}
+                >{{i}}
+                </li>
             </a>
-            <li>categoria</li>
-            <li>categoria</li>
-            <li>categoria</li>
-            <li>categoria</li>
+            {% endfor %}
+     
         </ul>
     </div>
 
@@ -44,9 +48,14 @@
 
     <!-- Productos -->
     <div class="products grid grid-cols-4 mt-9 gap-6">
-        {% for i in products %}
 
-        <a href="{% url 'product_detail' i.url %}" >
+
+        {# % for i in products|dictsortreversed:"nombre" % #}
+
+
+        {% for i in products|dictsort:"nombre" %}
+
+        <a href="{% url 'product_detail' i.categoria i.url %}" >
             <figure id="min_{{i.id}}"  >
                 <img src="{{i.miniatura.url}}" alt="">
             </figure>
@@ -54,7 +63,6 @@
                 {{i.nombre}}
             </p>
         </a>
-
         {% endfor %}
 
     </div>
