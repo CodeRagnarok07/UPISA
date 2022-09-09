@@ -74,7 +74,7 @@ class ValoresNutricionales(models.Model):
     vd_sodio = models.IntegerField(help_text="%")
 
 
-# class Galeria(models.Model):
+class Galeria(models.Model):
 
     imagen = models.ImageField()
     product = models.ForeignKey(
