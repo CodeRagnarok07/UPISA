@@ -49,9 +49,11 @@ class CategoriaSub(models.Model):
 
 class Product(models.Model):
     nombre = models.CharField(max_length=500)
+    url = models.CharField(max_length=500)
+
+    miniatura = models.ImageField()
 
     destacado = models.BooleanField(default=True)
-    # galery = models.TextField(blank=True, null=True)
 
     categoria = models.ForeignKey(
         Categoria, on_delete=models.CASCADE, related_query_name="products", related_name="products")
@@ -62,16 +64,6 @@ class Product(models.Model):
         help_text="numerico g por unidad", blank=True, null=True)
 
     descripcion = models.TextField()
-
-    # ingredientes = models.ManyToManyField( 
-    #     Ingrediente, blank=True,  related_query_name="products")
-
-    # antioxidante = models.ForeignKey(
-    #     Antioxidante, blank=True, null=True, on_delete=models.CASCADE, related_query_name="products")
-    # estabilizante = models.ForeignKey(
-    #     Estabilizante, blank=True, null=True, on_delete=models.CASCADE, related_query_name="products")
-    # conservante = models.ForeignKey(
-    #     Conservador, blank=True, null=True, on_delete=models.CASCADE, related_query_name="products")
 
     def __str__(self) -> str:
         return self.nombre
@@ -109,7 +101,6 @@ class ValoresNutricionales(models.Model):
 
 class Galeria(models.Model):
 
-    nombre = models.CharField(max_length=500,blank=True, null=True, help_text="ayuda al posicionamiento SEO")
     imagen = models.ImageField()
     product = models.ForeignKey(
         Product, blank=True, null=True, on_delete=models.CASCADE, related_query_name="galeria", related_name="galeria")

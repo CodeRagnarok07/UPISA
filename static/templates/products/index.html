@@ -43,17 +43,26 @@
     </div>
 
     <!-- Productos -->
-    <div class="grid grid-cols-4 mt-9">
+    <div class="products grid grid-cols-4 mt-9 gap-6">
         {% for i in products %}
-        <div class="bg-[#ffffff] rounded-2xl " style="box-shadow: 0px 0px 48px -3px rgba(156, 56, 0, 0.08);">
-           {{i.galeria.0}}
-           
-           
-            {{i.nombre}}
-        </div>
+
+        <a href="{% url 'product_detail' i.url %}" >
+            <figure id="min_{{i.id}}"  >
+                <img src="{{i.miniatura.url}}" alt="">
+            </figure>
+            <p class="p-9 text-center font-semibold">
+                {{i.nombre}}
+            </p>
+        </a>
 
         {% endfor %}
 
+    </div>
+
+    <!-- mas -->
+
+    <div class="flex w-full h-[266px] mt-20 mb-60 border border-black">
+        <img src="/static/imgs/lp-carrusel/Slider1.png" alt="">
     </div>
 
 </div>

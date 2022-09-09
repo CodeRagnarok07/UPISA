@@ -1,0 +1,71 @@
+{% extends '../base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}contacto{% endblock title %}
+
+
+
+{% block cont %}
+
+<div class="container">
+    <h1>{{product.nombre}}</h1>
+    <p>
+
+        {{product.id}}
+    </p>
+
+
+    <div id="product-carrusel">
+
+        <div id="slider_product">
+            {% for i in product.galeria.all %}
+            <img src="{{i.imagen.url}}" alt="">
+            {% endfor %}
+        </div>
+
+        <div id="control_product">
+            {% for i in product.galeria.all %}
+            <img src="{{i.imagen.url}}" alt="">
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <script>
+        console.log("")
+
+        // const carrusel = $("#product-carrusel")
+
+        const current_slider = 0
+
+        const slider_product = document.getElementById("slider_product")
+        const control_product = document.getElementById("control_product")
+
+        for (let i of slider_product.children) {
+            i.classList = "hidden"
+        }
+
+
+        function handleClickControler(e) {
+
+            var parent = e.parentNode;
+            // The equivalent of parent.children.indexOf(child)
+            var index = Array.prototype.indexOf.call(parent.children, e);
+
+            console.log(index, current_slider);
+            slider_product.children[current_slider].classList.toggle("hidden")
+            current_slider = index
+            slider_product.children[index].classList.toggle("hidden")
+        }
+
+        for (let i of control_product.children) {
+            i.onclick = (e) => handleClickControler(e.target)
+            // i.classList = "hidden"
+        }
+
+        slider_product.children[current_slider].classList.toggle("hidden")
+
+    </script>
+</div>
+{% endblock cont %}

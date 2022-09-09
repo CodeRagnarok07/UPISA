@@ -186,6 +186,55 @@ p.code {
   box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
 }
 
+.products a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 310px;
+  box-shadow: 0px 0px 48px -3px rgba(156, 56, 0, 0.08);
+  border-radius: 1rem;
+  background-color: #ffffff;
+}
+.products a figure {
+  margin: 5px 72px;
+  margin: auto;
+}
+.products a figure img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.products a p {
+  text-transform: uppercase;
+}
+
+#product-carrusel {
+  width: 553px;
+}
+#product-carrusel #slider_product img {
+  width: 553px;
+  height: auto;
+  margin: 0px auto;
+  border-radius: 16px;
+}
+#product-carrusel #control_product {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  border-radius: 8px;
+}
+#product-carrusel #control_product img {
+  opacity: 0.5;
+  height: 92px;
+  width: 92px;
+  object-fit: contain;
+}
+#product-carrusel #control_product img:hover {
+  box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
+}
+
 * {
   box-sizing: border-box;
   transition: all 0.5s ease;
