@@ -18,13 +18,16 @@ def productos(request):
         "page_obj": page_obj
 
     }
-    print(page_obj.paginator.page)
     return render(request, 'products/index.html', ctx)
 
 
 def category_productos(request, category):
+    sub = request.GET.getlist('filter')
+    if(sub):
+        products = Product.objects.filter(categoria__nombre=category, sub_categoria__nombre__in=sub )
+    else:
+        products = Product.objects.filter(categoria__nombre=category)
 
-    products = Product.objects.filter(categoria__nombre=category)
     categorias = Categoria.objects.all()
     category = Categoria.objects.get(nombre=category)
 
@@ -35,9 +38,12 @@ def category_productos(request, category):
     ctx = {
         "page_obj": page_obj,
         "categorias": categorias,
-        "current_categoria": category
+        "current_categoria": category,
+        "actives_sub": sub
 
     }
+    print(sub)
+
     return render(request, 'products/index.html', ctx)
 
 

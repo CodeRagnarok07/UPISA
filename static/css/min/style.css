@@ -159,12 +159,12 @@ p.code {
   right: -50px;
   width: 170px;
 }
-.modal div {
+.modal div, .modal label {
   text-transform: uppercase;
   padding: 12px 24px;
   font-weight: 700;
 }
-.modal div:hover {
+.modal div:hover, .modal label:hover {
   font-weight: 700;
   color: #EA8215;
 }

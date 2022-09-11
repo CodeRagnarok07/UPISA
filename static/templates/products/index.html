@@ -18,6 +18,8 @@
 
 {% block cont %}
 
+{{request.GET.filter}}
+
 <div class="container">
 
 
@@ -90,16 +92,25 @@
             </div>
 
             <div class="relative">
-                <div class="modal hidden left w-[500px] ">
+                <form action="." method="get" onchange="handleSubmit(this)" class="modal  left w-[500px] ">
                     {% for i in current_categoria.sub_categorias.all %}
-
-                    <div class="cursor-pointer flex justify-between">
-                        <label for="sub_{{i.id}}">{{i.nombre}}</label>
-                        <label for="sub_{{i.id}}">{{i.sub_categoria}}</label>
-                        <input type="checkbox" name="" id="sub_{{i.id}}">
-                    </div>
+                    <label  class="cursor-pointer flex justify-between" for="sub_{{i.id}}">{{i.nombre}}
+                        <input {% if i.nombre in actives_sub %} checked="true" {% endif %}
+                            type="checkbox" name="filter" value="{{i.nombre}}" id="sub_{{i.id}}">
+                        </label>
                     {% endfor %}
-                </div>
+                </form>
+
+                <script>
+
+                    const handleSubmit =(e)=>{
+                        
+                        // e.preventDefault()
+                        e.submit()
+                        console.log(e)
+                    }
+
+                </script>
             </div>
         </div>
         {% endif %}
