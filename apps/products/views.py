@@ -15,10 +15,8 @@ def productos(request):
     return render(request, 'products/index.html', ctx)
 
 def category_productos(request, category):
-    print("si")
+    
     products = Product.objects.filter(categoria__nombre=category)
-    print("no")
-
     categorias = Categoria.objects.all()
 
     ctx = {

@@ -33,22 +33,30 @@
     - [x] video link
 
 
-
+# current
+- [ ]  order products
+- [ ]  subcategories <= only active in categore
+- [ ]  productos populares <= componente repetible
+- [ ]  Paginacion
+- [ ]  carrusel 
+  - [ ]  cambiar flex center a margi x auto
 
 # componentes
 - [x] carrusel 
-  - [ ] estatico de caracteristicas
-  - [ ] productos 
+  - [x] estatico de caracteristicas
+  - [x] productos 
   - [ ] carrusel de resetas
-- [ ] Componentes statcios
-  - [ ] navbar
+- [ ] Componentes staticos
+  - [x] navbar
   - [ ] contacto
 - [ ] LandingPages
   - [ ] Inicio
   - [ ] Empresa
 - [ ] app calculadora segun items
-- [ ] productos
-  - [ ] categorias
+
+
+## [ ] productos
+  - [x] categorias
   - [ ] secciones
   - [ ] tipo
   - [ ] orden alfabetico

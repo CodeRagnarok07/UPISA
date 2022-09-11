@@ -144,17 +144,26 @@ p.code {
   }
 }
 
-.lang-selector {
+.modal {
+  position: absolute;
   padding: 12px 0px;
   border-radius: 12px;
   z-index: 400;
+  top: 20px;
+  right: -10px;
+  background-color: #ffffff;
+  color: black;
+  border: 2px #FAE0C9 solid;
 }
-.lang-selector div {
+.modal.left {
+  right: -50px;
+}
+.modal div {
   text-transform: uppercase;
   padding: 12px 24px;
   font-weight: 700;
 }
-.lang-selector div:hover {
+.modal div:hover {
   font-weight: 700;
   color: #EA8215;
 }
@@ -230,10 +239,12 @@ p.code {
   display: flex;
   justify-content: center;
   gap: 24px;
+  max-width: 553px;
+  overflow: auto;
 }
 #product-carrusel #control_product img {
+  flex-shrink: 0;
   border-radius: 8px;
-  opacity: 0.5;
   height: 92px;
   width: 92px;
   object-fit: contain;
@@ -242,6 +253,24 @@ p.code {
 #product-carrusel #control_product img.selected {
   border: 2px solid #EA8215;
   box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
+}
+
+.filters {
+  display: flex;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.filters .filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FAE0C9;
+  color: #EA8215;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.filters .filter svg path {
+  fill: #EA8215;
 }
 
 * {
