@@ -680,6 +680,11 @@ video {
   left: 90px;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }

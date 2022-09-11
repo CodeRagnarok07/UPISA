@@ -42,6 +42,8 @@ class Product(models.Model):
     def __str__(self) -> str:
 
         return self.nombre
+    class Meta:
+        ordering = ['-id']
 
 
 

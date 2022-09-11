@@ -275,6 +275,29 @@ p.code {
   fill: #EA8215;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 36px;
+}
+.pagination a {
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+.pagination a.current {
+  background-color: #FAE0C9;
+  color: #EA8215;
+  font-weight: 700;
+}
+.pagination .control {
+  padding: 16px;
+  border-radius: 50%;
+  margin: 0px 46px;
+}
+.pagination .control.able {
+  background-color: #EA8215;
+}
+
 * {
   box-sizing: border-box;
   transition: all 0.5s ease;

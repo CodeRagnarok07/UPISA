@@ -21,8 +21,16 @@
 <div class="container">
 
 
+    <div>
+        <form action="">
 
+            <button type="submit"></button>
+        </form>
+    </div>
 
+    <script>
+        document.getElementById("#")
+    </script>
 
 
     {% include './categories.html' %}
@@ -63,8 +71,8 @@
 
         {% if current_categoria %}
         <!-- Sub Categorias -->
-        <div  id="filter_sub" class="filter relative w-[125px] flex items-center">
-            <p class=" absolute inset-0  bg-red-500 flex items-center pl-3" onclick="toggle(this.parentElement)">
+        <div id="filter_sub" class="filter relative w-[125px] flex items-center">
+            <p class=" absolute inset-0 flex items-center pl-3" onclick="toggle(this.parentElement)">
                 FILTRAR
             </p>
             <div class="togle_icon absolute top-5 left-[90px] w-full ">
@@ -84,8 +92,10 @@
             <div class="relative">
                 <div class="modal hidden left w-[500px] ">
                     {% for i in current_categoria.sub_categorias.all %}
+
                     <div class="cursor-pointer flex justify-between">
-                        <label for="sub_{{i.id}}" >{{i.nombre}}</label>
+                        <label for="sub_{{i.id}}">{{i.nombre}}</label>
+                        <label for="sub_{{i.id}}">{{i.sub_categoria}}</label>
                         <input type="checkbox" name="" id="sub_{{i.id}}">
                     </div>
                     {% endfor %}
@@ -101,7 +111,11 @@
 
     <!-- Productos -->
     <div id="products" class=" grid grid-cols-4 mt-9 gap-6">
-        {% for i in products|dictsort:"nombre" %}{% include './item_product.html' %}{% endfor %}
+        {% for i in page_obj|dictsort:"nombre" %}
+            {% if i.sub_categoria.nombre in "choriso, MORCILLA" %}
+                {% include './item_product.html' %}
+            {% endif %}
+        {% endfor %}
     </div>
 
     <script>
@@ -119,6 +133,9 @@
 
     </script>
     <!-- mas -->
+
+    <!-- pagination -->
+    {% include '../components/pagination.html' %}
 
     <div class="flex w-full h-[266px] mt-20 mb-60 border border-black">
         <img src="/static/imgs/lp-carrusel/Slider1.png" alt="">
