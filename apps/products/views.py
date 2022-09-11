@@ -10,7 +10,8 @@ def productos(request):
     categorias = Categoria.objects.all()
     ctx = {
         "products": products,
-        "categorias": categorias
+        "categorias": categorias,
+
     }
     return render(request, 'products/index.html', ctx)
 
@@ -18,6 +19,7 @@ def category_productos(request, category):
     
     products = Product.objects.filter(categoria__nombre=category)
     categorias = Categoria.objects.all()
+    category = Categoria.objects.get(nombre=category)
 
     ctx = {
         "products": products,
@@ -31,6 +33,6 @@ def category_productos(request, category):
 def detail(request, category ,url):
     product = get_object_or_404(Product, url=url)
     ctx = {
-        "product": product
+        "product": product,
     }
     return render(request, 'products/detail.html', ctx)

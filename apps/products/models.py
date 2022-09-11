@@ -7,14 +7,16 @@ from django.core.files import File
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=500)
+    url = models.CharField(max_length=500)
 
     def __str__(self) -> str:
         return self.nombre
 
 
 class CategoriaSub(models.Model):
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_query_name="sub_categorias", related_name="sub_categorias")
     nombre = models.CharField(max_length=500)
+    url = models.CharField(max_length=500)
 
     def __str__(self) -> str:
         return self.nombre

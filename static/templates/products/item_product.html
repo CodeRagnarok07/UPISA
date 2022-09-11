@@ -1,0 +1,8 @@
+<a href="{% url 'product_detail' i.categoria i.url %}">
+    <figure id="min_{{i.id}}">
+        <img src="{{i.miniatura.url}}" alt="">
+    </figure>
+    <p class="p-9 text-center font-semibold">
+        {{i.nombre}}
+    </p>
+</a>

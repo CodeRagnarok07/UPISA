@@ -8,11 +8,15 @@ from .models import Product, ValoresNutricionales, Categoria, CategoriaSub , Gal
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
     search_fields = ['nombre']
+    prepopulated_fields = {"url": ("nombre",)}
+
 
 
 @admin.register(CategoriaSub)
 class CategoriaSubAdmin(admin.ModelAdmin):
     search_fields = ['categoria__nombre']
+    prepopulated_fields = {"url": ("nombre",)}
+
 
 
 class ValoresInline(admin.StackedInline):
@@ -40,7 +44,7 @@ class GaleriaInline(admin.StackedInline):
 class ProductAdmin(SummernoteModelAdmin):
     prepopulated_fields = {"url": ("nombre",)}
     search_fields = ['nombre']
-    # list_editable = ('nombre',)
+    list_editable = ('nombre',)
     list_filter = ('categoria', 'sub_categoria')
     list_display = ('nombre_es', 'nombre', 'categoria', 'sub_categoria')
 

@@ -3,7 +3,7 @@
         {% for i in categorias %}
         <a href="{% url 'category_productos' i %}">
             <li 
-            {% if i.nombre == current_categoria %} class="active" {% endif %}>
+            {% if i.nombre == current_categoria.nombre %} class="active" {% endif %}>
             {{i}}
             </li>
         </a>
