@@ -1,4 +1,4 @@
-<a href="{% url 'product_detail' i.categoria i.url %}">
+<a href="{% url 'product_detail' i.categoria.url i.url %}">
     <figure id="min_{{i.id}}">
         <img src="{{i.miniatura.url}}" alt="">
     </figure>

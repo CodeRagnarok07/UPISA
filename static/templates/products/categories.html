@@ -1,7 +1,7 @@
 <div class="categories">
     <ul class="">
         {% for i in categorias %}
-        <a href="{% url 'category_productos' i %}">
+        <a href="{% url 'category_productos' i.url %}">
             <li 
             {% if i.nombre == current_categoria.nombre %} class="active" {% endif %}>
             {{i}}

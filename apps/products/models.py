@@ -6,8 +6,8 @@ from django.core.files import File
 # Create your models here.
 
 class Categoria(models.Model):
-    nombre = models.CharField(max_length=500)
-    url = models.CharField(max_length=500)
+    nombre = models.CharField(max_length=500, unique=True)
+    url = models.CharField(max_length=500, unique=True)
 
     def __str__(self) -> str:
         return self.nombre
@@ -15,16 +15,16 @@ class Categoria(models.Model):
 
 class CategoriaSub(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_query_name="sub_categorias", related_name="sub_categorias")
-    nombre = models.CharField(max_length=500)
-    url = models.CharField(max_length=500)
+    nombre = models.CharField(max_length=500, unique=True)
+    url = models.CharField(max_length=500, unique=True)
 
     def __str__(self) -> str:
         return self.nombre
 
 
 class Product(models.Model):
-    nombre = models.CharField(max_length=500)
-    url = models.CharField(max_length=500)
+    nombre = models.CharField(max_length=500, unique=True)
+    url = models.CharField(max_length=500, unique=True)
 
     miniatura = models.ImageField()
 

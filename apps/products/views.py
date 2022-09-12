@@ -24,12 +24,12 @@ def productos(request):
 def category_productos(request, category):
     sub = request.GET.getlist('filter')
     if(sub):
-        products = Product.objects.filter(categoria__nombre=category, sub_categoria__nombre__in=sub )
+        products = Product.objects.filter(categoria__url=category, sub_categoria__nombre__in=sub )
     else:
-        products = Product.objects.filter(categoria__nombre=category)
+        products = Product.objects.filter(categoria__url=category)
 
     categorias = Categoria.objects.all()
-    category = Categoria.objects.get(nombre=category)
+    category = Categoria.objects.get(url=category)
 
     paginator = Paginator(products, 2) # Show 25 contacts per page.
     page_number = request.GET.get('page')
@@ -42,7 +42,6 @@ def category_productos(request, category):
         "actives_sub": sub
 
     }
-    print( request.GET)
 
     return render(request, 'products/index.html', ctx)
 

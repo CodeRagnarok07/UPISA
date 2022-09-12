@@ -24,6 +24,24 @@
     </div>
 
     <div class="relative">
+
+        <form class="modal" onchange="this.submit()" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+            <label class="flex" for="{{ language.code }}">
+                <p class="name">{{ language.name_local }} </p>
+                <p class="code">({{ language.code }})</p>    
+                <input class="hidden" type="submit" name="language" value="{{ language.code }}" id="{{ language.code }}">
+            </label>
+            {% endfor %}
+        </form>
+    </div>
+
+    <!-- <div class="relative">
         <div class="modal hidden">
             {% get_available_languages as LANGUAGES %}
             {% get_language_info_list for LANGUAGES as languages %}
@@ -36,6 +54,5 @@
             </a>
             {% endfor %}
         </div>
-    </div>
+    </div> -->
 </li>
-

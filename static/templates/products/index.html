@@ -18,11 +18,6 @@
 
 {% block cont %}
 
-{{request.META.QUERY_STRING}}
-<br>
-{{request.get_full_path}}
-<br>
-
 <div class="container">
 
 
@@ -32,10 +27,6 @@
             <button type="submit"></button>
         </form>
     </div>
-
-    <script>
-        document.getElementById("#")
-    </script>
 
 
     {% include './categories.html' %}
@@ -95,7 +86,7 @@
             </div>
 
             <div class="relative">
-                <form action="." method="get" onchange="handleSubmit(this)" class="modal  left w-[500px] ">
+                <form action="." method="get" onchange="handleSubmit(this)" class="modal hidden left w-[500px] ">
                     {% for i in current_categoria.sub_categorias.all %}
                     <label class="cursor-pointer flex justify-between" for="sub_{{i.id}}">{{i.nombre}}
                         <input {% if i.nombre in actives_sub %} checked="true" {% endif %} type="checkbox" name="filter"
@@ -126,9 +117,7 @@
     <!-- Productos -->
     <div id="products" class=" grid grid-cols-4 mt-9 gap-6">
         {% for i in page_obj|dictsort:"nombre" %}
-        {% if i.sub_categoria.nombre in "choriso, MORCILLA" %}
         {% include './item_product.html' %}
-        {% endif %}
         {% endfor %}
     </div>
 
@@ -138,10 +127,10 @@
         function setOrderAlf(e) {
             if (e) {
                 filter_alf.children[0].innerHTML = "ORDEN: A - Z"
-                products.innerHTML = `{% for i in products|dictsort:"nombre" %}{% include './item_product.html' %}{% endfor %}`
+                products.innerHTML = `{% for i in page_obj|dictsort:"nombre" %}{% include './item_product.html' %}{% endfor %}`
             } else {
                 filter_alf.children[0].innerHTML = "ORDEN: Z - A"
-                products.innerHTML = `{% for i in products|dictsortreversed:"nombre" %}{% include './item_product.html' %}{% endfor %}`
+                products.innerHTML = `{% for i in page_obj|dictsortreversed:"nombre" %}{% include './item_product.html' %}{% endfor %}`
             }
         }
 
