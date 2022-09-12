@@ -18,7 +18,10 @@
 
 {% block cont %}
 
-{{request.GET.filter}}
+{{request.META.QUERY_STRING}}
+<br>
+{{request.get_full_path}}
+<br>
 
 <div class="container">
 
@@ -94,17 +97,17 @@
             <div class="relative">
                 <form action="." method="get" onchange="handleSubmit(this)" class="modal  left w-[500px] ">
                     {% for i in current_categoria.sub_categorias.all %}
-                    <label  class="cursor-pointer flex justify-between" for="sub_{{i.id}}">{{i.nombre}}
-                        <input {% if i.nombre in actives_sub %} checked="true" {% endif %}
-                            type="checkbox" name="filter" value="{{i.nombre}}" id="sub_{{i.id}}">
-                        </label>
+                    <label class="cursor-pointer flex justify-between" for="sub_{{i.id}}">{{i.nombre}}
+                        <input {% if i.nombre in actives_sub %} checked="true" {% endif %} type="checkbox" name="filter"
+                            value="{{i.nombre}}" id="sub_{{i.id}}">
+                    </label>
                     {% endfor %}
                 </form>
 
                 <script>
 
-                    const handleSubmit =(e)=>{
-                        
+                    const handleSubmit = (e) => {
+
                         // e.preventDefault()
                         e.submit()
                         console.log(e)
@@ -123,9 +126,9 @@
     <!-- Productos -->
     <div id="products" class=" grid grid-cols-4 mt-9 gap-6">
         {% for i in page_obj|dictsort:"nombre" %}
-            {% if i.sub_categoria.nombre in "choriso, MORCILLA" %}
-                {% include './item_product.html' %}
-            {% endif %}
+        {% if i.sub_categoria.nombre in "choriso, MORCILLA" %}
+        {% include './item_product.html' %}
+        {% endif %}
         {% endfor %}
     </div>
 

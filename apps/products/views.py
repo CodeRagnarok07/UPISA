@@ -42,7 +42,7 @@ def category_productos(request, category):
         "actives_sub": sub
 
     }
-    print(sub)
+    print( request.GET)
 
     return render(request, 'products/index.html', ctx)
 
