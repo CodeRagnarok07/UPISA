@@ -14,6 +14,20 @@
 
 }
 
+.hidden-movil {
+    display: none;
+
+    @media (min-width: v.$xl ) {
+        display: inherit;
+
+    }
+
+}
+
+
+
+
+
 .filters {
     display: flex;
     text-transform: uppercase;
@@ -121,52 +135,5 @@
 
 }
 
-// details
-#product-carrusel {
-    width: 553px;
 
-    #slider_product {
-        width: 553px;
-        height: 553px;
-        display: flex;
-        align-items: center;
-        border-radius: 16px;
-
-        background-color: white;
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-
-        }
-
-
-    }
-
-    #control_product {
-        margin-top: 24px;
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-        max-width: 553px;
-        overflow: auto;
-
-        img {
-            flex-shrink: 0;
-
-            border-radius: 8px;
-            height: 92px;
-            width: 92px;
-            object-fit: contain;
-            background-color: white;
-
-            &.selected {
-                border: 2px solid v.$N100;
-                box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
-            }
-
-        }
-    }
-}
 

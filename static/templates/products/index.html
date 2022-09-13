@@ -50,16 +50,17 @@
             <div>
                 FILTRAR
             </div>
-            <form class="tooltip_options  " action="." method="get" onchange="this.submit()">
+            <form class="tooltip_options  " action="." method="get" onchange="this.submit()"> 
                 {% for i in current_categoria.sub_categorias.all %}
-                    <label class="option file:cursor-pointer " for="sub_{{i.id}}">
-                        <span class="mr-5">
-                            {{i.nombre}}
-                        </span>
-                        <input {% if i.nombre in actives_sub %} checked="true" {% endif %} type="checkbox" name="filter"
+                <label class="option file:cursor-pointer " for="sub_{{i.id}}">
+                    <span class="mr-5">
+                        {{i.nombre}}
+                    </span>
+                    <input {% if i.nombre in actives_sub %} checked="true" {% endif %} type="checkbox" name="filter"
                         value="{{i.nombre}}" id="sub_{{i.id}}">
-                    </label>
+                </label>
                 {% endfor %}
+                {% csrf_token %}
             </form>
         </div>
         {% endif %}

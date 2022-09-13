@@ -12,6 +12,7 @@ def productos(request):
     products = Product.objects.all()
     paginator = Paginator(products, 2) # Show 25 contacts per page.
     page_number = request.GET.get('page')
+
     page_obj = paginator.get_page(page_number)
     ctx = {
         "categorias": categorias,
@@ -29,7 +30,9 @@ def category_productos(request, category):
         products = Product.objects.filter(categoria__url=category)
 
     categorias = Categoria.objects.all()
-    category = Categoria.objects.get(url=category)
+    current_categoria = Categoria.objects.get(url=category)
+
+    products.order_by("nombre")
 
     paginator = Paginator(products, 2) # Show 25 contacts per page.
     page_number = request.GET.get('page')
@@ -38,9 +41,8 @@ def category_productos(request, category):
     ctx = {
         "page_obj": page_obj,
         "categorias": categorias,
-        "current_categoria": category,
+        "current_categoria": current_categoria,
         "actives_sub": sub
-
     }
 
     return render(request, 'products/index.html', ctx)

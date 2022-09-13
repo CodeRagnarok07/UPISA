@@ -1,13 +1,17 @@
 
-const $ = (obj)=> document.querySelector(obj)
 
-/** MODAL */
-const toggle = (e) => {
-    const modal = e.querySelector(".modal")
-    const svg_togle_icon = e.querySelector(".svg_togle_icon")
-    modal.classList.toggle("hidden")        
-    svg_togle_icon.children[0].classList.toggle("hidden")
-    svg_togle_icon.children[1].classList.toggle("hidden")
+
+/** re render products */
+function setOrderAlf(e) {
+    const filter_alf = $("#filter_alf")
+    const products = $("#products")
+    if (e) {
+        filter_alf.children[0].innerHTML = "ORDEN: A - Z"
+        products.innerHTML = `{% for i in page_obj|dictsort:"nombre" %}{% include './item_product.html' %}{% endfor %}`
+    } else {
+        filter_alf.children[0].innerHTML = "ORDEN: Z - A"
+        products.innerHTML = `{% for i in page_obj|dictsortreversed:"nombre" %}{% include './item_product.html' %}{% endfor %}`
+    }
 }
 
 
@@ -15,7 +19,7 @@ const toggle = (e) => {
 (() => {
     const all_tooltip_options = document.getElementsByClassName("tooltip_options")
 
-    for(const tooltip of all_tooltip_options){
+    for (const tooltip of all_tooltip_options) {
 
         const parent = tooltip.parentElement
 
@@ -41,12 +45,12 @@ const toggle = (e) => {
 
 
         const activador = () => {
-            tooltip.classList.toggle("hidden")     
+            tooltip.classList.toggle("hidden")
             svg_icons.children[0].classList.toggle("hidden")
             svg_icons.children[1].classList.toggle("hidden")
         }
 
-        clicker.onclick = ()=>activador()
+        clicker.onclick = () => activador()
 
         parent.appendChild(clicker)
         parent.appendChild(svg_icons)
@@ -55,17 +59,6 @@ const toggle = (e) => {
 
 
 
-/** re render products */   
-function setOrderAlf(e) {
-    const filter_alf = $("#filter_alf")
-    const products = $("#products")
-    if (e) {
-        filter_alf.children[0].innerHTML = "ORDEN: A - Z"
-        products.innerHTML = `{% for i in page_obj|dictsort:"nombre" %}{% include './item_product.html' %}{% endfor %}`
-    } else {
-        filter_alf.children[0].innerHTML = "ORDEN: Z - A"
-        products.innerHTML = `{% for i in page_obj|dictsortreversed:"nombre" %}{% include './item_product.html' %}{% endfor %}`
-    }
-}
+
 
 

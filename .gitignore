@@ -26,6 +26,7 @@ env/
 # Distribution / packaging
 .Python
 
+todo/
 build/
 develop-eggs/
 dist/
