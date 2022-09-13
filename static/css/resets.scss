@@ -1,0 +1,33 @@
+
+/*************** RESETS *********************/
+*,html {
+    box-sizing: border-box;
+    transition: all .5s ease;
+    // border: 1px solid red;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+input,select{
+    background-color: transparent;
+    
+}
+
+body{
+    overflow-x: hidden;
+}
+
+//  imagenes responsivas
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+button{
+    display: inline-block;
+}

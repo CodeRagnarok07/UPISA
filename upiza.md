@@ -40,6 +40,13 @@
 - [ ]  Paginacion
 - [ ]  carrusel 
   - [ ]  cambiar flex center a margi x auto
+- [ ] pasar la logica de js a funciones anonimas autoecutables
+
+```js
+(()=>{
+  
+})()
+```
 
 # componentes
 - [x] carrusel 
