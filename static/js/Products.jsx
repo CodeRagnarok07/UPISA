@@ -22,17 +22,20 @@ class ElementReactive extends HTMLElement {
     
     connectedCallback() {
         
-        this.innerHTML =
-            `{% for i in products|dictsort:"nombre" %}
+        this.innerHTML =(
+            <>
+            {/* {% for i in products|dictsort:"nombre" %} */}
             <a href="{% url 'product_detail' i.categoria i.url %}">
                 <figure id="min_{{i.id}}">
-                    <img src="{{i.miniatura.url}}" alt="">
+                    <img src="{{i.miniatura.url}}" alt=""/>
                 </figure>
                 <p class="p-9 text-center font-semibold">
-                    {{i.nombre}}
+                    {/* {{i.nombre}} */}
                 </p>
             </a>
-            {% endfor %}`
+            {/* {% endfor %} */}
+            </>
+            )
     }
 }
 

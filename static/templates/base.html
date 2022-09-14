@@ -20,13 +20,13 @@
 <body>
 
     <script>
-        const $ = (obj) =>document.querySelector(obj)
+        const $ = (obj) => document.querySelector(obj)
 
     </script>
 
     <header class="header">
 
-        <nav >
+        <nav>
 
             <!-- md control -->
             <buttom class="left" onclick="hidden_menu(this)">
@@ -38,51 +38,46 @@
             </buttom>
 
             <script>
-                const hidden_menu =(e)=>{
+        
+                const hidden_menu = (e) => {
                     const botones = e.parentElement.getElementsByTagName("a")
-                    for(const achor of botones ){
+                    for (const achor of botones) {
                         achor.classList.toggle("hidden-movil")
                     }
                 }
-                (()=>{
-                    const botones = $("nav:nth-child(n0)")
-                    
-                    console.log(botones);
-                })();
-                
-                
+
 
 
             </script>
 
-            <a href="{% url 'index' %}">
+            <a class="hidden-movil" href="{% url 'index' %}">
                 inicio
             </a>
-            <a href="{% url 'empresa' %}">
+            <a class="hidden-movil" href="{% url 'empresa' %}">
                 LA EMPRESA
             </a>
-            <a href="{% url 'products' %}">
+            <a class="hidden-movil" href="{% url 'products' %}">
                 PRODUCTOS
             </a>
-            <a href="{% url 'empresa' %}">
+            <a class="hidden-movil" href="{% url 'empresa' %}">
 
                 PARRILLEROS
             </a>
             <figure class="center"><img src='{% static "imgs/Logo.png" %}' alt=""></figure>
-            
-            <a href="{% url 'empresa' %}">
+
+            <a class="hidden-movil" href="{% url 'empresa' %}">
                 NOVEDADES
             </a>
 
-            <a href="{% url 'empresa' %}">
+            <a class="hidden-movil" href="{% url 'empresa' %}">
 
                 RECETAS
             </a>
-            <a href="{% url 'contacto' %}">
+            <a class="hidden-movil" href="{% url 'contacto' %}">
 
                 CONTACTO
             </a>
-            
+
             {% include './lang.html' %}
         </nav>
 

@@ -132,7 +132,7 @@ nav .right {
   width: auto;
   padding: auto 0px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1160px) {
   nav {
     padding-top: 0px;
     flex-direction: row;
@@ -340,6 +340,92 @@ nav .right {
   color: #EA8215;
 }
 
+.carrusel-slider {
+  margin-top: 109px;
+  position: relative;
+}
+.carrusel-slider .slider {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.carrusel-slider .slider .item-slider {
+  z-index: 2;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+.carrusel-slider .slider .item-slider .descrption {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  gap: 24px;
+}
+.carrusel-slider .slider .item-slider .descrption h1 {
+  z-index: 2;
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110%;
+  margin-bottom: -12px;
+}
+.carrusel-slider .controls-side {
+  /*movil*/
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100px;
+  left: -100px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.carrusel-slider .controls-side button {
+  padding: 16px;
+  border-radius: 50%;
+  background-color: #EF974A;
+}
+.carrusel-slider .dot-control {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  gap: 16px;
+}
+.carrusel-slider .dot-control div {
+  z-index: 50;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #EF974A;
+  cursor: pointer;
+}
+.carrusel-slider .dot-control div:hover, .carrusel-slider .dot-control div.active {
+  background-color: white;
+}
+@media (min-width: 768px) {
+  .carrusel-slider .dot-control {
+    margin-top: -4rem;
+    padding-top: 0px;
+  }
+  .carrusel-slider .dot-control div {
+    width: 12px;
+    height: 12px;
+  }
+}
+@media (min-width: 1360px) {
+  .carrusel-slider .controls-side {
+    display: flex;
+  }
+}
+
 /*************** RESETS *********************/
 *, html {
   box-sizing: border-box;
@@ -405,12 +491,12 @@ p.code {
   }
 }
 
-.container, nav, .carrusel, .carrusel #control {
+.container, nav, .carrusel, .carrusel #control, .carrusel-slider, .carrusel-slider .dot-control {
   margin: 0px auto;
   width: 88.2%;
 }
-@media (min-width: 1360px) {
-  .container, nav, .carrusel, .carrusel #control {
+@media (min-width: 1160px) {
+  .container, nav, .carrusel, .carrusel #control, .carrusel-slider, .carrusel-slider .dot-control {
     width: 1360px;
   }
 }

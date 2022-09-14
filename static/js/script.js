@@ -55,7 +55,73 @@ function setOrderAlf(e) {
         parent.appendChild(clicker)
         parent.appendChild(svg_icons)
     }
-})()
+})();
+
+
+//  Carrusel Slider with controls
+(() => {
+    // dot style
+    let current = 0
+    function setDoct() {
+        for (let dot of dot_control_cont.children) {
+            dot.className = ""
+        }
+        dot_control_cont.children[current].classList.add("active")
+    }
+
+
+    //  Select chidrem items
+    const carrusel_slider = $(".carrusel-slider")
+    const slider = carrusel_slider.getElementsByClassName("slider")[0]
+    const widthSlider = slider.children[0].offsetWidth
+
+
+    // arrow_controls
+    function arrowControler(bol) {
+        if (bol == true) {
+            current++
+            if (current >= slider.children.length) {
+                slider.scrollLeft = 0
+                current = 0
+            } else {
+                slider.scrollLeft += widthSlider
+            }
+        } else {
+            if (current < 1) {
+                slider.scrollLeft = slider.children.length * widthSlider
+                current = slider.children.length - 1
+            } else {
+                slider.scrollLeft -= widthSlider
+                current = current - 1
+            }
+        }
+        setDoct()
+    }
+    const controls_side = carrusel_slider.getElementsByClassName("controls-side")[0]
+    controls_side.children[0].onclick = () => arrowControler(false)
+    controls_side.children[1].onclick = () => arrowControler(true)
+    const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
+
+
+    // Dot control
+    function indexControler(e, i) {
+        slider.scrollLeft = widthSlider * i
+        current = i
+        setDoct()
+    }
+    for (let index = 0; index < slider.children.length; index++) {
+        const element = slider.children[index];
+
+        const dot_control = document.createElement("div")
+        dot_control.onclick = (e) => indexControler(e, index)
+        dot_control_cont.appendChild(dot_control)
+    }
+
+    dot_control_cont.children[0].classList.add("active")
+})();
+
+
+
 
 
 
