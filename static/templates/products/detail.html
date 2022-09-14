@@ -10,66 +10,41 @@
 
 <div class="container">
     <h1>{{product.nombre}}</h1>
-
     <p>
-
         {{product.id}}
     </p>
 
 
-    <div id="product-carrusel">
-
-        <div id="slider_product">
+    {% if product.galeria.all %}
+    <div class="carrusel img-control">
+        <div class="main">
             {% for i in product.galeria.all %}
             <img src="{{i.imagen.url}}" alt="">
             {% endfor %}
         </div>
-
-        <div id="control_product" >
-            {% for i in product.galeria.all %}
-                <img class="opacity-50" src="{{i.imagen.url}}" alt="">
-            {% endfor %}
-
-        </div>
     </div>
+    {% endif %}
 
     <script>
-        const slider_product = document.getElementById("slider_product")
-        const control_product = document.getElementById("control_product")
+     
 
-        function handleClickControler(e) {
-            var parent = e.parentNode;
-            // The equivalent of parent.children.indexOf(child)
-            var index = Array.prototype.indexOf.call(parent.children, e);
-            for (let i of slider_product.children) {
-                i.className = "hidden"
-            }
 
-            for (let i of control_product.children) {
-                i.className = "opacity-50"
-            }
+        // for (let i of control_product.children) {
+        //     i.onclick = (e) => handleClickControler(e.target)
+        // }
 
-            slider_product.children[index].classList.toggle("hidden")
-            control_product.children[index].classList.toggle("selected")
-            control_product.children[index].classList.toggle("opacity-50")
-        }
 
-        for (let i of control_product.children) {
-            i.onclick = (e) => handleClickControler(e.target)
-        }
+        // for (let i of slider_product.children) {
+        //     i.className = "hidden"
+        // }
 
-        
-        for (let i of slider_product.children) {
-                i.className = "hidden"
-            }
+        // // falta que sea solo el primero
+        // if (slider_product.children.length > 1) {
+        //     slider_product.children[0].classList.toggle("hidden")
+        //     control_product.children[0].className = "selected"
+        // }
 
-        // falta que sea solo el primero
-        if(slider_product.children.length > 1 ){
-            slider_product.children[0].classList.toggle("hidden")
-            control_product.children[0].className = "selected"
-        }
 
-  
 
     </script>
 </div>

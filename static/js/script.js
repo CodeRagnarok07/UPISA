@@ -60,66 +60,113 @@ function setOrderAlf(e) {
 
 //  Carrusel Slider with controls
 (() => {
-    // dot style
-    let current = 0
-    function setDoct() {
-        for (let dot of dot_control_cont.children) {
-            dot.className = ""
-        }
-        dot_control_cont.children[current].classList.add("active")
-    }
+    const all_carrusel_slider = document.getElementsByClassName("carrusel-slider")
 
-
-    //  Select chidrem items
-    const carrusel_slider = $(".carrusel-slider")
-    const slider = carrusel_slider.getElementsByClassName("slider")[0]
-    const widthSlider = slider.children[0].offsetWidth
-
-
-    // arrow_controls
-    function arrowControler(bol) {
-        if (bol == true) {
-            current++
-            if (current >= slider.children.length) {
-                slider.scrollLeft = 0
-                current = 0
-            } else {
-                slider.scrollLeft += widthSlider
+    for (const carrusel_slider of all_carrusel_slider) {
+        // dot style
+        let current = 0
+        function setDoct() {
+            for (let dot of dot_control_cont.children) {
+                dot.className = ""
             }
-        } else {
-            if (current < 1) {
-                slider.scrollLeft = slider.children.length * widthSlider
-                current = slider.children.length - 1
-            } else {
-                slider.scrollLeft -= widthSlider
-                current = current - 1
-            }
+            dot_control_cont.children[current].classList.add("active")
         }
-        setDoct()
+
+
+        //  Select chidrem items
+        const slider = carrusel_slider.getElementsByClassName("slider")[0]
+        const widthSlider = slider.children[0].offsetWidth
+
+
+        // arrow_controls
+        function arrowControler(bol) {
+            if (bol == true) {
+                current++
+                if (current >= slider.children.length) {
+                    slider.scrollLeft = 0
+                    current = 0
+                } else {
+                    slider.scrollLeft += widthSlider
+                }
+            } else {
+                if (current < 1) {
+                    slider.scrollLeft = slider.children.length * widthSlider
+                    current = slider.children.length - 1
+                } else {
+                    slider.scrollLeft -= widthSlider
+                    current = current - 1
+                }
+            }
+            setDoct()
+        }
+        const controls_side = carrusel_slider.getElementsByClassName("controls-side")[0]
+        controls_side.children[0].onclick = () => arrowControler(false)
+        controls_side.children[1].onclick = () => arrowControler(true)
+        const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
+
+
+        // Dot control
+        function indexControler(e, i) {
+            slider.scrollLeft = widthSlider * i
+            current = i
+            setDoct()
+        }
+        for (let index = 0; index < slider.children.length; index++) {
+            const element = slider.children[index];
+
+            const dot_control = document.createElement("div")
+            dot_control.onclick = (e) => indexControler(e, index)
+            dot_control_cont.appendChild(dot_control)
+        }
+
+        dot_control_cont.children[0].classList.add("active")
     }
-    const controls_side = carrusel_slider.getElementsByClassName("controls-side")[0]
-    controls_side.children[0].onclick = () => arrowControler(false)
-    controls_side.children[1].onclick = () => arrowControler(true)
-    const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
-
-
-    // Dot control
-    function indexControler(e, i) {
-        slider.scrollLeft = widthSlider * i
-        current = i
-        setDoct()
-    }
-    for (let index = 0; index < slider.children.length; index++) {
-        const element = slider.children[index];
-
-        const dot_control = document.createElement("div")
-        dot_control.onclick = (e) => indexControler(e, index)
-        dot_control_cont.appendChild(dot_control)
-    }
-
-    dot_control_cont.children[0].classList.add("active")
 })();
 
+
+// Carrusel with controladores
+(() => {
+    const carrusel = document.getElementsByClassName("carrusel")[0]
+
+    // Crear el controlador por imagenes
+    if (carrusel.classList.contains("carrusel")) {
+        const control = document.createElement("div")
+        control.className = "control"
+        carrusel.appendChild(control)
+    }
+
+    const main = carrusel.getElementsByClassName("main")[0]
+    const control = carrusel.getElementsByClassName("control")[0]
+
+    function handleClickControler(e) {
+        var parent = e.parentNode;
+        var index = Array.prototype.indexOf.call(parent.children, e);
+        for (let i of main.children) {
+            i.className = "hidden"
+        }
+        for (let i of control.children) {
+            i.className = "opacity-50"
+        }
+        main.children[index].classList.toggle("hidden")
+        control.children[index].classList.add("selected")
+        control.children[index].classList.toggle("opacity-50")
+    }
+
+
+    for (const img_main of main.children) {
+        const new_img = img_main.cloneNode()
+        new_img.className = "opacity-50"
+        new_img.onclick = (e) => handleClickControler(e.target)
+        control.appendChild(new_img)
+    }
+
+    for (let i of main.children) {
+        i.className = "hidden"
+    }
+
+    main.children[0].classList.toggle("hidden")
+    control.children[0].className = "selected"
+})();
 
 
 

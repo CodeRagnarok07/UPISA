@@ -27,13 +27,6 @@
     }
 }
 
-.flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .header {
     position: relative;
     background-repeat: repeat;
@@ -60,32 +53,13 @@
         padding-top: 48px;
     }
 
-    .nav-header {
+    .header-title {
         position: relative;
         margin-top: 100px;
+        text-align: center;
 
-        h1 {
-            font-family: 'kalamaya';
-            font-style: italic;
-            font-weight: 400;
-            font-size: 96px;
-            line-height: 100%;
-            /* identical to box height, or 96px */
-            text-align: center;
+       
 
-        }
-
-        p {
-            width: 789px;
-            margin: 0px auto;
-            margin-top: 8px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 24px;
-            text-align: center;
-        }
     }
 }
 
@@ -93,7 +67,7 @@ nav {
     z-index: 100;
     @extend .container;
     position: relative;
-    padding-top: 58px;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,143 +163,13 @@ nav {
 
 
 
+
+//  Nuevos
+
 .carrusel {
-    margin-top: 109px;
-    @extend .container;
-    position: relative;
-
-    #main {
-        display: flex;
-        overflow: hidden;
-        scroll-behavior: smooth;
-    }
-
-    .slider {
-        z-index: 2;
-        display: flex;
-        flex-direction: column-reverse;
-        flex-shrink: 0;
-        scroll-snap-align: start;
-
-        .descrption {
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 17px;
-            gap: 24px;
-
-            h1 {
-                z-index: 2;
-                font-family: 'Bebas Neue';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 36px;
-                line-height: 110%;
-                margin-bottom: -12px;
-            }
-        }
-
-    }
-
-
-    .btn-control {
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: -100px;
-        left: -100px;
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-
-        button {
-            padding: 16px;
-            border-radius: 50%;
-            background-color: v.$N65;
-        }
-    }
-
-    @media (min-width: v.$md ) {
-        margin-top: 9px;
-
-        .slider {
-            flex-direction: row;
-            align-items: center;
-
-            .descrption {
-                justify-content: space-between;
-                font-weight: 500;
-                font-size: 20px;
-                line-height: 24px;
-
-
-                h1 {
-                    font-weight: 700;
-                    font-size: 64px;
-                    line-height: 83px;
-                }
-
-                button {
-                    margin-right: auto;
-                }
-            }
-        }
-
-        .btn-control {
-            display: flex;
-
-        }
-
-    }
-
-    #control {
-        @extend .container;
-        display: flex;
-        justify-content: center;
-        padding-top: 24px;
-        gap: 16px;
-
-        div {
-            z-index: 50;
-
-            height: 8px;
-            width: 8px;
-            border-radius: 50%;
-            background-color: v.$N65;
-            cursor: pointer;
-
-            &:hover {
-                background-color: white;
-            }
-        }
-
-
-        @media (min-width: v.$md ) {
-            margin-top: -4rem;
-            padding-top: 0px;
-
-
-            div {
-                width: 12px;
-                height: 12px;
-            }
-        }
-    }
-
-
-
-}
-
-
-#product-carrusel {
     width: 553px;
 
-    #slider_product {
+    .main {
         width: 553px;
         height: 553px;
         display: flex;
@@ -344,14 +188,13 @@ nav {
 
     }
 
-    #control_product {
+    .control {
         margin-top: 24px;
         display: flex;
         justify-content: center;
         gap: 24px;
         max-width: 553px;
         overflow: auto;
-
         img {
             flex-shrink: 0;
 
@@ -428,7 +271,6 @@ nav {
 
 
 .carrusel-slider {
-    margin-top: 109px;
     @extend .container;
     position: relative;
 
@@ -437,34 +279,11 @@ nav {
         display: flex;
         overflow: hidden;
         scroll-behavior: smooth;
+
         .item-slider {
-            z-index: 2;
-            display: flex;
-            flex-direction: column-reverse;
             flex-shrink: 0;
             scroll-snap-align: start;
-    
-            .descrption {
-                z-index: 2;
-                display: flex;
-                flex-direction: column;
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 17px;
-                gap: 24px;
-    
-                h1 {
-                    z-index: 2;
-                    font-family: 'Bebas Neue';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 36px;
-                    line-height: 110%;
-                    margin-bottom: -12px;
-                }
-            }
+            width: 100%;
         }
     }
     .controls-side {
@@ -524,6 +343,8 @@ nav {
 
 
     @media (min-width: v.$xl) {
+    margin-top: 109px;
+        
         .controls-side{
         display: flex;
 

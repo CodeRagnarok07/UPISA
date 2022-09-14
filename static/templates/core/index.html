@@ -8,22 +8,22 @@
 {% block header %}
 
 <div class="carrusel-slider">
-
     <div class="slider">
         {% for i in carrusel %}
-        <div class="item-slider snap-start w-full">
+        <div class="item-slider">
+            <div class="item-home-carrusel-slider">
 
-            <div class="descrption">
+                    <div class="img-cont w-full">
+                        <img src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
+                    </div>
 
-                <h1>{{i.titulo}}</h1>
-                <p>Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas
-                    seleccionadas
-                    y rigurosos controles de calidad.</p>
-                <button class="primary">VER PRODUCTOS</button>
-            </div>
-
-            <div class="img-cont w-full">
-                <img src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
+                    <div class="descrption">
+                        <h1>{{i.titulo}}</h1>
+                        <p>Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas
+                            seleccionadas
+                            y rigurosos controles de calidad.</p>
+                        <button class="primary">VER PRODUCTOS</button>
+                    </div>
             </div>
         </div>
         {% endfor %}
@@ -51,11 +51,26 @@
     </div>
 </div>
 
-
 {% endblock header %}
 
-{% block cont %}
 
+
+{% block cont %}
+<video class="video" controls 
+       style="width:300px; height:240px; outline:none;
+              border: 5px solid #45c9d0; padding: 10px;">
+  <source src="https://www.youtube.com/watch?v=jmPBk3GW0Ac" type="video/mp4">
+</video>
+
+<iframe 
+src="https://www.youtube.com/embed/jmPBk3GW0Ac" 
+title="YouTube video player" 
+frameborder="0" 
+allow="" 
+allowfullscreen>
+</iframe>
+
+<h1>asdas</h1>
 
 
 

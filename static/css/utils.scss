@@ -1,0 +1,28 @@
+
+.container {
+    margin: 0px auto;
+    width: 88.2%;
+
+    @media (min-width: v.$lg ) {
+        width: 1360px;
+    }
+
+}
+
+.hidden-movil {
+    display: none;
+
+    @media (min-width: v.$lg ) {
+        display: inherit;
+
+    }
+
+}
+
+
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

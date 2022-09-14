@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Bebas+Neue&family=Inter:wght@500;600;700&display=swap');
+
+// @font-face {
+//     font-family: 'kalamaya';
+//     src: url('./kamalaya/kalamaya-old\ stlye.otf');
+//     src: url('./kamalaya/kalamaya-old\ stlye.ttf');
+//     src: url('./kamalaya/kalamaya-Regular.otf');
+//     src: url('./kamalaya/kalamaya-Regular.ttf');
+// }
+
 
 
 body {
@@ -14,11 +24,17 @@ body {
 
 
 button {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
 
     &.primary {
         border-radius: 8px;
         background-color: v.$V1;
         padding: 16px 24px;
+        width: 100%;
     }
 
     &.carrusel-control {
@@ -30,7 +46,11 @@ button {
 }
 
 p {
-
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
 
     &.name {
         display: none;
@@ -49,5 +69,19 @@ p {
             display: none;
         }
 
+    }
+}
+
+h1 {
+    font-family: 'kalamaya';
+    text-align: center;
+    font-size: 64px;
+    line-height: 100%;
+
+}
+
+@media (min-width: v.$lg ) {
+    h1 {
+        font-size: 96px;
     }
 }
