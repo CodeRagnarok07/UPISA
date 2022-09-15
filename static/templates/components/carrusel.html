@@ -1,21 +1,22 @@
 
+<!--  Carrusel con controles dot and arrow -->
 <div class="carrusel-slider">
-
     <div class="slider">
+
         {% for i in carrusel %}
-        <div class="item-slider w-full">
-
-            <div class="descrption">
-
-                <h1>{{i.titulo}}</h1>
-                <p>Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas
-                    seleccionadas
-                    y rigurosos controles de calidad.</p>
-                <button class="primary">VER PRODUCTOS</button>
-            </div>
-
-            <div class="img-cont w-full">
-                <img src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
+        <div class="item-slider">
+            <div class="item-home-carrusel-slider">
+                    <div class="img-cont w-full">
+                        <img src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
+                    </div>
+                    
+                    <div class="descrption">
+                        <h1>{{i.titulo}}</h1>
+                        <p>Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas
+                            seleccionadas
+                            y rigurosos controles de calidad.</p>
+                        <button class="primary">VER PRODUCTOS</button>
+                    </div>
             </div>
         </div>
         {% endfor %}
@@ -40,5 +41,16 @@
     </div>
 
     <div class="dot-control">
+    </div>
+</div>
+
+
+<!-- carrusel con control por imagenes no slider-->
+
+<div class="carrusel img-control">
+    <div class="main">
+        {% for i in product.galeria.all %}
+        <img src="{{i.imagen.url}}" alt="">
+        {% endfor %}
     </div>
 </div>

@@ -7,6 +7,8 @@ from django.utils.translation import gettext
 
 def index(request):
 
+    populares = Product.objects.filter(destacado=True)
+
     carrusel = [
         {
             "titulo": "Variedades de embutidos con sabores únicos",
@@ -24,7 +26,8 @@ def index(request):
 
     ctx = {
         "ingre": ingredientes,
-        "carrusel": carrusel
+        "carrusel": carrusel,
+        "populares": populares
     }
 
     return render(request, 'core/index.html', ctx)

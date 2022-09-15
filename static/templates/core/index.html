@@ -9,14 +9,14 @@
 
 <div class="carrusel-slider">
     <div class="slider">
+
         {% for i in carrusel %}
         <div class="item-slider">
             <div class="item-home-carrusel-slider">
-
                     <div class="img-cont w-full">
                         <img src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
                     </div>
-
+                    
                     <div class="descrption">
                         <h1>{{i.titulo}}</h1>
                         <p>Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas
@@ -56,22 +56,22 @@
 
 
 {% block cont %}
-<video class="video" controls 
-       style="width:300px; height:240px; outline:none;
-              border: 5px solid #45c9d0; padding: 10px;">
-  <source src="https://www.youtube.com/watch?v=jmPBk3GW0Ac" type="video/mp4">
-</video>
 
-<iframe 
-src="https://www.youtube.com/embed/jmPBk3GW0Ac" 
-title="YouTube video player" 
-frameborder="0" 
-allow="" 
-allowfullscreen>
-</iframe>
+<div class="container z-50 mt-[-4rem] relative">
 
-<h1>asdas</h1>
+    <iframe class="rounded-xl absolute inset-x-0 top-[-4rem] " width="100%" height="180px"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
 
+</div>
+
+
+{% include './certificaciones.html' %}
+
+{% include '../calculadora.html' %}
+{% include './populares.html' %}
+
+{% include './carrusel_resetas.html' %}
 
 
 {% endblock cont %}
