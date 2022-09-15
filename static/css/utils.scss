@@ -2,11 +2,17 @@
 .container {
     margin: 0px auto;
     width: 88.2%;
+    position: relative;
 
     @media (min-width: v.$lg ) {
         width: 1360px;
     }
 
+}
+
+.card{
+    background-color: white;
+    border-radius: 12px;
 }
 
 .hidden-movil {

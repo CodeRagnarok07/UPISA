@@ -176,20 +176,19 @@ nav {
 //  Nuevos
 
 .carrusel {
-    width: 553px;
+
 
     .main {
-        width: 553px;
-        height: 553px;
+
         display: flex;
         align-items: center;
         border-radius: 16px;
-
         background-color: white;
-
+        height: 180px;
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             border-radius: 16px;
 
         }
@@ -198,20 +197,21 @@ nav {
     }
 
     .control {
-        margin-top: 24px;
+        margin-left: auto;
+        width: auto;
+        margin-top: 1rem;
         display: flex;
-        justify-content: center;
-        gap: 24px;
-        max-width: 553px;
+        justify-content: start;
+        gap: 1rem;
         overflow: auto;
 
         img {
             flex-shrink: 0;
 
             border-radius: 8px;
-            height: 92px;
-            width: 92px;
-            object-fit: contain;
+            width: 66px;
+            height: 66px;
+            object-fit: cover;
             background-color: white;
 
             &.selected {

@@ -2,11 +2,17 @@
 .container, .carrusel-slider .dot-control, .carrusel-slider, nav {
   margin: 0px auto;
   width: 88.2%;
+  position: relative;
 }
 @media (min-width: 1160px) {
   .container, .carrusel-slider .dot-control, .carrusel-slider, nav {
     width: 1360px;
   }
+}
+
+.card, .empresa-ft > div {
+  background-color: white;
+  border-radius: 12px;
 }
 
 .hidden-movil {
@@ -18,7 +24,7 @@
   }
 }
 
-.flex-center, footer span, nav .right {
+.flex-center, .empresa-ft > div, footer span, nav .right {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,36 +165,34 @@ nav .right {
   }
 }
 
-.carrusel {
-  width: 553px;
-}
 .carrusel .main {
-  width: 553px;
-  height: 553px;
   display: flex;
   align-items: center;
   border-radius: 16px;
   background-color: white;
+  height: 180px;
 }
 .carrusel .main img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   border-radius: 16px;
 }
 .carrusel .control {
-  margin-top: 24px;
+  margin-left: auto;
+  width: auto;
+  margin-top: 1rem;
   display: flex;
-  justify-content: center;
-  gap: 24px;
-  max-width: 553px;
+  justify-content: start;
+  gap: 1rem;
   overflow: auto;
 }
 .carrusel .control img {
   flex-shrink: 0;
   border-radius: 8px;
-  height: 92px;
-  width: 92px;
-  object-fit: contain;
+  width: 66px;
+  height: 66px;
+  object-fit: cover;
   background-color: white;
 }
 .carrusel .control img.selected {
@@ -347,11 +351,11 @@ button {
 
 @font-face {
   font-family: "kalamaya";
-  src: url("./kamalaya/kalamaya-Regular.otf");
-  src: url("./kamalaya/kalamaya-Regular.ttf");
+  src: url("./kamalaya/kalamaya-Regular.otf") format("truetype");
+  src: url("./kamalaya/kalamaya-Regular.ttf") format("truetype");
 }
 body {
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -415,6 +419,24 @@ h2 {
   font-weight: 400;
   font-size: 32px;
   line-height: 110%;
+}
+
+h3 {
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+h4 {
+  text-align: center;
+  font-family: "kalamaya";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  color: #EA8215;
 }
 
 @media (min-width: 1160px) {
@@ -555,6 +577,25 @@ footer span.right {
 }
 .item-home-carrusel-slider p {
   margin: 0.75rem 0px 1.25rem;
+}
+
+.empresa-ft {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.empresa-ft > div {
+  gap: 1.75rem;
+  padding: 2rem 1.75rem;
+  justify-content: start;
+}
+.empresa-ft > div p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 /*# sourceMappingURL=style.css.map */

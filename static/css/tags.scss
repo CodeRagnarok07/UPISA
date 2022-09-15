@@ -2,14 +2,14 @@
 
 @font-face {
     font-family: 'kalamaya';
-    src: url('./kamalaya/kalamaya-Regular.otf');
-    src: url('./kamalaya/kalamaya-Regular.ttf');
+    src: url('./kamalaya/kalamaya-Regular.otf') format("truetype");
+    src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
 }
 
 
 
 body {
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 16px;
     font-weight: 500;
     line-height: 19px;
@@ -87,22 +87,41 @@ h2 {
     line-height: 110%;
 }
 
+h3 {
+    font-family: 'Antonio';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+h4 {
+    text-align: center;
+    font-family: 'kalamaya';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    color: v.$N100;
+}
+
 @media (min-width: v.$lg ) {
     h1 {
         font-size: 96px;
     }
 }
 
-footer{
+footer {
     margin-top: 7.5rem;
     text-align: left;
     color: white;
-    h2{
+
+    h2 {
         text-align: left;
 
     }
 
-    li{
+    li {
         margin: 12px 0px;
         font-size: 12px;
         font-weight: 400;
@@ -111,14 +130,16 @@ footer{
 
     }
 
-    span{
+    span {
         height: 80px;
         @extend .flex-center;
         text-align: center;
-        &.left{
+
+        &.left {
             background-color: v.$V1;
         }
-        &.right{
+
+        &.right {
             background-color: v.$blue;
         }
     }
