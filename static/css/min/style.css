@@ -18,7 +18,7 @@
   }
 }
 
-.flex-center, nav .right {
+.flex-center, footer span, nav .right {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -251,6 +251,18 @@ nav .right {
   scroll-snap-align: start;
   width: 100%;
 }
+.carrusel-slider .slider-group {
+  display: grid;
+  height: 205px;
+  grid-auto-flow: dense;
+  grid-template-columns: 4fr;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.carrusel-slider .slider-group .item-slider {
+  scroll-snap-align: start;
+  width: 100%;
+}
 .carrusel-slider .controls-side {
   /*movil*/
   z-index: 0;
@@ -413,6 +425,7 @@ h2 {
 footer {
   margin-top: 7.5rem;
   text-align: left;
+  color: white;
 }
 footer h2 {
   text-align: left;
@@ -423,6 +436,16 @@ footer li {
   font-weight: 400;
   display: flex;
   gap: 0.9rem;
+}
+footer span {
+  height: 80px;
+  text-align: center;
+}
+footer span.left {
+  background-color: #0B9839;
+}
+footer span.right {
+  background-color: #4688C3;
 }
 
 .filters {

@@ -60,7 +60,7 @@ function setOrderAlf(e) {
 
 //  Carrusel Slider with controls
 (() => {
-    const all_carrusel_slider = document.getElementsByClassName("carrusel-slider")
+    const all_carrusel_slider = document.getElementsByClassName("carrusel-slider") 
 
     for (const carrusel_slider of all_carrusel_slider) {
         // dot style
@@ -74,7 +74,7 @@ function setOrderAlf(e) {
 
 
         //  Select chidrem items
-        const slider = carrusel_slider.getElementsByClassName("slider")[0]
+        const slider = carrusel_slider.getElementsByClassName("slider")[0] ||  carrusel_slider.getElementsByClassName("slider-group")[0]
         const widthSlider = slider.children[0].offsetWidth
 
 

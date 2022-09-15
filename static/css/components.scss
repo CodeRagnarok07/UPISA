@@ -298,6 +298,21 @@ nav {
         }
     }
 
+    .slider-group {
+        display: grid;
+        height: 205px;
+        grid-auto-flow: dense;
+        grid-template-columns: 4fr;
+
+        overflow: scroll;
+        scroll-behavior: smooth;
+
+        .item-slider {
+            scroll-snap-align: start;
+            width: 100%;
+        }
+    }
+
     .controls-side {
         /*movil*/
         // display: none;

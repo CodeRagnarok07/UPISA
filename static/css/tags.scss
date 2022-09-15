@@ -96,6 +96,7 @@ h2 {
 footer{
     margin-top: 7.5rem;
     text-align: left;
+    color: white;
     h2{
         text-align: left;
 
@@ -108,5 +109,17 @@ footer{
         display: flex;
         gap: 0.9rem;
 
+    }
+
+    span{
+        height: 80px;
+        @extend .flex-center;
+        text-align: center;
+        &.left{
+            background-color: v.$V1;
+        }
+        &.right{
+            background-color: v.$blue;
+        }
     }
 }
