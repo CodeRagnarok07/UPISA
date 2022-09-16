@@ -27,18 +27,29 @@ button {
     font-weight: 600;
     font-size: 12px;
     line-height: 100%;
+    padding: 16px 24px;
+    border-radius: 8px;
 
     &.primary {
-        border-radius: 8px;
+        color: white;
         background-color: v.$V1;
-        padding: 16px 24px;
-        width: 100%;
+    }
+
+    &.secondary {
+        color: white;
+        background-color: v.$N100;
+
     }
 
     &.carrusel-control {
         padding: 16px;
         border-radius: 50%;
         background-color: v.$N65;
+    }
+
+    @media (min-width: v.$lg ) {
+        width: auto;
+
     }
 
 }

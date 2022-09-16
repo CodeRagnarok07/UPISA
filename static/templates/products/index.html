@@ -5,24 +5,16 @@
 {% block title %}contacto{% endblock title %}
 
 {% block header %}
-<div class="header-title">
-    <div class="container">
-
+<div class="header-title pb-9">
+    <div class="container ">
         <h1>• Productos •</h1>
-        <p>          
+        <p>
             Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único.
             ¡Tenés que probarlo!
             Elegí lo mejor, elegí sabor.
         </p>
     </div>
 </div>
-
-
-
-
-
-
-
 {% endblock header %}
 
 
@@ -30,12 +22,14 @@
 
 <div class="container">
 
-    {% include './categories.html' %}
+    <div class="flex-center">
+        {% include './categories.html' %}
+    </div>
     <!-- filters -->
     <div class="filters">
         <!-- Orden alfabetico -->
 
-        <div class="filter">
+        <!-- <div class="filter">
             <div>
                 ORDEN: A - Z
             </div>
@@ -44,10 +38,10 @@
                 <button class="option">opcion 1</button>
                 <button class="option">opcion 1</button>
             </div>
-        </div>
+        </div> -->
 
         {% if current_categoria %}
-        <div class="filter">
+        <div class="filter w-full md:w-auto">
             <div>
                 FILTRAR
             </div>
@@ -69,7 +63,7 @@
     </div>
 
     <!-- Productos -->
-    <div id="products" class=" grid grid-cols-4 mt-9 gap-6">
+    <div id="products" class=" grid grid-cols-2 md:grid-cols-4 mt-9 gap-6">
         {% for i in page_obj|dictsort:"nombre" %}
         {% include './item_product.html' %}
         {% endfor %}
@@ -79,8 +73,31 @@
     <!-- pagination -->
     {% include '../components/pagination.html' %}
 
-    <div class="flex w-full h-[266px] mt-20 mb-60 border border-black">
-        <img src="/static/imgs/lp-carrusel/Slider1.png" alt="">
+
+    <!-- Link Contacto -->
+    <div class="flex flex-col w-full rounded-xl mt-20 mb-40 bg-white
+    md:flex-row-reverse md:justify-between 
+    
+    ">
+
+        <img class="md:w-1/2  rounded-t-xl md:rounded-t-none md:rounded-r-xl" src="/static/imgs/contact_link.png"
+            alt="">
+
+        <div class="md:w-1/2 m-5 md:m-12 md:flex md:flex-col md:items-start md:justify-center">
+
+            <h3 class="font-bold">
+                ¿NO ENCONTRÁS LO QUE BUSCÁS? ESTAMOS PARA AYUDARTE
+            </h3>
+
+            <button class="secondary flex-center mt-6 gap-4 md:mr-auto w-auto">
+                CONTACTÁ CON NOSOTROS
+                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.50025 11.75C1.30142 11.7491 1.11079 11.6706 0.969005 11.5312C0.899085 11.4615 0.843607 11.3787 0.805753 11.2876C0.767899 11.1964 0.748413 11.0987 0.748413 11C0.748413 10.9012 0.767899 10.8035 0.805753 10.7123C0.843607 10.6212 0.899085 10.5384 0.969005 10.4687L5.43775 5.99996L0.969005 1.53121C0.828108 1.39031 0.748954 1.19922 0.748954 0.999958C0.748954 0.901296 0.768387 0.8036 0.806143 0.712448C0.8439 0.621296 0.89924 0.538473 0.969005 0.468708C1.03877 0.398944 1.12159 0.343603 1.21274 0.305847C1.3039 0.26809 1.40159 0.248657 1.50025 0.248657C1.69951 0.248657 1.89061 0.327812 2.0315 0.468708L7.0315 5.46871C7.10142 5.53839 7.1569 5.62118 7.19476 5.71234C7.23261 5.80351 7.2521 5.90125 7.2521 5.99996C7.2521 6.09867 7.23261 6.19641 7.19476 6.28757C7.1569 6.37874 7.10142 6.46153 7.0315 6.53121L2.0315 11.5312C1.88972 11.6706 1.69909 11.7491 1.50025 11.75Z"
+                        fill="white" />
+                </svg>
+            </button>
+        </div>
     </div>
 
 </div>

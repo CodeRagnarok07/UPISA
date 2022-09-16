@@ -34,7 +34,7 @@ class Product(models.Model):
         Categoria, on_delete=models.CASCADE, related_query_name="products", related_name="products")
     sub_categoria = models.ForeignKey(
         CategoriaSub, on_delete=models.CASCADE, related_query_name="products")
-
+        
     porcion = models.IntegerField(
         help_text="numerico g por unidad", blank=True, null=True)
     descripcion = models.TextField()

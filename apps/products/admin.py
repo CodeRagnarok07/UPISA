@@ -44,7 +44,6 @@ class GaleriaInline(admin.StackedInline):
 class ProductAdmin(SummernoteModelAdmin):
     prepopulated_fields = {"url": ("nombre",)}
     search_fields = ['nombre']
-    list_editable = ('nombre',)
     list_filter = ('categoria', 'sub_categoria')
     list_display = ('nombre_es', 'nombre', 'categoria', 'sub_categoria')
 

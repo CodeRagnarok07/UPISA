@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product, Categoria
+from .models import Product, Categoria, ValoresNutricionales
 # Create your views here.
 from django.core.paginator import Paginator
 
@@ -10,7 +10,7 @@ def productos(request):
     categorias = Categoria.objects.all()
 
     products = Product.objects.all()
-    paginator = Paginator(products, 2) # Show 25 contacts per page.
+    paginator = Paginator(products, 12) # Show 25 contacts per page.
     page_number = request.GET.get('page')
 
     page_obj = paginator.get_page(page_number)
@@ -50,6 +50,7 @@ def category_productos(request, category):
 
 def detail(request, category, url):
     product = get_object_or_404(Product, url=url)
+    
     ctx = {
         "product": product,
     }
