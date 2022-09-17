@@ -46,6 +46,7 @@ button {
         border-radius: 50%;
         background-color: v.$N65;
     }
+
     width: 100%;
 
     @media (min-width: v.$lg ) {
@@ -125,15 +126,33 @@ h4 {
     color: v.$N100;
 }
 
+h5 {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+}
+
 @media (min-width: v.$lg ) {
     h1 {
         font-size: 96px;
     }
+
     h2 {
         font-size: 48px;
     }
-    h3{
-        
+
+    h3 {
+
+    }
+    h5{
+        font-family: 'Antonio';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+
     }
 }
 
@@ -153,6 +172,13 @@ footer {
         font-weight: 400;
         display: flex;
         gap: 0.9rem;
+
+        @media (min-width: v.$lg ) {
+            margin: 16px 0px;
+            font-size: 15px;
+
+
+        }
 
     }
 

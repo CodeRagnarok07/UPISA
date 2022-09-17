@@ -138,11 +138,6 @@
   left: 0px;
   opacity: 0.8;
 }
-@media (min-width: 768px) {
-  .header {
-    padding-top: 48px;
-  }
-}
 .header .header-title {
   position: relative;
   margin-top: 100px;
@@ -520,12 +515,27 @@ h4 {
   color: #EA8215;
 }
 
+h5 {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+}
+
 @media (min-width: 1160px) {
   h1 {
     font-size: 96px;
   }
   h2 {
     font-size: 48px;
+  }
+  h5 {
+    font-family: "Antonio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
   }
 }
 footer {
@@ -542,6 +552,12 @@ footer li {
   font-weight: 400;
   display: flex;
   gap: 0.9rem;
+}
+@media (min-width: 1160px) {
+  footer li {
+    margin: 16px 0px;
+    font-size: 15px;
+  }
 }
 footer span {
   height: 80px;
