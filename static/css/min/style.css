@@ -313,8 +313,10 @@ nav .right {
 }
 .carrusel-slider .slider {
   display: flex;
+  flex-wrap: nowrap;
   overflow: hidden;
   scroll-behavior: smooth;
+  z-index: 100;
 }
 .carrusel-slider .slider .item-slider {
   flex-shrink: 0;
@@ -378,6 +380,7 @@ nav .right {
 @media (min-width: 1360px) {
   .carrusel-slider .controls-side {
     display: flex;
+    z-index: 0;
   }
 }
 

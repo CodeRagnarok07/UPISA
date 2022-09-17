@@ -302,8 +302,10 @@ nav {
 
     .slider {
         display: flex;
+        flex-wrap: nowrap;
         overflow: hidden;
         scroll-behavior: smooth;
+        z-index: 100;
 
         .item-slider {
             flex-shrink: 0;
@@ -384,6 +386,7 @@ nav {
 
         .controls-side {
             display: flex;
+            z-index: 0;
 
         }
     }

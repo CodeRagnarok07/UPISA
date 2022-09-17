@@ -127,12 +127,14 @@ function setOrderAlf(e) {
 // Carrusel with controladores
 (() => {
     const carrusel = document.getElementsByClassName("carrusel")[0]
+    const control_contain = document.createElement("div")
+    control_contain.clasName= "control_contain"
 
     // Crear el controlador por imagenes
     if (carrusel.classList.contains("carrusel")) {
         const control = document.createElement("div")
         control.className = "control"
-        carrusel.appendChild(control)
+        control_contain.appendChild(control)
     }
 
     const main = carrusel.getElementsByClassName("main")[0]

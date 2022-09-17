@@ -44,12 +44,12 @@ class GaleriaInline(admin.StackedInline):
 class ProductAdmin(SummernoteModelAdmin):
     prepopulated_fields = {"url": ("nombre",)}
     search_fields = ['nombre']
-    list_filter = ('categoria', 'sub_categoria')
-    list_display = ('nombre_es', 'nombre', 'categoria', 'sub_categoria')
+    list_filter = ('sub_categoria',)
+    list_display = ('nombre_es', 'nombre', 'sub_categoria')
 
     inlines = [ValoresInline, GaleriaInline]
     # 'ingredientes', 'antioxidante', 'estabilizante', 'conservante',
-    autocomplete_fields = ['categoria', 'sub_categoria']
+    autocomplete_fields = ['sub_categoria']
 
     def get_search_results(self, request, queryset, search_term):
         print("In get search results")
@@ -59,7 +59,7 @@ class ProductAdmin(SummernoteModelAdmin):
     fieldsets = (
         (None, {
             'classes': ('extrapretty',),
-            'fields': (('nombre','destacado',), ('url', 'miniatura'))
+            'fields': (('nombre','porcion','destacado',), ('url', 'miniatura'))
         }),
         ("traducciones", {
             'classes': ('extrapretty', 'collapse'),
@@ -67,7 +67,7 @@ class ProductAdmin(SummernoteModelAdmin):
         }),
         (None, {
             'classes': ('extrapretty',),
-            'fields': (('categoria', 'sub_categoria'),)
+            'fields': (('sub_categoria'),)
         }),
         (None, {
             'classes': ('extrapretty',),

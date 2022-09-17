@@ -10,12 +10,14 @@
     <div class="carrusel-slider">
         <div class="slider overflow-auto ">
             {% for i in populares %}
-            <div class="px-2">
+            <div class="px-2 relative">
                 <a class="
                 rounded-xl snap-start 
                 min-w-[148px] md:w-[322px] h-[197px] 
                 bg-white text-black 
-                flex flex-col justify-between" href="{% url 'product_detail' i.categoria.url i.url %}">
+                flex flex-col justify-between"
+                
+                href="{% url 'product_detail' i.sub_categoria.categoria.url i.url %}">
 
                     <figure class="flex-center w-full" id="min_{{i.id}}">
                         <img class="h-[110px] w-[104px] object-contain" src="{{i.miniatura.url}}" alt="">

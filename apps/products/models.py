@@ -27,13 +27,10 @@ class Product(models.Model):
     url = models.CharField(max_length=500, unique=True)
 
     miniatura = models.ImageField()
-
     destacado = models.BooleanField(default=True)
 
-    categoria = models.ForeignKey(
-        Categoria, on_delete=models.CASCADE, related_query_name="products", related_name="products")
     sub_categoria = models.ForeignKey(
-        CategoriaSub, on_delete=models.CASCADE, related_query_name="products")
+        CategoriaSub, on_delete=models.CASCADE, related_query_name="products",  help_text="Busqueda por Categoria superior")
         
     porcion = models.IntegerField(
         help_text="numerico g por unidad", blank=True, null=True)
