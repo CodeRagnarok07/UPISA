@@ -46,6 +46,7 @@ button {
         border-radius: 50%;
         background-color: v.$N65;
     }
+    width: 100%;
 
     @media (min-width: v.$lg ) {
         width: auto;
@@ -60,6 +61,12 @@ p {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
+
+    @media (min-width: v.$lg ) {
+        font-size: 16px;
+
+
+    }
 
     &.name {
         display: none;
@@ -96,6 +103,8 @@ h2 {
     font-weight: 400;
     font-size: 32px;
     line-height: 110%;
+    text-transform: uppercase;
+
 }
 
 h3 {
@@ -119,6 +128,12 @@ h4 {
 @media (min-width: v.$lg ) {
     h1 {
         font-size: 96px;
+    }
+    h2 {
+        font-size: 48px;
+    }
+    h3{
+        
     }
 }
 

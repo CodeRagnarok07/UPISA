@@ -1,38 +1,42 @@
 {% load static %}
 <section class="container">
     <h2 class="mt-16">CERTIFICACIONES</h2>
-    <p class="text-center font-medium">
+    <p class="text-center font-medium md:w-[90%] mx-auto md:text-xl ">
         Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con
         la certificación HACCP y ASPAGRAN, siendo una empresa con máximo control del proceso sobre el análisis del
         producto final.
     </p>
 
-    <div class="flex flex-col items-center gap-4 mt-6">
+    <div class="flex flex-col md:flex-row items-center gap-4 mt-6">
 
-        <div class=" sm:w-full h-[263px] bg-white rounded-xl p-5">
+        <div class="flex flex-col md:flex-row w-full bg-white rounded-xl p-5 md:p-9 md:gap-8">
 
-            <div class="flex-center">
-                <img src="{% static 'imgs/certificaciones/0.png' %}" alt="">
+            <div class="flex-center w-[140px] mx-auto ">
+                <img class="w-full"  src="{% static 'imgs/certificaciones/0.png' %}" alt="">
             </div>
 
-            <h2 class="mt-4 mb-1">ASPAGRAN</h2>
-            <p class="text-center">
-                Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con la certificación HACCP.
-            </p>
+            <div class="w-full md:w-[423.5px]">
+                <h2 class="mt-4 mb-1 md:text-left text-[32px] md:text-[36px] ">ASPAGRAN</h2>
+                <p class="text-center md:text-xl md:text-left">
+                    Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con la certificación HACCP, siendo una empresa con máximo control del proceso sobre el análisis del producto final.
+                </p>
+            </div>
         </div>
 
-        <div class=" sm:w-full h-[263px] bg-white rounded-xl p-5">
+        <div class="flex flex-col md:flex-row w-full bg-white rounded-xl p-5 md:p-9 md:gap-8">
 
-            <div class="flex-center">
-                <img src="{% static 'imgs/certificaciones/1.png' %}" alt="">
+            <div class="flex-center w-[140px] mx-auto ">
+                <img class="w-full"  src="{% static 'imgs/certificaciones/1.png' %}" alt="">
             </div>
 
-            <h2 class="mt-4 mb-1">HACCP</h2>
-            <p class="text-center">
-                Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y
-                tecnología con la certificación HACCP.
-            </p>
+            <div class="w-full md:w-[423.5px]">
+                <h2 class="mt-4 mb-1 md:text-left text-[32px] md:text-[36px] ">HACCP</h2>
+                <p class="text-center md:text-xl md:text-left">
+                    Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con la certificación HACCP, siendo una empresa con máximo control del proceso sobre el análisis del producto final.
+                </p>
+            </div>
         </div>
+
 
     </div>
 

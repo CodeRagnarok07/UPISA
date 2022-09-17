@@ -350,15 +350,12 @@ nav {
     }
 
     .dot-control {
-        @extend .container;
         display: flex;
         justify-content: center;
-        padding-top: 24px;
         gap: 16px;
 
         div {
             z-index: 50;
-
             height: 8px;
             width: 8px;
             border-radius: 50%;
@@ -374,7 +371,6 @@ nav {
 
 
         @media (min-width: v.$md ) {
-            margin-top: -4rem;
             padding-top: 0px;
 
 
@@ -387,7 +383,6 @@ nav {
 
 
     @media (min-width: v.$xl) {
-        margin-top: 109px;
 
         .controls-side {
             display: flex;

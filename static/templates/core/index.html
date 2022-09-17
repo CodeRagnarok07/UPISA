@@ -7,23 +7,27 @@
 
 {% block header %}
 
-<div class="carrusel-slider pb-32">
-    <div class="slider">
+<div class="carrusel-slider mb:mb-16">
+    <div class="slider md:-mb-16">
 
         {% for i in carrusel %}
         <div class="item-slider">
-            <div class="item-home-carrusel-slider">
-                    <div class="img-cont w-full">
-                        <img src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
-                    </div>
-                    
-                    <div class="descrption">
-                        <h1>{{i.titulo}}</h1>
-                        <p>Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas
-                            seleccionadas
-                            y rigurosos controles de calidad.</p>
-                        <button class="primary w-full lg:w-auto lg:mr-auto ">VER PRODUCTOS</button>
-                    </div>
+
+            <div class="w-full h-full mb-8 flex flex-col md:flex-row-reverse container">
+                <div class="w-full">
+                    <img class="w-full h-full object-contain" src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
+                </div>
+
+                <div class="w-full md:flex flex-col justify-center">
+                    <h2 class="text-[32px] md:text-[64px] md:text-left">{{i.titulo}}</h2>
+
+                    <p class="mb-6 mt-3 md:text-xl">Desde nuestros comienzos hemos lanzado al mercado productos
+                        elaborados con
+                        materias primas
+                        seleccionadas
+                        y rigurosos controles de calidad.</p>
+                    <button class="primary md:mr-auto  ">VER PRODUCTOS</button>
+                </div>
             </div>
         </div>
         {% endfor %}
@@ -50,6 +54,9 @@
     <div class="dot-control">
     </div>
 </div>
+<hr class="h-32 border-transparent" />
+
+
 
 {% endblock header %}
 
@@ -58,7 +65,8 @@
 {% block cont %}
 
 <div class="container">
-    <iframe class="rounded-xl -mt-28 " width="100%" height="180px" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    <iframe class="rounded-xl -mt-28 md:h-[700px]" width="100%" height="180px"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
     </iframe>
 
 </div>
@@ -71,5 +79,108 @@
 
 {% include './carrusel_resetas.html' %}
 
+<!-- puntos de venta -->
+<div class="container">
+
+    <div class="subtitle md:mb-5">
+
+        <h2>PUNTOS DE VENTA</h2>
+        <p>
+            Estamos en las mayores cadenas de supermercados de todo el país.
+        </p>
+    </div>
+
+
+
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-12 ">
+
+        <div class="flex justify-end items-center flex-col">
+            <div class="flex-center m-auto">
+                <img src="{% static 'imgs/dot/0.png' %}" alt="">
+            </div>
+            <p>Real</p>
+        </div>
+
+
+        <div class="flex justify-end items-center flex-col">
+            <div class="flex-center m-auto">
+                <img src="{% static 'imgs/dot/1.png' %}" alt="">
+            </div>
+            <p>Superseis</p>
+        </div>
+
+
+
+        <div class="flex justify-end items-center flex-col">
+            <div class="flex-center m-auto">
+                <img src="{% static 'imgs/dot/2.png' %}" alt="">
+            </div>
+            <p>Stock</p>
+        </div>
+
+
+
+        <div class="flex justify-end items-center flex-col">
+            <div class="flex-center m-auto">
+                <img src="{% static 'imgs/dot/3.png' %}" alt="">
+            </div>
+            <p>Biggie</p>
+        </div>
+
+
+
+        <div class="flex justify-end items-center flex-col ">
+            <div class="flex-center m-auto">
+                <img src="{% static 'imgs/dot/4.png' %}" alt="">
+            </div>
+            <p>Salemma</p>
+        </div>
+
+
+
+        <div class="flex justify-end items-center flex-col">
+            <div class="flex-center m-auto">
+                <img src="{% static 'imgs/dot/5.png' %}" alt="">
+            </div>
+            <p>Luisito</p>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+<!-- contact -->
+
+<div class="container mt-[80px]">
+
+    <div class="subtitle ">
+
+        <h2>¿tenés consultas?</h2>
+        <p>
+            No dudes en comunicarte con nosotros.
+            ¡Estamos para vos!
+        </p>
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 mt-9 md:mt-12 gap-6">
+        {% include './contact/form.html' %}
+
+        <div class="flex flex-col gap-6 w-full">
+
+            {% include './contact/card_simple.html' %}
+            {% include './contact/card_simple.html' %}
+            {% include './contact/card_simple.html' %}
+
+
+        </div>
+    </div>
+
+</div>
+
+<hr class="mb-[261px]">
 
 {% endblock cont %}

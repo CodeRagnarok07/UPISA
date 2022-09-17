@@ -1,11 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Bebas+Neue&family=Inter:wght@500;600;700&display=swap");
-.container, .carrusel-slider .dot-control, .carrusel-slider, nav {
+.glow {
+  background: #D9D9D9;
+  box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
+}
+
+.shawdow1 {
+  background: #D9D9D9;
+  box-shadow: 0px 12px 48px rgba(234, 130, 21, 0.12);
+}
+
+.shawdow2 {
+  background: #D9D9D9;
+  box-shadow: 0px 0px 48px -3px rgba(156, 56, 0, 0.08);
+}
+
+.container, .carrusel-slider, nav {
   margin: 0px auto;
   width: 88.2%;
   position: relative;
 }
 @media (min-width: 1160px) {
-  .container, .carrusel-slider .dot-control, .carrusel-slider, nav {
+  .container, .carrusel-slider, nav {
     width: 1360px;
   }
 }
@@ -14,12 +29,20 @@
   background-color: white;
   border-radius: 12px;
 }
-@media (min-width: 768px) {
-  .card.map iframe, .empresa-ft > div.map iframe {
-    height: 416px;
+@media (min-width: 408px) {
+  .card.map > div.flex, .empresa-ft > div.map > div.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 56px;
   }
-  .card.map > div, .empresa-ft > div.map > div {
-    padding: 36px;
+  .card.map > div.flex h2, .empresa-ft > div.map > div.flex h2 {
+    margin: 0px;
+    margin-right: 20%;
+  }
+  .card.map > div.flex .info, .empresa-ft > div.map > div.flex .info {
+    width: 100%;
+    padding: 0px auto;
   }
 }
 .card.map iframe, .empresa-ft > div.map iframe {
@@ -27,10 +50,14 @@
   width: 100%;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  height: 200px;
 }
 .card.map > div, .empresa-ft > div.map > div {
   padding: 20px;
+}
+@media (min-width: 768px) {
+  .card.map > div, .empresa-ft > div.map > div {
+    padding: 39px;
+  }
 }
 .card.map > div .info, .empresa-ft > div.map > div .info {
   display: flex;
@@ -322,7 +349,6 @@ nav .right {
 .carrusel-slider .dot-control {
   display: flex;
   justify-content: center;
-  padding-top: 24px;
   gap: 16px;
 }
 .carrusel-slider .dot-control div {
@@ -338,7 +364,6 @@ nav .right {
 }
 @media (min-width: 768px) {
   .carrusel-slider .dot-control {
-    margin-top: -4rem;
     padding-top: 0px;
   }
   .carrusel-slider .dot-control div {
@@ -347,9 +372,6 @@ nav .right {
   }
 }
 @media (min-width: 1360px) {
-  .carrusel-slider {
-    margin-top: 109px;
-  }
   .carrusel-slider .controls-side {
     display: flex;
   }
@@ -388,6 +410,10 @@ button {
   display: inline-block;
 }
 
+hr {
+  border-color: transparent;
+}
+
 @font-face {
   font-family: "kalamaya";
   src: url("./kamalaya/kalamaya-Regular.otf") format("truetype");
@@ -411,6 +437,7 @@ button {
   line-height: 100%;
   padding: 16px 24px;
   border-radius: 8px;
+  width: 100%;
 }
 button.primary {
   color: white;
@@ -437,6 +464,11 @@ p {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
+}
+@media (min-width: 1160px) {
+  p {
+    font-size: 16px;
+  }
 }
 p.name {
   display: none;
@@ -467,6 +499,7 @@ h2 {
   font-weight: 400;
   font-size: 32px;
   line-height: 110%;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -490,6 +523,9 @@ h4 {
 @media (min-width: 1160px) {
   h1 {
     font-size: 96px;
+  }
+  h2 {
+    font-size: 48px;
   }
 }
 footer {
@@ -535,21 +571,6 @@ footer span.right {
 }
 .filters .filter svg path {
   fill: #EA8215;
-}
-
-.glow {
-  background: #D9D9D9;
-  box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
-}
-
-.shawdow1 {
-  background: #D9D9D9;
-  box-shadow: 0px 12px 48px rgba(234, 130, 21, 0.12);
-}
-
-.shawdow2 {
-  background: #D9D9D9;
-  box-shadow: 0px 0px 48px -3px rgba(156, 56, 0, 0.08);
 }
 
 .categories {
@@ -610,6 +631,8 @@ footer span.right {
 
 .item-home-carrusel-slider {
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .item-home-carrusel-slider .img-cont {
   height: 50%;
@@ -702,6 +725,7 @@ footer span.right {
 #contact_form p textarea {
   border: 2px solid #FAE0C9;
   padding: 16px 14px;
+  max-height: 160px;
 }
 #contact_form p input:hover, #contact_form p input:focus, #contact_form p input:target, #contact_form p input:active,
 #contact_form p textarea:hover,
@@ -709,6 +733,12 @@ footer span.right {
 #contact_form p textarea:target,
 #contact_form p textarea:active {
   border-color: #EA8215;
+}
+
+.subtitle {
+  margin-top: 64px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
