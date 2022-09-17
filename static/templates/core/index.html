@@ -8,13 +8,13 @@
 {% block header %}
 
 <div class="carrusel-slider mb:mb-16">
-    <div class="slider md:-mb-16">
+    <div class="slider mb-8 md:-mb-16">
 
         {% for i in carrusel %}
         <div class="item-slider">
 
-            <div class="w-full h-full mb-8 flex flex-col md:flex-row-reverse container">
-                <div class="w-full">
+            <div class="w-full h-full mb-8 flex flex-col md:flex-row-reverse  container">
+                <div class="w-full my-auto">
                     <img class="w-full h-full object-contain" src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
                 </div>
 
@@ -150,6 +150,10 @@
 
     </div>
 </div>
+
+<!-- NOVEDADES Y VENTOS -->
+
+{% include './novedades.html' %}
 
 
 <!-- contact -->

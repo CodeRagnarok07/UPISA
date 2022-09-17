@@ -29,6 +29,9 @@
   background-color: white;
   border-radius: 12px;
 }
+.card img, .empresa-ft > div img {
+  border-radius: 0px;
+}
 @media (min-width: 408px) {
   .card.map > div.flex, .empresa-ft > div.map > div.flex {
     display: flex;
@@ -67,6 +70,12 @@
 .card.map > div .info > div, .empresa-ft > div.map > div .info > div {
   display: flex;
   gap: 15px;
+}
+
+.subtitle {
+  margin-top: 64px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .hidden-movil {
@@ -530,6 +539,13 @@ h5 {
   h2 {
     font-size: 48px;
   }
+  h3 {
+    font-family: "Antonio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 41px;
+  }
   h5 {
     font-family: "Antonio";
     font-style: normal;
@@ -749,12 +765,6 @@ footer span.right {
 #contact_form p textarea:target,
 #contact_form p textarea:active {
   border-color: #EA8215;
-}
-
-.subtitle {
-  margin-top: 64px;
-  margin-bottom: 12px;
-  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

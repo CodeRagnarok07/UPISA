@@ -28,6 +28,9 @@
 .card {
     background-color: white;
     border-radius: 12px;
+    img{
+        border-radius: 0px;
+    }
 
     &.map {
 
@@ -81,6 +84,14 @@
 
     }
 }
+
+.subtitle {
+    margin-top: 64px;
+    margin-bottom: 12px;
+    text-align: center;
+
+}
+
 
 .hidden-movil {
     display: none;
