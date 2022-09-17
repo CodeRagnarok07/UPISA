@@ -14,6 +14,33 @@
   background-color: white;
   border-radius: 12px;
 }
+@media (min-width: 768px) {
+  .card.map iframe, .empresa-ft > div.map iframe {
+    height: 416px;
+  }
+  .card.map > div, .empresa-ft > div.map > div {
+    padding: 36px;
+  }
+}
+.card.map iframe, .empresa-ft > div.map iframe {
+  object-fit: contain;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 200px;
+}
+.card.map > div, .empresa-ft > div.map > div {
+  padding: 20px;
+}
+.card.map > div .info, .empresa-ft > div.map > div .info {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+.card.map > div .info > div, .empresa-ft > div.map > div .info > div {
+  display: flex;
+  gap: 15px;
+}
 
 .hidden-movil {
   display: none;
@@ -329,7 +356,8 @@ nav .right {
 }
 
 /*************** RESETS *********************/
-*, html {
+*,
+html {
   box-sizing: border-box;
   transition: all 0.5s ease;
 }
@@ -340,8 +368,11 @@ nav .right {
   box-sizing: inherit;
 }
 
-input, select {
+input, textarea,
+select {
   background-color: transparent;
+  outline: none;
+  border-radius: 8px;
 }
 
 body {
@@ -654,6 +685,30 @@ footer span.right {
 .tabla-nutricional tbody tr td:last-child {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+}
+
+#contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#contact_form p {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: 8px;
+}
+#contact_form p input,
+#contact_form p textarea {
+  border: 2px solid #FAE0C9;
+  padding: 16px 14px;
+}
+#contact_form p input:hover, #contact_form p input:focus, #contact_form p input:target, #contact_form p input:active,
+#contact_form p textarea:hover,
+#contact_form p textarea:focus,
+#contact_form p textarea:target,
+#contact_form p textarea:active {
+  border-color: #EA8215;
 }
 
 /*# sourceMappingURL=style.css.map */

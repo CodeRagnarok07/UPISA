@@ -1,6 +1,6 @@
-
 /*************** RESETS *********************/
-*,html {
+*,
+html {
     box-sizing: border-box;
     transition: all .5s ease;
     // border: 1px solid red;
@@ -12,22 +12,28 @@
     box-sizing: inherit;
 }
 
-input,select{
+// selection:active:focus:bg-transparent focus:outline-none
+
+input,textarea,
+select {
     background-color: transparent;
-    
+    outline: none;
+    border-radius: 8px;
+
+
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
 //  imagenes responsivas
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
 
-button{
+button {
     display: inline-block;
 }
