@@ -46,18 +46,14 @@
     background-repeat: repeat;
     background-color: v.$N100;
     color: #ffffff;
-
     // padding-top: 11px;
     // padding-bottom: 68px;
-
     height: auto;
 
     &.white {
         background-color: white;
         color: black;
-
     }
-
     &::before {
         z-index: 0;
         content: "";
@@ -71,15 +67,13 @@
         opacity: 0.8;
     }
 
-
-
     .header-title {
         position: relative;
-        margin-top: 100px;
+        margin-top: 4rem;
         text-align: center;
-
-
-
+        @media (min-width:780px) {
+            margin-top: 6.25rem;
+        }
     }
 }
 
@@ -192,7 +186,6 @@ nav {
 .carrusel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     .main {
         display: flex;
@@ -202,6 +195,7 @@ nav {
         background-color: white;
 
         height: 200px;
+
         @media (min-width: v.$lg) {
             height: 553px;
         }
@@ -210,7 +204,7 @@ nav {
             // margin-top: auto;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
             border-radius: 16px;
 

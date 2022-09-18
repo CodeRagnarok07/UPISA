@@ -1,0 +1,45 @@
+{% extends '../base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}contacto{% endblock title %}
+
+{% block header %}
+<div class="header-title pb-16">
+    <div class="container ">
+        <h1>• Recetas •</h1>
+        <p class="max-w-[613px] mx-auto ">
+            Prepara los platos más deliciosos y sabrosos con nuestra variedad de productos y disfruta en cada bocado.
+        </p>
+    </div>
+</div>
+{% endblock header %}
+
+
+{% block cont %}
+
+
+<div class="container pb-72 pt-16">
+
+    <div id="recetas" class="grid grid-cols-1 mt-6 gap-6
+    md:grid-cols-6
+    ">
+        {% for i in page_obj %}
+        {% include './receta_card.html' %}
+        {% endfor %}
+
+    </div>
+    <script>
+        (() => {
+            const container = document.getElementById("recetas")
+
+            container.children[0].classList.replace("md:col-span-2", "md:col-span-3")
+            container.children[1].classList.replace("md:col-span-2", "md:col-span-3")
+        })()
+    </script>
+
+
+    {% include '../components/pagination.html' %}
+
+</div>
+{% endblock cont %}

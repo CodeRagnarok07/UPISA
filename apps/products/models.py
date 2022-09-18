@@ -1,8 +1,5 @@
-from operator import mod
 from django.db import models
-from io import BytesIO
-from PIL import Image
-from django.core.files import File
+
 # Create your models here.
 
 class Categoria(models.Model):

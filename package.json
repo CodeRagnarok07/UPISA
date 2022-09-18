@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tailwindcss -i ./static/css/tailwind.scss -o ./static/css/min/tailwind.css --watch",
-    "scss": "sass --watch ./static/css/style.scss ./static/css/min/style.css"
-    
+    "scss": "sass --watch ./static/css/style.scss ./static/css/min/style.css",
+    "dev": "concurrently \"npx tailwindcss -i ./static/css/tailwind.scss -o ./static/css/min/tailwind.css --watch\" \"sass --watch ./static/css/style.scss ./static/css/min/style.css\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/rierangel/freelance-upisa#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.8",
+    "concurrently": "^7.4.0",
     "postcss-cli": "^10.0.0",
     "scss": "^0.2.4",
     "tailwindcss": "^3.1.8"

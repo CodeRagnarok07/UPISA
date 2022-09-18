@@ -29,9 +29,6 @@
   background-color: white;
   border-radius: 12px;
 }
-.card img, .empresa-ft > div img {
-  border-radius: 0px;
-}
 @media (min-width: 408px) {
   .card.map > div.flex, .empresa-ft > div.map > div.flex {
     display: flex;
@@ -149,8 +146,13 @@
 }
 .header .header-title {
   position: relative;
-  margin-top: 100px;
+  margin-top: 4rem;
   text-align: center;
+}
+@media (min-width: 780px) {
+  .header .header-title {
+    margin-top: 6.25rem;
+  }
 }
 
 nav {
@@ -234,7 +236,6 @@ nav .right {
 .carrusel {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .carrusel .main {
   display: flex;
@@ -252,7 +253,7 @@ nav .right {
 .carrusel .main img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 16px;
 }

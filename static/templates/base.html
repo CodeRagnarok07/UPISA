@@ -8,9 +8,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="{% static '/css/min/tailwind.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/min/style.css' %}">
-    <!-- <link rel="stylesheet" href="{% static '/css/min/style.css' %}"> -->
 
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
@@ -38,16 +38,12 @@
             </buttom>
 
             <script>
-        
                 const hidden_menu = (e) => {
                     const botones = e.parentElement.getElementsByTagName("a")
                     for (const achor of botones) {
                         achor.classList.toggle("hidden-movil")
                     }
                 }
-
-
-
             </script>
 
             <a class="hidden-movil" href="{% url 'index' %}">
@@ -69,8 +65,7 @@
                 NOVEDADES
             </a>
 
-            <a class="hidden-movil" href="{% url 'empresa' %}">
-
+            <a class="hidden-movil" href="{% url 'recetas' %}">
                 RECETAS
             </a>
             <a class="hidden-movil" href="{% url 'contacto' %}">
@@ -94,7 +89,7 @@
 
 
     {% include './footer.html' %}
-    <script src="{% static '/js/script.js' %}"></script>
+    <script src="{% static '/js/scripts.js' %}"></script>
 </body>
 
 </html>
