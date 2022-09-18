@@ -831,6 +831,10 @@ video {
   flex-direction: column-reverse;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -1190,8 +1194,18 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:row-span-2 {
+    grid-row: span 2 / span 2;
   }
 }
 

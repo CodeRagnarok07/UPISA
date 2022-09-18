@@ -128,13 +128,14 @@ function setOrderAlf(e) {
 (() => {
     const carrusel = document.getElementsByClassName("carrusel")[0]
     const control_contain = document.createElement("div")
-    control_contain.clasName= "control_contain"
+    control_contain.className = "control-contain"
 
     // Crear el controlador por imagenes
-    if (carrusel.classList.contains("carrusel")) {
+    if (carrusel.classList.contains("img-control")) {
         const control = document.createElement("div")
         control.className = "control"
         control_contain.appendChild(control)
+        carrusel.appendChild(control_contain)
     }
 
     const main = carrusel.getElementsByClassName("main")[0]

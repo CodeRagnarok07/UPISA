@@ -1,5 +1,12 @@
-<div class="categories">
+<div class="categories p-5">
     <ul class="">
+        <a href="{% url 'products' %}">
+            <li 
+            {% if current_categoria == "TODOS" %} class="active glow" {% endif %}>
+            TODOS
+            </li>
+        </a>
+        
         {% for i in categorias %}
         <a href="{% url 'category_productos' i.url %}">
             <li 

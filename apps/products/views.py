@@ -15,6 +15,7 @@ def productos(request):
 
     page_obj = paginator.get_page(page_number)
     ctx = {
+        "current_categoria": "TODOS",
         "categorias": categorias,
         "page_obj": page_obj
 
@@ -25,9 +26,10 @@ def productos(request):
 def category_productos(request, category):
     sub = request.GET.getlist('filter')
     if(sub):
-        products = Product.objects.filter(categoria__url=category, sub_categoria__nombre__in=sub )
+        products = Product.objects.filter(sub_categoria__categoria__url=category, sub_categoria__nombre__in=sub )
     else:
-        products = Product.objects.filter(categoria__url=category)
+        products = Product.objects.filter(sub_categoria__categoria__url=category)
+
 
     categorias = Categoria.objects.all()
     current_categoria = Categoria.objects.get(url=category)
