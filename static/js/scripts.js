@@ -18,7 +18,7 @@ function setOrderAlf(e) {
 
 
 
-/* COMPONENTS */ 
+/* COMPONENTS */
 
 
 // tooltip with options
@@ -66,35 +66,18 @@ function setOrderAlf(e) {
 
 //  Carrusel Slider with controls
 (() => {
-    const all_carrusel_slider = document.getElementsByClassName("carrusel-slider") 
+    const all_carrusel_slider = document.getElementsByClassName("carrusel-slider")
 
-
-    /**
-     * DONE que sea grid responsiva 
-     * 
-     * que el numero de dots sea acorde al avance
-     * que avance 2 por dot y por arrow 
-     * 
-     */
     for (const carrusel_slider of all_carrusel_slider) {
 
+        //  Select chidrem items and width
+        const slider = carrusel_slider.getElementsByClassName("slider")[0]
+        const widthSlider = slider.children[0].offsetWidth
+
         let current = 0
-        let cols = 1
-
-        // obteniendo responsividad
-        const attrs = carrusel_slider.getAttributeNames().map((name) => {
-            if(name.split("-")[0] == "grid"){
-                const media = carrusel_slider.getAttribute(name)
-                const media_cols = name.split("-")[name.split("-").length -1]
-
-                if(window.matchMedia(`(min-width: ${media})`).matches){
-                    cols = media_cols
-                }
-            }
-          }, {});
+        let cols = slider.offsetWidth/widthSlider
 
         // dot style
-
         function setDoct() {
             for (let dot of dot_control_cont.children) {
                 dot.className = ""
@@ -102,9 +85,7 @@ function setOrderAlf(e) {
             dot_control_cont.children[current].classList.add("active")
         }
 
-        //  Select chidrem items and width
-        const slider = carrusel_slider.getElementsByClassName("slider")[0] ||  carrusel_slider.getElementsByClassName("slider-group")[0]
-        const widthSlider = slider.children[0].offsetWidth
+  
 
         // arrow_controls
         function arrowControler(bol) {
@@ -130,10 +111,10 @@ function setOrderAlf(e) {
         const right_control = carrusel_slider.getElementsByClassName("right-control")[0]
         const left_control = carrusel_slider.getElementsByClassName("left-control")[0]
 
-        if(right_control){
+        if (right_control) {
             right_control.onclick = () => arrowControler(true)
         }
-        if(left_control){
+        if (left_control) {
             left_control.onclick = () => arrowControler(false)
         }
 
@@ -142,16 +123,16 @@ function setOrderAlf(e) {
         const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
         function indexControler(e, i) {
             slider.scrollLeft = widthSlider * i * cols
-            console.log(i*cols);
+            console.log(i * cols);
             current = i
             setDoct()
         }
 
-        
-        items_number = slider.children.length / cols
- 
 
-        for (let index = 0 ; index < items_number; index++) {
+        items_number = slider.children.length / cols
+
+
+        for (let index = 0; index < items_number; index++) {
             // const element = slider.children[index];
             const dot_control = document.createElement("div")
             dot_control.onclick = (e) => indexControler(e, index)
@@ -170,7 +151,7 @@ function setOrderAlf(e) {
     control_contain.className = "control-contain"
 
     // Crear el controlador por imagenes
-    if(carrusel != undefined){
+    if (carrusel != undefined) {
         console.log("paso");
         if (carrusel.classList.contains("img-control")) {
             const control = document.createElement("div")
@@ -180,7 +161,7 @@ function setOrderAlf(e) {
         }
         const main = carrusel.getElementsByClassName("main")[0]
         const control = carrusel.getElementsByClassName("control")[0]
-    
+
         function handleClickControler(e) {
             var parent = e.parentNode;
             var index = Array.prototype.indexOf.call(parent.children, e);
@@ -194,19 +175,19 @@ function setOrderAlf(e) {
             control.children[index].classList.add("selected")
             control.children[index].classList.toggle("opacity-50")
         }
-    
-    
+
+
         for (const img_main of main.children) {
             const new_img = img_main.cloneNode()
             new_img.className = "opacity-50"
             new_img.onclick = (e) => handleClickControler(e.target)
             control.appendChild(new_img)
         }
-    
+
         for (let i of main.children) {
             i.className = "hidden"
         }
-    
+
         main.children[0].classList.toggle("hidden")
         control.children[0].className = "selected"
     }
