@@ -67,13 +67,13 @@
         <div>
             <h5 class="mb-3">INGREDIENTES</h5>
             <div id="ingredientes-list"></div>
-            
+
             <h5 class="mb-3 mt-6">PREPARACIÓN</h5>
             <div id="preparacion-list"></div>
         </div>
 
         <div>
-        
+
         </div>
 
         <script>
@@ -110,15 +110,13 @@
 
 
 
-    <div>
-        <div id="recetas" class="grid grid-cols-1 mt-6 gap-6
+    <div class="grid grid-cols-1 mt-6 gap-6
         md:grid-cols-6
         ">
-            {% for i in similares %}
-            {% include './receta_card.html' %}
-            {% endfor %}
-    
-        </div>
+        {% for i in similares %}
+        {% include './receta_card.html' %}
+        {% endfor %}
+
     </div>
 
 

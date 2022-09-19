@@ -1,3 +1,4 @@
+// paginacion django
 .pagination {
     display: flex;
     justify-content: center;
@@ -77,6 +78,8 @@
     }
 }
 
+
+// Navabar con elementos right center y left responsivo en md
 nav {
     z-index: 100;
     @extend .container;
@@ -194,11 +197,6 @@ nav {
         border-radius: 16px;
         background-color: white;
 
-        height: 200px;
-
-        @media (min-width: v.$lg) {
-            height: 553px;
-        }
 
         img {
             // margin-top: auto;

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="{% static '/css/min/tailwind.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/min/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/min/style.css' %}">
 
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
@@ -26,7 +26,7 @@
 
     <header class="header md:pt-12">
 
-        <nav>
+        <nav class="container">
 
             <!-- md control -->
             <buttom class="left" onclick="hidden_menu(this)">
@@ -55,10 +55,10 @@
             <a class="hidden-movil" href="{% url 'products' %}">
                 PRODUCTOS
             </a>
-            <a class="hidden-movil" href="{% url 'empresa' %}">
-
+            <a class="hidden-movil" href="{% url 'parrilleros' %}">
                 PARRILLEROS
             </a>
+            
             <figure class="center"><img src='{% static "imgs/Logo.png" %}' alt=""></figure>
 
             <a class="hidden-movil" href="{% url 'empresa' %}">

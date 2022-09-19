@@ -243,12 +243,6 @@ nav .right {
   justify-content: center;
   border-radius: 16px;
   background-color: white;
-  height: 200px;
-}
-@media (min-width: 1160px) {
-  .carrusel .main {
-    height: 553px;
-  }
 }
 .carrusel .main img {
   width: 100%;
