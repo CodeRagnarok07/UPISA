@@ -70,26 +70,28 @@ function setOrderAlf(e) {
 
 
     /**
-     * que avance 2 por dot y por arrow 
+     * DONE que sea grid responsiva 
+     * 
      * que el numero de dots sea acorde al avance
-     * que sea grid responsiva
+     * que avance 2 por dot y por arrow 
      * 
      */
     for (const carrusel_slider of all_carrusel_slider) {
 
         let current = 0
-        let cols = 0
+        let cols = 1
 
+        // obteniendo responsividad
         const attrs = carrusel_slider.getAttributeNames().map((name) => {
             if(name.split("-")[0] == "grid"){
                 const media = carrusel_slider.getAttribute(name)
                 const media_cols = name.split("-")[name.split("-").length -1]
-                cols = media_cols
+
+                if(window.matchMedia(`(min-width: ${media})`).matches){
+                    cols = media_cols
+                }
             }
           }, {});
-
-
-
 
         // dot style
 
@@ -139,14 +141,18 @@ function setOrderAlf(e) {
         // Dot Control
         const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
         function indexControler(e, i) {
-            slider.scrollLeft = widthSlider * i
+            slider.scrollLeft = widthSlider * i * cols
+            console.log(i*cols);
             current = i
             setDoct()
         }
 
-        for (let index = 0 ; index < slider.children.length; index++) {
-            const element = slider.children[index];
+        
+        items_number = slider.children.length / cols
+ 
 
+        for (let index = 0 ; index < items_number; index++) {
+            // const element = slider.children[index];
             const dot_control = document.createElement("div")
             dot_control.onclick = (e) => indexControler(e, index)
             dot_control_cont.appendChild(dot_control)

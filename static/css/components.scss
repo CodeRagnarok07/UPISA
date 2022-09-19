@@ -321,22 +321,21 @@ nav {
         }
 
         &.slider-grid {
-            z-index: 100;
-            width: 100%;
+         
             --n: 2; /*visible items */
-            --g: 16px;
+            --g: 0px;
             @media (min-width: v.$md ) {
                 --n: 4; /*visible items */
-                --g: 16px;
+                --g: 0px;
             }
-    
+
+            z-index: 100;
             display: grid;
             grid-auto-flow: column;
             grid-auto-columns: calc((100% - (var(--n) - 1)*var(--g))/var(--n));
             grid-gap: var(--g);
             overflow: hidden;
     
-            
         }
     }
 

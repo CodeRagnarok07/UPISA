@@ -334,10 +334,9 @@ nav .right {
   width: 100%;
 }
 .carrusel-slider .slider.slider-grid {
-  z-index: 100;
-  width: 100%;
   --n: 2; /*visible items */
-  --g: 16px;
+  --g: 0px;
+  z-index: 100;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% - (var(--n) - 1) * var(--g)) / var(--n));
@@ -347,7 +346,7 @@ nav .right {
 @media (min-width: 768px) {
   .carrusel-slider .slider.slider-grid {
     --n: 4; /*visible items */
-    --g: 16px;
+    --g: 0px;
   }
 }
 .carrusel-slider .dot-control {
