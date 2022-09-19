@@ -14,13 +14,13 @@
   box-shadow: 0px 0px 48px -3px rgba(156, 56, 0, 0.08);
 }
 
-.container, .carrusel-slider, nav {
+.container, nav {
   margin: 0px auto;
   width: 88.2%;
   position: relative;
 }
 @media (min-width: 1160px) {
-  .container, .carrusel-slider, nav {
+  .container, nav {
     width: 1360px;
   }
 }
@@ -387,7 +387,7 @@ nav .right {
     height: 12px;
   }
 }
-@media (min-width: 1360px) {
+@media (min-width: 1160px) {
   .carrusel-slider .controls-side {
     display: flex;
     z-index: 0;
@@ -718,6 +718,22 @@ footer span.right {
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
+}
+@media (min-width: 768px) {
+  .empresa-ft {
+    flex-direction: row;
+  }
+  .empresa-ft > div {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 36px;
+  }
+  .empresa-ft > div p {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 .tabla-nutricional thead {

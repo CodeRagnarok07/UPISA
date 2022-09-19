@@ -302,7 +302,7 @@ nav {
 
 
 .carrusel-slider {
-    @extend .container;
+    // @extend .;
     position: relative;
     margin-bottom: 2.75rem;
 
@@ -389,7 +389,7 @@ nav {
     }
 
 
-    @media (min-width: v.$xl) {
+    @media (min-width: v.$lg) {
 
         .controls-side {
             display: flex;

@@ -155,6 +155,23 @@
             line-height: 17px;
         }
     }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+
+        >div {
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            padding: 36px;
+            p{
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+    }
 }
 
 .tabla-nutricional {
@@ -236,5 +253,3 @@
         }
     }
 }
-
-

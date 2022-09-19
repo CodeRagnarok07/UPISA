@@ -39,7 +39,7 @@
 
         {% if product.galeria.all %}
         <div class="carrusel img-control xl:row-span-2">
-            <div class="main">
+            <div class="main h-[200px] md:h-[553px]">
                 {% for i in product.galeria.all %}
                 <img src="{{i.imagen.url}}" alt="">
                 {% endfor %}
@@ -122,17 +122,14 @@
 
     <!-- CONTACTO -->
     <div class="flex flex-col w-full rounded-xl mt-20 mb-40 bg-white
-      md:flex-row-reverse md:justify-between ">
+      md:flex-row-reverse md:justify-between">
 
         <img class="md:w-1/2  rounded-t-xl md:rounded-t-none md:rounded-r-xl" src="/static/imgs/contact_link.png"
             alt="">
-
         <div class="md:w-1/2 m-5 md:m-12 md:flex md:flex-col md:items-start md:justify-center">
-
             <h3 class="font-bold">
                 ¿TE INTERESA DISTRIBUIR ESTE Y OTROS PRODUCTOS DE UPISA?
             </h3>
-
             <a href="{% url 'contacto' %}">
                 <button class="secondary flex-center mt-6 gap-4 md:mr-auto w-auto">
                     CONTACTÁ CON NOSOTROS
@@ -145,8 +142,7 @@
             </a>
         </div>
     </div>
-
-
-
 </div>
+
+
 {% endblock cont %}

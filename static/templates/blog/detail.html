@@ -91,8 +91,13 @@
     <div>{{post.contenido|safe}}</div>
 
 
-
-    <div class="grid grid-cols-1 mt-6 gap-6
+    <div class="subtitle mt-24 pb-6 ">
+        <h2>MÁS CONSEJOS</h2>
+        <p class="w-[600px] mx-auto">
+            Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología.
+        </p>
+    </div>
+    <div class="grid grid-cols-1 gap-6 
         md:grid-cols-3">
         {% for i in more %}
         {% include './post_card.html' %}
