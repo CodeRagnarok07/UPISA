@@ -328,6 +328,16 @@ nav .right {
   scroll-behavior: smooth;
   z-index: 100;
 }
+.carrusel-slider .slider.slider-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  grid-auto-columns: minmax(148px, 1fr);
+  grid-auto-flow: column;
+  overflow-x: auto;
+}
+.carrusel-slider .slider.slider-grid .item-grid {
+  padding: 8px;
+}
 .carrusel-slider .slider .item-slider {
   flex-shrink: 0;
   scroll-snap-align: start;
@@ -346,7 +356,6 @@ nav .right {
   width: 100%;
 }
 .carrusel-slider .controls-side {
-  /*movil*/
   z-index: 0;
   position: absolute;
   top: 0;
@@ -356,6 +365,12 @@ nav .right {
   display: none;
   justify-content: space-between;
   align-items: center;
+}
+@media (min-width: 1160px) {
+  .carrusel-slider .controls-side {
+    display: flex;
+    z-index: 0;
+  }
 }
 .carrusel-slider .controls-side button {
   padding: 16px;
@@ -385,12 +400,6 @@ nav .right {
   .carrusel-slider .dot-control div {
     width: 12px;
     height: 12px;
-  }
-}
-@media (min-width: 1160px) {
-  .carrusel-slider .controls-side {
-    display: flex;
-    z-index: 0;
   }
 }
 

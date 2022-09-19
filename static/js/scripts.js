@@ -69,8 +69,20 @@ function setOrderAlf(e) {
     const all_carrusel_slider = document.getElementsByClassName("carrusel-slider") 
 
     for (const carrusel_slider of all_carrusel_slider) {
+
+        const attrs = carrusel_slider.getAttributeNames().map((name) => {
+            if(name.split("-")[0] == "grid"){
+                return {[name]: carrusel_slider.getAttribute(name)}
+            }
+          }, {});
+          console.log(attrs);
+
+
+
+
         // dot style
         let current = 0
+
         function setDoct() {
             for (let dot of dot_control_cont.children) {
                 dot.className = ""
@@ -78,11 +90,9 @@ function setOrderAlf(e) {
             dot_control_cont.children[current].classList.add("active")
         }
 
-
-        //  Select chidrem items
+        //  Select chidrem items and width
         const slider = carrusel_slider.getElementsByClassName("slider")[0] ||  carrusel_slider.getElementsByClassName("slider-group")[0]
         const widthSlider = slider.children[0].offsetWidth
-
 
         // arrow_controls
         function arrowControler(bol) {
@@ -105,18 +115,25 @@ function setOrderAlf(e) {
             }
             setDoct()
         }
-        const controls_side = carrusel_slider.getElementsByClassName("controls-side")[0]
-        controls_side.children[0].onclick = () => arrowControler(false)
-        controls_side.children[1].onclick = () => arrowControler(true)
+        const right_control = carrusel_slider.getElementsByClassName("right-control")[0]
+        const left_control = carrusel_slider.getElementsByClassName("left-control")[0]
+
+        if(right_control){
+            right_control.onclick = () => arrowControler(true)
+        }
+        if(left_control){
+            left_control.onclick = () => arrowControler(false)
+        }
+
+
+        // Dot Control
         const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
-
-
-        // Dot control
         function indexControler(e, i) {
             slider.scrollLeft = widthSlider * i
             current = i
             setDoct()
         }
+
         for (let index = 0; index < slider.children.length; index++) {
             const element = slider.children[index];
 
@@ -130,7 +147,7 @@ function setOrderAlf(e) {
 })();
 
 
-// Carrusel with controladores
+// Carrusel with controladores por imagenes
 (() => {
     const carrusel = document.getElementsByClassName("carrusel")[0]
     const control_contain = document.createElement("div")

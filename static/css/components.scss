@@ -55,6 +55,7 @@
         background-color: white;
         color: black;
     }
+
     &::before {
         z-index: 0;
         content: "";
@@ -72,6 +73,7 @@
         position: relative;
         margin-top: 4rem;
         text-align: center;
+
         @media (min-width:780px) {
             margin-top: 6.25rem;
         }
@@ -308,6 +310,20 @@ nav {
 
 
     .slider {
+
+        &.slider-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+            // grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            grid-auto-columns: minmax(148px, 1fr);
+            grid-auto-flow: column;
+            overflow-x: auto;
+
+            .item-grid {
+                padding: 8px;
+            }
+        }
+
         display: flex;
         flex-wrap: nowrap;
         overflow: hidden;
@@ -337,8 +353,12 @@ nav {
     }
 
     .controls-side {
-        /*movil*/
-        // display: none;
+        @media (min-width: v.$lg) {
+            display: flex;
+            z-index: 0;
+
+        }
+
         z-index: 0;
         position: absolute;
         top: 0;
@@ -389,13 +409,5 @@ nav {
     }
 
 
-    @media (min-width: v.$lg) {
-
-        .controls-side {
-            display: flex;
-            z-index: 0;
-
-        }
-    }
 
 }
