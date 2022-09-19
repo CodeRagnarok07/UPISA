@@ -68,20 +68,30 @@ function setOrderAlf(e) {
 (() => {
     const all_carrusel_slider = document.getElementsByClassName("carrusel-slider") 
 
+
+    /**
+     * que avance 2 por dot y por arrow 
+     * que el numero de dots sea acorde al avance
+     * que sea grid responsiva
+     * 
+     */
     for (const carrusel_slider of all_carrusel_slider) {
+
+        let current = 0
+        let cols = 0
 
         const attrs = carrusel_slider.getAttributeNames().map((name) => {
             if(name.split("-")[0] == "grid"){
-                return {[name]: carrusel_slider.getAttribute(name)}
+                const media = carrusel_slider.getAttribute(name)
+                const media_cols = name.split("-")[name.split("-").length -1]
+                cols = media_cols
             }
           }, {});
-          console.log(attrs);
 
 
 
 
         // dot style
-        let current = 0
 
         function setDoct() {
             for (let dot of dot_control_cont.children) {
@@ -134,7 +144,7 @@ function setOrderAlf(e) {
             setDoct()
         }
 
-        for (let index = 0; index < slider.children.length; index++) {
+        for (let index = 0 ; index < slider.children.length; index++) {
             const element = slider.children[index];
 
             const dot_control = document.createElement("div")

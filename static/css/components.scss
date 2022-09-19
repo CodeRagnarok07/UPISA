@@ -306,75 +306,41 @@ nav {
 .carrusel-slider {
     // @extend .;
     position: relative;
-    margin-bottom: 2.75rem;
 
 
     .slider {
-
-        &.slider-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-            // grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            grid-auto-columns: minmax(148px, 1fr);
-            grid-auto-flow: column;
-            overflow-x: auto;
-
-            .item-grid {
-                padding: 8px;
-            }
-        }
-
         display: flex;
         flex-wrap: nowrap;
         overflow: hidden;
         scroll-behavior: smooth;
         z-index: 100;
-
         .item-slider {
             flex-shrink: 0;
             scroll-snap-align: start;
             width: 100%;
         }
-    }
 
-    .slider-group {
-        display: grid;
-        height: 205px;
-        grid-auto-flow: dense;
-        grid-template-columns: 4fr;
-
-        overflow: scroll;
-        scroll-behavior: smooth;
-
-        .item-slider {
-            scroll-snap-align: start;
+        &.slider-grid {
+            z-index: 100;
             width: 100%;
+            --n: 2; /*visible items */
+            --g: 16px;
+            @media (min-width: v.$md ) {
+                --n: 4; /*visible items */
+                --g: 16px;
+            }
+    
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - (var(--n) - 1)*var(--g))/var(--n));
+            grid-gap: var(--g);
+            overflow: hidden;
+    
+            
         }
     }
 
-    .controls-side {
-        @media (min-width: v.$lg) {
-            display: flex;
-            z-index: 0;
-
-        }
-
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: -100px;
-        left: -100px;
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-
-        button {
-            padding: 16px;
-            border-radius: 50%;
-            background-color: v.$N65;
-        }
-    }
+    
 
     .dot-control {
         display: flex;
