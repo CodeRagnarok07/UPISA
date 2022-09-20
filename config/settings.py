@@ -139,13 +139,13 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'es'
 
 LANGUAGES = [
-    ('es', gettext_lazy('Español')), ## simepre comenzaba en chino :/
+    ('es', gettext_lazy('Español')), 
     ('en', gettext_lazy('Ingles')),
     ('ru', gettext_lazy('Ruso')),
     ('zh-hans', gettext_lazy('Chino')),
 ]
+
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'
-MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'es'
 
 TIME_ZONE = 'UTC'
 
