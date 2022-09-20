@@ -377,246 +377,43 @@ nav .right {
   }
 }
 
-.progres-form .section:before {
-  content: "";
-  width: 100%;
-  background: #0ce479;
-  height: 170px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.progres-form .form-instructions {
-  text-align: center;
-}
-.progres-form form {
-  margin: 2rem auto;
-  width: 100%;
-  max-width: 330px;
-  will-change: transform;
-}
-.progres-form .fieldgroup {
-  margin: 1.5rem 0;
-  position: relative;
-}
-.progres-form label {
-  position: absolute;
-  top: 0.8rem;
-  left: 0;
-  display: block;
-  font-size: 1rem;
-  transition: 0.2s ease-out;
-  opacity: 0.5;
-  will-change: top, font-size;
-}
-.progres-form label:hover {
-  cursor: text;
-}
-.progres-form input {
-  border: 1px solid #fff;
-  font-size: 1.2rem;
-  padding: 0.6rem;
-  padding-left: 0;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #444;
-  transition: 0.2s;
-  width: calc(100% - 0.6rem);
-  max-width: 350px;
-  border-radius: 0;
-}
-.progres-form input:focus {
-  outline: none;
-}
-.progres-form input:valid {
-  border-color: #444;
-}
-.progres-form input:focus + label, .progres-form input.hasInput + label {
-  top: -0.8rem;
-  font-size: 0.7rem;
-}
-.progres-form .btn {
-  color: #fff;
-  background-color: rgb(11, 204, 108);
-  padding: 0.8rem;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-  border-radius: 5px;
-  border: 2px solid transparent;
-  min-width: 45px !important;
-}
-.progres-form .btn:hover, .progres-form .btn.hover {
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  transition: 0.2s;
-}
-.progres-form .btn:active, .progres-form .btn.active {
-  color: #fff;
-  background-color: #066b39;
-  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
-  outline: 2px solid rgb(11, 204, 108);
-}
-.progres-form .btn:focus, .progres-form .btn.focus {
-  color: #fff;
-  outline: 2px solid rgb(11, 204, 108);
-  outline-offset: 2px;
-}
-.progres-form .btn:active:focus, .progres-form .btn.active.focus {
-  outline: 4px solid rgb(11, 204, 108);
-}
-.progres-form .btn.hover, .progres-form .btn.active {
-  outline: none;
-}
-.progres-form .btn-alt {
-  background-color: transparent;
-  color: rgb(11, 204, 108);
-  border: 2px solid rgb(11, 204, 108);
-}
-.progres-form .btn-alt:hover, .progres-form .btn-alt.hover {
-  background-color: transparent;
-  color: #010a06;
-  border-color: #010a06;
-  text-shadow: none;
-}
-.progres-form .btn-alt:focus, .progres-form .btn-alt.focus {
-  color: #066b39;
-}
-.progres-form .btn-alt:active, .progres-form .btn-alt.active {
-  color: #fff;
-  background-color: rgb(11, 204, 108);
-  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
-}
-.progres-form .btn-alt.hover, .progres-form .btn-alt.active {
-  outline: none;
-}
-.progres-form .buttons {
+.progres-form .progres-items {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.progres-form .buttons .btn {
-  margin-right: 15px;
+.progres-form .progres-items .progres-item {
+  z-index: 50;
+  padding: 12px 22px;
+  border: solid 2px #FAE0C9;
+  background-color: #FDF2E8;
+  border-radius: 80px;
+  color: #FAE0C9;
 }
-.progres-form form .btn {
-  display: inline-block;
-  width: 100%;
-  max-width: 220px;
-  margin: 4rem auto 0 auto;
-}
-.progres-form [data-step="4"] button.btn {
-  display: block;
-  margin: 0 auto;
-}
-.progres-form .form-progress {
-  position: relative;
-  display: block;
-  margin: 3rem auto;
-  width: 100%;
-  max-width: 400px;
+.progres-form .progres-items .progres-item.active {
+  background-color: #0B9839;
+  color: white;
+  border: none;
 }
 .progres-form progress {
-  display: block;
-  position: relative;
-  top: 5px;
-  left: 5px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: rgb(11, 204, 108);
-  width: 100%;
-  height: 5px;
-  background: none;
+  position: absolute;
   transition: 1s;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  appearance: none;
+  background: none;
+  -webkit-appearance: none;
   will-change: contents;
 }
 .progres-form progress::-webkit-progress-bar {
-  background-color: #ddd;
+  background-color: #FAE0C9;
 }
 .progres-form progress::-webkit-progress-value {
-  background-color: rgb(11, 204, 108);
+  background-color: #0B9839;
   transition: all 0.5s ease-in-out;
-}
-.progres-form .form-progress-indicator {
-  position: absolute;
-  top: -6px;
-  left: 0;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: 3px solid #ddd;
-  border-radius: 50%;
-  transition: all 0.2s ease-in-out;
-  transition-delay: 0.3s;
-  will-change: transform;
-}
-.progres-form .form-progress-indicator.one {
-  left: 0;
-}
-.progres-form .form-progress-indicator.two {
-  left: 33%;
-}
-.progres-form .form-progress-indicator.three {
-  left: 66%;
-}
-.progres-form .form-progress-indicator.four {
-  left: 100%;
-}
-.progres-form .form-progress-indicator.active {
-  animation: bounce 0.5s forwards;
-  animation-delay: 0.5s;
-  border-color: rgb(11, 204, 108);
-}
-.progres-form .animation-container {
-  position: relative;
-  width: 100%;
-  transition: 0.3s;
-  will-change: padding;
-  overflow: hidden;
-}
-.progres-form .form-step {
-  position: absolute;
-  transition: 1s ease-in-out;
-  transition-timing-function: ease-in-out;
-  will-change: transform, opacity;
-}
-.progres-form .form-step.leaving {
-  animation: left-and-out 0.5s forwards;
-}
-.progres-form .form-step.waiting {
-  transform: translateX(400px);
-}
-.progres-form .form-step.coming {
-  animation: right-and-in 0.5s forwards;
-}
-@keyframes left-and-out {
-  100% {
-    opacity: 0;
-    transform: translateX(-400px);
-  }
-}
-@keyframes right-and-in {
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes bounce {
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.progres-form .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 /*************** RESETS *********************/
@@ -688,6 +485,10 @@ button.primary {
 button.secondary {
   color: white;
   background-color: #EA8215;
+}
+button.secondary.white {
+  background-color: #FAE0C9;
+  color: #EA8215;
 }
 button.carrusel-control {
   padding: 16px;

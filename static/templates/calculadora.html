@@ -9,80 +9,114 @@
             </h2>
         </div>
 
-        <div class="progres-form bg-white border-t-2  rounded-b-xl">
-            <section class="section">
 
-                <div class="form-progress">
-                    <progress class="form-progress-bar" min="0" max="100" value="0" step="33"
-                        aria-labelledby="form-progress-completion"></progress>
+        <!-- TODO
+        barra de progreso
+        animaciones
+        overflow
+        submit
+        -->
+        <div class="bg-white pt-9 px-9">
 
-                    <div class="form-progress-indicator one active"></div>
-                    <div class="form-progress-indicator two"></div>
-                    <div class="form-progress-indicator three"></div>
-                    <div class="form-progress-indicator four"></div>
+            <div class="progres-form">
 
-                    <p id="form-progress-completion" class="js-form-progress-completion sr-only" aria-live="polite">0%
-                        complete</p>
+            <form id="calculadora" action="">
+                <div class="progres-bar w-full relative ">
+                    <div class="progres-items">                    
+                        <div class="progres-item active overflow-hidden ">
+                            <p class="text-green-700   h-0 w-full">PERSONAS</p>
+                        </div>
+                        <div class="progres-item">PERSONAS</div>
+                        <div class="progres-item">PERSONAS</div>
+                        <div class="progres-item">PERSONAS</div>
+               
+
+                    </div>
+
+                    <!-- class="h-[3px] inset-x-0 bottom-[50%] bg-[#FAE0C9] z-0 absolute " -->
+                    <progress class="md:flex hidden" max="100" value="0"></progress>
+
                 </div>
-
-                <div class="animation-container">
-                    <!-- Step one -->
-                    <div class="form-step js-form-step" data-step="1">
-
-                        <p class="form-instructions"><strong>Click the continue button to show form
-                                progression.</strong><br>
-                            Please fill out the fields below so we can learn some information about you. We promise to
-                            store these on Post-It<sup><small>TM</small></sup> notes around the office.</p>
-
+                <!-- STEPS -->
+                <div class="steps-form flex flex-nowrap overflow-hidden scroll-smooth">
+                    <!-- step 1 -->
+                    <div class="flex-shrink-0 w-full">
+                        <h1>paso 1</h1>
                     </div>
+                    <div class="flex-shrink-0 w-full"><h1>paso 2</h1></div>
+                    <div class="flex-shrink-0 w-full"><h1>paso 3</h1></div>
+                    <div class="flex-shrink-0 w-full"><h1>paso 4</h1></div>
 
-                    <!-- Step two -->
-                    <div class="form-step js-form-step waiting hidden" data-step="2">
-
-                        <p class="form-instructions"><strong>Click the continue button to show form
-                                progression.</strong>
-                            <br> Please fill in the token below with yesterday's date plus the timestamp from the day of
-                            your birth (expressed as an integer) to the power of fourteen divided by two.
-                        </p>
-
-                     
-                    </div>
-
-
-
-                    <!-- Step three -->
-                    <div class="form-step js-form-step waiting hidden" data-step="3">
-
-                        <p class="form-instructions"><strong>Click the continue button to show form
-                                progression.</strong>
-                            <br> Please tell us your credit card information. We promise not to store it or use it to
-                            buy a new iPhone in the App Store.
-                        </p>
-
-
-                    </div>
-
-
-
-                    <!-- Step four -->
-                    <div class="form-step js-form-step waiting hidden" data-step="4">
-
-                        <p class="form-instructions"><strong>Click the continue button to show form
-                                progression.</strong>
-                            <br> Finally, please just write the words "I Agree" in the field below to consent to us
-                            using the previous data you entered to buy a new iPhone.
-                        </p>
-
-
-                    </div>
 
                 </div>
 
-                <div class="buttons">
-                    <button class="btn btn-alt js-reset">Reset</button>
-                    <button  class="btn">Continue</button>
+                <!-- controls -->
+
+                <div class="controls flex justify-between py-6 border-t border-t-[#FDF2E8]">
+                    <button type="button" class="secondary white w-auto">ATRÁS</button>
+                    <button type="submit" class="secondary w-auto">SIGUIENTE</button>
                 </div>
-            </section>
+
+            </form>
+        </div>
+
+            <script>
+                const calculadora = document.getElementById("calculadora")
+
+                let current = 1
+
+                const progres_items = calculadora.querySelector(".progres-items")
+                const progres_bar = calculadora.querySelector("progress")
+
+                const steps_form = calculadora.querySelector(".steps-form")
+                const widthSlider = steps_form.children[0].offsetWidth
+
+                /* pasos */
+                const handleStep = (bool) => {
+                    if (bool == true) {
+                        console.log("sad");
+                        steps_form.scrollLeft += widthSlider * 1
+                        progres_items.children[current].classList.add("active")
+                        progres_bar.value += 33
+                        console.log(progres_bar)
+
+                        current++
+
+                    } else if (bool == false) {
+                        steps_form.scrollLeft -= widthSlider
+                        current = current - 1
+                        progres_items.children[current].className = "progres-item"
+                        progres_bar.value -= 33
+                        console.log(progres_bar)
+
+
+                    }
+                }
+
+
+
+
+                const btn_control = calculadora.querySelector(".controls")
+
+                // previus
+                btn_control.children[0].onclick = () => handleStep(false)
+                // next
+                btn_control.children[1].onclick = () => handleStep(true)
+
+
+
+
+
+
+                const handleSubmit = (e) => {
+                    e.preventDefault()
+
+                }
+                calculadora.onsubmit = (e) => handleSubmit(e)
+
+
+            </script>
+
         </div>
     </div>
 </div>

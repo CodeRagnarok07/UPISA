@@ -39,6 +39,11 @@ button {
         color: white;
         background-color: v.$N100;
 
+        &.white{
+            background-color: v.$N20;
+            color: v.$N100;
+        }
+
     }
 
     &.carrusel-control {
