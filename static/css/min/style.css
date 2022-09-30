@@ -384,15 +384,28 @@ nav .right {
 }
 .progres-form .progres-items .progres-item {
   z-index: 50;
-  padding: 12px 22px;
   border: solid 2px #FAE0C9;
   background-color: #FDF2E8;
   border-radius: 80px;
-  color: #FAE0C9;
+  overflow: hidden;
+  padding: 0px 22px;
+  gap: 8px;
+  height: 8px;
+  color: transparent;
+}
+@media (min-width: 760px) {
+  .progres-form .progres-items .progres-item {
+    padding: 12px 22px;
+    color: #FAE0C9;
+    height: auto;
+    gap: 0px;
+  }
+  .progres-form .progres-items .progres-item.active {
+    color: white;
+  }
 }
 .progres-form .progres-items .progres-item.active {
   background-color: #0B9839;
-  color: white;
   border: none;
 }
 .progres-form progress {

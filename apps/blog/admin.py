@@ -11,8 +11,8 @@ class GaleriaInline(admin.StackedInline):
 
 @admin.register(TrucosYConsejos)
 class TrucosYConsejosAdmin(SummernoteModelAdmin):
-    search_fields = ['titulo']
-    prepopulated_fields = {"url": ("titulo",)}
+    search_fields = ['titulo_es']
+    prepopulated_fields = {"url": ("titulo_es",)}
     # summernote_fields = ['descripcion', ]
     inlines = [GaleriaInline, ]
     def get_search_results(self, request, queryset, search_term):
@@ -22,18 +22,23 @@ class TrucosYConsejosAdmin(SummernoteModelAdmin):
     fieldsets = (
         (None, {
             'classes': ('extrapretty',), 
-            'fields': (('titulo', 'url', 'miniatura'), 'video')
+            'fields': (('titulo_es', 'url'),)
         }),
         ("traducciones de titulo", {
             'classes': ('extrapretty', 'collapse'), 
-            'fields': (('titulo_es','titulo_en'),('titulo_ru','titulo_zh_hans'))
+            'fields': (('titulo_en','titulo_zh_hans','titulo_ru'),)
         }),
         (None, {
             'classes': ('extrapretty',), 
-            'fields': ('contenido',)
+            'fields': ('miniatura', 'video',)
+        }),
+      
+        (None, {
+            'classes': ('extrapretty',), 
+            'fields': ('contenido_es',)
         }),
         ("traducciones de contenido", {
             'classes': ('extrapretty', 'collapse'), 
-            'fields': ('contenido_es','contenido_en','contenido_ru','contenido_zh_hans')
+            'fields': ('contenido_en','contenido_ru','contenido_zh_hans')
         }),
     )

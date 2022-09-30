@@ -387,22 +387,46 @@ nav {
 
 
 .progres-form {
-    .progres-items{
+
+    .progres-items {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .progres-item{
+
+
+        .progres-item {
             z-index: 50;
-            padding: 12px 22px;
             border: solid 2px v.$N20;
             background-color: v.$N10;
             border-radius: 80px;
-            color: v.$N20;
+            overflow: hidden;
+            padding: 0px 22px;
+            gap:8px;
 
-            &.active{
+            height: 8px;
+            color: transparent;
+
+
+            @media (min-width: 760px) {
+                padding: 12px 22px;
+                color: v.$N20;
+                height: auto;
+                gap:0px;
+
+                &.active {
+                    color: white;
+
+                }
+
+
+
+            }
+
+            &.active {
                 background-color: v.$V1;
-                color: white;
                 border: none;
+
+
             }
         }
     }
@@ -419,15 +443,15 @@ nav {
         background: none;
         -webkit-appearance: none;
         will-change: contents;
-    
+
         &::-webkit-progress-bar {
             background-color: v.$N20;
         }
-    
+
         &::-webkit-progress-value {
             background-color: v.$V1;
             transition: all 0.5s ease-in-out;
         }
     }
-    
+
 }

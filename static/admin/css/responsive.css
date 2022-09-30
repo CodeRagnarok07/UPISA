@@ -1013,3 +1013,7 @@ input[type="submit"], button {
         word-break: break-word;
     }
 }
+
+/* p.file-upload > input[accept="image/*"]{
+    color: red;
+} */

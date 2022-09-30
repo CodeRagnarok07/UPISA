@@ -2,21 +2,43 @@ from django.contrib import admin
 
 # Register your models here.
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Product, ValoresNutricionales, Categoria, CategoriaSub , Galeria
+from .models import Product, ValoresNutricionales, Categoria, CategoriaSub, Galeria
 
 
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
-    search_fields = ['nombre']
-    prepopulated_fields = {"url": ("nombre",)}
+    list_display = ('nombre_es', )
 
+    search_fields = ['nombre_es']
+    prepopulated_fields = {"url": ("nombre_es",)}
+    fieldsets = (
+        (None, {
+            'classes': ('extrapretty',),
+            'fields': ('nombre_es', 'url')
+        }),
+        ("traducciones", {
+            'classes': ('extrapretty', 'collapse'),
+            'fields': (('nombre_en', 'nombre_ru', 'nombre_zh_hans'),)
+        }),
+    )
 
 
 @admin.register(CategoriaSub)
 class CategoriaSubAdmin(admin.ModelAdmin):
-    search_fields = ['categoria__nombre']
-    prepopulated_fields = {"url": ("nombre",)}
+    search_fields = ['categoria__nombre_es']
+    list_display = ('nombre_es', )
 
+    prepopulated_fields = {"url": ("nombre_es",)}
+    fieldsets = (
+        (None, {
+            'classes': ('extrapretty',),
+            'fields': ('nombre_es', 'url', 'categoria')
+        }),
+        ("traducciones", {
+            'classes': ('extrapretty', 'collapse'),
+            'fields': (('nombre_en', 'nombre_ru', 'nombre_zh_hans'),)
+        }),
+    )
 
 
 class ValoresInline(admin.StackedInline):
@@ -42,10 +64,10 @@ class GaleriaInline(admin.StackedInline):
 
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {"url": ("nombre",)}
-    search_fields = ['nombre']
+    prepopulated_fields = {"url": ("nombre_es",)}
+    search_fields = ['nombre_es']
     list_filter = ('sub_categoria',)
-    list_display = ('nombre_es', 'nombre', 'sub_categoria')
+    list_display = ('nombre_es', 'sub_categoria')
 
     inlines = [ValoresInline, GaleriaInline]
     # 'ingredientes', 'antioxidante', 'estabilizante', 'conservante',
@@ -59,11 +81,15 @@ class ProductAdmin(SummernoteModelAdmin):
     fieldsets = (
         (None, {
             'classes': ('extrapretty',),
-            'fields': (('nombre','porcion','destacado',), ('url', 'miniatura'))
+            'fields': (('nombre_es', 'url', 'porcion', ),'destacado',)
         }),
         ("traducciones", {
             'classes': ('extrapretty', 'collapse'),
-            'fields': (('nombre_es', 'nombre_en'), ('nombre_ru', 'nombre_zh_hans'))
+            'fields': (('nombre_en', 'nombre_ru', 'nombre_zh_hans'),)
+        }),
+        (None, {
+            'classes': ('extrapretty',),
+            'fields': ('miniatura',)
         }),
         (None, {
             'classes': ('extrapretty',),
@@ -71,12 +97,10 @@ class ProductAdmin(SummernoteModelAdmin):
         }),
         (None, {
             'classes': ('extrapretty',),
-            'fields': ('descripcion',)
+            'fields': ('descripcion_es',)
         }),
         ("traducciones descripcion", {
             'classes': ('extrapretty', 'collapse'),
             'fields': ('descripcion_en', 'descripcion_ru', 'descripcion_zh_hans')
         })
-  
-
     )
