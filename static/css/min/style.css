@@ -144,6 +144,7 @@
   bottom: 0px;
   left: 0px;
   opacity: 0.8;
+  mix-blend-mode: overlay;
 }
 .header .header-title {
   position: relative;
@@ -168,7 +169,7 @@ nav {
   line-height: 100%;
   text-transform: uppercase;
 }
-nav a {
+nav .btn-nav {
   order: 0;
   width: 100%;
   list-style-type: none;
@@ -179,7 +180,7 @@ nav a {
   padding: 1rem;
   cursor: pointer;
 }
-nav a:hover {
+nav .btn-nav:hover {
   border-color: #F3B177;
 }
 nav .left {
@@ -216,7 +217,7 @@ nav .right {
     flex-direction: row;
     justify-content: space-between;
   }
-  nav a {
+  nav .btn-nav {
     display: flex;
   }
   nav .left {
@@ -309,6 +310,7 @@ nav .right {
   text-transform: uppercase;
   padding: 12px 24px;
   font-weight: 700;
+  gap: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
