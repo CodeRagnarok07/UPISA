@@ -1072,6 +1072,10 @@ video {
   padding-bottom: 6.5px;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .pt-9 {
   padding-top: 2.25rem;
 }
@@ -1106,14 +1110,6 @@ video {
 
 .pb-28 {
   padding-bottom: 7rem;
-}
-
-.pt-1 {
-  padding-top: 0.25rem;
-}
-
-.pt-5 {
-  padding-top: 1.25rem;
 }
 
 .text-left {

@@ -39,7 +39,7 @@ button {
         color: white;
         background-color: v.$N100;
 
-        &.white{
+        &.white {
             background-color: v.$N20;
             color: v.$N100;
         }
@@ -70,40 +70,10 @@ p {
 
     @media (min-width: v.$lg ) {
         font-size: 16px;
-
-
-    }
-
-    &.name {
-        display: none;
-    }
-
-    &.code {
-        display: flex;
-    }
-
-    @media (min-width: v.$md ) {
-        &.name {
-            display: flex;
-        }
-
-        &.code {
-            display: none;
-        }
-
     }
 }
 
 h1 {
-    font-family: 'kalamaya';
-    text-align: center;
-    font-size: 64px;
-    line-height: 100%;
-
-}
-
-h2 {
-    text-align: center;
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: 400;
@@ -111,24 +81,97 @@ h2 {
     line-height: 110%;
     text-transform: uppercase;
 
+    @media (min-width: v.$lg) {
+        font-family: 'Antonio';
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 83px;
+        /* identical to box height */
+
+    }
+
+    &.kalamaya {
+        font-family: 'kalamaya';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 100%;
+        color: #FFFFFF;
+
+        @media (min-width: v.$lg) {
+            font-size: 96px;
+        }
+    }
+
+    &.kalamaya-title {
+        font-family: 'kalamaya';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 100%;
+        color: #141414;
+
+        @media (min-width: v.$lg) {
+            font-size: 120px;
+
+        }
+    }
+
+}
+
+h2 {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    text-transform: uppercase;
+
+    @media (min-width: v.$lg) {
+        font-family: 'Antonio';
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 62px;
+        /* identical to box height */
+
+    }
 }
 
 h3 {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+
+    @media (min-width: v.$lg) {
+        font-family: 'Antonio';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 47px;
+    }
+
+}
+
+h4 {
     font-family: 'Antonio';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
-}
+    text-transform: uppercase;
 
-h4 {
-    text-align: center;
-    font-family: 'kalamaya';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 100%;
-    color: v.$N100;
+    @media (min-width:v.$lg) {
+        font-family: 'Antonio';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 41px;
+
+    }
+
+
 }
 
 h5 {
@@ -137,25 +180,9 @@ h5 {
     font-weight: 400;
     font-size: 24px;
     line-height: 100%;
-}
+    text-transform: uppercase;
 
-@media (min-width: v.$lg ) {
-    h1 {
-        font-size: 96px;
-    }
-
-    h2 {
-        font-size: 48px;
-    }
-
-    h3 {
-        font-family: 'Antonio';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 41px;
-    }
-    h5{
+    @media (min-width:v.$lg) {
         font-family: 'Antonio';
         font-style: normal;
         font-weight: 700;
@@ -163,7 +190,11 @@ h5 {
         line-height: 31px;
 
     }
+
+
 }
+
+
 
 footer {
     margin-top: 7.5rem;
@@ -203,5 +234,26 @@ footer {
         &.right {
             background-color: v.$blue;
         }
+    }
+}
+
+
+article {
+    
+    h1 {
+        font-family: 'Antonio';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 41px;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
     }
 }
