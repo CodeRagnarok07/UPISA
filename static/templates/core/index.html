@@ -9,19 +9,20 @@
 
 
 
-<div class="carrusel-slider mb:mb-16 container">
-    <div class="slider mb-8 md:-mb-16">
+<div class="carrusel-slider pb-28 lg:pb-40 mt-0 sm:mt-16 md:mt-0  container">
+    <div class="slider mb-8">
 
         {% for i in carrusel %}
         <div class="item-slider ">
 
-            <div class="w-full h-full mb-8 flex flex-col md:flex-row-reverse  ">
+            <div class="w-full h-full flex flex-col md:flex-row-reverse  ">
                 <div class="w-full my-auto">
                     <img class="w-full h-full object-contain" src="/static/imgs/lp-carrusel/{{i.img}}" alt="">
                 </div>
 
-                <div class="w-full md:flex flex-col justify-center">
-                    <h2 class="text-[32px] md:text-[64px] md:text-left">{{i.titulo}}</h2>
+                <div class="w-full md:flex flex-col justify-center text-center md:text-left">
+                    <h1 class="md:text-left">{{i.titulo1}}</h1>
+                    <h1 class="kalamaya-title md:text-left lg:-mt-8 lg:ml-16">{{i.titulo2}}</h1>
 
                     <p class="mb-6 mt-3 md:text-xl">Desde nuestros comienzos hemos lanzado al mercado productos
                         elaborados con
@@ -56,7 +57,7 @@
     <div class="dot-control">
     </div>
 </div>
-<hr class="h-32 border-transparent" />
+<!-- <hr class="h-32 border-transparent" /> -->
 
 
 
@@ -66,11 +67,10 @@
 
 {% block cont %}
 
-<div class="container">
-    <iframe class="rounded-xl -mt-28 md:h-[700px]" width="100%" height="180px"
+<div class="container -mt-12 lg:-mt-20 h-[180px] sm:h-[300px] md:h-[450px] lg:h-[600px] xl:h-[700px]">
+    <iframe class="rounded-xl  h-full  w-full " 
         src="https://www.youtube.com/embed/tgbNymZ7vqY">
     </iframe>
-
 </div>
 
 

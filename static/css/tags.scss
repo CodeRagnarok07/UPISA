@@ -108,11 +108,15 @@ h1 {
         font-style: italic;
         font-weight: 400;
         font-size: 64px;
-        line-height: 100%;
+        line-height: 20px;
         color: #141414;
+        text-transform: lowercase;
+        line-height: 100%;
 
         @media (min-width: v.$lg) {
             font-size: 120px;
+            line-height: 100%;
+
 
         }
     }
@@ -234,26 +238,5 @@ footer {
         &.right {
             background-color: v.$blue;
         }
-    }
-}
-
-
-article {
-    
-    h1 {
-        font-family: 'Antonio';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 41px;
-        text-transform: uppercase;
-    }
-
-    p {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
     }
 }

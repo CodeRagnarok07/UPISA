@@ -31,15 +31,24 @@ def index(request):
     populares = Product.objects.filter(destacado=True)
     carrusel = [
         {
-            "titulo": "Variedades de embutidos con sabores únicos",
+            "titulo1": "Variedades de embutidos",
+            "titulo2": "con sabores unicos",
             "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
             "img": "Slider1.png"
         },
-        {
-            "titulo": "Variedades de embutidos con sabores únicos",
+         {
+            "titulo1": "Variedades de embutidos",
+            "titulo2": "con sabores unicos",
             "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
-            "img": "Slider2.png"
-        }
+            "img": "Slider1.png"
+        },
+         {
+            "titulo1": "Variedades de embutidos",
+            "titulo2": "con sabores unicos",
+            "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
+            "img": "Slider1.png"
+        },
+       
     ]
 
     ingredientes = Product.objects.all()

@@ -580,12 +580,15 @@ h1.kalamaya-title {
   font-style: italic;
   font-weight: 400;
   font-size: 64px;
-  line-height: 100%;
+  line-height: 20px;
   color: #141414;
+  text-transform: lowercase;
+  line-height: 100%;
 }
 @media (min-width: 1160px) {
   h1.kalamaya-title {
     font-size: 120px;
+    line-height: 100%;
   }
 }
 
@@ -692,20 +695,391 @@ footer span.right {
   background-color: #4688C3;
 }
 
+article {
+  /* source	None.	
+  span	None.	 */
+  /* time	None.	 */
+  /* track	None.	 */
+}
+article a:link {
+  color: internal value;
+  text-decoration: underline;
+  cursor: auto;
+}
+article a:visited {
+  color: internal value;
+  text-decoration: underline;
+  cursor: auto;
+}
+article a:link:active {
+  color: internal value;
+}
+article a:visited:active {
+  color: internal value;
+}
+article address {
+  display: block;
+  font-style: italic;
+}
+article area {
+  display: none;
+}
+article article {
+  display: block;
+}
+article aside {
+  display: block;
+}
+article b {
+  font-weight: bold;
+}
+article bdo {
+  unicode-bidi: bidi-override;
+}
+article blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+article body {
+  display: block;
+  margin: 8px;
+}
+article body:focus {
+  outline: none;
+}
+article caption {
+  display: table-caption;
+  text-align: center;
+}
+article cite {
+  font-style: italic;
+}
+article code {
+  font-family: monospace;
+}
+article col {
+  display: table-column;
+}
+article colgroup {
+  display: table-column-group;
+}
+article datalist {
+  display: none;
+}
+article dd {
+  display: block;
+  margin-left: 40px;
+}
+article del {
+  text-decoration: line-through;
+}
+article details {
+  display: block;
+}
+article dfn {
+  font-style: italic;
+}
+article dl {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+article dt {
+  display: block;
+}
+article em {
+  font-style: italic;
+}
+article embed:focus {
+  outline: none;
+}
+article fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove internal value;
+}
+article figcaption {
+  display: block;
+}
+article figure {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+article footer {
+  display: block;
+}
+article form {
+  display: block;
+  margin-top: 0em;
+}
+article head {
+  display: none;
+}
+article header {
+  display: block;
+}
+article hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+article html {
+  display: block;
+}
+article html:focus {
+  outline: none;
+}
+article i {
+  font-style: italic;
+}
+article iframe:focus {
+  outline: none;
+}
+article iframe[seamless] {
+  display: block;
+}
+article ins {
+  text-decoration: underline;
+}
+article kbd {
+  font-family: monospace;
+}
+article label {
+  cursor: default;
+}
+article legend {
+  display: block;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: none;
+}
+article li {
+  display: list-item;
+}
+article link {
+  display: none;
+}
+article map {
+  display: inline;
+}
+article mark {
+  background-color: yellow;
+  color: black;
+}
+article menu {
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+article nav {
+  display: block;
+}
+article object:focus {
+  outline: none;
+}
+article ol {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+article output {
+  display: inline;
+}
+article p {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+article param {
+  display: none;
+}
+article pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0;
+}
+article q {
+  display: inline;
+}
+article q::before {
+  content: open-quote;
+}
+article q::after {
+  content: close-quote;
+}
+article rt {
+  line-height: normal;
+}
+article s {
+  text-decoration: line-through;
+}
+article samp {
+  font-family: monospace;
+}
+article script {
+  display: none;
+}
+article section {
+  display: block;
+}
+article small {
+  font-size: smaller;
+}
+article strike {
+  text-decoration: line-through;
+}
+article strong {
+  font-weight: bold;
+}
+article style {
+  display: none;
+}
+article sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+article summary {
+  display: block;
+}
+article sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+article table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+article tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+article td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+article tfoot {
+  display: table-footer-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+article th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: center;
+}
+article thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+article title {
+  display: none;
+}
+article tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+article u {
+  text-decoration: underline;
+}
+article ul {
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+article var {
+  font-style: italic;
+}
+article img,
+article svg,
+article video,
+article canvas,
+article audio,
+article iframe,
+article embed,
+article object {
+  display: inline-block;
+  vertical-align: middle;
+}
 article h1 {
   font-family: "Antonio";
-  font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 41px;
-  text-transform: uppercase;
+}
+article h2 {
+  font-family: "Antonio";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+}
+article h3 {
+  font-family: "Antonio";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+article h4 {
+  font-family: "Antonio";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+}
+article h5 {
+  font-family: "Antonio";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+article h6 {
+  font-family: "Antonio";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 21px;
 }
 article p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .filters {
