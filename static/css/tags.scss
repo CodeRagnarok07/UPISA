@@ -70,6 +70,7 @@ p {
 
     @media (min-width: v.$lg ) {
         font-size: 16px;
+        line-height: 15px;
     }
 }
 
@@ -130,6 +131,7 @@ h2 {
     font-size: 32px;
     line-height: 110%;
     text-transform: uppercase;
+    margin-bottom: 12px;
 
     @media (min-width: v.$lg) {
         font-family: 'Antonio';
