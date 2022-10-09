@@ -81,45 +81,16 @@
 
 
 
-{% include './carrusel_resetas.html' %}
 
 <!-- puntos de venta -->
 {% include './puntos.html' %}
 
-<!-- NOVEDADES Y VENTOS -->
+<!--trucos y consejos -->
 
-{% include './novedades.html' %}
 
 
 <!-- contact -->
 
-<div class="container mt-[80px]">
-
-    <div class="subtitle ">
-
-        <h2>¿tenés consultas?</h2>
-        <p>
-            No dudes en comunicarte con nosotros.
-            ¡Estamos para vos!
-        </p>
-    </div>
-
-
-    <div class="grid grid-cols-1 md:grid-cols-2 mt-9 md:mt-12 gap-6">
-        {% include './contact/form.html' %}
-
-        <div class="flex flex-col gap-6 w-full">
-
-            {% include './contact/card_simple.html' %}
-            {% include './contact/card_simple.html' %}
-            {% include './contact/card_simple.html' %}
-
-
-        </div>
-    </div>
-
-</div>
-
-<hr class="mb-[261px]">
+{% include './contact/home_contact.html' %}
 
 {% endblock cont %}

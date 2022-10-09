@@ -54,6 +54,13 @@
     &.white {
         background-color: white;
         color: black;
+
+        &::before {
+            mix-blend-mode: multiply;
+            opacity: 0.8;
+
+
+        }
     }
 
     &::before {
@@ -66,7 +73,7 @@
         right: 0px;
         bottom: 0px;
         left: 0px;
-        opacity: 0.8;
+        opacity: 1.2;
         mix-blend-mode: overlay;
     }
 
@@ -396,7 +403,7 @@ nav {
             border-radius: 80px;
             overflow: hidden;
             padding: 0px 22px;
-            gap:8px;
+            gap: 8px;
 
             height: 8px;
             color: transparent;
@@ -406,7 +413,7 @@ nav {
                 padding: 12px 22px;
                 color: v.$N20;
                 height: auto;
-                gap:0px;
+                gap: 0px;
 
                 &.active {
                     color: white;

@@ -70,12 +70,6 @@
   gap: 15px;
 }
 
-.subtitle {
-  margin-top: 64px;
-  margin-bottom: 12px;
-  text-align: center;
-}
-
 .hidden-movil {
   display: none;
 }
@@ -107,6 +101,16 @@
     display: none;
   }
 }
+div.title-cont {
+  text-align: center;
+}
+@media (min-width: 1160px) {
+  div.title-cont p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -149,6 +153,10 @@
   background-color: white;
   color: black;
 }
+.header.white::before {
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
 .header::before {
   z-index: 0;
   content: "";
@@ -159,7 +167,7 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.8;
+  opacity: 1.2;
   mix-blend-mode: overlay;
 }
 .header .header-title {

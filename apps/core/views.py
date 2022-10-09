@@ -87,6 +87,6 @@ def contactView(request):
             return redirect("contacto")
 
 
-    return render(request, "core/contact/contact.html", {"form": form})
+    return render(request, "core/contact/index.html", {"form": form})
 
 

@@ -41,11 +41,13 @@
                     justify-content: space-between;
                     align-items: center;
                     padding: 48px 56px;
-                    h2{
-                        margin: 0px ;
+
+                    h2 {
+                        margin: 0px;
                         margin-right: 20%;
                     }
-                    .info{
+
+                    .info {
                         width: 100%;
                         padding: 0px auto;
                     }
@@ -62,9 +64,10 @@
 
         >div {
             @media (min-width: 768px) {
-            padding: 39px;
+                padding: 39px;
 
             }
+
             padding: 20px;
 
             .info {
@@ -84,12 +87,6 @@
     }
 }
 
-.subtitle {
-    margin-top: 64px;
-    margin-bottom: 12px;
-    text-align: center;
-
-}
 
 
 .hidden-movil {
@@ -114,15 +111,39 @@
 .name {
     display: none;
 }
+
 .code {
     display: flex;
 }
+
 @media (min-width: v.$md ) {
     .name {
         display: flex;
     }
+
     .code {
         display: none;
+    }
+
+}
+
+
+div {
+
+    &.title-cont {
+
+        text-align: center;
+
+        p {
+            @media (min-width: v.$lg) {
+                font-size: 1.25rem
+                    /* 20px */
+                ;
+                line-height: 1.75rem
+                    /* 28px */
+                ;
+            }
+        }
     }
 
 }
