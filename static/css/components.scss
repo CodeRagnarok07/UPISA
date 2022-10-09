@@ -352,25 +352,34 @@ nav {
         justify-content: center;
         gap: 16px;
 
+
         div {
             z-index: 50;
             height: 8px;
             width: 8px;
             border-radius: 50%;
-            background-color: v.$N65;
             cursor: pointer;
+            background-color: v.$N65;
 
             &:hover,
             &.active {
                 background-color: white;
             }
+        }
 
+        &.dot-control-white {
+            div {
+                background-color: v.$N20;
+                &:hover,
+                &.active {
+                    background-color: v.$N100;
+                }
+            }
         }
 
 
         @media (min-width: v.$md ) {
             padding-top: 0px;
-
 
             div {
                 width: 12px;
@@ -386,7 +395,7 @@ nav {
 
 
 
-
+// form
 
 .progres-form {
 

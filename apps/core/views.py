@@ -1,6 +1,9 @@
 from itertools import product
 from django.shortcuts import render
 from products.models import Product
+from receta.models import Receta
+
+
 from django.utils.translation import gettext
 # Create your views here.
 from django.core.mail import send_mail, BadHeaderError
@@ -28,7 +31,9 @@ def index(request):
 
 
 
-    populares = Product.objects.filter(destacado=True)
+    products_populares = Product.objects.filter(destacado=True)
+    last_recetas = Receta.objects.all()[:5]
+
     carrusel = [
         {
             "titulo1": "Variedades de embutidos",
@@ -57,7 +62,8 @@ def index(request):
         "form":form,
         "ingre": ingredientes,
         "carrusel": carrusel,
-        "populares": populares
+        "products_populares": products_populares,
+        "last_recetas":last_recetas
     }
 
     return render(request, 'core/index.html', ctx)

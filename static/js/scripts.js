@@ -70,7 +70,17 @@ function setOrderAlf(e) {
         const widthSlider = slider.children[0].offsetWidth
 
         let current = 0
-        let cols = slider.offsetWidth/widthSlider
+        let cols = slider.offsetWidth / widthSlider
+
+
+        // current count 
+        const renderCurretn = () => {
+            const cont_container = carrusel_slider.getElementsByClassName("render-cont")[0]
+            if (cont_container) {
+                cont_container.textContent = current +1
+            }
+        }
+
 
         // dot style
         function setDoct() {
@@ -78,9 +88,10 @@ function setOrderAlf(e) {
                 dot.className = ""
             }
             dot_control_cont.children[current].classList.add("active")
+            renderCurretn()
         }
 
-  
+
 
         // arrow_controls
         function arrowControler(bol) {
@@ -102,6 +113,8 @@ function setOrderAlf(e) {
                 }
             }
             setDoct()
+            renderCurretn()
+
         }
         const right_control = carrusel_slider.getElementsByClassName("right-control")[0]
         const left_control = carrusel_slider.getElementsByClassName("left-control")[0]
@@ -135,7 +148,16 @@ function setOrderAlf(e) {
         }
 
         dot_control_cont.children[0].classList.add("active")
+
+
+        renderCurretn()
+
+
     }
+
+
+
+
 })();
 
 
