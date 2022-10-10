@@ -11,14 +11,12 @@
 html {
     box-sizing: border-box;
     transition: all .5s ease;
-    // border: 1px solid red;
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
 
 
 button {
