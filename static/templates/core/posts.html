@@ -1,5 +1,19 @@
 <div class="header z-0 mt-[76px] mb-16 py-12 lg:py-20">
     <div class="container">
-        
+        <div class="title-cont">
+            <h2>TRUCOS Y CONSEJOS</h2>
+            <p>Conocé la amplia línea de fiambres y embutidos frescos que tenemos <br> para vos, con calidad y sabor
+                único. ¡Tenés que probarlo!</p>
+        </div>
+
+
+        <div id="recetas" class="grid grid-cols-1 mt-6 gap-6
+        md:grid-cols-2
+        ">
+            {% for i in posts %}
+                {% include '../blog/post_card.html' %}
+            {% endfor %}
+
+        </div>
     </div>
 </div>

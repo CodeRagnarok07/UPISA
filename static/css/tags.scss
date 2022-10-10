@@ -6,6 +6,48 @@
     src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
 }
 
+/*************** RESETS *********************/
+*,
+html {
+    box-sizing: border-box;
+    transition: all .5s ease;
+    // border: 1px solid red;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+button {
+    display: inline-block;
+}
+
+hr{
+    border-color: transparent;
+}
+
+// selection:active:focus:bg-transparent focus:outline-none
+
+input,textarea,
+select {
+    background-color: transparent;
+    outline: none;
+    border-radius: 8px;
+
+
+}
+
+
+
+//  imagenes responsivas
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 body {
@@ -16,10 +58,11 @@ body {
     letter-spacing: 0em;
     text-align: left;
     background: v.$N10;
+    overflow-x: hidden;
 
 }
 
-
+//  styles
 
 button {
     font-family: 'Inter';
@@ -60,7 +103,7 @@ button {
     }
 
     // props
-    &.with_svg{
+    &.with_svg {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -149,6 +192,29 @@ h2 {
         /* identical to box height */
 
     }
+
+    &.kalamaya {
+        font-family: 'kalamaya';
+        font-style: italic;
+        text-transform: none;
+        color: v.$N100;
+
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 100%;
+
+        @media (min-width:v.$lg) {
+            font-style: normal;
+
+            font-weight: 400;
+            font-size: 80px;
+            line-height: 100%;
+
+        }
+
+
+
+    }
 }
 
 h3 {
@@ -207,8 +273,6 @@ h5 {
 
 
 }
-
-
 
 footer {
     margin-top: 7.5rem;

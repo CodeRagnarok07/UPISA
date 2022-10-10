@@ -1,10 +1,10 @@
 @use 'vars' as v;
 
 @import 'utils';
-@import 'components';
-@import 'resets';
 @import 'tags';
+@import 'components';
 @import 'article';
+
 
 
 
@@ -125,7 +125,7 @@
         }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: v.$lg) {
         flex-direction: row;
 
         >div {
@@ -280,4 +280,70 @@
         margin: 0.75rem 0px 1.25rem;
     }
 }
+
+.title-cont {
+
+    text-align: center;
+    margin-bottom: 48px;
+    p {
+        @media (min-width: v.$lg) {
+            font-size: 1.25rem
+                /* 20px */
+            ;
+            line-height: 1.75rem
+                /* 28px */
+            ;
+        }
+    }
+}
+
+
+// // about
+
+// .confianza{
+//     display: flex;
+//     flex-direction: column;
+//     gap: 3rem;
+//     // @apply gap-12 flex flex-col;
+
+//     .confianza-card{
+//         background-color: red;
+//         &:nth-child(odd){
+//             flex-direction: row-reverse;
+//         }
+//         display: flex;
+//         align-items: center;
+
+//         // @apply md:flex flex-row-reverse items-center;
+
+//         .img-cont{
+
+//             width: 65%;
+//             margin-bottom: -2rem;
+//             margin-left: -15%;
+
+//             @media (min-width:v.$md) {
+//                 margin-bottom: 0px;
+//             }
+//             // @apply w-[65%] -mb-8 md:-ml-[15%] md:mb-0;
+//             img{
+//                 // @apply rounded-xl
+//             }
+
+//             .card-body{
+//                 // @apply p-5 md:w-[440px];
+    
+//                 .card-title{
+//                     // @apply flex items-center gap-4 mb-3;
+    
+//                     i{
+//                         // @apply h-6 md:h-8
+//                     }
+//                 }
+//             }
+//         }
+
+//     }
+
+// }
 

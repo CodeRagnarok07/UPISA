@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Bebas+Neue&family=Inter:wght@500;600;700&display=swap");
 .glow {
   background: #D9D9D9;
@@ -79,7 +80,7 @@
   }
 }
 
-.flex-center, .empresa-ft > div, footer span, nav .right, .pagination .control {
+.flex-center, .empresa-ft > div, nav .right, .pagination .control, footer span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,14 +102,274 @@
     display: none;
   }
 }
-div.title-cont {
-  text-align: center;
+@font-face {
+  font-family: "kalamaya";
+  src: url("./kamalaya/kalamaya-Regular.otf") format("truetype");
+  src: url("./kamalaya/kalamaya-Regular.ttf") format("truetype");
+}
+/*************** RESETS *********************/
+*,
+html {
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+button {
+  display: inline-block;
+}
+
+hr {
+  border-color: transparent;
+}
+
+input, textarea,
+select {
+  background-color: transparent;
+  outline: none;
+  border-radius: 8px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  background: #FDF2E8;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  padding: 16px 24px;
+  border-radius: 8px;
+  width: 100%;
+}
+button.primary {
+  color: white;
+  background-color: #0B9839;
+}
+button.secondary {
+  color: white;
+  background-color: #EA8215;
+}
+button.secondary.white {
+  background-color: #FAE0C9;
+  color: #EA8215;
+}
+button.carrusel-control {
+  padding: 16px;
+  border-radius: 50%;
+  background-color: #EF974A;
 }
 @media (min-width: 1024px) {
-  div.title-cont p {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+  button {
+    width: auto;
   }
+}
+button.with_svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+@media (min-width: 1024px) {
+  p {
+    font-size: 16px;
+    line-height: 15px;
+  }
+}
+
+h1 {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-family: "Antonio";
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 83px;
+    /* identical to box height */
+  }
+}
+h1.kalamaya {
+  font-family: "kalamaya";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 100%;
+  color: #FFFFFF;
+}
+@media (min-width: 1024px) {
+  h1.kalamaya {
+    font-size: 96px;
+  }
+}
+h1.kalamaya-title {
+  font-family: "kalamaya";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 20px;
+  color: #141414;
+  text-transform: lowercase;
+  line-height: 100%;
+}
+@media (min-width: 1024px) {
+  h1.kalamaya-title {
+    font-size: 120px;
+    line-height: 100%;
+  }
+}
+
+h2 {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+@media (min-width: 1024px) {
+  h2 {
+    font-family: "Antonio";
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    /* identical to box height */
+  }
+}
+h2.kalamaya {
+  font-family: "kalamaya";
+  font-style: italic;
+  text-transform: none;
+  color: #EA8215;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+}
+@media (min-width: 1024px) {
+  h2.kalamaya {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 100%;
+  }
+}
+
+h3 {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+}
+@media (min-width: 1024px) {
+  h3 {
+    font-family: "Antonio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 47px;
+  }
+}
+
+h4 {
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  h4 {
+    font-family: "Antonio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 41px;
+  }
+}
+
+h5 {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  h5 {
+    font-family: "Antonio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+footer {
+  margin-top: 7.5rem;
+  text-align: left;
+  color: white;
+}
+footer h2 {
+  text-align: left;
+}
+footer li {
+  margin: 12px 0px;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  gap: 0.9rem;
+}
+@media (min-width: 1024px) {
+  footer li {
+    margin: 16px 0px;
+    font-size: 15px;
+  }
+}
+footer span {
+  height: 80px;
+  text-align: center;
+}
+footer span.left {
+  background-color: #0B9839;
+}
+footer span.right {
+  background-color: #4688C3;
 }
 
 .pagination {
@@ -171,14 +432,27 @@ div.title-cont {
   mix-blend-mode: overlay;
 }
 .header .header-title {
-  position: relative;
-  margin-top: 4rem;
   text-align: center;
+  padding-bottom: 8rem;
+  margin-top: 100px;
 }
-@media (min-width: 780px) {
-  .header .header-title {
-    margin-top: 6.25rem;
-  }
+.header .header-title h1 {
+  font-family: "kalamaya";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 100%;
+}
+.header .header-title h1::before, .header .header-title h1::after {
+  content: " • ";
+}
+.header .header-title.text-cont {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
 }
 
 nav {
@@ -272,7 +546,6 @@ nav .right {
 }
 .carrusel .main img {
   width: 100%;
-  height: 800px;
   object-fit: cover;
   object-position: center;
   border-radius: 16px;
@@ -459,262 +732,6 @@ nav .right {
 .progres-form progress::-webkit-progress-value {
   background-color: #0B9839;
   transition: all 0.5s ease-in-out;
-}
-
-/*************** RESETS *********************/
-*,
-html {
-  box-sizing: border-box;
-  transition: all 0.5s ease;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-input, textarea,
-select {
-  background-color: transparent;
-  outline: none;
-  border-radius: 8px;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-button {
-  display: inline-block;
-}
-
-hr {
-  border-color: transparent;
-}
-
-@font-face {
-  font-family: "kalamaya";
-  src: url("./kamalaya/kalamaya-Regular.otf") format("truetype");
-  src: url("./kamalaya/kalamaya-Regular.ttf") format("truetype");
-}
-body {
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: left;
-  background: #FDF2E8;
-}
-
-button {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 100%;
-  padding: 16px 24px;
-  border-radius: 8px;
-  width: 100%;
-}
-button.primary {
-  color: white;
-  background-color: #0B9839;
-}
-button.secondary {
-  color: white;
-  background-color: #EA8215;
-}
-button.secondary.white {
-  background-color: #FAE0C9;
-  color: #EA8215;
-}
-button.carrusel-control {
-  padding: 16px;
-  border-radius: 50%;
-  background-color: #EF974A;
-}
-@media (min-width: 1024px) {
-  button {
-    width: auto;
-  }
-}
-button.with_svg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-}
-
-p {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-}
-@media (min-width: 1024px) {
-  p {
-    font-size: 16px;
-    line-height: 15px;
-  }
-}
-
-h1 {
-  font-family: "Bebas Neue";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 110%;
-  text-transform: uppercase;
-}
-@media (min-width: 1024px) {
-  h1 {
-    font-family: "Antonio";
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 83px;
-    /* identical to box height */
-  }
-}
-h1.kalamaya {
-  font-family: "kalamaya";
-  font-style: italic;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 100%;
-  color: #FFFFFF;
-}
-@media (min-width: 1024px) {
-  h1.kalamaya {
-    font-size: 96px;
-  }
-}
-h1.kalamaya-title {
-  font-family: "kalamaya";
-  font-style: italic;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 20px;
-  color: #141414;
-  text-transform: lowercase;
-  line-height: 100%;
-}
-@media (min-width: 1024px) {
-  h1.kalamaya-title {
-    font-size: 120px;
-    line-height: 100%;
-  }
-}
-
-h2 {
-  font-family: "Bebas Neue";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 110%;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-@media (min-width: 1024px) {
-  h2 {
-    font-family: "Antonio";
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 62px;
-    /* identical to box height */
-  }
-}
-
-h3 {
-  font-family: "Bebas Neue";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 38px;
-}
-@media (min-width: 1024px) {
-  h3 {
-    font-family: "Antonio";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 47px;
-  }
-}
-
-h4 {
-  font-family: "Antonio";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 26px;
-  text-transform: uppercase;
-}
-@media (min-width: 1024px) {
-  h4 {
-    font-family: "Antonio";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 41px;
-  }
-}
-
-h5 {
-  font-family: "Bebas Neue";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
-  text-transform: uppercase;
-}
-@media (min-width: 1024px) {
-  h5 {
-    font-family: "Antonio";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 31px;
-  }
-}
-
-footer {
-  margin-top: 7.5rem;
-  text-align: left;
-  color: white;
-}
-footer h2 {
-  text-align: left;
-}
-footer li {
-  margin: 12px 0px;
-  font-size: 12px;
-  font-weight: 400;
-  display: flex;
-  gap: 0.9rem;
-}
-@media (min-width: 1024px) {
-  footer li {
-    margin: 16px 0px;
-    font-size: 15px;
-  }
-}
-footer span {
-  height: 80px;
-  text-align: center;
-}
-footer span.left {
-  background-color: #0B9839;
-}
-footer span.right {
-  background-color: #4688C3;
 }
 
 article {
@@ -1197,7 +1214,7 @@ article p {
   font-size: 14px;
   line-height: 17px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .empresa-ft {
     flex-direction: row;
   }
@@ -1322,6 +1339,17 @@ article p {
 }
 .item-home-carrusel-slider p {
   margin: 0.75rem 0px 1.25rem;
+}
+
+.title-cont {
+  text-align: center;
+  margin-bottom: 48px;
+}
+@media (min-width: 1024px) {
+  .title-cont p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

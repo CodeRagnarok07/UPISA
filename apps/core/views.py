@@ -1,16 +1,21 @@
-from itertools import product
 from django.shortcuts import render
-from products.models import Product
-from receta.models import Receta
 
 
-from django.utils.translation import gettext
+
 # Create your views here.
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 
+# models
+from products.models import Product
+from receta.models import Receta
+from blog.models import TrucosYConsejos
+
+
+# translate
+from django.utils.translation import gettext
 
 
 def index(request):
@@ -33,6 +38,7 @@ def index(request):
 
     products_populares = Product.objects.filter(destacado=True)
     last_recetas = Receta.objects.all()[:5]
+    posts = TrucosYConsejos.objects.all()[:2]
 
     carrusel = [
         {
@@ -63,7 +69,8 @@ def index(request):
         "ingre": ingredientes,
         "carrusel": carrusel,
         "products_populares": products_populares,
-        "last_recetas":last_recetas
+        "last_recetas":last_recetas,
+        "posts":posts
     }
 
     return render(request, 'core/index.html', ctx)
