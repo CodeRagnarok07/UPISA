@@ -14,9 +14,7 @@
             <div class="slider slider-grid">
                 {% for i in products_populares %}
                 <div class="item-grid px-2 flex ">
-                    <a class="
-                            rounded-xl  
-                            w-full
+                    <a class="z-50 rounded-xl w-full
                             bg-white text-black 
                             flex flex-col justify-between"
                         href="{% url 'product_detail' i.sub_categoria.categoria.url i.url %}">
@@ -33,7 +31,7 @@
 
             </div>
 
-            <div class="controls-side">
+            <div class="controls-side -z-50">
                 <button class="left-control">
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

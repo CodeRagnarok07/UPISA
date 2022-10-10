@@ -443,6 +443,7 @@ footer span.right {
   font-weight: 400;
   font-size: 96px;
   line-height: 100%;
+  text-transform: none;
 }
 .header .header-title h1::before, .header .header-title h1::after {
   content: " • ";
@@ -455,11 +456,11 @@ footer span.right {
   line-height: 30px;
   text-align: center;
 }
-.header .dot-control div {
-  background-color: #FAE0C9;
+.header .carrusel-slider .dot-control div {
+  background-color: #EF974A;
 }
-.header .dot-control div:hover, .header .dot-control div.active {
-  background-color: #EA8215;
+.header .carrusel-slider .dot-control div:hover, .header .carrusel-slider .dot-control div.active {
+  background-color: white;
 }
 
 nav {
@@ -626,10 +627,10 @@ nav .right {
   width: 8px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #EF974A;
+  background-color: #FAE0C9;
 }
 .carrusel-slider .dot-control div:hover, .carrusel-slider .dot-control div.active {
-  background-color: white;
+  background-color: #EA8215;
 }
 @media (min-width: 768px) {
   .carrusel-slider .dot-control {

@@ -73,6 +73,8 @@ function setOrderAlf(e) {
         let cols = slider.offsetWidth / widthSlider
 
 
+        /* ReRenders */
+
         // current count 
         const renderCurretn = () => {
             const cont_container = carrusel_slider.getElementsByClassName("render-cont")[0]
@@ -80,7 +82,6 @@ function setOrderAlf(e) {
                 cont_container.textContent = current +1
             }
         }
-
 
         // dot style
         function setDoct() {
@@ -97,18 +98,18 @@ function setOrderAlf(e) {
         function arrowControler(bol) {
             if (bol == true) {
                 current++
-                if (current >= slider.children.length) {
+                if (current >= slider.children.length / cols) {
                     slider.scrollLeft = 0
                     current = 0
                 } else {
-                    slider.scrollLeft += widthSlider
+                    slider.scrollLeft += widthSlider * cols
                 }
             } else {
                 if (current < 1) {
-                    slider.scrollLeft = slider.children.length * widthSlider
+                    slider.scrollLeft = slider.children.length * widthSlider * cols
                     current = slider.children.length - 1
                 } else {
-                    slider.scrollLeft -= widthSlider
+                    slider.scrollLeft -= widthSlider * cols
                     current = current - 1
                 }
             }

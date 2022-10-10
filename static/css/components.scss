@@ -82,9 +82,7 @@
         padding-bottom: 8rem;
         margin-top: 100px;
 
-        @media (min-width:780px) {
-
-        }
+        @media (min-width:780px) {}
 
         h1 {
             font-family: 'kalamaya';
@@ -92,6 +90,7 @@
             font-weight: 400;
             font-size: 96px;
             line-height: 100%;
+            text-transform: none;
 
             &::before,
             &::after {
@@ -114,13 +113,17 @@
         }
     }
 
-    .dot-control {
-        div {
-            background-color: v.$N20;
+    .carrusel-slider {
 
-            &:hover,
-            &.active {
-                background-color: v.$N100;
+        .dot-control {
+            div {
+                background-color: v.$N65;
+
+                &:hover,
+                &.active {
+                    background-color: white;
+                }
+
             }
         }
     }
@@ -336,21 +339,23 @@ nav {
         gap: 16px;
 
 
+
         div {
             z-index: 50;
             height: 8px;
             width: 8px;
             border-radius: 50%;
             cursor: pointer;
-            background-color: v.$N65;
+
+            background-color: v.$N20;
 
             &:hover,
             &.active {
-                background-color: white;
+                background-color: v.$N100;
             }
         }
 
- 
+
 
 
         @media (min-width: v.$md ) {
@@ -422,11 +427,6 @@ nav {
 
 
 }
-
-
-
-
-
 
 
 // form
