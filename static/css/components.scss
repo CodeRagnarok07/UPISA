@@ -114,6 +114,18 @@
         }
     }
 
+    .dot-control {
+        div {
+            background-color: v.$N20;
+
+            &:hover,
+            &.active {
+                background-color: v.$N100;
+            }
+        }
+    }
+
+
 }
 
 // Navabar con elementos right center y left responsivo en md
@@ -276,63 +288,6 @@ nav {
     }
 }
 
-
-.parent_tooltip_options {
-    position: relative;
-    gap: 0.75rem;
-    cursor: pointer;
-
-    .clicker {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-    }
-
-
-    .tooltip_options {
-        position: absolute;
-        z-index: 400;
-        top: 100%;
-        left: 0;
-
-        display: flex;
-        flex-direction: column;
-
-
-        padding: 0.75rem 0;
-        border: 2px v.$N20 solid;
-        border-radius: 0.75rem;
-
-        background-color: #ffffff;
-        color: black;
-
-        &.hidden {
-            display: none;
-        }
-
-        .option {
-            text-transform: uppercase;
-            padding: 12px 24px;
-            font-weight: 700;
-            gap: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            &:hover {
-                font-weight: 700;
-                color: v.$N100;
-            }
-        }
-
-    }
-
-
-}
-
-
 .carrusel-slider {
     // @extend .;
     position: relative;
@@ -395,16 +350,7 @@ nav {
             }
         }
 
-        &.dot-control-white {
-            div {
-                background-color: v.$N20;
-
-                &:hover,
-                &.active {
-                    background-color: v.$N100;
-                }
-            }
-        }
+ 
 
 
         @media (min-width: v.$md ) {
@@ -420,6 +366,65 @@ nav {
 
 
 }
+
+
+.parent_tooltip_options {
+    position: relative;
+    gap: 0.75rem;
+    cursor: pointer;
+
+    .clicker {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }
+
+
+    .tooltip_options {
+        position: absolute;
+        z-index: 400;
+        top: 100%;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+
+        padding: 0.75rem 0;
+        border: 2px v.$N20 solid;
+        border-radius: 0.75rem;
+
+        background-color: #ffffff;
+        color: black;
+
+        &.hidden {
+            display: none;
+        }
+
+        .option {
+            text-transform: uppercase;
+            padding: 12px 24px;
+            font-weight: 700;
+            gap: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &:hover {
+                font-weight: 700;
+                color: v.$N100;
+            }
+        }
+
+    }
+
+
+}
+
+
+
 
 
 

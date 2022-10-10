@@ -52,8 +52,10 @@ def category_productos(request, category):
 
 def detail(request, category, url):
     product = get_object_or_404(Product, url=url)
-    
+    products_populares = Product.objects.filter(destacado=True)
+
     ctx = {
         "product": product,
+        "products_populares": products_populares,
     }
     return render(request, 'products/detail.html', ctx)

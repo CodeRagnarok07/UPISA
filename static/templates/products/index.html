@@ -5,14 +5,13 @@
 {% block title %}contacto{% endblock title %}
 
 {% block header %}
-<div class="header-title pb-9">
-    <div class="container ">
-        <h1>• Productos •</h1>
-        <p>
-            Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único.
-            ¡Tenés que probarlo!
-            Elegí lo mejor, elegí sabor.
-        </p>
+<div class=" header-title relative">
+    <h1 class="">Productos</h1>
+    <div class="text-cont  absolute inset-x-0">
+        Conocé la amplia línea de fiambres y <br class="md:hidden">
+        embutidos frescos que tenemos para vos, con <br> 
+        calidad y sabor único. ¡Tenés que probarlo!<br class="md:hidden">
+        Elegí lo mejor, elegí sabor.
     </div>
 </div>
 {% endblock header %}
@@ -28,7 +27,6 @@
     <!-- filters -->
     <div class="filters">
         <!-- Orden alfabetico -->
-
         <!-- <div class="filter">
             <div>
                 ORDEN: A - Z
@@ -39,8 +37,7 @@
                 <button class="option">opcion 1</button>
             </div>
         </div> -->
-
-        {% if current_categoria %}
+        {% if current_categoria != "TODOS" %}
         <div class="filter w-full md:w-auto">
             <div>
                 FILTRAR
@@ -90,7 +87,7 @@
             </h3>
 
             <a href="{% url 'contacto' %}">
-                <button  class="secondary flex-center mt-6 gap-4 md:mr-auto w-auto">
+                <button  class="secondary flex-center mt-6 gap-4 md:mr-auto w-full md:w-auto">
                     CONTACTÁ CON NOSOTROS
                     <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

@@ -30,6 +30,7 @@
 .card, .empresa-ft > div {
   background-color: white;
   border-radius: 12px;
+  z-index: 100;
 }
 @media (min-width: 408px) {
   .card.map > div.flex, .empresa-ft > div.map > div.flex {
@@ -454,6 +455,12 @@ footer span.right {
   line-height: 30px;
   text-align: center;
 }
+.header .dot-control div {
+  background-color: #FAE0C9;
+}
+.header .dot-control div:hover, .header .dot-control div.active {
+  background-color: #EA8215;
+}
 
 nav {
   z-index: 100;
@@ -575,48 +582,6 @@ nav .right {
   box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
 }
 
-.parent_tooltip_options {
-  position: relative;
-  gap: 0.75rem;
-  cursor: pointer;
-}
-.parent_tooltip_options .clicker {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-.parent_tooltip_options .tooltip_options {
-  position: absolute;
-  z-index: 400;
-  top: 100%;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 0.75rem 0;
-  border: 2px #FAE0C9 solid;
-  border-radius: 0.75rem;
-  background-color: #ffffff;
-  color: black;
-}
-.parent_tooltip_options .tooltip_options.hidden {
-  display: none;
-}
-.parent_tooltip_options .tooltip_options .option {
-  text-transform: uppercase;
-  padding: 12px 24px;
-  font-weight: 700;
-  gap: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.parent_tooltip_options .tooltip_options .option:hover {
-  font-weight: 700;
-  color: #EA8215;
-}
-
 .carrusel-slider {
   position: relative;
 }
@@ -666,12 +631,6 @@ nav .right {
 .carrusel-slider .dot-control div:hover, .carrusel-slider .dot-control div.active {
   background-color: white;
 }
-.carrusel-slider .dot-control.dot-control-white div {
-  background-color: #FAE0C9;
-}
-.carrusel-slider .dot-control.dot-control-white div:hover, .carrusel-slider .dot-control.dot-control-white div.active {
-  background-color: #EA8215;
-}
 @media (min-width: 768px) {
   .carrusel-slider .dot-control {
     padding-top: 0px;
@@ -680,6 +639,48 @@ nav .right {
     width: 12px;
     height: 12px;
   }
+}
+
+.parent_tooltip_options {
+  position: relative;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+.parent_tooltip_options .clicker {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.parent_tooltip_options .tooltip_options {
+  position: absolute;
+  z-index: 400;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0;
+  border: 2px #FAE0C9 solid;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  color: black;
+}
+.parent_tooltip_options .tooltip_options.hidden {
+  display: none;
+}
+.parent_tooltip_options .tooltip_options .option {
+  text-transform: uppercase;
+  padding: 12px 24px;
+  font-weight: 700;
+  gap: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.parent_tooltip_options .tooltip_options .option:hover {
+  font-weight: 700;
+  color: #EA8215;
 }
 
 .progres-form .progres-items {

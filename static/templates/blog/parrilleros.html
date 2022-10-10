@@ -9,7 +9,8 @@
     <div class="container ">
         <h1>• Parrilleros •</h1>
         <p class="max-w-[613px] mx-auto ">
-            ¡Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!
+            ¡Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor
+            asado!
         </p>
     </div>
 </div>
@@ -24,7 +25,7 @@
 
 
 
-<div class="container pb-72 mt-20">
+<div class="container pb-72 mt-20 ">
     <div class="subtitle md:mb-5">
         <h2>TRUCOS Y CONSEJOS</h2>
         <p class="w-[566px] mx-auto">
@@ -32,8 +33,8 @@
         </p>
     </div>
 
-    <div id="recetas" class="grid grid-cols-1 mt-6 gap-6
-    md:grid-cols-2
+    <div class="grid grid-cols-1 mt-6 gap-6 
+    md:grid-cols-2 
     ">
         {% for i in page_obj %}
         {% include './post_card.html' %}
@@ -45,12 +46,10 @@
 
     {% include '../components/pagination.html' %}
 
-    <div class="flex-center mt-20">
-        <button class="secondary ">VER MÁS CONSEJOS</button>
+
+    <div class="mt-40">
+        {% include '../core/puntos.html' %}
     </div>
 
-
-{% include '../core/puntos.html' %}
-    
 </div>
 {% endblock cont %}
