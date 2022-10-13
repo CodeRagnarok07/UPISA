@@ -20,45 +20,49 @@
 
             <div class="progres-form">
 
-            <form id="calculadora" action="">
-                <div class="progres-bar w-full relative ">
-                    <div class="progres-items">                    
-                        <div class="progres-item active over ">
-                          PERSONAS
+                <form id="calculadora" action="">
+                    <div class="progres-bar w-full relative ">
+                        <div class="progres-items">
+                            <div class="progres-item active over "> PERSONAS</div>
+                            <div class="progres-item">PERSONAS</div>
+                            <div class="progres-item">PERSONAS</div>
+                            <div class="progres-item">PERSONAS</div>
+
+
                         </div>
-                        <div class="progres-item">PERSONAS</div>
-                        <div class="progres-item">PERSONAS</div>
-                        <div class="progres-item">PERSONAS</div>
-               
+
+                        <!-- class="h-[3px] inset-x-0 bottom-[50%] bg-[#FAE0C9] z-0 absolute " -->
+                        <progress class="md:flex hidden" max="100" value="0"></progress>
+
+                    </div>
+                    <!-- STEPS -->
+                    <div class="steps-form flex flex-nowrap overflow-hidden scroll-smooth">
+                        <!-- step 1 -->
+                        <div class="flex-shrink-0 w-full">
+                            <h1>paso 1</h1>
+                        </div>
+                        <div class="flex-shrink-0 w-full">
+                            <h1>paso 2</h1>
+                        </div>
+                        <div class="flex-shrink-0 w-full">
+                            <h1>paso 3</h1>
+                        </div>
+                        <div class="flex-shrink-0 w-full">
+                            <h1>paso 4</h1>
+                        </div>
+
 
                     </div>
 
-                    <!-- class="h-[3px] inset-x-0 bottom-[50%] bg-[#FAE0C9] z-0 absolute " -->
-                    <progress class="md:flex hidden" max="100" value="0"></progress>
+                    <!-- controls -->
 
-                </div>
-                <!-- STEPS -->
-                <div class="steps-form flex flex-nowrap overflow-hidden scroll-smooth">
-                    <!-- step 1 -->
-                    <div class="flex-shrink-0 w-full">
-                        <h1>paso 1</h1>
+                    <div class="controls flex justify-between py-6 border-t border-t-[#FDF2E8]">
+                        <button type="button" class="secondary white w-auto">ATRÁS</button>
+                        <button type="submit" class="secondary w-auto">SIGUIENTE</button>
                     </div>
-                    <div class="flex-shrink-0 w-full"><h1>paso 2</h1></div>
-                    <div class="flex-shrink-0 w-full"><h1>paso 3</h1></div>
-                    <div class="flex-shrink-0 w-full"><h1>paso 4</h1></div>
 
-
-                </div>
-
-                <!-- controls -->
-
-                <div class="controls flex justify-between py-6 border-t border-t-[#FDF2E8]">
-                    <button type="button" class="secondary white w-auto">ATRÁS</button>
-                    <button type="submit" class="secondary w-auto">SIGUIENTE</button>
-                </div>
-
-            </form>
-        </div>
+                </form>
+            </div>
 
             <script>
                 const calculadora = document.getElementById("calculadora")
@@ -92,9 +96,6 @@
 
                     }
                 }
-
-
-
 
                 const btn_control = calculadora.querySelector(".controls")
 
