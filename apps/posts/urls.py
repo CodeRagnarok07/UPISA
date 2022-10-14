@@ -5,5 +5,5 @@ from .views import parrilleros, viewDetail
 
 urlpatterns = [
     path('parrilleros', parrilleros, name='parrilleros'),
-    path('<str:url>', viewDetail, name='detail_parrilleros'),
+    path('parrilleros/<str:url>', viewDetail, name='detail_parrilleros'),
 ]

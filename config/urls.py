@@ -31,7 +31,7 @@ urlpatterns += i18n_patterns(
     path('', include('core.urls')),
     path('productos/', include('products.urls')),
     path('recetas/', include('receta.urls')),
-    path('parrilleros/', include('blog.urls')),
+    path('posts/', include('posts.urls')),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

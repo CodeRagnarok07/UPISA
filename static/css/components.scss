@@ -327,7 +327,6 @@ nav {
             grid-auto-columns: calc((100% - (var(--n) - 1)*var(--g))/var(--n));
             grid-gap: var(--g);
             overflow: hidden;
-
         }
     }
 

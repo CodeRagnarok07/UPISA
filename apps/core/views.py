@@ -11,7 +11,7 @@ from .forms import ContactForm
 # models
 from products.models import Product
 from receta.models import Receta
-from blog.models import TrucosYConsejos
+from posts.models import TrucosYConsejos
 
 
 # translate

@@ -285,7 +285,9 @@
 
     text-align: center;
     margin-bottom: 48px;
+    
     p {
+        margin: 0px auto;
         @media (min-width: v.$lg) {
             font-size: 1.25rem
                 /* 20px */

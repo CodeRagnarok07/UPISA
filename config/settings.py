@@ -66,7 +66,7 @@ INSTALLED_APPS = [
 
     # apps
     'core',
-    'blog',
+    'posts',
     'products',
     'receta',
 ]
