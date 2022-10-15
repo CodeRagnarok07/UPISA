@@ -1,0 +1,45 @@
+{% extends '../base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}contacto{% endblock title %}
+
+{% block header %}
+<div class=" header-title relative">
+    <h1 class="">Recetas</h1>
+    <div class="text-cont  absolute inset-x-0">
+        Prepara los platos más deliciosos y sabrosos con nuestra <br> variedad de productos y disfruta en cada bocado.
+    </div>
+</div>
+{% endblock header %}
+
+
+
+{% block cont %}
+
+
+<div class="container pb-72 pt-16">
+
+    <div id="novedades" class="grid grid-cols-1 mt-6 gap-6
+    md:grid-cols-6
+    ">
+        {% for i in page_obj %}
+            {% include './novedades_card.html' %}
+
+        {% endfor %}
+
+    </div>
+    <script>
+        (() => {
+            const container = document.getElementById("novedades")
+
+            container.children[0].classList.replace("md:col-span-2", "md:col-span-3")
+            container.children[1].classList.replace("md:col-span-2", "md:col-span-3")
+        })()
+    </script>
+
+
+    {% include '../components/pagination.html' %}
+
+</div>
+{% endblock cont %}

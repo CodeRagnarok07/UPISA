@@ -1,19 +1,21 @@
     <div class="container">
         <div class="text-center">
             <h2>PRODUCTOS  POPULARES</h2>
-            <p class="lg:text-xl">
-                
-                Conocé la amplia línea de fiambres y embutidos  <br class="flex md:hidden"> frescos que tenemos <br class="hidden md:flex"> 
-                para vos, con calidad y sabor <br class="flex md:hidden"> único. ¡Tenés que probarlo!
+            <p class="lg:text-xl">            
+                Conocé la amplia línea de fiambres y embutidos  <br class="rp"> frescos que tenemos <br class="md"> 
+                para vos, con calidad y sabor <br class="rp"> único. ¡Tenés que probarlo!
             </p>
         </div>
 
 
         <div class="carrusel-slider mt-12" >
             <!-- grid-col-4="780px" -->
-            <div class="slider slider-grid">
+            <div class="slider slider-grid"
+            style="--grid:2;--grid-md:4"
+            >
                 {% for i in products_populares %}
-                <div class="item-grid px-2 flex ">
+                <div class="item-grid px-2 flex "
+                >
                     <a class="z-50 rounded-xl w-full
                             bg-white text-black 
                             flex flex-col justify-between"

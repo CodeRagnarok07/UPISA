@@ -10,6 +10,10 @@
 
 }
 
+
+
+
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -94,42 +98,35 @@
     }
 }
 
-
-
-
-
-
-p{
+p {
     &.name {
         display: none;
     }
-    
+
     &.code {
         display: flex;
     }
-    
+
     @media (min-width: v.$md ) {
         &.name {
             display: flex;
         }
-    
+
         &.code {
             display: none;
         }
-    
+
     }
 }
-
-
-
 
 .title-cont {
 
     text-align: center;
     margin-bottom: 48px;
-    
+
     p {
         margin: 0px auto;
+
         @media (min-width: v.$lg) {
             font-size: 1.25rem
                 /* 20px */
@@ -141,10 +138,7 @@ p{
     }
 }
 
-
-
 //  imagenes responsivas
-
 img {
     max-width: 100%;
     height: auto;

@@ -18,3 +18,9 @@
 }
 
 
+br.rp{
+    @apply flex md:hidden
+}
+br.md{
+    @apply hidden md:flex
+}

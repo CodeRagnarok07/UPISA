@@ -59,7 +59,7 @@
         scroll-snap-type: x mandatory;
 
         z-index: 10;
-        --grid:2;
+        --grid:1;
         --grid-md:1;
 
         &.slider-grid {
@@ -145,7 +145,7 @@
         justify-content: center;
         border-radius: 16px;
         background-color: white;
-
+        overflow: hidden;
 
         img {
             // margin-top: auto;
@@ -320,12 +320,7 @@
 
 }
 
-
-
-
-
 // Carrusel c
-
 .controls-side {
     @media (min-width: v.$lg) {
         display: flex;

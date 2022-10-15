@@ -10,9 +10,18 @@ $V1:#0B9839;
 $V2:#96B93F;
 
 $blue: #4688C3;
+
+
 // responsive 
+
 
 $sm: 360px;
 $md: 768px;
 $lg: 1024px;
 $xl: 1360px;
+
+@mixin responsive {
+    @media (min-width:$md) {
+        @content
+    }
+}

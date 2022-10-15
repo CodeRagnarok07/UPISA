@@ -43,7 +43,7 @@
 
         {% if product.galeria.all %}
         <div class="carrusel img-control xl:row-span-2">
-            <div class="main h-[200px] md:h-[553px]">
+            <div class="main h-[200px] md:h-[553px] ">
                 {% for i in product.galeria.all %}
                 <img src="{{i.imagen.url}}" alt="">
                 {% endfor %}
