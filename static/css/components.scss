@@ -1,4 +1,4 @@
-// paginacion django
+// ********** django pagination ********* //
 .pagination {
     display: flex;
     justify-content: center;
@@ -7,12 +7,9 @@
     @media (min-width: v.$lg ) {
         a {
             padding: 12px 20px;
-
         }
-
         .control {
             padding: 16px;
-
         }
     }
 
@@ -42,197 +39,102 @@
     }
 }
 
-.header {
+
+// ********** dot_control ********* //
+.carrusel-slider {
+    // *** vars ***//
+    $primary : v.$N100;
+    $secondary : v.$N20;
+
+
+
     position: relative;
-    background-repeat: repeat;
-    background-color: v.$N100;
-    color: #ffffff;
-    // padding-top: 11px;
-    // padding-bottom: 68px;
-    height: auto;
 
-    &.white {
-        background-color: white;
-        color: black;
-
-        &::before {
-            mix-blend-mode: multiply;
-            opacity: 0.8;
-
-
-        }
-    }
-
-    &::before {
-        z-index: 0;
-        content: "";
-        background-image: url("/static/imgs/header-texture.png");
-        background-size: cover;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 1.2;
-        mix-blend-mode: overlay;
-    }
-
-    .header-title {
-        text-align: center;
-        padding-bottom: 8rem;
-        margin-top: 100px;
-
-        @media (min-width:780px) {}
-
-        h1 {
-            font-family: 'kalamaya';
-            font-style: italic;
-            font-weight: 400;
-            font-size: 96px;
-            line-height: 100%;
-            text-transform: none;
-
-            &::before,
-            &::after {
-                content: " • ";
-            }
-
-        }
-
-        &.text-cont {
-
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 30px;
-            text-align: center;
-
-
-        }
-    }
-
-    .carrusel-slider {
-
-        .dot-control {
-            div {
-                background-color: v.$N65;
-
-                &:hover,
-                &.active {
-                    background-color: white;
-                }
-
-            }
-        }
-    }
-
-
-}
-
-// Navabar con elementos right center y left responsivo en md
-nav {
-    z-index: 100;
-    @extend .container;
-    position: relative;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-weight: 600;
-    font-size: 15px;
-
-    line-height: 100%;
-    text-transform: uppercase;
-
-    .btn-nav {
-        order: 0;
-        width: 100%;
-        list-style-type: none;
-        text-align: center;
-        justify-content: center;
-        border-radius: 8px;
-        border: solid 2px transparent;
-        padding: 1rem;
-        cursor: pointer;
-
-        &:hover {
-            border-color: v.$N45;
-
-        }
-    }
-
-    .left {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 50px;
+    .slider {
         display: flex;
-        align-items: center;
-        cursor: pointer;
-        pointer-events: all;
+        flex-wrap: nowrap;
+        overflow: hidden;
+
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+
         z-index: 10;
+        --grid:2;
+        --grid-md:1;
 
+        &.slider-grid {
+            /*visible items */
+            --n: attr(data-grid number);
+            --g: 0px;
 
+            z-index: 100;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - (var(--grid) - 1)*var(--g))/var(--grid));
+            grid-gap: var(--g);
+            overflow: hidden;
+
+            @media (min-width:768px) {
+                grid-auto-columns: calc((100% - (var(--grid-md) - 1)*var(--g))/var(--grid-md));
+
+            }
+            
+            &:nth-child(0){
+                height: 100%;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+
+            }
+            img{
+                height: 100%;
+
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .item-slider {
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            width: 100%;
+        }
     }
 
-    .center {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
+
+    .dot-control {
         display: flex;
         justify-content: center;
-        height: 50px;
+        gap: 16px;
+
+        div {
+            z-index: 50;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: $secondary;
+
+            &:hover,
+            &.active {
+                background-color: $primary;
+            }
+        }
+
+        @media (min-width:768px) {
+            padding-top: 0px;
+
+            div {
+                width: 12px;
+                height: 12px;
+            }
+        }
     }
 
-    .right {
-        height: 50px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: auto;
-        padding: auto 0px;
-        @extend .flex-center;
 
 
-    }
-
-
-
-    @media (min-width: v.$lg) {
-        padding-top: 0px;
-        flex-direction: row;
-        justify-content: space-between;
-
-        .btn-nav {
-            display: flex;
-        }
-
-        .left {
-            display: none;
-        }
-
-        .center {
-            position: static;
-            order: 0;
-            min-width: 136px;
-            height: 80px;
-        }
-
-        .right {
-            position: inherit;
-            width: auto;
-        }
-
-
-    }
 }
 
-
-// carrusel img control
+// ********** img_control ********* //
 .carrusel {
     display: flex;
     flex-direction: column;
@@ -291,87 +193,7 @@ nav {
     }
 }
 
-.carrusel-slider {
-    // @extend .;
-    position: relative;
-
-
-    .slider {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow: hidden;
-        scroll-behavior: smooth;
-        z-index: 100;
-
-        .item-slider {
-            flex-shrink: 0;
-            scroll-snap-align: start;
-            width: 100%;
-        }
-
-        &.slider-grid {
-
-            --n: 2;
-            /*visible items */
-            --g: 0px;
-
-            @media (min-width: v.$md ) {
-                --n: 4;
-                /*visible items */
-                --g: 0px;
-            }
-
-            z-index: 100;
-            display: grid;
-            grid-auto-flow: column;
-            grid-auto-columns: calc((100% - (var(--n) - 1)*var(--g))/var(--n));
-            grid-gap: var(--g);
-            overflow: hidden;
-        }
-    }
-
-
-
-    .dot-control {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-
-
-
-        div {
-            z-index: 50;
-            height: 8px;
-            width: 8px;
-            border-radius: 50%;
-            cursor: pointer;
-
-            background-color: v.$N20;
-
-            &:hover,
-            &.active {
-                background-color: v.$N100;
-            }
-        }
-
-
-
-
-        @media (min-width: v.$md ) {
-            padding-top: 0px;
-
-            div {
-                width: 12px;
-                height: 12px;
-            }
-        }
-    }
-
-
-
-}
-
-
+// ********** tooltip ********* //
 .parent_tooltip_options {
     position: relative;
     gap: 0.75rem;
@@ -427,9 +249,7 @@ nav {
 
 }
 
-
-// form
-
+// ********** progres bar ********* //
 .progres-form {
 
     .progres-items {
@@ -499,3 +319,116 @@ nav {
     }
 
 }
+
+
+
+
+
+// Carrusel c
+
+.controls-side {
+    @media (min-width: v.$lg) {
+        display: flex;
+        z-index: 0;
+
+    }
+
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -100px;
+    left: -100px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        padding: 16px;
+        border-radius: 50%;
+        background-color: v.$N65;
+    }
+}
+
+.item-home-carrusel-slider {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    .img-cont {
+        height: 50%;
+        margin: 10px 0px;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+        }
+    }
+
+    h1 {
+        text-align: left;
+        z-index: 2;
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 110%;
+    }
+
+    p {
+        margin: 0.75rem 0px 1.25rem;
+    }
+}
+
+
+
+// // about
+
+// .confianza{
+//     display: flex;
+//     flex-direction: column;
+//     gap: 3rem;
+//     // @apply gap-12 flex flex-col;
+
+//     .confianza-card{
+//         background-color: red;
+//         &:nth-child(odd){
+//             flex-direction: row-reverse;
+//         }
+//         display: flex;
+//         align-items: center;
+
+//         // @apply md:flex flex-row-reverse items-center;
+
+//         .img-cont{
+
+//             width: 65%;
+//             margin-bottom: -2rem;
+//             margin-left: -15%;
+
+//             @media (min-width:v.$md) {
+//                 margin-bottom: 0px;
+//             }
+//             // @apply w-[65%] -mb-8 md:-ml-[15%] md:mb-0;
+//             img{
+//                 // @apply rounded-xl
+//             }
+
+//             .card-body{
+//                 // @apply p-5 md:w-[440px];
+    
+//                 .card-title{
+//                     // @apply flex items-center gap-4 mb-3;
+    
+//                     i{
+//                         // @apply h-6 md:h-8
+//                     }
+//                 }
+//             }
+//         }
+
+//     }
+
+// }
+

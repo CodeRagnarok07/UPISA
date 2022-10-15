@@ -1,53 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Bebas+Neue&family=Inter:wght@500;600;700&display=swap');
-
-@font-face {
-    font-family: 'kalamaya';
-    src: url('./kamalaya/kalamaya-Regular.otf') format("truetype");
-    src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
-}
-
-/*************** RESETS *********************/
-*,
-html {
-    box-sizing: border-box;
-    transition: all .5s ease;
-    &::before,
-    &::after {
-        box-sizing: inherit;
-    }
-}
-
-
-
-button {
-    display: inline-block;
-}
-
-hr{
-    border-color: transparent;
-}
-
-// selection:active:focus:bg-transparent focus:outline-none
-
-input,textarea,
-select {
-    background-color: transparent;
-    outline: none;
-    border-radius: 8px;
-
-
-}
-
-
-
-//  imagenes responsivas
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
 body {
     font-family: 'Inter';
     font-size: 16px;
@@ -57,56 +7,6 @@ body {
     text-align: left;
     background: v.$N10;
     overflow-x: hidden;
-
-}
-
-//  styles
-
-button {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 100%;
-    padding: 16px 24px;
-    border-radius: 8px;
-
-    &.primary {
-        color: white;
-        background-color: v.$V1;
-    }
-
-    &.secondary {
-        color: white;
-        background-color: v.$N100;
-
-        &.white {
-            background-color: v.$N20;
-            color: v.$N100;
-        }
-
-    }
-
-    &.carrusel-control {
-        padding: 16px;
-        border-radius: 50%;
-        background-color: v.$N65;
-    }
-
-    width: 100%;
-
-    @media (min-width: v.$lg ) {
-        width: auto;
-
-    }
-
-    // props
-    &.with_svg {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 14px;
-    }
 
 }
 
@@ -272,43 +172,76 @@ h5 {
 
 }
 
-footer {
-    margin-top: 7.5rem;
-    text-align: left;
-    color: white;
-
-    h2 {
-        text-align: left;
-
-    }
-
-    li {
-        margin: 12px 0px;
-        font-size: 12px;
-        font-weight: 400;
-        display: flex;
-        gap: 0.9rem;
-
-        @media (min-width: v.$lg ) {
-            margin: 16px 0px;
-            font-size: 15px;
 
 
-        }
+input,
+textarea,
+select {
+    background-color: transparent;
+    outline: none;
+    border-radius: 8px;
 
-    }
+    &::selection,
+    &:active,
+    &:focus {
+        background-color: transparent;
+        outline: none;
 
-    span {
-        height: 80px;
-        @extend .flex-center;
-        text-align: center;
-
-        &.left {
-            background-color: v.$V1;
-        }
-
-        &.right {
-            background-color: v.$blue;
-        }
     }
 }
+
+button {
+    display: inline-block;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 16px 24px;
+    border-radius: 8px;
+
+    &.primary {
+        color: white;
+        background-color: v.$V1;
+    }
+
+    &.secondary {
+        color: white;
+        background-color: v.$N100;
+
+        &.white {
+            background-color: v.$N20;
+            color: v.$N100;
+        }
+
+    }
+
+    &.carrusel-control {
+        padding: 16px;
+        border-radius: 50%;
+        background-color: v.$N65;
+    }
+
+    width: 100%;
+
+    @media (min-width: v.$lg ) {
+        width: auto;
+
+    }
+
+    // props
+    &.with_svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+    }
+
+}
+
+hr {
+    border-color: transparent;
+}
+
+

@@ -62,15 +62,12 @@ function setOrderAlf(e) {
 //  Carrusel Slider with controls
 (() => {
     const all_carrusel_slider = document.getElementsByClassName("carrusel-slider")
-
     for (const carrusel_slider of all_carrusel_slider) {
 
         //  Select chidrem items and width
         const slider = carrusel_slider.getElementsByClassName("slider")[0]
-        const widthSlider = slider.children[0].offsetWidth
 
         let current = 0
-        let cols = slider.offsetWidth / widthSlider
 
 
         /* ReRenders */
@@ -79,7 +76,7 @@ function setOrderAlf(e) {
         const renderCurretn = () => {
             const cont_container = carrusel_slider.getElementsByClassName("render-cont")[0]
             if (cont_container) {
-                cont_container.textContent = current +1
+                cont_container.textContent = current + 1
             }
         }
 
@@ -96,23 +93,30 @@ function setOrderAlf(e) {
 
         // arrow_controls
         function arrowControler(bol) {
-            if (bol == true) {
-                current++
-                if (current >= slider.children.length / cols) {
-                    slider.scrollLeft = 0
-                    current = 0
+            const widthSlider = slider.children[0].offsetWidth
+            const cols = slider.offsetWidth / widthSlider
+
+            console.log(widthSlider);
+            setTimeout(() => {
+                
+                if (bol == true) {
+                    current++
+                    if (current >= slider.children.length / cols) {
+                        slider.scrollLeft = 0
+                        current = 0
+                    } else {
+                        slider.scrollLeft += widthSlider * cols
+                    }
                 } else {
-                    slider.scrollLeft += widthSlider * cols
+                    if (current < 1) {
+                        slider.scrollLeft = slider.children.length * widthSlider * cols
+                        current = slider.children.length - 1
+                    } else {
+                        slider.scrollLeft -= widthSlider * cols
+                        current = current - 1
+                    }
                 }
-            } else {
-                if (current < 1) {
-                    slider.scrollLeft = slider.children.length * widthSlider * cols
-                    current = slider.children.length - 1
-                } else {
-                    slider.scrollLeft -= widthSlider * cols
-                    current = current - 1
-                }
-            }
+            }, 500);
             setDoct()
             renderCurretn()
 
@@ -131,36 +135,33 @@ function setOrderAlf(e) {
         // Dot Control
         const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
         function indexControler(e, i) {
+            const widthSlider = slider.children[0].offsetWidth
+            const cols = slider.offsetWidth / widthSlider
+
+            console.log(widthSlider);
+
             slider.scrollLeft = widthSlider * i * cols
-            console.log(i * cols);
+          
             current = i
             setDoct()
         }
 
+        let widthSlider = slider.children[0].offsetWidth
 
-        items_number = slider.children.length / cols
+        let cols = slider.offsetWidth / widthSlider
 
-
+        let items_number = slider.children.length / cols
         for (let index = 0; index < items_number; index++) {
             // const element = slider.children[index];
             const dot_control = document.createElement("div")
             dot_control.onclick = (e) => indexControler(e, index)
             dot_control_cont.appendChild(dot_control)
+            console.log(dot_control_cont, dot_control);
         }
-
         dot_control_cont.children[0].classList.add("active")
-
-
         renderCurretn()
-
-
     }
-
-
-
-
 })();
-
 
 // Carrusel img-control
 (() => {

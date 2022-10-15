@@ -12,6 +12,7 @@ translator.register(Categoria, nameTranslation)
 translator.register(CategoriaSub, nameTranslation)
 
 
+
 # translator.register(Galeria, nameTranslation)
 # translator.register(Ingrediente, nameTranslation)
 # translator.register(Antioxidante, nameTranslation)
