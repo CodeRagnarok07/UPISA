@@ -20,8 +20,8 @@ $md: 768px;
 $lg: 1024px;
 $xl: 1360px;
 
-@mixin responsive {
-    @media (min-width:$md) {
+@mixin responsive($size) {
+    @media (min-width:$size) {
         @content
     }
 }

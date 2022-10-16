@@ -10,8 +10,9 @@ from datetime import datetime
 
 
 def parrilleros(request):
-    pots = TrucosYConsejos.objects.all()
-    paginator = Paginator(pots, 5) # Show 25 contacts per page.
+    posts = TrucosYConsejos.objects.filter(publicar__lte=datetime.now()).order_by('-publicar')
+
+    paginator = Paginator(posts, 5) # Show 25 contacts per page.
     page_number = request.GET.get('page')
 
     page_obj = paginator.get_page(page_number)
@@ -35,8 +36,8 @@ def viewDetail(request, url):
 
 
 def novedades(request):
-    pots = Novedades.objects.filter(publicar__lte=datetime.now()).order_by('-publicar')
-    paginator = Paginator(pots, 8) # Show 25 contacts per page.
+    posts = Novedades.objects.filter(publicar__lte=datetime.now()).order_by('-publicar')
+    paginator = Paginator(posts, 8) # Show 25 contacts per page.
     page_number = request.GET.get('page')
 
     page_obj = paginator.get_page(page_number)
