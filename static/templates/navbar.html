@@ -21,34 +21,16 @@
         }
     </script>
 
-    <a class="btn-nav hidden-movil" href="{% url 'index' %}">
-        inicio
-    </a>
-    <a class="btn-nav hidden-movil" href="{% url 'empresa' %}">
-        LA EMPRESA
-    </a>
-    <a class="btn-nav hidden-movil" href="{% url 'products' %}">
-        PRODUCTOS
-    </a>
-    <a class="btn-nav hidden-movil" href="{% url 'parrilleros' %}">
-        PARRILLEROS
-    </a>
+    <a class="btn-nav hidden-movil" href="{% url 'index' %}">{% trans "inicio" %}</a>
+    <a class="btn-nav hidden-movil" href="{% url 'empresa' %}">{% trans "LA EMPRESA" %}</a>
+    <a class="btn-nav hidden-movil" href="{% url 'products' %}">{% trans "PRODUCTOS" %}</a>
+    <a class="btn-nav hidden-movil" href="{% url 'parrilleros' %}">{% trans "PARRILLEROS" %}</a>
     
-    <a href="{% url 'index' %}">
-        <figure class="center"><img src='{% static "imgs/Logo.png" %}' alt=""></figure>
-    </a>
+    <a href="{% url 'index' %}"><figure class="center"><img src='{% static "imgs/Logo.png" %}' alt=""></figure></a>
 
-    <a class="btn-nav hidden-movil" href="{% url 'novedades' %}">
-        NOVEDADES
-    </a>
-
-    <a class="btn-nav hidden-movil" href="{% url 'recetas' %}">
-        RECETAS
-    </a>
-    <a class="btn-nav hidden-movil" href="{% url 'contacto' %}">
-
-        CONTACTO
-    </a>
+    <a class="btn-nav hidden-movil" href="{% url 'novedades' %}">{% trans "NOVEDADES" %}</a>
+    <a class="btn-nav hidden-movil" href="{% url 'recetas' %}">{% trans "RECETAS" %}</a>
+    <a class="btn-nav hidden-movil" href="{% url 'contacto' %}">{% trans "CONTACTO" %}</a>
 
     {% include './lang.html' %}
 </nav>

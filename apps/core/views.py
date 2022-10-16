@@ -101,6 +101,7 @@ def contactView(request):
         "mail": "fram@upisa.com.py",
     }
 
+
     centros = [
         {
             "map": '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14417.13948351845!2d-57.4847207!3d-25.3952733!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945dade995c057d3%3A0xece213d608577f4a!2sUPISA!5e0!3m2!1ses-419!2sve!4v1665867275893!5m2!1ses-419!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',

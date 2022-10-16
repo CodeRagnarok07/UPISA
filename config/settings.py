@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-from django.utils.translation import gettext_lazy
+from django.utils.translation import gettext_lazy, get_language
+get_language()
+
 
 from pathlib import Path
 import os
@@ -51,7 +53,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 INSTALLED_APPS = [
     # packages
-    'rosetta',
+    # 'rosetta',
     'modeltranslation',
 
     'django.contrib.admin',
@@ -91,6 +93,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.i18n',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -145,6 +148,11 @@ LANGUAGES = [
     ('zh-hans', gettext_lazy('Chino')),
 ]
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
+
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'
 
 TIME_ZONE = 'UTC'
@@ -172,3 +180,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
