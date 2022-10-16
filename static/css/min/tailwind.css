@@ -666,6 +666,11 @@ video {
   margin-bottom: 2rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mt-7 {
   margin-top: 1.75rem;
 }
@@ -1351,6 +1356,10 @@ br.md {
 
   .md\:mt-12 {
     margin-top: 3rem;
+  }
+
+  .md\:mt-28 {
+    margin-top: 7rem;
   }
 
   .md\:flex {

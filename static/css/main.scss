@@ -16,7 +16,9 @@
     font-family: 'kalamaya';
     src: url('./kamalaya/kalamaya-Regular.otf') format("truetype");
     src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
-};
+}
+
+;
 
 
 
@@ -25,6 +27,7 @@
 html {
     box-sizing: border-box;
     transition: all .5s ease;
+
     &::before,
     &::after {
         box-sizing: inherit;
@@ -220,8 +223,10 @@ nav {
 
 
     }
+
     .hidden-movil {
         display: none;
+
         @media (min-width: v.$lg ) {
             display: inherit;
         }
@@ -303,7 +308,8 @@ footer {
             width: 100%;
             text-align: center;
             padding: 36px;
-            p{
+
+            p {
                 font-size: 20px;
                 line-height: 24px;
             }
@@ -456,6 +462,13 @@ footer {
     }
 }
 
+.posts-grid {
+    // display: grid;
+    // grid-column: 1;
+    // margin-top: ;
+    @apply grid grid-cols-1 mt-6 gap-6 md:grid-cols-6
+}
+
 
 // ********** contact ********* //
 
@@ -487,4 +500,3 @@ footer {
         }
     }
 }
-

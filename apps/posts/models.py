@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 class Tag(models.Model):
@@ -14,6 +15,9 @@ class TrucosYConsejos(models.Model):
     miniatura = models.ImageField()
     contenido = models.TextField()
     tag = models.ManyToManyField(Tag)
+
+    publicar = models.DateField('fecha de publicacion',default=date.today, blank=True)
+
     def __str__(self):
         return self.titulo
 
@@ -22,7 +26,8 @@ class Novedades(models.Model):
     url = models.CharField(max_length=500)
     miniatura = models.ImageField()
     contenido = models.TextField()
-    tag = models.ManyToManyField(Tag)
+    publicar = models.DateField('fecha de publicacion',default=date.today, blank=True)
+
     def __str__(self):
         return self.titulo
 

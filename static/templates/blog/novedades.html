@@ -6,9 +6,9 @@
 
 {% block header %}
 <div class=" header-title relative">
-    <h1 class="">Recetas</h1>
+    <h1 class="">Novedades</h1>
     <div class="text-cont  absolute inset-x-0">
-        Prepara los platos más deliciosos y sabrosos con nuestra <br> variedad de productos y disfruta en cada bocado.
+        Prepara los platos más deliciosos y sabrosos con nuestra variedad de productos y disfruta en cada bocado. 
     </div>
 </div>
 {% endblock header %}
@@ -20,9 +20,7 @@
 
 <div class="container pb-72 pt-16">
 
-    <div id="novedades" class="grid grid-cols-1 mt-6 gap-6
-    md:grid-cols-6
-    ">
+    <div class="posts-grid">
         {% for i in page_obj %}
             {% include './novedades_card.html' %}
 

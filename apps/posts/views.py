@@ -6,6 +6,8 @@ from django.shortcuts import get_object_or_404
 
 import random 
 
+from datetime import datetime    
+
 
 def parrilleros(request):
     pots = TrucosYConsejos.objects.all()
@@ -33,7 +35,7 @@ def viewDetail(request, url):
 
 
 def novedades(request):
-    pots = Novedades.objects.all()
+    pots = Novedades.objects.filter(publicar__lte=datetime.now()).order_by('-publicar')
     paginator = Paginator(pots, 8) # Show 25 contacts per page.
     page_number = request.GET.get('page')
 

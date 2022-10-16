@@ -53,7 +53,7 @@ class TrucosYConsejosAdmin(SummernoteModelAdmin):
     fieldsets = (
         (None, {
             'classes': ('extrapretty',), 
-            'fields': (('titulo_es', 'url'),'miniatura', 'tag')
+            'fields': (('titulo_es', 'url'),'miniatura', 'tag','publicar')
         }),
         ("traducciones de titulo", {
             'classes': ('extrapretty', 'collapse'), 
@@ -83,7 +83,8 @@ class NovedadesAdmin(SummernoteModelAdmin):
     fieldsets = (
         (None, {
             'classes': ('extrapretty',), 
-            'fields': (('titulo_es', 'url'), 'miniatura')
+            'fields': (('titulo_es', 'url'), 'miniatura','publicar')
+
         }),
         ("traducciones de titulo", {
             'classes': ('extrapretty', 'collapse'), 

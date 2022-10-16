@@ -8,7 +8,7 @@
 {% block header %}
 <div class="header-title pb-9 md:pb-16">
     <div class="container ">
-        <h1>• Contacto •</h1>
+        <h1>Contacto</h1>
         <p>
             Para más información y/o dudas dejanos tus datos y nos comunicaremos
             contigo en la brevedad posible.
@@ -28,13 +28,13 @@
 
         {% include './form.html' %}
 
-        {% include './card_map.html' %}
+        {% with i=central %}
+            {% include './card_map.html' %}
 
-
-
+        {% endwith %}
     </div>
 
-    <div class="subtitle">
+    <div class="title mt-16 mb-6 md:mt-28 md:mb-16">
 
         <h2>CENTROS DE DISTRIBUCIÓN</h2>
         <p>Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología.
@@ -44,15 +44,13 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        {% include './card_map.html' %}
+        {% for i in centros %}
 
         {% include './card_map.html' %}
 
-        {% include './card_map.html' %}
+        {% endfor %}
 
-        {% include './card_map.html' %}
 
-        {% include './card_map.html' %}
 
 
 
