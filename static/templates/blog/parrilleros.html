@@ -7,10 +7,10 @@
 {% block header %}
 <div class="header-title pb-16">
     <div class="container ">
-        <h1>Parrilleros</h1>
+        <h1>{% trans "Parrilleros" %}</h1>
         <p class="mx-auto">
-            ¡Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor
-            asado!
+            {% trans "¡Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!" %}
+        
         </p>
     </div>
 </div>
@@ -27,9 +27,9 @@
 
 <div class="container pb-72 mt-20 ">
     <div class="title">
-        <h2>TRUCOS Y CONSEJOS</h2>
+        <h2>{% trans "TRUCOS Y CONSEJOS" %}</h2>
         <p class="">
-            Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología.
+            {% trans "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología." %}
         </p>
     </div>
 
@@ -48,7 +48,8 @@
 
 
     <div class="mt-40">
-        {% include '../core/puntos.html' %}
+        {% include '../components/puntos.html' %}
+
     </div>
 
 </div>

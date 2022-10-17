@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-17 02:26+0000\n"
+"POT-Creation-Date: 2022-10-17 02:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: config/settings.py:145
 msgid "Español"
@@ -1403,66 +1405,66 @@ msgstr ""
 
 #: static/templates/blog/parrilleros.html:10
 msgid "Parrilleros"
-msgstr "烤架"
+msgstr "грильеры"
 
 #: static/templates/blog/parrilleros.html:12
 msgid ""
 "¡Te compartimos los mejores secretos que todo parrillero debe saber para "
 "sorprender a todos con el mejor asado!"
-msgstr "我们分享每个烧烤师都应该知道的最好的秘密，用最好的烧烤让每个人都大吃一惊！"
+msgstr "Делимся лучшими секретами, которые должен знать каждый гриль, чтобы удивить всех лучшим шашлыком!"
 
 #: static/templates/blog/parrilleros.html:30
 msgid "TRUCOS Y CONSEJOS"
-msgstr "技巧和窍门"
+msgstr "ТРЮКИ И СОВЕТЫ"
 
 #: static/templates/blog/parrilleros.html:32
 msgid ""
 "Tenemos un compromiso real con la seguridad alimentaria a través de la "
 "calidad, la excelencia y tecnología."
-msgstr "我们通过质量、卓越和技术对食品安全做出真正的承诺。"
+msgstr "Мы действительно привержены безопасности пищевых продуктов благодаря качеству, совершенству и технологиям."
 
 #: static/templates/components/puntos.html:10
 msgid "PUNTOS DE VENTA"
-msgstr "销售点"
+msgstr "ПУНКТЫ ПРОДАЖИ"
 
 #: static/templates/components/puntos.html:11
 msgid "Estamos en las mayores cadenas de supermercados de todo el país."
-msgstr "我们在全国最大的连锁超市。"
+msgstr "Мы представлены в крупнейших сетях супермаркетов по всей стране."
 
 #: static/templates/core/contact/index.html:10
 msgid "Contacto"
-msgstr "接触"
+msgstr "Контакт"
 
 #: static/templates/core/contact/index.html:11
 msgid ""
 "Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo "
 "en la brevedad posible."
-msgstr "如需更多信息和/或疑问，请留下您的信息，我们将尽快与您联系。"
+msgstr "Для получения дополнительной информации и / или сомнений, оставьте нам свою информацию, и мы свяжемся с вами как можно скорее."
 
 #: static/templates/navbar.html:24
 msgid "inicio"
-msgstr "开始"
+msgstr ""
 
 #: static/templates/navbar.html:25
 msgid "LA EMPRESA"
-msgstr "公司"
+msgstr "КОМПАНИЯ"
 
 #: static/templates/navbar.html:26
 msgid "PRODUCTOS"
-msgstr "产品"
+msgstr "ТОВАРЫ"
 
 #: static/templates/navbar.html:27
 msgid "PARRILLEROS"
-msgstr "烤架"
+msgstr "ГРИЛЛЕРЫ"
 
 #: static/templates/navbar.html:29
 msgid "NOVEDADES"
-msgstr "消息"
+msgstr "НОВОСТИ"
 
 #: static/templates/navbar.html:30
 msgid "RECETAS"
-msgstr "处方"
+msgstr "ПРЕДПИСАНИЯ"
 
 #: static/templates/navbar.html:31
 msgid "CONTACTO"
-msgstr "接触"
+msgstr "Контакт"
