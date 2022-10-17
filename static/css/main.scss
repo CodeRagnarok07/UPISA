@@ -77,11 +77,11 @@ html {
         padding-bottom: 8rem;
         margin-top: 100px;
 
-        @media (min-width:780px) {}
+   
 
         h1 {
             font-family: 'kalamaya';
-            font-style: italic;
+            // font-style: italic;
             font-weight: 400;
             font-size: 96px;
             line-height: 100%;
@@ -93,19 +93,27 @@ html {
             }
 
         }
-
-        &.text-cont {
-
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 30px;
-            text-align: center;
-
-
+        p{
+            width: 80%;
+            margin: 0px auto;
+            line-height: 24.2px;
+            @media (min-width:1000px) {
+                width: 40%;
+        
+            }
         }
+
+        // &.text-cont {
+
+        //     font-family: 'Inter';
+        //     font-style: normal;
+        //     font-weight: 500;
+        //     font-size: 20px;
+        //     line-height: 30px;
+        //     text-align: center;
+
+          
+        // }
     }
 
     .carrusel-slider {

@@ -991,15 +991,21 @@ p.code {
   }
 }
 
-.title-cont {
+.title-cont, .title {
   text-align: center;
   margin-bottom: 48px;
 }
-.title-cont p {
+.title-cont .title, .title .title {
+  @apply text-center;
+}
+.title-cont .title > p, .title .title > p {
+  @apply text-xl;
+}
+.title-cont p, .title p {
   margin: 0px auto;
 }
 @media (min-width: 1024px) {
-  .title-cont p {
+  .title-cont p, .title p {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
@@ -1061,7 +1067,6 @@ html::after {
 }
 .header .header-title h1 {
   font-family: "kalamaya";
-  font-style: italic;
   font-weight: 400;
   font-size: 96px;
   line-height: 100%;
@@ -1070,13 +1075,15 @@ html::after {
 .header .header-title h1::before, .header .header-title h1::after {
   content: " • ";
 }
-.header .header-title.text-cont {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
+.header .header-title p {
+  width: 80%;
+  margin: 0px auto;
+  line-height: 24.2px;
+}
+@media (min-width: 1000px) {
+  .header .header-title p {
+    width: 40%;
+  }
 }
 .header .carrusel-slider .dot-control div {
   background-color: #EF974A;

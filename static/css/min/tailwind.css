@@ -690,16 +690,16 @@ video {
   margin-top: 6rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-16 {
   margin-top: 4rem;
 }
 
 .mt-20 {
   margin-top: 5rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .mt-40 {
@@ -1255,15 +1255,6 @@ video {
   }
 }
 
-.title {
-  text-align: center;
-}
-
-.title > p {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 br.rp {
   display: flex;
 }
@@ -1409,12 +1400,12 @@ br.md {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:grid-cols-4 {

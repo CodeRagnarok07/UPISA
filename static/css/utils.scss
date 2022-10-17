@@ -119,7 +119,14 @@ p {
     }
 }
 
-.title-cont {
+.title-cont, .title {
+    .title{
+        @apply text-center;
+    };
+    .title > p{
+        @apply text-xl
+    }
+    
 
     text-align: center;
     margin-bottom: 48px;
@@ -128,12 +135,8 @@ p {
         margin: 0px auto;
 
         @media (min-width: v.$lg) {
-            font-size: 1.25rem
-                /* 20px */
-            ;
-            line-height: 1.75rem
-                /* 28px */
-            ;
+            font-size: 1.25rem  /* 20px */;            
+            line-height: 1.75rem /* 28px */;
         }
     }
 }
