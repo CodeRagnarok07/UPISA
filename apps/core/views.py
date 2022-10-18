@@ -83,23 +83,6 @@ def about(request):
 
 
 def contactView(request):
-    print(settings.DEBUG)
-    if request.method == "GET":
-        form = ContactForm()
-    else:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            nombre_y_apellido = form.cleaned_data["nombre_y_apellido"]
-            from_email = form.cleaned_data["email"]
-            telefono_celular = form.cleaned_data["telefono_celular"]
-            message = form.cleaned_data['mensaje']
-
-            try:
-                send_mail(nombre_y_apellido, message, from_email, [settings.DEFAULT_TO_EMAIL])
-            except BadHeaderError:
-                return HttpResponse("Invalid header found.")
-            return redirect("contacto")
-
     central = {
         "map": '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4475.260772589646!2d-56.02537914510181!3d-27.092766044490048!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945789aab5e28375%3A0x6b19309d5d2f5d1e!2sUPISA%20Frigor%C3%ADfico!5e0!3m2!1ses-419!2sve!4v1665867223988!5m2!1ses-419!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         "name": "sucursal fram",
@@ -107,7 +90,6 @@ def contactView(request):
         "tlf": "+595 921 987654",
         "mail": "fram@upisa.com.py",
     }
-
 
     centros = [
         {
@@ -146,6 +128,24 @@ def contactView(request):
         }
     ]
 
+    if request.method == "GET":
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            nombre_y_apellido = form.cleaned_data["nombre_y_apellido"]
+            from_email = form.cleaned_data["email"]
+            telefono_celular = form.cleaned_data["telefono_celular"]
+            message = form.cleaned_data['mensaje']
+
+            try:
+                send_mail(nombre_y_apellido, message, from_email, [settings.DEFAULT_TO_EMAIL])
+            except BadHeaderError:
+                return HttpResponse("Invalid header found.")
+            
+            return redirect("contacto")
+
+ 
     ctx = {
         "form": form,
         "central": central,

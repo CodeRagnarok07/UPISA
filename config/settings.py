@@ -42,7 +42,6 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG') # env('DEBUG')
 
-print(env('ALLOWED_HOSTS'))
 if DEBUG is False:
     ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 else:
@@ -192,7 +191,7 @@ if DEBUG is False:
     EMAIL_BACKEND = env('EMAIL_BACKEND')
     DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
     DEFAULT_TO_EMAIL = env('DEFAULT_TO_EMAIL')
-    
+
     EMAIL_HOST = env('EMAIL_HOST')
     EMAIL_HOST_USER = env('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
@@ -200,7 +199,7 @@ if DEBUG is False:
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
     DEFAULT_FROM_EMAIL = "will@wsvincent.com"
-    DEFAULT_TO_EMAIL = "will@wsvincent.com"
+    DEFAULT_TO_EMAIL = "angelriera1796@gmail.com"
 
     EMAIL_HOST = "smtp.sendgrid.net"  # new
     EMAIL_HOST_USER = "apikey"  # new
