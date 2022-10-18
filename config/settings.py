@@ -40,9 +40,14 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))  # add this
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # env('DEBUG')
+DEBUG = env('DEBUG') # env('DEBUG')
 
-ALLOWED_HOST = ['*']  # [env('ALLOWED_HOSTS')]
+print(env('ALLOWED_HOSTS'))
+if DEBUG is False:
+    ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+else:
+    ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -181,3 +186,25 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# mail sttings
+if DEBUG is False:
+    EMAIL_BACKEND = env('EMAIL_BACKEND')
+    DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+    DEFAULT_TO_EMAIL = env('DEFAULT_TO_EMAIL')
+    
+    EMAIL_HOST = env('EMAIL_HOST')
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
+    DEFAULT_FROM_EMAIL = "will@wsvincent.com"
+    DEFAULT_TO_EMAIL = "will@wsvincent.com"
+
+    EMAIL_HOST = "smtp.sendgrid.net"  # new
+    EMAIL_HOST_USER = "apikey"  # new
+    EMAIL_HOST_PASSWORD = "<sendgrid_password>"  # new
+
+EMAIL_USE_TLS = True  # new
+EMAIL_PORT = 587  # new

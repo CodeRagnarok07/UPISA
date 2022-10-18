@@ -1070,7 +1070,7 @@ html::after {
   font-weight: 400;
   font-size: 96px;
   line-height: 100%;
-  text-transform: none;
+  text-transform: capitalize;
 }
 .header .header-title h1::before, .header .header-title h1::after {
   content: " • ";

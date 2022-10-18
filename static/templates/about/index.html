@@ -1,4 +1,4 @@
-{% extends '../../base.html' %}
+{% extends '../base.html' %}
 {% load i18n %}
 {% load static %}
 
@@ -13,7 +13,7 @@ contamos, porque ¡tenés que probarlo!
 
 {% block header %}
 <div class=" header-title  relative">
-    <h1 class="">La Empresa</h1>
+    <h1 class="">{% trans "La Empresa" %}</h1>
 
 </div>
 {% endblock header %}
@@ -34,23 +34,22 @@ contamos, porque ¡tenés que probarlo!
 
         <div class="title mb-4">
 
-            <h2 class="">un poco de historia</h2>
+            <h2 class="">
+                {% trans "un poco de historia" %}
+            </h2>
         </div>
         <div class="flex-col gap-16">
             <div class="mb-6 flex flex-col lg:flex-row">
                 <div class="w-full">
                     <img src="{% static 'imgs/about/2.png' %}" alt="">
                     <p class="mt-4 mb-6">
-                        Nacimos el 22 de enero del año 2000 en la ciudad de Fram, Itapúa, por productores y cooperativas
-                        agropecuarias, que se unieron con el objetivo de poder desarrollar, comercializar su producción
-                        y reducir los intermediarios, lo que significa mejores precios y garantía de calidad para el
-                        consumidor final.
+                        {% trans "Nacimos el 22 de enero del año 2000 en la ciudad de Fram, Itapúa, por productores y cooperativas agropecuarias, que se unieron con el objetivo de poder desarrollar, comercializar su producción y reducir los intermediarios, lo que significa mejores precios y garantía de calidad para el consumidor final." %}
                     </p>
                 </div>
                 <div class="w-full flex-center text-center">
 
                     <h2 class="kalamaya w-[80%] md:text-[80px] md:leading-[80px]">
-                        • Garantía de calidad para el consumidor •
+                        • {% trans "Garantía de calidad para el consumidor" %} •
                     </h2>
                 </div>
             </div>
@@ -194,7 +193,7 @@ contamos, porque ¡tenés que probarlo!
 
     </div>
 
-    {% include '../certificaciones.html' %}
+    {% include '../components/certificaciones.html' %}
 
 
     <div class="carrusel img-control mt-16">

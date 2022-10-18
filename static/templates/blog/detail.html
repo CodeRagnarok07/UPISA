@@ -7,10 +7,10 @@
 {% block header %}
 <div class="header-title pb-16">
     <div class="container ">
-        <h1 class="pb-16">Consejo Parrillero</h1>
-
+        <h1 class="pb-16">{% trans "Consejo Parrillero" %}</h1>
     </div>
 </div>
+
 {% endblock header %}
 
 
@@ -47,9 +47,11 @@
 
 
     <div class="title-cont mt-24 pb-6 ">
-        <h2>MÁS CONSEJOS</h2>
+        <h2>
+            {% trans "MÁS CONSEJOS" %}
+        </h2>
         <p class="mx-auto">
-            Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología.
+            {% trans "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología." %}
         </p>
     </div>
     <div class="grid grid-cols-1 gap-6 

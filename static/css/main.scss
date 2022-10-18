@@ -85,7 +85,8 @@ html {
             font-weight: 400;
             font-size: 96px;
             line-height: 100%;
-            text-transform: none;
+            text-transform: capitalize;
+
 
             &::before,
             &::after {
