@@ -9,6 +9,7 @@ db.sqlite3-journal
 media
 
 env/
+env8/
 0todo/
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
