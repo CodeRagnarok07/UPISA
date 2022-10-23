@@ -183,3 +183,9 @@ bower_components
 psd
 thumb
 sketch
+
+
+#  cpanel
+
+passenger_wsgi.py
+tmp/

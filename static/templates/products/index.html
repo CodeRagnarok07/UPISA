@@ -49,7 +49,7 @@ Elegí lo mejor, elegí sabor.
             <div>
                 FILTRAR
             </div>
-            <form class="tooltip_options" action="." method="get" onchange="this.submit()">
+            <form class="tooltip_options " action="." method="get" onchange="this.submit()">
                 {% for i in current_categoria.sub_categorias.all %}
                 <label class="option file:cursor-pointer " for="sub_{{i.id}}">
                     <span class="mr-5">
