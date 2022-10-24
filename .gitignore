@@ -189,3 +189,4 @@ sketch
 
 passenger_wsgi.py
 tmp/
+static_root/
