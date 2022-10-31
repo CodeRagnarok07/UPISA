@@ -666,6 +666,16 @@ video {
   margin-bottom: 2rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .mt-7 {
   margin-top: 1.75rem;
 }
@@ -794,6 +804,22 @@ video {
   margin-bottom: 2.25rem;
 }
 
+.-mr-16 {
+  margin-right: -4rem;
+}
+
+.mr-16 {
+  margin-right: 4rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
 .block {
   display: block;
 }
@@ -862,6 +888,42 @@ video {
   height: 1rem;
 }
 
+.h-\[70px\] {
+  height: 70px;
+}
+
+.h-\[50px\] {
+  height: 50px;
+}
+
+.h-\[10px\] {
+  height: 10px;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[190px\] {
+  height: 190px;
+}
+
+.h-11 {
+  height: 2.75rem;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[250px\] {
+  height: 250px;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -906,8 +968,31 @@ video {
   width: 1rem;
 }
 
+.w-11 {
+  width: 2.75rem;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.border-separate {
+  border-collapse: separate;
+}
+
+.border-spacing-2 {
+  --tw-border-spacing-x: 0.5rem;
+  --tw-border-spacing-y: 0.5rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+}
+
+.border-spacing-y-2 {
+  --tw-border-spacing-y: 0.5rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
 }
 
 .cursor-pointer {
@@ -936,6 +1021,10 @@ video {
 
 .flex-col-reverse {
   flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .flex-nowrap {
@@ -1007,6 +1096,12 @@ video {
   row-gap: 1.5rem;
 }
 
+.space-y-9 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.25rem * var(--tw-space-y-reverse));
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -1015,12 +1110,32 @@ video {
   overflow: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .rounded-t-xl {
@@ -1033,12 +1148,21 @@ video {
   border-top-right-radius: 1rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
 
 .border-transparent {
   border-color: transparent;
+}
+
+.border-\[\#FAE0C9\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(250 224 201 / var(--tw-border-opacity));
 }
 
 .border-t-\[\#FDF2E8\] {
@@ -1054,6 +1178,11 @@ video {
 .bg-\[\#FAE0C9\] {
   --tw-bg-opacity: 1;
   background-color: rgb(250 224 201 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#EA8215\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 130 21 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -1120,6 +1249,36 @@ video {
   padding-bottom: 6.5px;
 }
 
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .pt-5 {
   padding-top: 1.25rem;
 }
@@ -1164,6 +1323,14 @@ video {
   padding-bottom: 8rem;
 }
 
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1172,12 +1339,21 @@ video {
   text-align: center;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .uppercase {
@@ -1396,6 +1572,10 @@ br.md {
     width: auto;
   }
 
+  .md\:flex-auto {
+    flex: 1 1 auto;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1543,6 +1723,10 @@ br.md {
 
   .lg\:w-4\/5 {
     width: 80%;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 
   .lg\:flex-row {

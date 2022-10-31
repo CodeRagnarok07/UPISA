@@ -566,6 +566,45 @@ select:focus {
   outline: none;
 }
 
+input[type=checkbox] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #F3B177;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+input[type=checkbox]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: white;
+}
+input[type=checkbox]:checked {
+  background-color: #EA8215;
+}
+input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+
+.btn,
 button {
   display: inline-block;
   font-family: "Inter";
@@ -577,28 +616,38 @@ button {
   border-radius: 8px;
   width: 100%;
 }
+.btn.rounded-full,
+button.rounded-full {
+  border-radius: 50%;
+}
+.btn.primary,
 button.primary {
   color: white;
   background-color: #0B9839;
 }
+.btn.secondary,
 button.secondary {
   color: white;
   background-color: #EA8215;
 }
+.btn.secondary.white,
 button.secondary.white {
   background-color: #FAE0C9;
   color: #EA8215;
 }
+.btn.carrusel-control,
 button.carrusel-control {
   padding: 16px;
   border-radius: 50%;
   background-color: #EF974A;
 }
 @media (min-width: 1024px) {
-  button {
+  .btn,
+button {
     width: auto;
   }
 }
+.btn.with_svg,
 button.with_svg {
   display: flex;
   justify-content: center;
@@ -608,6 +657,13 @@ button.with_svg {
 
 hr {
   border-color: transparent;
+}
+
+.bg-light2 {
+  background-color: #FDF2E8;
+  border-radius: 8px;
+  color: #141414;
+  padding: 0.75rem;
 }
 
 .pagination {
@@ -796,58 +852,6 @@ hr {
   color: #EA8215;
 }
 
-.progres-form .progres-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.progres-form .progres-items .progres-item {
-  z-index: 50;
-  border: solid 2px #FAE0C9;
-  background-color: #FDF2E8;
-  border-radius: 80px;
-  overflow: hidden;
-  padding: 0px 22px;
-  gap: 8px;
-  height: 8px;
-  color: transparent;
-}
-@media (min-width: 760px) {
-  .progres-form .progres-items .progres-item {
-    padding: 12px 22px;
-    color: #FAE0C9;
-    height: auto;
-    gap: 0px;
-  }
-  .progres-form .progres-items .progres-item.active {
-    color: white;
-  }
-}
-.progres-form .progres-items .progres-item.active {
-  background-color: #0B9839;
-  border: none;
-}
-.progres-form progress {
-  position: absolute;
-  transition: 1s;
-  height: 3px;
-  width: 100%;
-  left: 0;
-  right: 0;
-  bottom: 50%;
-  appearance: none;
-  background: none;
-  -webkit-appearance: none;
-  will-change: contents;
-}
-.progres-form progress::-webkit-progress-bar {
-  background-color: #FAE0C9;
-}
-.progres-form progress::-webkit-progress-value {
-  background-color: #0B9839;
-  transition: all 0.5s ease-in-out;
-}
-
 .controls-side {
   z-index: 0;
   position: absolute;
@@ -991,21 +995,26 @@ p.code {
   }
 }
 
-.title-cont, .title {
+.title-cont,
+.title {
   text-align: center;
   margin-bottom: 48px;
 }
-.title-cont .title, .title .title {
+.title-cont .title,
+.title .title {
   @apply text-center;
 }
-.title-cont .title > p, .title .title > p {
+.title-cont .title > p,
+.title .title > p {
   @apply text-xl;
 }
-.title-cont p, .title p {
+.title-cont p,
+.title p {
   margin: 0px auto;
 }
 @media (min-width: 1024px) {
-  .title-cont p, .title p {
+  .title-cont p,
+.title p {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
@@ -1014,6 +1023,100 @@ p.code {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.progres-form .progres-bar {
+  width: 100%;
+  position: relative;
+}
+.progres-form .progres-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+}
+.progres-form .progres-items .progres-item {
+  z-index: 50;
+  border: solid 2px #FAE0C9;
+  background-color: #FDF2E8;
+  border-radius: 80px;
+  overflow: hidden;
+  padding: 0px 22px;
+  gap: 8px;
+  height: 8px;
+  color: transparent;
+}
+@media (min-width: 768px) {
+  .progres-form .progres-items .progres-item {
+    padding: 12px 22px;
+    color: #FAE0C9;
+    height: auto;
+    gap: 0px;
+  }
+  .progres-form .progres-items .progres-item.active {
+    color: white;
+  }
+}
+.progres-form .progres-items .progres-item.active {
+  background-color: #0B9839;
+  border: none;
+}
+.progres-form progress {
+  position: absolute;
+  transition: 1s;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  appearance: none;
+  background: none;
+  -webkit-appearance: none;
+  will-change: contents;
+}
+.progres-form progress::-webkit-progress-bar {
+  background-color: #FAE0C9;
+}
+.progres-form progress::-webkit-progress-value {
+  background-color: #0B9839;
+  transition: all 0.5s ease-in-out;
+}
+
+.calculadora .steps-form {
+  margin: 4rem 0px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  --grid: 1;
+  --g: 5px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--grid) - 1) * var(--g)) / var(--grid));
+  grid-gap: var(--g);
+}
+.calculadora .steps-form > div {
+  flex-shrink: 0;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.calculadora #table-personas {
+  border-collapse: separate;
+  border-spacing: 0rem 2rem;
+  width: 100%;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  @apply border-separate border-spacing-y-2 w-full mt-9 mb-12;
+}
+.calculadora #step_2 > div label,
+.calculadora #step_3 > div label {
+  padding: 0.82rem 0px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.calculadora #step_4 h2 {
+  margin: 0px;
 }
 
 @font-face {

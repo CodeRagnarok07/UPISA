@@ -98,7 +98,7 @@ function setOrderAlf(e) {
 
             console.log(widthSlider);
             setTimeout(() => {
-                
+
                 if (bol == true) {
                     current++
                     if (current >= slider.children.length / cols) {
@@ -141,7 +141,7 @@ function setOrderAlf(e) {
             console.log(widthSlider);
 
             slider.scrollLeft = widthSlider * i * cols
-          
+
             current = i
             setDoct()
         }
@@ -214,8 +214,7 @@ function setOrderAlf(e) {
 })();
 
 
-/** PROGRES FORM */
-
+/** calculadora */
 
 
 

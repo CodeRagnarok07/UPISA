@@ -173,6 +173,7 @@ h5 {
 }
 
 
+// ******** Input Styles ************ //
 
 input,
 textarea,
@@ -190,6 +191,51 @@ select {
     }
 }
 
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid v.$N45;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+
+    &::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        /* Windows High Contrast Mode */
+        background-color: white;
+
+    }
+
+    &:checked {
+        background-color: v.$N100;
+        &::before {
+            transform: scale(1);
+        }
+
+    }
+}
+
+// ********** buttons ********** //
+.btn,
 button {
     display: inline-block;
 
@@ -200,6 +246,9 @@ button {
     line-height: 100%;
     padding: 16px 24px;
     border-radius: 8px;
+    &.rounded-full{
+        border-radius: 50%;
+    }
 
     &.primary {
         color: white;
@@ -245,3 +294,10 @@ hr {
 }
 
 
+
+.bg-light2{
+    background-color: v.$N10;
+    border-radius: 8px;
+    color: #141414;
+    padding: 0.75rem;
+}
