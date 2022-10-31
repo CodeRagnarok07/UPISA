@@ -474,7 +474,7 @@
 
                                 </div>
 
-                                <div class="grid grid-cols-2 mt-9">
+                                <div class="grid md:grid-cols-2 mt-9">
                                     <div>
                                         <div class="flex items-center text-base font-semibold gap-3 py-4">
                                             <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
@@ -496,7 +496,7 @@
                                         </div>
 
                                         <div class="flex items-center text-base font-medium gap-3 py-4">
-                                            <div class="h-full flex items-center bg-light2 font-semibold">
+                                            <div class="w-max h-full flex items-center bg-light2 font-semibold">
                                                 1,5 Kg
                                             </div>
                                             Pierna con hueso
@@ -532,14 +532,25 @@
                         <!-- controls -->
 
                         <div class="controls flex justify-between py-6 border-t border-t-[#FDF2E8]">
-                            <button type="button" class="secondary white w-auto">ATRÁS</button>
-                            <button type="submit" class="secondary w-auto">SIGUIENTE</button>
+                            <div  class="btn secondary white w-auto invisible">ATRÁS</div>
+                            <div  class="btn secondary w-auto">SIGUIENTE</div>                        
+                            <button type="submit" class="flex items-center gap-3 secondary w-auto hidden">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.05469 7.25781C3.87857 7.08169 3.77962 6.84282 3.77962 6.59375C3.77962 6.34468 3.87857 6.10581 4.05469 5.92969C4.23081 5.75357 4.46968 5.65462 4.71875 5.65462C4.96782 5.65462 5.20669 5.75357 5.38281 5.92969L7.0625 7.60938V1.125C7.0625 0.87636 7.16127 0.637903 7.33709 0.462087C7.5129 0.286272 7.75136 0.1875 8 0.1875C8.24864 0.1875 8.4871 0.286272 8.66291 0.462087C8.83873 0.637903 8.9375 0.87636 8.9375 1.125V7.60938L10.6172 5.92969C10.7933 5.75357 11.0322 5.65462 11.2812 5.65462C11.5303 5.65462 11.7692 5.75357 11.9453 5.92969C12.1214 6.10581 12.2204 6.34468 12.2204 6.59375C12.2204 6.84282 12.1214 7.08169 11.9453 7.25781L8.66406 10.5391C8.48715 10.7137 8.24858 10.8116 8 10.8116C7.75142 10.8116 7.51285 10.7137 7.33594 10.5391L4.05469 7.25781ZM14.875 8.9375C14.6264 8.9375 14.3879 9.03627 14.2121 9.21209C14.0363 9.3879 13.9375 9.62636 13.9375 9.875V13.9375H2.0625V9.875C2.0625 9.62636 1.96373 9.3879 1.78791 9.21209C1.6121 9.03627 1.37364 8.9375 1.125 8.9375C0.87636 8.9375 0.637903 9.03627 0.462087 9.21209C0.286272 9.3879 0.1875 9.62636 0.1875 9.875V14.25C0.189553 14.6638 0.354833 15.06 0.647415 15.3526C0.939996 15.6452 1.33623 15.8104 1.75 15.8125H14.25C14.6638 15.8104 15.06 15.6452 15.3526 15.3526C15.6452 15.06 15.8104 14.6638 15.8125 14.25V9.875C15.8125 9.62636 15.7137 9.3879 15.5379 9.21209C15.3621 9.03627 15.1236 8.9375 14.875 8.9375Z" fill="white"/>
+                                    </svg>
+                                    DESCARGAR IMAGEN                                    
+                            </button>                           
                         </div>
 
                     </form>
+
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+
+<div id="result_calculadora" >
+    {% include "./calculadora_result.html" %}
+</div>

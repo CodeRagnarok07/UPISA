@@ -606,7 +606,8 @@ input[type=checkbox]:checked::before {
 
 .btn,
 button {
-  display: inline-block;
+  cursor: pointer;
+  width: auto;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -614,7 +615,6 @@ button {
   line-height: 100%;
   padding: 16px 24px;
   border-radius: 8px;
-  width: 100%;
 }
 .btn.rounded-full,
 button.rounded-full {

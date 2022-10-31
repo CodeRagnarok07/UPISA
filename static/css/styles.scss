@@ -237,8 +237,8 @@ input[type="checkbox"] {
 // ********** buttons ********** //
 .btn,
 button {
-    display: inline-block;
-
+    cursor: pointer;
+    width: auto;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -272,7 +272,6 @@ button {
         background-color: v.$N65;
     }
 
-    width: 100%;
 
     @media (min-width: v.$lg ) {
         width: auto;
