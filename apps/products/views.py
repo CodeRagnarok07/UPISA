@@ -36,7 +36,7 @@ def category_productos(request, category):
 
     products.order_by("nombre")
 
-    paginator = Paginator(products, 2) # Show 25 contacts per page.
+    paginator = Paginator(products, 1) # Show 25 contacts per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
