@@ -45,10 +45,10 @@ DEBUG = env('DEBUG') # env('DEBUG')
 
 # ALLOWED_HOSTS = ['localhost']
 
-ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
-# if DEBUG is False:
-# else:
-#     ALLOWED_HOSTS = ['*']
+if DEBUG is False:
+    ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
+else:
+    ALLOWED_HOSTS = ['*']
 
 
 # Application definition
