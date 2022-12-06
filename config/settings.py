@@ -9,15 +9,13 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import dj_database_url
+import environ  # add this
+import sys
+import os
+from pathlib import Path
 from django.utils.translation import gettext_lazy, get_language
 get_language()
-
-
-from pathlib import Path
-import os
-import sys
-
-import environ  # add this
 
 
 env = environ.Env(  # add this
@@ -40,7 +38,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))  # add this
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG') # env('DEBUG')
+DEBUG = True  # env('DEBUG') # env('DEBUG')
 
 
 # ALLOWED_HOSTS = ['localhost']
@@ -68,7 +66,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # packages
     'django_summernote',
 
@@ -116,12 +114,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+
+# default  DATABASE_URL='sqlite:///db.sqlite3'
+# Feel free to alter this value to suit your needs.
+# default='postgresql://postgres:postgres@localhost:5432/mysite',
+
+print(ALLOWED_HOSTS)
 
 
 # Password validation
@@ -149,7 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'es'
 
 LANGUAGES = [
-    ('es', gettext_lazy('Español')), 
+    ('es', gettext_lazy('Español')),
     ('en', gettext_lazy('Ingles')),
     ('ru', gettext_lazy('Ruso')),
     ('zh-hans', gettext_lazy('Chino')),

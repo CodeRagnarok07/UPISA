@@ -604,6 +604,11 @@ input[type=checkbox]:checked::before {
   transform: scale(1);
 }
 
+input[type=number] {
+  text-align: center;
+  width: 60px;
+}
+
 .btn,
 button {
   cursor: pointer;
@@ -1117,6 +1122,34 @@ img {
 }
 .calculadora #step_4 h2 {
   margin: 0px;
+}
+.calculadora .content_input_number_calculadora {
+  display: flex;
+  gap: 0.5rem;
+}
+.calculadora .content_input_number_calculadora .number_control {
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: #EA8215;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calculadora .content_input_number_calculadora .input_number_calculadora {
+  width: 20%;
+  border: #FAE0C9 1px solid;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+.calculadora .noarrow {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.calculadora .noarrow::-webkit-outer-spin-button, .calculadora .noarrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @font-face {
