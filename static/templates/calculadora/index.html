@@ -51,7 +51,8 @@
                 <div class="progres-form calculadora">
 
 
-                    <form id="calculadora" action="">
+                    <form method="POST" id="calculadora" action="">
+                        {% csrf_token %}
                         <div class="progres-bar">
                             <div class="progres-items">
                                 <div class="progres-item active over "> PERSONAS</div>
@@ -67,341 +68,45 @@
 
                         <!-- STEPS -->
                         <div class="steps-form ">
-                    
+                                      <!-- step 2 -->
+                                      <div>
+                                        <h1>SELECCIONAR CARNES</h1>
+                                        <div id="step_2" class="grid grid-cols-2 mt-16 overflow-y-scroll  h-[250px]"></div>
+                                    </div>
+        
+                  
+
                             <!-- step 1 -->
                             <div id="step_1">
                                 <div class="flex justify-between">
                                     <h1>CANTIDAD DE PERSONAS</h1>
                                     <h1>PORCIÓN</h1>
                                 </div>
-
-                                    
-                      
-
-              
-                                <table class="mt-9 " id="table_person">
-                                    <tbody>
-                                        <tr id="person_detail">
-                                            <!-- tipo -->
-                                            <th>ADULTOS</th>
-    
-                                            <!-- cantidad -->
-    
-                                            
-                                            <th>
-                                                <label class="content_input_number_calculadora" for="input_number_calculadora">                                                    
-                                                    <div onclick="this.nextElementSibling.stepDown()" class="cursor-pointer number_control">
-                                                        <svg width="16" height="2" viewBox="0 0 16 2" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M14.875 1.9375H1.125C0.87636 1.9375 0.637903 1.83873 0.462087 1.66291C0.286272 1.4871 0.1875 1.24864 0.1875 1C0.1875 0.75136 0.286272 0.512903 0.462087 0.337087C0.637903 0.161272 0.87636 0.0625 1.125 0.0625H14.875C15.1236 0.0625 15.3621 0.161272 15.5379 0.337087C15.7137 0.512903 15.8125 0.75136 15.8125 1C15.8125 1.24864 15.7137 1.4871 15.5379 1.66291C15.3621 1.83873 15.1236 1.9375 14.875 1.9375Z"
-                                                                fill="white" />
-                                                        </svg>
-                                                    </div>                                                
-                                                    <input id="input_number_calculadora" class="noarrow input_number_calculadora h-11 w-11" value="18" type="number"></input>
-                                                    <div onclick="this.previousElementSibling.stepUp()" class="cursor-pointer number_control">
-                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M15.8125 8C15.8125 8.24864 15.7137 8.4871 15.5379 8.66291C15.3621 8.83873 15.1236 8.9375 14.875 8.9375H8.9375V14.875C8.9375 15.1236 8.83873 15.3621 8.66291 15.5379C8.4871 15.7137 8.24864 15.8125 8 15.8125C7.75136 15.8125 7.5129 15.7137 7.33709 15.5379C7.16127 15.3621 7.0625 15.1236 7.0625 14.875V8.9375H1.125C0.87636 8.9375 0.637903 8.83873 0.462087 8.66291C0.286272 8.4871 0.1875 8.24864 0.1875 8C0.1875 7.75136 0.286272 7.5129 0.462087 7.33709C0.637903 7.16127 0.87636 7.0625 1.125 7.0625H7.0625V1.125C7.0625 0.87636 7.16127 0.637903 7.33709 0.462087C7.5129 0.286272 7.75136 0.1875 8 0.1875C8.24864 0.1875 8.4871 0.286272 8.66291 0.462087C8.83873 0.637903 8.9375 0.87636 8.9375 1.125V7.0625H14.875C15.1236 7.0625 15.3621 7.16127 15.5379 7.33709C15.7137 7.5129 15.8125 7.75136 15.8125 8Z"
-                                                                fill="white" />
-                                                        </svg>
-                                                    </div>
-
-                                                </label>
-    
-                                            </th>
-    
-                                            <!-- porcion -->
-                                            <th>
-                                                <div class="h-11 border border-[#FAE0C9] px-4 flex items-center  rounded-lg">
-                                                
-                                                    <input disabled id="g_value" class=" h-full inline items-center w-min" value="258" type="number"></input>g
-                                                    <lable for="g_value" onclick="this.previousElementSibling.disabled = !this.previousElementSibling.disabled" class="h-full px-2 flex-center cursor-pointer">
-                                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M16.1641 3.33592L13.6641 0.83592C13.577 0.74852 13.4735 0.679173 13.3595 0.631855C13.2456 0.584538 13.1234 0.560181 13 0.560181C12.8766 0.560181 12.7544 0.584538 12.6405 0.631855C12.5265 0.679173 12.423 0.74852 12.3359 0.83592L4.83594 8.33592C4.7486 8.42295 4.67945 8.52648 4.63251 8.64048C4.58557 8.75449 4.56177 8.87669 4.5625 8.99998V11.5C4.5625 11.7486 4.66127 11.9871 4.83709 12.1629C5.0129 12.3387 5.25136 12.4375 5.5 12.4375H8C8.24837 12.4356 8.48637 12.3376 8.66406 12.164L16.1641 4.66405C16.2515 4.57695 16.3208 4.47345 16.3681 4.3595C16.4154 4.24555 16.4398 4.12337 16.4398 3.99998C16.4398 3.87659 16.4154 3.75442 16.3681 3.64047C16.3208 3.52651 16.2515 3.42302 16.1641 3.33592ZM13 2.82811L14.1719 3.99998L13.3125 4.85936L12.1406 3.68748L13 2.82811ZM7.60938 10.5625H6.4375V9.39061L10.8125 5.01561L11.9844 6.18748L7.60938 10.5625ZM15.8125 9.04686V15.25C15.8104 15.6638 15.6452 16.06 15.3526 16.3526C15.06 16.6451 14.6638 16.8104 14.25 16.8125H1.75C1.33623 16.8104 0.939996 16.6451 0.647415 16.3526C0.354833 16.06 0.189553 15.6638 0.1875 15.25V2.74998C0.189553 2.33621 0.354833 1.93998 0.647415 1.6474C0.939996 1.35482 1.33623 1.18954 1.75 1.18748H7.95312C8.20177 1.18748 8.44022 1.28625 8.61604 1.46207C8.79185 1.63789 8.89062 1.87634 8.89062 2.12498C8.89062 2.37362 8.79185 2.61208 8.61604 2.7879C8.44022 2.96371 8.20177 3.06248 7.95312 3.06248H2.0625V14.9375H13.9375V9.04686C13.9375 8.79822 14.0363 8.55976 14.2121 8.38394C14.3879 8.20813 14.6264 8.10936 14.875 8.10936C15.1236 8.10936 15.3621 8.20813 15.5379 8.38394C15.7137 8.55976 15.8125 8.79822 15.8125 9.04686Z"
-                                                                fill="#EA8215" />
-                                                        </svg>
-                                                    </lable>
-
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </tbody>
-                                   
-                                </table>
-
-
-
+                                <table class="w-full border-separate border-spacing-y-2  mt-9 mb-9 " id="table_person"></table>
                                 <div class="flex mt-14">
                                     <div class="mr-auto">
-                                        <button id="add_person" class="secondary white ">AGREGAR TIPO DE PERSONA</button>
+                                        <button id="add_person" class="secondary white ">AGREGAR TIPO DE
+                                            PERSONA</button>
                                     </div>
                                 </div>
-
-
                             </div>
 
-                            <div id="step_2">
-                                <h1>SELECCIONAR CARNES</h1>
-                                <div class="grid grid-cols-2 mt-16 overflow-y-scroll  h-[250px]">
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-
-
-                                </div>
-                            </div>
-
-                            <div id="step_3">
+                  
+                            <!-- step 3 -->
+                            <div>
                                 <h1>SELECCIONAR EMBUTIDOS</h1>
-
-                                <div class="grid grid-cols-1  mt-16 overflow-y-scroll  h-[250px] ">
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-                                    <label class="flex">
-                                        <input type="checkbox" name="" id="">
-                                        Pierna con hueso
-                                    </label>
-
-
-                                </div>
+                                <div id="step_3" class="grid grid-cols-1  mt-16 overflow-y-scroll  h-[250px]"></div>
                             </div>
-
+                            
+                            <!-- RESULT -->
                             <div id="step_4">
                                 <!-- tipo -->
                                 <div class="flex flex-wrap gap-4 ">
-
                                     <div class="flex items-center gap-3 ">
-
                                         <h3>5 ADULTOS</h3>
-
-
                                         <div class="h-full flex items-center bg-light2">
                                             Porción: 500 g
                                         </div>
-
                                     </div>
                                     <div class="flex items-center gap-3">
 
@@ -414,16 +119,11 @@
 
                                     </div>
                                     <div class="flex items-center gap-3">
-
                                         <h3>5 ADULTOS</h3>
-
-
                                         <div class="h-full flex items-center bg-light2">
                                             Porción: 500 g
                                         </div>
-
                                     </div>
-
                                 </div>
 
                                 <div class="grid md:grid-cols-2 mt-9">
@@ -458,11 +158,14 @@
 
                                     <div>
                                         <div class="flex items-center text-base font-semibold gap-3 py-4">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16.5 3.80834C16.375 3.70834 16.2666 3.625 16.1583 3.54167L16.1833 3.50834C16.8333 2.85834 16.8333 1.80834 16.1833 1.15834C15.5333 0.508337 14.4833 0.508337 13.825 1.15834L13.2083 1.775C12.6511 1.35298 11.9597 1.14742 11.2624 1.19646C10.5651 1.2455 9.90931 1.54581 9.41663 2.04167L2.04163 9.41667C1.54578 9.90934 1.24546 10.5652 1.19643 11.2624C1.14739 11.9597 1.35295 12.6511 1.77497 13.2083L1.1583 13.825C0.499967 14.4833 0.499967 15.5333 1.1583 16.1833C1.8083 16.8333 2.8583 16.8333 3.5083 16.1833L3.54163 16.1583C3.62497 16.2667 3.7083 16.375 3.8083 16.5C4.94163 17.6167 6.79163 17.6167 7.9333 16.5L16.475 7.93334C17.0209 7.38729 17.3297 6.6481 17.3344 5.87597C17.339 5.10383 17.0392 4.36096 16.5 3.80834ZM2.97497 12.0083C2.86271 11.775 2.82567 11.5126 2.86896 11.2574C2.91225 11.0021 3.03374 10.7666 3.21663 10.5833L10.5833 3.21667C10.7666 3.03377 11.0021 2.91229 11.2573 2.869C11.5126 2.82571 11.775 2.86275 12.0083 2.975L2.97497 12.0083ZM15.3 6.75L6.74997 15.3C6.26663 15.7917 5.47497 15.7917 4.9833 15.3C4.49997 14.8333 4.49997 14 4.9833 13.5333L13.5333 4.98334C14 4.5 14.8333 4.5 15.3 4.98334C15.7916 5.475 15.7916 6.26667 15.3 6.75Z" fill="#4688C3"/>
-                                                </svg>
-                                                
-                                                EMBUTIDOS
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M16.5 3.80834C16.375 3.70834 16.2666 3.625 16.1583 3.54167L16.1833 3.50834C16.8333 2.85834 16.8333 1.80834 16.1833 1.15834C15.5333 0.508337 14.4833 0.508337 13.825 1.15834L13.2083 1.775C12.6511 1.35298 11.9597 1.14742 11.2624 1.19646C10.5651 1.2455 9.90931 1.54581 9.41663 2.04167L2.04163 9.41667C1.54578 9.90934 1.24546 10.5652 1.19643 11.2624C1.14739 11.9597 1.35295 12.6511 1.77497 13.2083L1.1583 13.825C0.499967 14.4833 0.499967 15.5333 1.1583 16.1833C1.8083 16.8333 2.8583 16.8333 3.5083 16.1833L3.54163 16.1583C3.62497 16.2667 3.7083 16.375 3.8083 16.5C4.94163 17.6167 6.79163 17.6167 7.9333 16.5L16.475 7.93334C17.0209 7.38729 17.3297 6.6481 17.3344 5.87597C17.339 5.10383 17.0392 4.36096 16.5 3.80834ZM2.97497 12.0083C2.86271 11.775 2.82567 11.5126 2.86896 11.2574C2.91225 11.0021 3.03374 10.7666 3.21663 10.5833L10.5833 3.21667C10.7666 3.03377 11.0021 2.91229 11.2573 2.869C11.5126 2.82571 11.775 2.86275 12.0083 2.975L2.97497 12.0083ZM15.3 6.75L6.74997 15.3C6.26663 15.7917 5.47497 15.7917 4.9833 15.3C4.49997 14.8333 4.49997 14 4.9833 13.5333L13.5333 4.98334C14 4.5 14.8333 4.5 15.3 4.98334C15.7916 5.475 15.7916 6.26667 15.3 6.75Z"
+                                                    fill="#4688C3" />
+                                            </svg>
+
+                                            EMBUTIDOS
                                         </div>
 
                                         <div class="flex items-center text-base font-medium gap-3 py-4">
@@ -484,16 +187,20 @@
                         <!-- controls -->
 
                         <div class="controls flex justify-between py-6 border-t border-t-[#FDF2E8]">
-                            <div  class="btn secondary white w-auto invisible">ATRÁS</div>
-                            <div  class="btn secondary w-auto">SIGUIENTE</div>                        
+                            <div class="btn secondary white w-auto invisible">ATRÁS</div>
+                            <div class="btn secondary w-auto">SIGUIENTE</div>
                             <button type="submit" class="flex items-center gap-3 secondary w-auto hidden">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.05469 7.25781C3.87857 7.08169 3.77962 6.84282 3.77962 6.59375C3.77962 6.34468 3.87857 6.10581 4.05469 5.92969C4.23081 5.75357 4.46968 5.65462 4.71875 5.65462C4.96782 5.65462 5.20669 5.75357 5.38281 5.92969L7.0625 7.60938V1.125C7.0625 0.87636 7.16127 0.637903 7.33709 0.462087C7.5129 0.286272 7.75136 0.1875 8 0.1875C8.24864 0.1875 8.4871 0.286272 8.66291 0.462087C8.83873 0.637903 8.9375 0.87636 8.9375 1.125V7.60938L10.6172 5.92969C10.7933 5.75357 11.0322 5.65462 11.2812 5.65462C11.5303 5.65462 11.7692 5.75357 11.9453 5.92969C12.1214 6.10581 12.2204 6.34468 12.2204 6.59375C12.2204 6.84282 12.1214 7.08169 11.9453 7.25781L8.66406 10.5391C8.48715 10.7137 8.24858 10.8116 8 10.8116C7.75142 10.8116 7.51285 10.7137 7.33594 10.5391L4.05469 7.25781ZM14.875 8.9375C14.6264 8.9375 14.3879 9.03627 14.2121 9.21209C14.0363 9.3879 13.9375 9.62636 13.9375 9.875V13.9375H2.0625V9.875C2.0625 9.62636 1.96373 9.3879 1.78791 9.21209C1.6121 9.03627 1.37364 8.9375 1.125 8.9375C0.87636 8.9375 0.637903 9.03627 0.462087 9.21209C0.286272 9.3879 0.1875 9.62636 0.1875 9.875V14.25C0.189553 14.6638 0.354833 15.06 0.647415 15.3526C0.939996 15.6452 1.33623 15.8104 1.75 15.8125H14.25C14.6638 15.8104 15.06 15.6452 15.3526 15.3526C15.6452 15.06 15.8104 14.6638 15.8125 14.25V9.875C15.8125 9.62636 15.7137 9.3879 15.5379 9.21209C15.3621 9.03627 15.1236 8.9375 14.875 8.9375Z" fill="white"/>
-                                    </svg>
-                                    DESCARGAR IMAGEN                                    
-                            </button>                           
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.05469 7.25781C3.87857 7.08169 3.77962 6.84282 3.77962 6.59375C3.77962 6.34468 3.87857 6.10581 4.05469 5.92969C4.23081 5.75357 4.46968 5.65462 4.71875 5.65462C4.96782 5.65462 5.20669 5.75357 5.38281 5.92969L7.0625 7.60938V1.125C7.0625 0.87636 7.16127 0.637903 7.33709 0.462087C7.5129 0.286272 7.75136 0.1875 8 0.1875C8.24864 0.1875 8.4871 0.286272 8.66291 0.462087C8.83873 0.637903 8.9375 0.87636 8.9375 1.125V7.60938L10.6172 5.92969C10.7933 5.75357 11.0322 5.65462 11.2812 5.65462C11.5303 5.65462 11.7692 5.75357 11.9453 5.92969C12.1214 6.10581 12.2204 6.34468 12.2204 6.59375C12.2204 6.84282 12.1214 7.08169 11.9453 7.25781L8.66406 10.5391C8.48715 10.7137 8.24858 10.8116 8 10.8116C7.75142 10.8116 7.51285 10.7137 7.33594 10.5391L4.05469 7.25781ZM14.875 8.9375C14.6264 8.9375 14.3879 9.03627 14.2121 9.21209C14.0363 9.3879 13.9375 9.62636 13.9375 9.875V13.9375H2.0625V9.875C2.0625 9.62636 1.96373 9.3879 1.78791 9.21209C1.6121 9.03627 1.37364 8.9375 1.125 8.9375C0.87636 8.9375 0.637903 9.03627 0.462087 9.21209C0.286272 9.3879 0.1875 9.62636 0.1875 9.875V14.25C0.189553 14.6638 0.354833 15.06 0.647415 15.3526C0.939996 15.6452 1.33623 15.8104 1.75 15.8125H14.25C14.6638 15.8104 15.06 15.6452 15.3526 15.3526C15.6452 15.06 15.8104 14.6638 15.8125 14.25V9.875C15.8125 9.62636 15.7137 9.3879 15.5379 9.21209C15.3621 9.03627 15.1236 8.9375 14.875 8.9375Z"
+                                        fill="white" />
+                                </svg>
+                                DESCARGAR IMAGEN
+                            </button>
+                 
                         </div>
-
+        
                     </form>
 
                 </div>
@@ -504,5 +211,5 @@
 </section>
 
 <div id="result_calculadora" class="hidden">
-     include "./result.html" %}
+    include "./result.html" %}
 </div>
