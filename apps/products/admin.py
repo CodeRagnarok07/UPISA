@@ -81,7 +81,7 @@ class ProductAdmin(SummernoteModelAdmin):
     fieldsets = (
         (None, {
             'classes': ('extrapretty',),
-            'fields': (('nombre_es', 'url', 'porcion', ),'destacado',)
+            'fields': (('nombre_es', 'url', 'porcion', 'unidad'),'destacado',)
         }),
         ("traducciones", {
             'classes': ('extrapretty', 'collapse'),

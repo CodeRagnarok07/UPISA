@@ -2,9 +2,7 @@
 
 npm init -y
 
-
 # i18n
-
 https://docs.djangoproject.com/en/4.1/topics/i18n/
 https://docs.djangoproject.com/en/4.1/topics/i18n/translation/
 
@@ -23,3 +21,7 @@ http://localhost:8000/rosetta/files/third-party/
 ## traduccion de modelos
 https://django-modeltranslation.readthedocs.io/en/latest/
 https://alfaexploit.com/es/posts/django_traducciones/
+
+
+
+# Deploy on Cpnel

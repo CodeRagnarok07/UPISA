@@ -29,8 +29,9 @@ class Product(models.Model):
     sub_categoria = models.ForeignKey(
         CategoriaSub, on_delete=models.CASCADE, related_query_name="products",  help_text="Busqueda por Categoria superior")
         
-    porcion = models.IntegerField(
-        help_text="numerico g por unidad", blank=True, null=True)
+    porcion = models.IntegerField(help_text="cantidad", blank=True, null=True)
+    unidad = models.CharField(help_text="unidad de porcion: kg, caja, gr (3 chorizos)", max_length=500,blank=True, null=True)
+    
     descripcion = models.TextField()
 
     def __str__(self) -> str:
