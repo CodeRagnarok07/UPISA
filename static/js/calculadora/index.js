@@ -8,7 +8,7 @@ let state = {
     personas: [
         {
             tipo: "Adultos",
-            cantidad: 1,
+            cantidad: 5,
             porcion: 500,
         },
         {
@@ -16,8 +16,48 @@ let state = {
             cantidad: 1,
             porcion: 250,
         },
+        {
+            tipo: "otro",
+            cantidad: 2,
+            porcion: 250,
+        },
     ],
     carnes: [
+        {
+            name: "Pierna con hueso",
+            used: false,
+            gpk: 100
+        },
+        {
+            name: "Pierna con hueso",
+            used: false,
+            gpk: 100
+        },
+        {
+            name: "Pierna con hueso",
+            used: false,
+            gpk: 100
+        },
+        {
+            name: "Pierna con hueso",
+            used: false,
+            gpk: 100
+        },
+        {
+            name: "Pierna con hueso",
+            used: false,
+            gpk: 100
+        },
+        {
+            name: "Pierna con hueso",
+            used: false,
+            gpk: 100
+        },
+        {
+            name: "Pierna con hueso",
+            used: false,
+            gpk: 100
+        },
         {
             name: "Pierna con hueso",
             used: false,
@@ -30,7 +70,7 @@ let state = {
         },
         {
             name: "Lomito de cerdo",
-            used: true,
+            used: false,
             gpk: 100
         },
         {
@@ -43,7 +83,7 @@ let state = {
     embutidos: [
         {
             name: "Chorizo Parrillero",
-            used: true,
+            used: false,
             gpk: 100
         },
         {
@@ -172,10 +212,7 @@ function addPerson() {
 const add_person = document.getElementById("add_person")
 add_person.onclick = () => addPerson()
 
-
-
 // STEP 2 and 3
-
 const createListCheckbox = (id_element, state_key) => {
     const carnes_list = document.getElementById(id_element)
     const setStateCheck = (name, index) => {
@@ -203,16 +240,26 @@ createListCheckbox("step_3", "embutidos")
 
 
 // Render Result
+const gr_result =()=>{
+    let acumulado = 0
+    for (let index = 0; index < state.personas.length; index++) {
+        const element = state.personas[index];
+        let grms = element.cantidad *  element.porcion
+        acumulado = acumulado + grms
+    }
+    return acumulado
+}
 
+const render_items_result = (id_container, state_item, current_state, acumulado) => {
+    console.log(acumulado);
 
-const render_items_result = (id_container, state_item, current_state) => {
     const container = document.getElementById(id_container)
     const render_list = `
         ${current_state[state_item].filter(v => v.used == true).map((v) => (
         `
             <div class="flex items-center text-base font-medium gap-3 py-4">
-            <div class="w-max h-full flex items-center bg-light2 font-semibold">
-                ${v.gpk} Kg
+            <div class="w-max text-clip h-full flex items-center bg-light2 font-semibold">
+                ${acumulado} Kg
             </div>
             ${v.name}
         </div>
@@ -227,6 +274,7 @@ const render_items_result = (id_container, state_item, current_state) => {
 const step_4 = document.getElementById("step_4_person")
 
 const render_result = (current_state) => {
+    const acumulado = gr_result()
     // render person
     const render_person_list = `
         ${current_state["personas"].map((v) => (
@@ -243,8 +291,8 @@ const render_result = (current_state) => {
     step_4.children[0].innerHTML = render_person_list
 
 
-    render_items_result("container_carnes", "carnes", current_state)
-    render_items_result("container_embutidos", "embutidos", current_state)
+    render_items_result("container_carnes", "carnes", current_state, acumulado)
+    render_items_result("container_embutidos", "embutidos", current_state, acumulado)
 
 
 }
@@ -275,24 +323,62 @@ function getCookie(name) {
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("hello");
     render_result(state)
-    // let csrftoken = getCookie('csrftoken');
-    // const body = JSON.stringify({ data: state })
-    // fetch(window.location.href, {
-    //     method: 'POST', // or 'PUT'
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json',
-    //         'X-CSRFToken': csrftoken
-    //     },
-    //     body: body
-    // })
-    //     .then(res => console.log(res))
-    //     .catch(err => console.log(err))
 
-
-    // Render
 }
 
 calculadora.onsubmit = (e) => handleSubmit(e)
+
+
+
+// CREATE IMAGEN
+
+
+
+const createImg = (node) => {
+
+    console.log("hola mundo");
+    const { body } = document
+
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    canvas.width = canvas.height = 100
+
+    const tempImg = document.createElement('img')
+
+
+    tempImg.addEventListener('load', onTempImageLoad)
+    const xtmlImg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    
+${node}
+
+
+    </div>
+    
+    </foreignObject></svg>`
+
+    tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(xtmlImg)
+    const targetImg = document.createElement('img')
+    body.appendChild(targetImg)
+
+    function onTempImageLoad(e) {
+        ctx.drawImage(e.target, 0, 0)
+        targetImg.src = canvas.toDataURL()
+        console.log(tempImg.src);
+
+    }
+
+}
+
+const createimg = document.getElementById("createimg")
+
+
+const result_calculadora = document.getElementById("result_calculadora")
+
+var yourString = new XMLSerializer().serializeToString(result_calculadora);
+
+
+createimg.onclick = () => createImg(result_calculadora.outerHTML)
