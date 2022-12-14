@@ -640,6 +640,11 @@ button.secondary.white {
   background-color: #FAE0C9;
   color: #EA8215;
 }
+.btn.secondary.white2,
+button.secondary.white2 {
+  background-color: #FDF2E8;
+  color: #EA8215;
+}
 .btn.carrusel-control,
 button.carrusel-control {
   padding: 16px;
@@ -1127,6 +1132,12 @@ img {
   display: flex;
   gap: 0.5rem;
 }
+.calculadora .content_input_number_calculadora .input_number_calculadora {
+  width: 20%;
+  border: #FAE0C9 1px solid;
+  text-align: center;
+  border-radius: 0.5rem;
+}
 .calculadora .content_input_number_calculadora .number_control {
   width: 2.75rem;
   height: 2.75rem;
@@ -1135,12 +1146,12 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
-.calculadora .content_input_number_calculadora .input_number_calculadora {
-  width: 20%;
-  border: #FAE0C9 1px solid;
-  text-align: center;
-  border-radius: 0.5rem;
+.calculadora .content_input_number_calculadora .number_control.disable {
+  background-color: red;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 .calculadora .noarrow {
   -webkit-appearance: textfield;

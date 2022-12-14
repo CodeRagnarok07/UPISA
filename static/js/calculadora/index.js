@@ -8,12 +8,12 @@ let state = {
     personas: [
         {
             tipo: "Adultos",
-            cantidad: 8,
+            cantidad: 1,
             porcion: 500,
         },
         {
             tipo: "Niños",
-            cantidad: 8,
+            cantidad: 1,
             porcion: 250,
         },
     ],
@@ -21,40 +21,40 @@ let state = {
         {
             name: "Pierna con hueso",
             used: false,
-            gpk: 100 
+            gpk: 100
         },
         {
             name: "Paleta de cerdo",
             used: false,
-            gpk: 100 
+            gpk: 100
         },
         {
             name: "Lomito de cerdo",
-            used: false,
-            gpk: 100 
+            used: true,
+            gpk: 100
         },
         {
             name: "Trimming de cerdo",
             used: false,
-            gpk: 100 
+            gpk: 100
         },
 
     ],
     embutidos: [
         {
             name: "Chorizo Parrillero",
-            used: false,
-            gpk: 100 
+            used: true,
+            gpk: 100
         },
         {
             name: "Salchicha Upisa",
             used: false,
-            gpk: 100 
+            gpk: 100
         },
         {
             name: "Chorizo Prontas Toscana con ajo",
             used: false,
-            gpk: 100 
+            gpk: 100
         },
 
     ]
@@ -73,7 +73,7 @@ const reRenderAddPerson = () => {
             <th>${v.tipo}</th>
             <th key=${i}>
                 <label class="content_input_number_calculadora" for="input_number_calculadora">                                                    
-                    <div onclick="this.nextElementSibling.stepDown()" class="cursor-pointer number_control">
+                    <div onclick="this.nextElementSibling.stepDown()" class="number_control  ${v.cantidad == 0 ? "disable": ""}">
                         <svg width="16" height="2" viewBox="0 0 16 2" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -89,7 +89,7 @@ const reRenderAddPerson = () => {
                     class="noarrow input_number_calculadora h-11 w-11"/>
                    
 
-                    <div class="cursor-pointer number_control">
+                    <div class="number_control">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -126,18 +126,25 @@ const reRenderAddPerson = () => {
         const indexkey = element.parentElement.parentElement.getAttribute("key")
         const key = element.getAttribute("name")
         const newvalue = element.value
-
         state.personas[indexkey][key] = newvalue
-        console.log(state.personas[indexkey]);
     }
     table_person.innerHTML = person_detail
     // document.getElementById("w").parentElement.
     const inputs = table_person.getElementsByTagName("input")
-    const arrowControl = (input, bool) => {
+    const arrowControl = (input, bool, e) => {
         if (bool) {
             input.stepUp()
+            if(input.value >= 1){
+
+                
+                e.className = "number_control" 
+            }
         } else {
             input.stepDown()
+            if(input.value == 0){
+                e.className = "number_control disable" 
+            }
+
         }
         setStatePerson(input)
 
@@ -145,8 +152,8 @@ const reRenderAddPerson = () => {
     for (let index = 0; index < inputs.length; index++) {
         const element = inputs[index];
         if (index % 2 == 0) {
-            element.nextElementSibling.onclick = () => arrowControl(element, true)
-            element.previousElementSibling.onclick = () => arrowControl(element, false)
+            element.nextElementSibling.onclick = (e) => arrowControl(element, true, element.previousElementSibling)
+            element.previousElementSibling.onclick = (e) => arrowControl(element, false, element.previousElementSibling)
         }
         element.oninput = () => setStatePerson(element)
     }
@@ -167,13 +174,13 @@ add_person.onclick = () => addPerson()
 
 
 
-// STEP 2
+// STEP 2 and 3
 
 const createListCheckbox = (id_element, state_key) => {
     const carnes_list = document.getElementById(id_element)
     const setStateCheck = (name, index) => {
-        state[name][index].used =  !state[name][index].used
- 
+        state[name][index].used = !state[name][index].used
+
         console.log(state[name][index].used);
         // let object_name = Object.keys(state[name][key])
         // const value = state[name][key][object_name[0]]
@@ -191,10 +198,63 @@ const createListCheckbox = (id_element, state_key) => {
         element.onclick = (e) => setStateCheck(state_key, index)
     }
 }
-
-
 createListCheckbox("step_2", "carnes")
 createListCheckbox("step_3", "embutidos")
+
+
+// Render Result
+
+
+const render_items_result = (id_container, state_item, current_state) => {
+    const container = document.getElementById(id_container)
+    const render_list = `
+        ${current_state[state_item].filter(v => v.used == true).map((v) => (
+        `
+            <div class="flex items-center text-base font-medium gap-3 py-4">
+            <div class="w-max h-full flex items-center bg-light2 font-semibold">
+                ${v.gpk} Kg
+            </div>
+            ${v.name}
+        </div>
+            `
+    )).join("")}`
+
+    container.children[1].innerHTML = render_list
+
+
+}
+
+const step_4 = document.getElementById("step_4_person")
+
+const render_result = (current_state) => {
+    // render person
+    const render_person_list = `
+        ${current_state["personas"].map((v) => (
+            `
+            <div class="flex items-center gap-3 ">
+            <h3>${v.cantidad} ${v.tipo}</h3>
+            <div class="h-full flex items-center bg-light2">
+                Porción: ${v.porcion} g
+            </div>
+            </div>
+            `
+    )).join("")} 
+    `
+    step_4.children[0].innerHTML = render_person_list
+
+
+    render_items_result("container_carnes", "carnes", current_state)
+    render_items_result("container_embutidos", "embutidos", current_state)
+
+
+}
+
+
+
+
+
+
+
 
 function getCookie(name) {
     var cookieValue = null;
@@ -215,22 +275,24 @@ function getCookie(name) {
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    let csrftoken = getCookie('csrftoken');
-    // let csrf = document.querySelector('input[name="csrfmiddlewaretoken"]').value
-    // state.push('csrfmiddlewaretoken', csrf);
-    // console.log(state);
-    const body = JSON.stringify({data:state})
-    fetch(window.location.href, {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken
-        },
-        body: body
-    })
-    .then(res=>console.log(res))
-    .catch(err => console.log(err))
+    console.log("hello");
+    render_result(state)
+    // let csrftoken = getCookie('csrftoken');
+    // const body = JSON.stringify({ data: state })
+    // fetch(window.location.href, {
+    //     method: 'POST', // or 'PUT'
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json',
+    //         'X-CSRFToken': csrftoken
+    //     },
+    //     body: body
+    // })
+    //     .then(res => console.log(res))
+    //     .catch(err => console.log(err))
+
+
+    // Render
 }
 
 calculadora.onsubmit = (e) => handleSubmit(e)

@@ -68,66 +68,37 @@
 
                         <!-- STEPS -->
                         <div class="steps-form ">
-                                
-        
-                  
+
+                            <!-- RESULT -->
+
 
                             <!-- step 1 -->
                             <div id="step_1">
                                 <div class="flex justify-between">
-                                    <h1>CANTIDAD DE PERSONAS</h1>
-                                    <h1>PORCIÓN</h1>
+                                    <h3>CANTIDAD DE PERSONAS</h3>
+                                    <h3>PORCIÓN</h3>
                                 </div>
-                                <table class="w-full border-separate border-spacing-y-2  mt-9 mb-9 " id="table_person"></table>
+                                <table class="w-full border-separate border-spacing-y-2  mt-9 mb-9 " id="table_person">
+                                </table>
                                 <div class="flex mt-14">
                                     <div class="mr-auto">
-                                        <button id="add_person" class="secondary white ">AGREGAR TIPO DE
-                                            PERSONA</button>
+                                        <button id="add_person" class="secondary white2 ">AGREGAR TIPO DE PERSONA</button>
                                     </div>
                                 </div>
                             </div>
 
-                        <!-- step 2 -->
-                        <div>
-                            <h1>SELECCIONAR CARNES</h1>
-                            <div id="step_2" class="grid grid-cols-2 mt-16 overflow-y-scroll  h-[250px]"></div>
-                        </div>
-                            <!-- step 3 -->
-                            <div>
-                                <h1>SELECCIONAR EMBUTIDOS</h1>
-                                <div id="step_3" class="grid grid-cols-1  mt-16 overflow-y-scroll  h-[250px]"></div>
-                            </div>
-                            
-                            <!-- RESULT -->
+
                             <div id="step_4">
                                 <!-- tipo -->
-                                <div class="flex flex-wrap gap-4 ">
-                                    <div class="flex items-center gap-3 ">
-                                        <h3>5 ADULTOS</h3>
-                                        <div class="h-full flex items-center bg-light2">
-                                            Porción: 500 g
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-3">
-
-                                        <h3>5 ADULTOS</h3>
+                                <div id="step_4_person">
+                                    <div class="flex flex-wrap gap-4 ">
 
 
-                                        <div class="h-full flex items-center bg-light2">
-                                            Porción: 500 g
-                                        </div>
-
-                                    </div>
-                                    <div class="flex items-center gap-3">
-                                        <h3>5 ADULTOS</h3>
-                                        <div class="h-full flex items-center bg-light2">
-                                            Porción: 500 g
-                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="grid md:grid-cols-2 mt-9">
-                                    <div>
+                                <div id="step_4_items" class="grid md:grid-cols-2 mt-9">
+                                    <div id="container_carnes">
                                         <div class="flex items-center text-base font-semibold gap-3 py-4">
                                             <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -146,17 +117,12 @@
                                             </svg>
                                             CARNES
                                         </div>
+                                        <div></div>
 
-                                        <div class="flex items-center text-base font-medium gap-3 py-4">
-                                            <div class="w-max h-full flex items-center bg-light2 font-semibold">
-                                                1,5 Kg
-                                            </div>
-                                            Pierna con hueso
-                                        </div>
 
                                     </div>
 
-                                    <div>
+                                    <div id="container_embutidos">
                                         <div class="flex items-center text-base font-semibold gap-3 py-4">
                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -167,13 +133,8 @@
 
                                             EMBUTIDOS
                                         </div>
+                                        <div></div>
 
-                                        <div class="flex items-center text-base font-medium gap-3 py-4">
-                                            <div class="h-full flex items-center bg-light2 font-semibold">
-                                                1,5 Kg
-                                            </div>
-                                            Pierna con hueso
-                                        </div>
 
                                     </div>
                                 </div>
@@ -182,13 +143,26 @@
                             </div>
 
 
+                            <!-- step 2 -->
+                            <div>
+                                <h1>SELECCIONAR CARNES</h1>
+                                <div id="step_2" class="grid grid-cols-2 mt-16 overflow-y-scroll  h-[250px]"></div>
+                            </div>
+                            <!-- step 3 -->
+                            <div>
+                                <h1>SELECCIONAR EMBUTIDOS</h1>
+                                <div id="step_3" class="grid grid-cols-1  mt-16 overflow-y-scroll  h-[250px]"></div>
+                            </div>
+
+
+
                         </div>
 
                         <!-- controls -->
 
                         <div class="controls flex justify-between py-6 border-t border-t-[#FDF2E8]">
                             <div class="btn secondary white w-auto invisible">ATRÁS</div>
-                            <div class="btn secondary w-auto">SIGUIENTE</div>
+                            <button type="submit" class="btn secondary w-auto">SIGUIENTE</button>
                             <button type="submit" class="flex items-center gap-3 secondary w-auto hidden">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -198,9 +172,9 @@
                                 </svg>
                                 DESCARGAR IMAGEN
                             </button>
-                 
+
                         </div>
-        
+
                     </form>
 
                 </div>

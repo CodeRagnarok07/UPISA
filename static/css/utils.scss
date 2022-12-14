@@ -291,8 +291,15 @@ img {
     .content_input_number_calculadora {
         display: flex;
         gap: 0.5rem;
-
-
+        .input_number_calculadora {
+            width: 20%;
+            // height: 100%;
+            border: v.$N20 1px solid;
+            // padding: 0px 1.5rem;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+        
         .number_control {
             width: 2.75rem;
             height: 2.75rem;
@@ -302,25 +309,19 @@ img {
             display: flex;
             align-items: center;
             justify-content: center;
-            // @apply h-11 w-11 bg-[#EA8215] flex-center rounded-full
+            cursor: pointer;
+
+            &.disable {
+                background-color: red;
+                pointer-events: none;
+                cursor: not-allowed;
+
+            }
         }
 
-
-
-
-        .input_number_calculadora {
-            width: 20%;
-            // height: 100%;
-            border: v.$N20 1px solid;
-            // padding: 0px 1.5rem;
-            text-align: center;
-            border-radius: 0.5rem;
-
-            // @apply border border-[#FAE0C9] px-6 flex-center rounded-lg w-1/2
-
-        }
     }
-    .noarrow{
+
+    .noarrow {
         -webkit-appearance: textfield;
         -moz-appearance: textfield;
         appearance: textfield;
