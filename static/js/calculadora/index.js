@@ -8,19 +8,15 @@ let state = {
     personas: [
         {
             tipo: "Adultos",
-            cantidad: 5,
+            cantidad: 1,
             porcion: 500,
         },
         {
             tipo: "Niños",
             cantidad: 1,
             porcion: 250,
-        },
-        {
-            tipo: "otro",
-            cantidad: 2,
-            porcion: 250,
-        },
+        }
+   
     ],
     carnes: [
         {
@@ -203,7 +199,7 @@ reRenderAddPerson()
 function addPerson() {
     let newperson = {
         tipo: "persona",
-        cantidad: 8,
+        cantidad: 1,
         porcion: 250,
     }
     state.personas.push(newperson)
@@ -218,7 +214,7 @@ const createListCheckbox = (id_element, state_key) => {
     const setStateCheck = (name, index) => {
         state[name][index].used = !state[name][index].used
 
-        console.log(state[name][index].used);
+        // console.log(state[name][index].used);
         // let object_name = Object.keys(state[name][key])
         // const value = state[name][key][object_name[0]]
         // state[name][key][object_name[0]] = !value
@@ -251,7 +247,7 @@ const gr_result =()=>{
 }
 
 const render_items_result = (id_container, state_item, current_state, acumulado) => {
-    console.log(acumulado);
+    // console.log(acumulado);
 
     const container = document.getElementById(id_container)
     const render_list = `
@@ -321,64 +317,70 @@ function getCookie(name) {
 }
 
 
-const handleSubmit = (e) => {
-    e.preventDefault()
-    render_result(state)
 
-}
-
-calculadora.onsubmit = (e) => handleSubmit(e)
 
 
 
 // CREATE IMAGEN
 
 
-
-const createImg = (node) => {
-
+const handleSubmit = (e) => {
+    // e.preventDefault()
     console.log("hola mundo");
-    const { body } = document
-
-    const canvas = document.createElement('canvas')
-    const ctx = canvas.getContext('2d')
-    canvas.width = canvas.height = 100
-
-    const tempImg = document.createElement('img')
-
-
-    tempImg.addEventListener('load', onTempImageLoad)
-    const xtmlImg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-    <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-    
-${node}
-
-
-    </div>
-    
-    </foreignObject></svg>`
-
-    tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(xtmlImg)
-    const targetImg = document.createElement('img')
-    body.appendChild(targetImg)
-
-    function onTempImageLoad(e) {
-        ctx.drawImage(e.target, 0, 0)
-        targetImg.src = canvas.toDataURL()
-        console.log(tempImg.src);
-
-    }
-
 }
 
-const createimg = document.getElementById("createimg")
+calculadora.onsubmit = (e) => handleSubmit(e)
 
 
-const result_calculadora = document.getElementById("result_calculadora")
 
-var yourString = new XMLSerializer().serializeToString(result_calculadora);
+// HANDLE STEP
+
+let current = 1
+const progres_items = calculadora.querySelector(".progres-items")
+const progres_bar = calculadora.querySelector("progress")
+const steps_form = calculadora.querySelector(".steps-form")
+const widthSlider = steps_form.children[0].offsetWidth
+/* pasos */
+const btn_control = calculadora.querySelector(".controls")
+const handleStep = (bool) => {
+
+    if (bool == true) {
+        steps_form.scrollLeft += widthSlider * 1
+        progres_items.children[current].classList.add("active")
+        progres_bar.value += 33
+        current++
+        render_result(state)
+
+    } else if (bool == false && current > 1) {
+        steps_form.scrollLeft -= widthSlider
+        current = current - 1
+        progres_items.children[current].className = "progres-item"
+        progres_bar.value -= 33
+    }
 
 
-createimg.onclick = () => createImg(result_calculadora.outerHTML)
+    if (current > 1) { // muestra o oculta el previus
+        btn_control.children[0].classList.remove("invisible")
+    } else if (current == 1) { // muestra prevuis
+        btn_control.children[0].classList.add("invisible")
+    }
+    if (current == 4) { // ultimo paso
+        btn_control.children[1].classList.add("hidden")
+        btn_control.children[2].classList.remove("hidden")
+    }
+    if (current == 3) { // devolver ultimo paso
+        btn_control.children[1].classList.remove("hidden")
+        btn_control.children[2].classList.add("hidden")
+    }
+}
+btn_control.children[0].onclick = () => handleStep(false)
+btn_control.children[1].onclick = () => handleStep(true)
+
+
+
+// const next = document.getElementById("next_step")
+
+// next.onclick = (e) => render_result(state)
+
+
+console.log(state);
