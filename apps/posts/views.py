@@ -9,18 +9,12 @@ import random
 from datetime import datetime
 
 
-import json
-from django.shortcuts import redirect
-
-from django.contrib.staticfiles.storage import staticfiles_storage
 
 import os
 import os.path
 from django.conf import settings
-from django.templatetags.static import static
-from pathlib import Path
 
-from html2image import Html2Image
+
 
 def parrilleros(request):
     posts = TrucosYConsejos.objects.filter(
@@ -31,25 +25,10 @@ def parrilleros(request):
     
     # body_unicode = request.body.decode('utf-8')
     # data_dict = json.loads(request.body)
-
     if request.method == "POST":
-
-
         file1 = open(os.path.join(settings.BASE_DIR, 'static/file.html'), "r")
-        # file = open(os.path.join((Path(__file__).resolve().parent.parent.parent), f"static/file.html"), "r")
-
-
-        hti = Html2Image()
-        # with open(os.path.join(settings.BASE_DIR, 'static/file.html')) as f:
-
-          
-            # hti.screenshot(f.read(), save_as='out.png')
-
-
-
-
-      
-    
+    #     file = open(os.path.join((Path(__file__).resolve().parent.parent.parent), f"static/file.html"), "r")
+    #     with open(os.path.join(settings.BASE_DIR, 'static/file.html')) as f:
 
     page_obj = paginator.get_page(page_number)
     ctx = {
