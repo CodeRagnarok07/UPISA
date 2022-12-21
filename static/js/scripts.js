@@ -171,7 +171,6 @@ function setOrderAlf(e) {
 
     // Crear el controlador por imagenes
     if (carrusel != undefined) {
-        console.log("paso");
         if (carrusel.classList.contains("img-control")) {
             const control = document.createElement("div")
             control.className = "control"
@@ -203,12 +202,15 @@ function setOrderAlf(e) {
             control.appendChild(new_img)
         }
 
+
         for (let i of main.children) {
             i.className = "hidden"
         }
 
         main.children[0].classList.toggle("hidden")
         control.children[0].className = "selected"
+
+
     }
 
 })();
