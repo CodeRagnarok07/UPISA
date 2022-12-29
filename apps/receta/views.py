@@ -9,7 +9,7 @@ from django.shortcuts import get_object_or_404
 def viewList(request):
     recetas = Receta.objects.all()
 
-    paginator = Paginator(recetas, 12) # Show 25 contacts per page.
+    paginator = Paginator(recetas, 16) # Show 25 contacts per page.
     page_number = request.GET.get('page')
 
     page_obj = paginator.get_page(page_number)
