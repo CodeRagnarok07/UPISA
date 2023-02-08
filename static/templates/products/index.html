@@ -67,7 +67,7 @@ Elegí lo mejor, elegí sabor.
     </div>
 
     <!-- Productos -->
-    <div id="products" class=" grid grid-cols-2 md:grid-cols-4 mt-9 gap-6">
+    <div id="products" class="grid grid-cols-2 md:grid-cols-4 mt-9 gap-6">
         {% for i in page_obj|dictsort:"nombre" %}
         {% include './item_product.html' %}
         {% endfor %}

@@ -17,13 +17,13 @@
             style="--grid:2;--grid-md:4"
             >
                 {% for i in products_populares %}
-                <div class="item-grid px-2 flex "
-                >
+                <div class="item-grid px-2 flex ">
                     <a class="z-50 rounded-xl w-full
                             bg-white text-black 
                             flex flex-col justify-between"
                         href="{% url 'product_detail' i.sub_categoria.categoria.url i.url %}">
 
+                        <div></div>
                         <figure class="mt-5 flex-center w-full" id="min_{{i.id}}">
                             <img class="h-[110px] w-[104px] object-contain" src="{{i.miniatura.url}}" alt="">
                         </figure>
@@ -31,6 +31,8 @@
                             {{i.nombre}}
                         </p>
                     </a>
+
+                    
                 </div>
                 {% endfor %}
 
