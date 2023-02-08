@@ -187,6 +187,6 @@ sketch
 
 #  cpanel
 
-passenger_wsgi.py
+# passenger_wsgi.py
 tmp/
 static_root/
