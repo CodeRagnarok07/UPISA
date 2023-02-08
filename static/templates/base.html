@@ -10,15 +10,16 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="{% static '/css/min/tailwind.css' %}">
     <link rel="stylesheet" href="{% static '/css/min/style.css' %}">
 
     <link rel="icon" href="{% static '/imgs/favicon.ico' %}">
-    
+
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <meta name="description" content="{% block pagedescription %}{% endblock pagedescription %}">
     <title>UPISA {% block title %}{% endblock title %}</title>
+    <script type="module" src="{% static '/js/scripts.js' %}"></script>
 
 </head>
 
@@ -36,7 +37,7 @@
 
         {% block header %}
         {% endblock header %}
-        
+
     </header>
 
     {% block cont %}
@@ -46,7 +47,6 @@
 
 
     {% include './footer.html' %}
-    <script src="{% static '/js/scripts.js' %}"></script>
     <script type="module" src="{% static '/js/calculadora/index.js' %}"></script>
 </body>
 

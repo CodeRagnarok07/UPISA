@@ -378,9 +378,4 @@ btn_control.children[1].onclick = () => handleStep(true)
 
 
 
-// const next = document.getElementById("next_step")
 
-// next.onclick = (e) => render_result(state)
-
-
-console.log(state);
