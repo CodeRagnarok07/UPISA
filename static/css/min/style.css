@@ -676,6 +676,38 @@ hr {
   padding: 0.75rem;
 }
 
+h1.title-box {
+  margin-bottom: 3rem;
+}
+h1.title-box:first-child div {
+  font-weight: 500;
+  font-size: 3rem;
+  color: #141414;
+}
+h1.title-box:last-child div.second {
+  margin-top: -0.25rem;
+  font-family: "kalamaya";
+  font-weight: 500;
+  text-transform: none;
+  font-size: 4rem;
+}
+h1.title-box:last-child div.second.about {
+  font-size: 5rem;
+  color: #EA8215;
+}
+h1.title-box:last-child div.second.text-white {
+  margin-top: -0.125rem;
+  color: #EA8215;
+}
+h1.title-box.calculadora:first-child div {
+  font-size: 5rem;
+}
+h1.title-box.calculadora:last-child div.second {
+  margin-top: 0rem;
+  text-align: center;
+  font-size: 7rem;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -711,14 +743,15 @@ hr {
   position: relative;
 }
 .carrusel-slider .slider {
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   z-index: 10;
-  --grid:1;
-  --grid-md:1;
+  --grid: 1;
+  --grid-md: 1;
 }
 .carrusel-slider .slider.slider-grid {
   /*visible items */
@@ -865,7 +898,6 @@ hr {
 }
 
 .controls-side {
-  z-index: 0;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -878,7 +910,6 @@ hr {
 @media (min-width: 1024px) {
   .controls-side {
     display: flex;
-    z-index: 0;
   }
 }
 .controls-side button {
@@ -1195,6 +1226,23 @@ html::after {
   mix-blend-mode: multiply;
   opacity: 0.8;
 }
+.header.calculadora {
+  background-color: white;
+  color: black;
+}
+.header.calculadora::before {
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  border-radius: 100%;
+  border: solid 1.5rem transparent;
+}
+.header.calculadora:first-child {
+  font-size: 5rem;
+}
+.header.calculadora:last-child {
+  margin-right: -5rem;
+  font-size: 5rem;
+}
 .header::before {
   z-index: 0;
   content: "";
@@ -1356,6 +1404,16 @@ footer span.left {
 }
 footer span.right {
   background-color: #4688C3;
+}
+footer .feed {
+  margin: 1rem 0rem;
+  border-radius: 12px;
+}
+footer .feed iframe {
+  overflow-y: scroll;
+  max-height: 500px;
+  width: 80%;
+  border-radius: 12px;
 }
 
 .empresa-ft {

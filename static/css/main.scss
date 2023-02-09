@@ -59,6 +59,29 @@ html {
         }
     }
 
+    &.calculadora {
+        background-color: white;
+        color: black;
+
+        &::before {
+            mix-blend-mode: multiply;
+            opacity: 0.8;
+            border-radius: 100%;
+            border: solid 1.5rem transparent;
+
+
+        }
+
+
+        &:first-child{
+            font-size: 5rem;
+        }
+        &:last-child{
+            margin-right: -5rem;
+            font-size: 5rem;
+        }
+    }
+
     &::before {
         z-index: 0;
         content: "";
@@ -281,6 +304,19 @@ footer {
         &.right {
             background-color: v.$blue;
         }
+    }
+
+    .feed{
+        margin: 1rem 0rem;
+        border-radius: 12px;
+
+        iframe{
+            overflow-y: scroll;
+            max-height: 500px;
+            width: 80%;
+            border-radius: 12px;
+        }
+
     }
 }
 

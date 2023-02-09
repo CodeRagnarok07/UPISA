@@ -227,6 +227,7 @@ input[type="checkbox"] {
 
     &:checked {
         background-color: v.$N100;
+
         &::before {
             transform: scale(1);
         }
@@ -252,7 +253,8 @@ button {
     line-height: 100%;
     padding: 16px 24px;
     border-radius: 8px;
-    &.rounded-full{
+
+    &.rounded-full {
         border-radius: 50%;
     }
 
@@ -269,6 +271,7 @@ button {
             background-color: v.$N20;
             color: v.$N100;
         }
+
         &.white2 {
             background-color: v.$N10;
             color: v.$N100;
@@ -305,9 +308,63 @@ hr {
 
 
 
-.bg-light2{
+.bg-light2 {
     background-color: v.$N10;
     border-radius: 8px;
     color: #141414;
     padding: 0.75rem;
+}
+
+
+h1.title-box {
+    margin-bottom: 3rem;
+
+    &:first-child div {
+        font-weight: 500;
+        font-size: 3rem;
+        color: #141414;
+    }
+
+
+    &:last-child div.second {
+        margin-top: -0.25rem;
+        // margin-left: 2rem;
+        font-family: "kalamaya";
+        // font-style: italic;
+        font-weight: 500;
+        text-transform: none;
+        // color: #FFFFFF;
+        font-size: 4rem;
+
+        &.about {
+
+            font-size: 5rem;
+            color: v.$N100;
+
+        }
+
+        &.text-white {
+            margin-top: -0.125rem;
+            color: v.$N100;
+        }
+
+        // text-white text-[70px] -mt-40 -mr-20
+    }
+
+    &.calculadora {
+        &:first-child div {
+            font-size: 5rem;
+        }
+
+        &:last-child div.second {
+            margin-top: 0rem;
+
+            text-align: center;
+            font-size: 7rem;
+
+        }
+
+
+
+    }
 }
