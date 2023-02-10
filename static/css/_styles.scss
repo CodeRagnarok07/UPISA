@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Bebas+Neue&family=Inter:wght@500;600;700&display=swap');
+
+@font-face {
+    font-family: 'kalamaya';
+    src: url('./kamalaya/kalamaya-Regular.otf') format("truetype");
+    src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
+}
+
+;
+
+
+
 body {
     font-family: 'Inter';
     font-size: 16px;
@@ -173,138 +185,7 @@ h5 {
 }
 
 
-// ******** Input Styles ************ //
 
-input,
-textarea,
-select {
-    background-color: transparent;
-    outline: none;
-    border-radius: 8px;
-
-    &::selection,
-    &:active,
-    &:focus {
-        background-color: transparent;
-        outline: none;
-
-    }
-}
-
-input[type="checkbox"] {
-    /* Add if not using autoprefixer */
-    -webkit-appearance: none;
-    /* Remove most all native input styles */
-    appearance: none;
-    /* For iOS < 15 */
-    background-color: var(--form-background);
-    /* Not removed via appearance */
-    margin: 0;
-
-    font: inherit;
-    color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid v.$N45;
-    border-radius: 0.15em;
-    transform: translateY(-0.075em);
-    display: grid;
-    place-content: center;
-
-    &::before {
-        content: "";
-        width: 0.65em;
-        height: 0.65em;
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-        transform: scale(0);
-        transform-origin: bottom left;
-        transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em var(--form-control-color);
-        /* Windows High Contrast Mode */
-        background-color: white;
-
-    }
-
-    &:checked {
-        background-color: v.$N100;
-
-        &::before {
-            transform: scale(1);
-        }
-
-    }
-}
-
-input[type="number"] {
-    text-align: center;
-    width: 60px;
-
-}
-
-// ********** buttons ********** //
-.btn,
-button {
-    cursor: pointer;
-    width: auto;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 100%;
-    padding: 16px 24px;
-    border-radius: 8px;
-
-    &.rounded-full {
-        border-radius: 50%;
-    }
-
-    &.primary {
-        color: white;
-        background-color: v.$V1;
-    }
-
-    &.secondary {
-        color: white;
-        background-color: v.$N100;
-
-        &.white {
-            background-color: v.$N20;
-            color: v.$N100;
-        }
-
-        &.white2 {
-            background-color: v.$N10;
-            color: v.$N100;
-        }
-
-
-    }
-
-    &.carrusel-control {
-        padding: 16px;
-        border-radius: 50%;
-        background-color: v.$N65;
-    }
-
-
-    @media (min-width: v.$lg ) {
-        width: auto;
-
-    }
-
-    // props
-    &.with_svg {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 14px;
-    }
-
-}
-
-hr {
-    border-color: transparent;
-}
 
 
 
@@ -370,7 +251,7 @@ p {
 h1.title-box {
     margin-bottom: 3rem;
 
-    &:first-child div {
+    &:first-child {
         font-weight: 500;
         font-size: 3rem;
         color: #141414;
@@ -386,19 +267,16 @@ h1.title-box {
         text-transform: none;
         // color: #FFFFFF;
         font-size: 4rem;
+        @media (min-width: v.$lg) {
+            margin-top: -2.5rem;
+            /* identical to box height */
+
+        }
 
         &.about {
-
             font-size: 5rem;
             color: v.$N100;
-
         }
-
-        &.text-white {
-            margin-top: -0.125rem;
-            color: white;
-        }
-
         // text-white text-[70px] -mt-40 -mr-20
     }
 
@@ -418,4 +296,14 @@ h1.title-box {
 
 
     }
+}
+
+
+// Color
+
+.text-white {
+    color: white;
+}
+.text-primary {
+    color: v.$N100;
 }

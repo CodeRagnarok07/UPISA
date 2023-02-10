@@ -1,0 +1,11 @@
+// ********** RESETS ********* //
+*,
+html {
+    box-sizing: border-box;
+    transition: all .5s ease;
+
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}

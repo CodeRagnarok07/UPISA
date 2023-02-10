@@ -1,0 +1,31 @@
+
+// ********** contact ********* //
+
+#contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+
+    p {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        border-radius: 8px;
+
+        input,
+        textarea {
+            border: 2px solid v.$N20;
+            padding: 16px 14px;
+            max-height: 160px;
+
+            &:hover,
+            &:focus,
+            &:target,
+            &:active {
+                border-color: v.$N100;
+            }
+
+        }
+    }
+}

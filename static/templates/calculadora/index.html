@@ -5,10 +5,10 @@
     <div class="flex flex-col md:flex-row rounded-xl mt-9">
 
 
-        <div class="relative bg-red-600 w-1/2 object-cover">
+        <div class="relative bg-red-600 md:w-1/2 object-cover">
 
                 <div class="absolute inset-0 flex items-center justify-center w-full">
-                    <h1 class="title-box">
+                    <h1 class="title-box calculadora">
                         <div class=""> Calculadora</div>
                         <div class="second about"> de asados</div>
                     </h1>
@@ -20,7 +20,7 @@
         </div>
 
 
-        <div class="w-1/2">
+        <div class="md:w-1/2">
 
             <div class="bg-white pt-9 px-9 ">
                 <div class="progres-form calculadora">
@@ -68,12 +68,12 @@
                             <!-- step 2 -->
                             <div>
                                 <h1>SELECCIONAR CARNES</h1>
-                                <div id="step_2" class="grid grid-cols-2 mt-16 overflow-y-scroll  h-[250px]"></div>
+                                <div id="step_2" class="grid grid-cols-1 pt-16  h-[250px]"></div>
                             </div>
                             <!-- step 3 -->
                             <div>
                                 <h1>SELECCIONAR EMBUTIDOS</h1>
-                                <div id="step_3" class="grid grid-cols-1  mt-16 overflow-y-scroll  h-[250px]"></div>
+                                <div id="step_3" class="grid grid-cols-2 pt-16  h-[250px]"></div>
                             </div>
 
                             <div id="step_4">
@@ -135,10 +135,9 @@
 
                         <!-- controls -->
 
-                        <div
-                            class="controls flex flex-col gap-8 md:flex-row justify-between py-6 border-t border-t-[#FDF2E8]">
+                        <div class="controls flex flex-row justify-between items-center py-6 border-t border-t-[#FDF2E8]">
 
-                            <div class="btn secondary white w-auto invisible">ATRÁS</div>
+                            <div class="btn secondary white w-auto invisible ">ATRÁS</div>
                             <div id="next_step" class="btn secondary w-auto">SIGUIENTE</div>
 
                             <button type="submit" id="createimg"

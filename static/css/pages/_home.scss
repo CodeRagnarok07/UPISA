@@ -1,0 +1,42 @@
+// ********** HOME ********* //
+
+.empresa-ft {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    >div {
+
+        gap: 1.75rem;
+        padding: 2rem 1.75rem;
+        @extend .card, .flex-center;
+        justify-content: start;
+
+        p {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    @media (min-width: v.$lg) {
+        flex-direction: row;
+
+        >div {
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            padding: 36px;
+
+            p {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+    }
+}
