@@ -1,3 +1,120 @@
+.calculadora {
+
+    .steps-form {
+        margin: 4rem 0px;
+
+        overflow: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+
+        --grid: 1;
+        --g: 5px;
+
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% - (var(--grid) - 1)*var(--g))/var(--grid));
+        grid-gap: var(--g);
+
+        >div {
+            flex-shrink: 0;
+            width: 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        // flex flex-nowrap overflow-hidden scroll-smooth my-16
+    }
+
+    #table-personas {
+        border-collapse: separate;
+        border-spacing: 0rem 2rem;
+        width: 100%;
+        margin-top: 2.25rem;
+        margin-bottom: 1rem;
+        @apply border-separate border-spacing-y-2 w-full mt-9 mb-12
+    }
+
+    #step_2,
+    #step_3 {
+        >div {
+            label {
+                padding: 0.82rem 0px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+            }
+
+        }
+    }
+
+    #step_4 {
+        h2 {
+            margin: 0px;
+        }
+    }
+
+    .content_input_number_calculadora {
+        display: flex;
+        gap: 0.5rem;
+        .input_number_calculadora {
+            width: 20%;
+            // height: 100%;
+            border: v.$N20 1px solid;
+            // padding: 0px 1.5rem;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+        
+        .number_control {
+            width: 2.75rem;
+            height: 2.75rem;
+            background-color: v.$N100;
+            // padding: auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &.disable {
+                background-color: red;
+                pointer-events: none;
+                cursor: not-allowed;
+
+            }
+        }
+
+    }
+
+    .noarrow {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+
+}
+
+// <div onclick=addNumPerson() class="h-11 w-11 bg-[#EA8215] flex-center rounded-full">
+//
+// </div>
+// <div class="h-11 w-11 bg-[#EA8215] flex-center rounded-full">
+// <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+//     xmlns="http://www.w3.org/2000/svg">
+//     <path
+//         d="M15.8125 8C15.8125 8.24864 15.7137 8.4871 15.5379 8.66291C15.3621 8.83873 15.1236 8.9375 14.875 8.9375H8.9375V14.875C8.9375 15.1236 8.83873 15.3621 8.66291 15.5379C8.4871 15.7137 8.24864 15.8125 8 15.8125C7.75136 15.8125 7.5129 15.7137 7.33709 15.5379C7.16127 15.3621 7.0625 15.1236 7.0625 14.875V8.9375H1.125C0.87636 8.9375 0.637903 8.83873 0.462087 8.66291C0.286272 8.4871 0.1875 8.24864 0.1875 8C0.1875 7.75136 0.286272 7.5129 0.462087 7.33709C0.637903 7.16127 0.87636 7.0625 1.125 7.0625H7.0625V1.125C7.0625 0.87636 7.16127 0.637903 7.33709 0.462087C7.5129 0.286272 7.75136 0.1875 8 0.1875C8.24864 0.1875 8.4871 0.286272 8.66291 0.462087C8.83873 0.637903 8.9375 0.87636 8.9375 1.125V7.0625H14.875C15.1236 7.0625 15.3621 7.16127 15.5379 7.33709C15.7137 7.5129 15.8125 7.75136 15.8125 8Z"
+//         fill="white" />
+// </svg>
+// </div>
+
+
 // .resultc {
 //     position: relative;
 //     background-repeat: repeat;

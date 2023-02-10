@@ -1,0 +1,61 @@
+
+.carrusel {
+    display: flex;
+    flex-direction: column;
+
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background-color: white;
+        overflow: hidden;
+
+        img {
+            // margin-top: auto;
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 16px;
+
+        }
+
+
+    }
+
+    .control-contain {
+
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+
+        .control {
+            // width: max-content;
+            cursor: pointer;
+            margin: 1rem auto;
+            justify-content: start;
+            gap: 1rem;
+            overflow: auto;
+            display: flex;
+
+            img {
+
+                border-radius: 8px;
+                width: 66px;
+                height: 66px;
+                object-fit: cover;
+                background-color: white;
+
+
+                &.selected,
+                &:hover {
+                    border: 2px solid v.$N100;
+                    box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
+                }
+
+            }
+        }
+    }
+}

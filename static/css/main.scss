@@ -1,25 +1,15 @@
 @use 'vars' as v;
+@import 'utils';
+@import 'components/index';
+@import 'styles';
+
 
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Bebas+Neue&family=Inter:wght@500;600;700&display=swap');
-
-
-
-
-@import 'article';
-@import 'styles';
-@import 'components';
-@import 'utils';
-@import 'calculadora';
-
-
-
 @font-face {
     font-family: 'kalamaya';
     src: url('./kamalaya/kalamaya-Regular.otf') format("truetype");
     src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
-}
-
-;
+};
 
 
 

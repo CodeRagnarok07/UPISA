@@ -1,0 +1,40 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 36px;
+
+    @media (min-width: v.$lg ) {
+        a {
+            padding: 12px 20px;
+        }
+
+        .control {
+            padding: 16px;
+        }
+    }
+
+    a {
+        padding: 12px 16px;
+
+        border-radius: 8px;
+
+        &.current {
+            background-color: v.$N20;
+            color: v.$N100;
+            font-weight: 700;
+        }
+    }
+
+    .control {
+        padding: 12px;
+        @extend .flex-center;
+        border-radius: 50%;
+        margin: 0px 46px;
+
+        &.able {
+            background-color: v.$N100;
+
+        }
+
+    }
+}

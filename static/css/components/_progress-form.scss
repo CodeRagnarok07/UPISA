@@ -1,0 +1,75 @@
+// ********** progres bar ********* //
+
+.progres-form {
+
+    .progres-bar {
+        width: 100%;
+        position: relative;
+    }
+
+    .progres-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3%;
+
+
+        .progres-item {
+            z-index: 50;
+            border: solid 2px v.$N20;
+            background-color: v.$N10;
+            border-radius: 80px;
+            overflow: hidden;
+            padding: 0px 22px;
+            gap: 8px;
+
+            height: 8px;
+            color: transparent;
+
+
+            @media (min-width: v.$md) {
+                padding: 12px 22px;
+                color: v.$N20;
+                height: auto;
+                gap: 0px;
+
+                &.active {
+                    color: white;
+
+                }
+            }
+
+            &.active {
+                background-color: v.$V1;
+                border: none;
+
+
+            }
+        }
+    }
+
+    progress {
+        position: absolute;
+        transition: 1s;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 50%;
+        appearance: none;
+        background: none;
+        -webkit-appearance: none;
+        will-change: contents;
+
+        &::-webkit-progress-bar {
+            background-color: v.$N20;
+        }
+
+        &::-webkit-progress-value {
+            background-color: v.$V1;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+}
+

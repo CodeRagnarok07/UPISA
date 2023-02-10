@@ -315,6 +315,57 @@ hr {
     padding: 0.75rem;
 }
 
+p {
+    &.name {
+        display: none;
+    }
+
+    &.code {
+        display: flex;
+    }
+
+    @media (min-width: v.$md ) {
+        &.name {
+            display: flex;
+        }
+
+        &.code {
+            display: none;
+        }
+
+    }
+}
+
+.title-cont,
+.title {
+    .title {
+        @apply text-center;
+    }
+
+    ;
+
+    .title>p {
+        @apply text-xl
+    }
+
+
+    text-align: center;
+    margin-bottom: 48px;
+
+    p {
+        margin: 0px auto;
+
+        @media (min-width: v.$lg) {
+            font-size: 1.25rem
+                /* 20px */
+            ;
+            line-height: 1.75rem
+                /* 28px */
+            ;
+        }
+    }
+}
+
 
 h1.title-box {
     margin-bottom: 3rem;
@@ -326,7 +377,7 @@ h1.title-box {
     }
 
 
-    &:last-child div.second {
+    div.second {
         margin-top: -0.25rem;
         // margin-left: 2rem;
         font-family: "kalamaya";
@@ -345,7 +396,7 @@ h1.title-box {
 
         &.text-white {
             margin-top: -0.125rem;
-            color: v.$N100;
+            color: white;
         }
 
         // text-white text-[70px] -mt-40 -mr-20
