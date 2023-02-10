@@ -82,8 +82,7 @@ def index(request):
         },
         {
             "map": '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57608.60541601811!2d-54.7288656!3d-25.5204556!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68585dfdc583f%3A0xc1b28138c8acfcc1!2sFrigor%C3%ADfico%20Upisa%20-%20Centro%20De%20Distribuci%C3%B3n!5e0!3m2!1ses-419!2sve!4v1665867659830!5m2!1ses-419!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
-            "name": """Suc. Ciudad             
-            del Este""",
+            "name": "Suc. Ciudad del Este",
             "address": " Fulgencio Yegros y 25 de Diciembre. Ciudad del Este.",
             "tlf": "+59561 550 752",
             "mail": "fram@upisa.com.py",

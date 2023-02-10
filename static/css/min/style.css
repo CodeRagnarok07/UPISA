@@ -226,6 +226,24 @@ p.code {
 
 h1.title-box {
   margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+h1.title-box.slider {
+  margin: 0;
+}
+h1.title-box.slider div {
+  font-size: 2rem;
+}
+@media (min-width: 1024px) {
+  h1.title-box.slider div {
+    font-size: 4rem;
+  }
+  h1.title-box.slider div.second {
+    margin-top: -0.5rem;
+    font-size: 7rem;
+    margin-left: auto;
+  }
 }
 h1.title-box:first-child {
   font-weight: 500;
@@ -1476,14 +1494,14 @@ footer span.right {
   background-color: #4688C3;
 }
 footer .feed {
-  margin: 1rem 0rem;
+  display: hidden;
   border-radius: 12px;
 }
 footer .feed iframe {
   overflow-y: scroll;
-  max-height: 500px;
-  width: 80%;
   border-radius: 12px;
+  max-height: 500px;
+  max-width: 160px;
 }
 
 #products a {

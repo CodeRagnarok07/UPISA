@@ -1,9 +1,11 @@
-# import os
-# import sys
+
+import os
+import sys
+import django.core.handlers.wsgi
+from django.core.wsgi import get_wsgi_application
 
 # from config.wsig import application
 # sys.path.insert(0, os.path.dirname(__file__))
-
 
 # def application(environ, start_response):
 #     start_response('200 OK', [('Content-Type', 'text/plain')])
@@ -12,12 +14,6 @@
 #     response = '\n'.join([message, version])
 #     return [response.encode()]
 
-
-import os
-import sys
-
-import django.core.handlers.wsgi
-from django.core.wsgi import get_wsgi_application
 
 # Set up paths and environment variables
 sys.path.append(os.getcwd())

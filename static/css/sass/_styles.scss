@@ -250,6 +250,29 @@ p {
 
 h1.title-box {
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    &.slider {
+        margin: 0;
+        div {
+            font-size: 2rem;
+        }
+
+        @media (min-width: v.$lg) {
+
+            div {
+                font-size: 4rem;
+
+                &.second {
+                    margin-top: -0.5rem;
+
+                    font-size: 7rem;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
 
     &:first-child {
         font-weight: 500;
@@ -267,6 +290,7 @@ h1.title-box {
         text-transform: none;
         // color: #FFFFFF;
         font-size: 4rem;
+
         @media (min-width: v.$lg) {
             margin-top: -2.5rem;
             /* identical to box height */
@@ -277,6 +301,7 @@ h1.title-box {
             font-size: 5rem;
             color: v.$N100;
         }
+
         // text-white text-[70px] -mt-40 -mr-20
     }
 
@@ -304,6 +329,7 @@ h1.title-box {
 .text-white {
     color: white;
 }
+
 .text-primary {
     color: v.$N100;
 }

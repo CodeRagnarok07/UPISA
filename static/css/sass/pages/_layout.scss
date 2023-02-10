@@ -269,14 +269,14 @@ footer {
     }
 
     .feed{
-        margin: 1rem 0rem;
+        display: hidden;
         border-radius: 12px;
 
         iframe{
             overflow-y: scroll;
-            max-height: 500px;
-            width: 80%;
             border-radius: 12px;
+            max-height: 500px;
+            max-width: 160px;
         }
 
     }
