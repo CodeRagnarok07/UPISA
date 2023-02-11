@@ -17,7 +17,7 @@ const reRenderAddPerson = () => {
             <th>${v.tipo}</th>
             <th key=${i}>
                 <label class="content_input_number_calculadora" for="input_number_calculadora">                                                    
-                    <div onclick="this.nextElementSibling.stepDown()" class="number_control  ${v.cantidad == 0 ? "disable": ""}">
+                    <div onclick="this.nextElementSibling.stepDown()" class="number_control  ${v.cantidad == 0 ? "disable" : ""}">
                         <svg width="16" height="2" viewBox="0 0 16 2" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -78,15 +78,15 @@ const reRenderAddPerson = () => {
     const arrowControl = (input, bool, e) => {
         if (bool) {
             input.stepUp()
-            if(input.value >= 1){
+            if (input.value >= 1) {
 
-                
-                e.className = "number_control" 
+
+                e.className = "number_control"
             }
         } else {
             input.stepDown()
-            if(input.value == 0){
-                e.className = "number_control disable" 
+            if (input.value == 0) {
+                e.className = "number_control disable"
             }
 
         }
@@ -144,11 +144,13 @@ createListCheckbox("step_3", "embutidos")
 
 
 // Render Result
-const gr_result =()=>{
+const gr_result = () => {
     let acumulado = 0
+
     for (let index = 0; index < state.personas.length; index++) {
         const element = state.personas[index];
-        let grms = element.cantidad *  element.porcion
+        let grms = element.cantidad * element.porcion
+        console.log(element.cantidad * element.porcion);
         acumulado = acumulado + grms
     }
     return acumulado
@@ -158,6 +160,8 @@ const render_items_result = (id_container, state_item, current_state, acumulado)
     // console.log(acumulado);
 
     const container = document.getElementById(id_container)
+
+
     const render_list = `
         ${current_state[state_item].filter(v => v.used == true).map((v) => (
         `
@@ -171,8 +175,6 @@ const render_items_result = (id_container, state_item, current_state, acumulado)
     )).join("")}`
 
     container.children[1].innerHTML = render_list
-
-
 }
 
 const step_4 = document.getElementById("step_4_person")
@@ -182,7 +184,7 @@ const render_result = (current_state) => {
     // render person
     const render_person_list = `
         ${current_state["personas"].map((v) => (
-            `
+        `
             <div class="flex items-center gap-3 ">
             <h3>${v.cantidad} ${v.tipo}</h3>
             <div class="h-full flex items-center bg-light2">
@@ -195,8 +197,14 @@ const render_result = (current_state) => {
     step_4.children[0].innerHTML = render_person_list
 
 
-    render_items_result("container_carnes", "carnes", current_state, acumulado)
-    render_items_result("container_embutidos", "embutidos", current_state, acumulado)
+
+    let cortes = current_state["carnes"].filter(v => v.used == true).length + current_state["embutidos"].filter(v => v.used == true).length
+
+
+    let total_corte = (acumulado /cortes ).toFixed(2)
+
+    render_items_result("container_carnes", "carnes", current_state, total_corte)
+    render_items_result("container_embutidos", "embutidos", current_state, total_corte)
 
 
 }
