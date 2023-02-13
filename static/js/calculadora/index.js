@@ -160,14 +160,14 @@ const render_items_result = (id_container, state_item, current_state, acumulado)
     // console.log(acumulado);
 
     const container = document.getElementById(id_container)
-
+    // console.log(acumulado.toString(), `${}` , "hola mundo");
 
     const render_list = `
         ${current_state[state_item].filter(v => v.used == true).map((v) => (
         `
             <div class="flex items-center text-base font-medium gap-3 py-4">
             <div class="w-max text-clip h-full flex items-center bg-light2 font-semibold">
-                ${acumulado} Kg
+                ${acumulado.toString().replace(".", ",")} grs
             </div>
             ${v.name}
         </div>
@@ -188,7 +188,7 @@ const render_result = (current_state) => {
             <div class="flex items-center gap-3 ">
             <h3>${v.cantidad} ${v.tipo}</h3>
             <div class="h-full flex items-center bg-light2">
-                Porción: ${v.porcion} g
+                Porción: ${v.porcion.toString().replace(".", ",")} grs
             </div>
             </div>
             `
