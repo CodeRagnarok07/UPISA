@@ -184,18 +184,6 @@ h5 {
 
 }
 
-
-
-
-
-
-.bg-light2 {
-    background-color: v.$N10;
-    border-radius: 8px;
-    color: #141414;
-    padding: 0.75rem;
-}
-
 p {
     &.name {
         display: none;
@@ -323,13 +311,3 @@ h1.title-box {
     }
 }
 
-
-// Color
-
-.text-white {
-    color: white;
-}
-
-.text-primary {
-    color: v.$N100;
-}

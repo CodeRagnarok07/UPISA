@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <footer>
 
@@ -10,17 +11,15 @@
             </div>
         </a>
         <div class="container relative flex flex-col gap-12 md:flex-row md:justify-between  flex">
-
-
             <div class="">
                 <h5>ENLACES</h5>
-                <ul>
-                    <li><a href="">Empresa</a></li>
-                    <li><a href="">Productos</a></li>
-                    <li><a href="">Certificaciones</a></li>
-                    <li><a href="">Recetas</a></li>
-                    <li><a href="">Parrilleros</a></li>
-                    <li><a href="">Contacto</a></li>
+                <ul class="capitalize">
+                    <li><a href="{% url 'empresa' %}">{% trans "empresa" %}</a></li>
+                    <li><a href="{% url 'products' %}">{% trans "productos" %}</a></li>
+                    <li><a href="{% url 'parrilleros' %}">{% trans "parrilleros" %}</a></li>
+                    <li><a href="{% url 'novedades' %}">{% trans "novedades" %}</a></li>
+                    <li><a href="{% url 'recetas' %}">{% trans "recetas" %}</a></li>
+                    <li><a href="{% url 'contacto' %}">{% trans "contacto" %}</a></li>
                 </ul>
             </div>
 
@@ -137,7 +136,7 @@
 
                 </div>
 
-                <div class="feed md:scale-[.50] md:-ml-20 md:-mt-24 ">
+                <!-- <div class="feed md:scale-[.50] md:-ml-20 md:-mt-24 ">
                     <blockquote class="instagram-media"
                         data-instgrm-permalink="https://www.instagram.com/p/CociB1rprAn/?utm_source=ig_embed&amp;utm_campaign=loading"
                         data-instgrm-version="14"
@@ -233,7 +232,7 @@
                     </blockquote>
                     <script async src="//www.instagram.com/embed.js"></script>
 
-                </div>
+                </div> -->
 
             </div>
 

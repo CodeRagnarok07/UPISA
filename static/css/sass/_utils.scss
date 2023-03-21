@@ -1,3 +1,5 @@
+
+
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -11,7 +13,15 @@
 }
 
 
+hr {
+    border-color: transparent;
+}
 
+//  imagenes responsivas
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 .flex-center {
@@ -98,13 +108,6 @@
     }
 }
 
-
-
-//  imagenes responsivas
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 
 

@@ -1,8 +1,10 @@
 @use 'vars' as v;
 @import 'resets';
+@import 'theme';
 @import 'styles';
 @import 'utils';
 @import 'elements';
+@import 'layout';
 @import 'components';
 @import 'pages';
 
