@@ -26,12 +26,16 @@ urlpatterns = [
 
     path('i18n/', include('django.conf.urls.i18n')),
     path('summernote/', include('django_summernote.urls')),
+
+    path('api/productos/', include('products.urls')),
+    path('api/recetas/', include('receta.urls')),
+    path('api/posts/', include('posts.urls')),
 ]
 urlpatterns += i18n_patterns(
     path('', include('core.urls')),
-    path('productos/', include('products.urls')),
-    path('recetas/', include('receta.urls')),
-    path('posts/', include('posts.urls')),
+    # path('productos/', include('products.urls')),
+    # path('recetas/', include('receta.urls')),
+    # path('posts/', include('posts.urls')),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

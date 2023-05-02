@@ -105,11 +105,9 @@ def index(request):
 
     return render(request, 'home/index.html', ctx)
 
-
 def about(request):
     ctx = {}
     return render(request, 'about/index.html', ctx)
-
 
 def contactView(request):
     central = {

@@ -178,9 +178,9 @@ USE_TZ = True
 # ]
 
 STATICFILES_DIRS = [
-    "templates",
+    "templates/static",
 ]
-STATIC_URL = '/_next/'
+STATIC_URL = 'static/'
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
