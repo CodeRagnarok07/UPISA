@@ -1,0 +1,6 @@
+
+@mixin movil() {
+    @media (max-width:540) {
+        @content
+    }
+}

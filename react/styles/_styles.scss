@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Bebas+Neue&family=Inter:wght@500;600;700&display=swap');
+
+@font-face {
+    font-family: 'kalamaya';
+    src: url('./kamalaya/kalamaya-Regular.otf') format("truetype");
+    src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
+}
+
+;
+
+
+
+p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    @media (min-width: v.$lg ) {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
+}
+
+
+
+
+h1 {
+    font-family: 'Antonio';
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    text-transform: uppercase;
+
+    @media (min-width: v.$lg) {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 83px;
+
+    }
+
+    &.kalamaya {
+        font-family: 'kalamaya';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 100%;
+        color: #FFFFFF;
+
+        @media (min-width: v.$lg) {
+            font-size: 96px;
+        }
+    }
+
+
+
+
+
+}
+
+h2 {
+    font-family: 'Antonio';
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+
+    @media (min-width: v.$lg) {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 62px;
+        /* identical to box height */
+
+    }
+}
+
+h3 {
+    font-family: 'Antonio';
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+
+    @media (min-width: v.$lg) {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 47px;
+    }
+
+}
+
+h4 {
+    font-family: 'Antonio';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-transform: uppercase;
+
+    @media (min-width:v.$lg) {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 41px;
+
+    }
+
+
+}
+
+h5 {
+    font-family: 'Antonio';
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    @media (min-width:v.$lg) {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+
+    }
+
+
+}
+
+p {
+    &.name {
+        display: none;
+    }
+
+    &.code {
+        display: flex;
+    }
+
+    @media (min-width: v.$md ) {
+        &.name {
+            display: flex;
+        }
+
+        &.code {
+            display: none;
+        }
+
+    }
+}
+
+.title-cont,
+.title {
+    .title {
+        @apply text-center;
+    }
+
+    ;
+
+    .title>p {
+        @apply text-xl
+    }
+
+
+    text-align: center;
+    margin-bottom: 48px;
+
+    p {
+        margin: 0px auto;
+
+        @media (min-width: v.$lg) {
+            font-size: 1.25rem
+                /* 20px */
+            ;
+            line-height: 1.75rem
+                /* 28px */
+            ;
+        }
+    }
+}
+
+
+h1.title-box {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    &.slider {
+        margin: 0;
+
+        div {
+            font-size: 2rem;
+        }
+
+        @media (min-width: v.$lg) {
+
+            div {
+                font-size: 4rem;
+
+                &.second {
+                    margin-top: -0.5rem;
+
+                    font-size: 7rem;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+    &:first-child {
+        font-weight: 500;
+        font-size: 3rem;
+        color: #141414;
+    }
+
+
+    div.second {
+        margin-top: -0.25rem;
+        // margin-left: 2rem;
+        font-family: "kalamaya";
+        // font-style: italic;
+        font-weight: 500;
+        text-transform: none;
+        // color: #FFFFFF;
+        font-size: 4rem;
+
+        @media (min-width: v.$lg) {
+            margin-top: -2.5rem;
+            /* identical to box height */
+
+        }
+
+        &.about {
+            font-size: 5rem;
+            color: v.$primary;
+        }
+
+        // text-white text-[70px] -mt-40 -mr-20
+    }
+
+    &.calculadora {
+        &:first-child div {
+            font-size: 5rem;
+        }
+
+        &:last-child div.second {
+            margin-top: 0rem;
+
+            text-align: center;
+            font-size: 7rem;
+
+        }
+
+
+
+    }
+}

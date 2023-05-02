@@ -1,0 +1,16 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 88.2%;
+    position: relative
+  
+    // @include movil() {
+    //     width: 88.2%;
+  
+    // }
+  
+  }
+
+  .hidden{
+    display: none;
+  }
