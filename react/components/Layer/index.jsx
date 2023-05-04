@@ -1,10 +1,12 @@
 import React from 'react'
 import Footer from './Footer'
 import Navbar from './Navbar'
-export default function index({children}) {
+export default function index({children, content}) {
+
+
   return (
     <>
-    <Navbar/>
+    <Navbar content={content}/>
         {children}
     <Footer/>
     </>

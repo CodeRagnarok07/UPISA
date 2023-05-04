@@ -1,6 +1,13 @@
-
-@mixin movil() {
-    @media (max-width:540) {
+@mixin movil($size:540) {
+    @media (max-width:$size) {
         @content
     }
+};
+
+@mixin inset($top:auto, $right:auto, $bottom:auto, $left:auto) {
+
+    top:$top;
+    right:$right;
+    left:$left;
+    bottom:$bottom;
 }

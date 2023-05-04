@@ -1,16 +1,84 @@
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 88.2%;
-    position: relative
-  
-    // @include movil() {
-    //     width: 88.2%;
-  
-    // }
-  
+  margin-left: auto;
+  margin-right: auto;
+  width: 88.2%;
+  position: relative // @include movil() {
+  //     width: 88.2%;
+
+  // }
+
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-movil {
+
+  @include movil (1128px) {
+    display: none;
+
+  }
+}
+
+
+.cont-video {
+  position: relative;
+  z-index: 5;
+  margin-top: -3rem;
+  height: 750px;
+
+  iframe {
+    border-radius: 0.75rem;
+    height: 100%;
+    width: 100%;
   }
 
-  .hidden{
-    display: none;
+  @include movil(640px) {
+    height: 300px;
+    margin-top: 0rem;
+
   }
+
+
+
+
+
+  // -mt-12 lg:-mt-20 h-[180px] sm:h-[300px] md:h-[450px] lg:h-[600px] xl:h-[700px]
+
+}
+
+.bg {
+  position: relative;
+  background-repeat: repeat;
+  height: auto;
+
+  // &.white {
+  //     background-color: white;
+  //     color: black;
+  //     &::before {
+  //         mix-blend-mode: multiply;
+  //         opacity: 0.8;
+  //     }
+  // }
+
+
+  &::before {
+      z-index: 0;
+      content: "";
+      background-image: url("/static/img/header-texture.png");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      // opacity: 100;
+      mix-blend-mode: overlay;
+  }
+
+  &.bg-primary{
+    background-color: v.$primary;
+  }
+
+}

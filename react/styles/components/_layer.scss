@@ -1,0 +1,253 @@
+.navbar {
+    position: relative;
+    background-color: v.$primary;
+
+    padding-top: 5%;
+    padding-bottom: 3.75rem;
+
+    @include movil (1128px) {
+        ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            &:first-child{
+                margin-top: 3rem;
+            }
+
+          
+
+            a.logo {
+                display: flex;
+                order: -1;
+                position: absolute;
+                @include inset(10%, 0, 0, 0);
+                margin-bottom: 2rem;
+            }
+
+            div.btn {
+                display: inherit;
+                position: absolute;
+                @include inset(auto, auto, auto, 0);
+            }
+
+            div.lang {
+                display: inherit;
+                position: absolute;
+                @include inset(auto, 0, auto, auto);
+            }
+        }
+
+    }
+
+
+
+    ul {
+        @extend .container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        .btn {
+            display: none;
+            padding: 16px;
+
+            &:hover {
+                outline: 2px solid v.$primary-light;
+                border-radius: 8px;
+
+            }
+
+        }
+
+        >a,
+        .lang {
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 100%;
+            letter-spacing: -0.02em;
+            padding: 16px;
+            color: v.$white;
+            white-space: nowrap;
+
+
+
+            &:hover {
+                outline: 2px solid v.$primary-light;
+                border-radius: 8px;
+
+            }
+
+           
+
+            &.logo {
+                min-width: 90px;
+                position: relative;
+                height: 50px;
+
+                img {
+
+                    @include inset(0, 0, 0, 0);
+                    position: absolute;
+                    // background: red;
+                    min-width: 90px;
+
+                    height: 50px;
+                }
+
+
+            }
+
+            .lang {
+                .code {
+                    display: none;
+                }
+
+                .name {
+                    display: flex;
+
+                }
+
+                @include movil (1128px) {
+                    .code {
+                        display: flex;
+                    }
+                    .name {
+                        display: none;
+
+                    }
+                }
+
+            }
+
+            // @include movil(1074) {
+            //     display: none;
+
+            //     background-color: red;
+            // }
+
+
+
+        }
+
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 3.50rem;
+        margin-bottom: 3.75rem;
+        color: white;
+
+        text-align: center;
+
+    }
+
+    .space{
+        margin-bottom: 25%;
+        @include movil(1152px){
+            margin-bottom: 20%;
+
+        }
+        // @include movil(964px){
+        //     margin-bottom: 15%;
+
+        // }
+        // @include movil(724px){
+        //     margin-bottom: 10%;
+
+        // }
+        // @include movil(408px){
+        //     margin-bottom: 15%;
+
+        // }
+        // @include movil(322px){
+        //     margin-bottom: 30%;
+
+        // }
+
+        
+
+        
+    }
+
+    .carrusel {
+        position: absolute;
+        @include inset(0, 0, auto, 0);
+        z-index: 1;
+
+       
+
+        .carrusel_description {
+
+            position: absolute;
+            @include inset(40%, 10%, auto, 10%);
+
+            @include movil( 428px){
+                >:first-child {
+
+                }
+    
+                .kalamaya {
+                    font-weight: 600;
+                    line-height: 156px;
+                    font-size: 2rem;
+                }
+    
+            }
+
+
+
+            >:first-child {
+                color: white;
+                margin-bottom: -3rem;
+
+            }
+
+            .kalamaya {
+
+                font-family: 'kalamaya';
+                font-style: italic;
+                font-weight: 500;
+                line-height: 156px;
+                font-size: 2rem;
+
+                /* NARANJA 65 */
+
+                color: v.$primary-light;
+
+
+            }
+
+
+
+        }
+
+        @include movil(630px){
+
+            height: 260px;
+        }
+        img {
+            // display: none;
+            @include inset(0, 0, auto, 0);
+            object-fit: cover;
+
+            width:  100%;
+            height: 100%;
+
+
+         
+        }
+
+
+    }
+}
+
+
