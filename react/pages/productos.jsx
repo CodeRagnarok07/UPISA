@@ -1,5 +1,5 @@
 import React from 'react'
-import Layer from '@/components/Layer'
+import Layer from '../components/layer'
 
 export default function productos() {
   const content = {
@@ -8,11 +8,16 @@ export default function productos() {
     Elegí lo mejor, elegí sabor.`
   }
   return (
-    <Layer content={content}>
+    <>
+   
+      <Layer content={content} >
 
       <div className="container">
         index
       </div>
-    </Layer>
+      
+      </Layer>
+
+    </>
   )
 }

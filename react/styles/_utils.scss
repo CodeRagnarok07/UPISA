@@ -10,7 +10,7 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .hidden-movil {
@@ -77,8 +77,10 @@
       mix-blend-mode: overlay;
   }
 
-  &.bg-primary{
-    background-color: v.$primary;
-  }
+  
 
+}
+
+.bg-primary{
+  background-color: v.$primary;
 }

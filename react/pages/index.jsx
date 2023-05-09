@@ -1,10 +1,15 @@
 import React from 'react'
-import Layer from '@/components/Layer'
 import Video from '@/components/Video'
 
 import Head from 'next/head'
+import Layer from '../components/layer'
 
 export default function index() {
+
+
+
+  console.log(process.env.NEXT_PUBLIC_API_URL);
+
   return (
 
     <>
@@ -15,17 +20,19 @@ export default function index() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layer>
+
+      <Layer >
+
 
         <div className="bg bg-primary">
 
-
-          <Video url={"https://drive.google.com/file/d/1E5qbD3NhY2VYfUpk5ORbGm99cdGOCMWh/preview"} />
+          {/* <Video url={"https://drive.google.com/file/d/1E5qbD3NhY2VYfUpk5ORbGm99cdGOCMWh/preview"} /> */}
 
         </div>
 
-
+   
       </Layer>
+
     </>
   )
 }
