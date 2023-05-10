@@ -60,6 +60,11 @@
             flex-shrink: 0;
             scroll-snap-align: start;
             width: 100%;
+
+            img{
+                background: radial-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0) 0%);
+
+            }
         }
     }
 

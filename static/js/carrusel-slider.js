@@ -105,10 +105,16 @@
             // const element = slider.children[index];
             const dot_control = document.createElement("div")
             dot_control.onclick = (e) => indexControler(e, index)
-            dot_control_cont.appendChild(dot_control)
+
+            if(dot_control_cont !== undefined){   
+                dot_control_cont.appendChild(dot_control)
+            }
             // console.log(dot_control_cont, dot_control);
         }
-        dot_control_cont.children[0].classList.add("active")
+
+        if(dot_control_cont !== undefined){   
+            dot_control_cont.children[0].classList.add("active")
+        }
         renderCurretn()
     }
 })();

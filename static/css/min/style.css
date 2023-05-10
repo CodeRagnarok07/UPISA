@@ -992,6 +992,9 @@ article p {
   scroll-snap-align: start;
   width: 100%;
 }
+.carrusel-slider .slider .item-slider img {
+  background: radial-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0) 0%);
+}
 .carrusel-slider .dot-control {
   display: flex;
   justify-content: center;
@@ -1237,6 +1240,44 @@ article p {
 .calculadora .noarrow::-webkit-outer-spin-button, .calculadora .noarrow::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.certificaciones {
+  --grid-cols: 1;
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+.certificaciones .certificaciones-item {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.certificaciones .certificaciones-item .img-cont {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.certificaciones .certificaciones-item .img-cont img {
+  height: 100%;
+  width: auto;
+}
+.certificaciones .certificaciones-item .text-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 2rem;
+}
+.certificaciones .certificaciones-item .text-cont h3 {
+  text-align: center;
+}
+@media (min-width: 540px) {
+  .certificaciones {
+    --grid-cols: 3;
+  }
 }
 
 #contact_form {
