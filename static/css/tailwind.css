@@ -14,7 +14,7 @@
     @apply text-center;
 };
 .title > p{
-    @apply text-xl
+    @apply text-xs
 }
 
 

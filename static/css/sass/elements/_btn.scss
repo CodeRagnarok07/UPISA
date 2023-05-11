@@ -3,7 +3,7 @@
 .btn,
 button {
     cursor: pointer;
-    width: auto;
+    width: 100%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -56,6 +56,11 @@ button {
         justify-content: center;
         align-items: center;
         gap: 14px;
+    }
+
+    @include responsive(v.$lg){
+        width: auto;
+
     }
 
 }

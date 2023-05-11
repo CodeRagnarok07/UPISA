@@ -2,28 +2,25 @@
 
 <section class="container mt-7">
 
-    <div class="flex flex-col md:flex-row rounded-xl mt-9">
 
 
-        <div class="relative bg-red-600 md:w-1/2 object-cover">
-
-                <div class="absolute inset-0 flex items-center justify-center w-full">
-                    <h1 class="title-box calculadora">
-                        <div class=""> Calculadora</div>
-                        <div class="second about"> de asados</div>
-                    </h1>
-                </div>
+    <div class="calculadora bg-white bg-opacity-80 flex flex-col md:flex-row rounded-xl mt-9">
 
 
-            <img class="object-cover h-full w-full" src="/static/imgs/calculadora/bgcalc.jpg" alt="">
+        <div class="calculadora-title md:w-1/2 text-black text-upercase font-extrabold  flex flex-col justify-center items-center">
+        
+            <div>
+                <h1 class="text-7xl "> Calculadora</h1>
+                <h1 class="text-7xl text-right"> de asados</h1>
+            </div>
+
 
         </div>
 
 
-        <div class="md:w-1/2">
+        <div class="md:w-1/2 pt-9 px-9 calculadora-script">
 
-            <div class="bg-white pt-9 px-9 ">
-                <div class="progres-form calculadora">
+                <div class="progres-form ">
 
 
                     <form method="POST" id="calculadora" action="">
@@ -67,12 +64,12 @@
 
                             <!-- step 2 -->
                             <div>
-                                <h1>SELECCIONAR CARNES</h1>
+                                <h3>SELECCIONAR CARNES</h3>
                                 <div id="step_2" class="grid grid-cols-1 pt-16  h-[250px]"></div>
                             </div>
                             <!-- step 3 -->
                             <div>
-                                <h1>SELECCIONAR EMBUTIDOS</h1>
+                                <h3>SELECCIONAR EMBUTIDOS</h3>
                                 <div id="step_3" class="grid grid-cols-2 pt-16  h-[250px]"></div>
                             </div>
 
@@ -135,7 +132,8 @@
 
                         <!-- controls -->
 
-                        <div class="controls flex flex-row justify-between items-center py-6 border-t border-t-[#FDF2E8]">
+                        <div
+                            class="controls gap-4 flex flex-row justify-between items-center py-6 border-t border-t-[#FDF2E8]">
 
                             <div class="btn secondary white w-auto invisible ">ATRÁS</div>
                             <div id="next_step" class="btn secondary w-auto">SIGUIENTE</div>
@@ -156,7 +154,6 @@
                     </form>
 
                 </div>
-            </div>
 
         </div>
     </div>

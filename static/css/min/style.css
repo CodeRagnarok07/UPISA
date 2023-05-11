@@ -366,6 +366,35 @@ img {
   height: auto;
 }
 
+.bg1 {
+  position: relative;
+  background-repeat: repeat;
+  background-color: #EA8215;
+  color: #ffffff;
+  height: auto;
+}
+.bg1.white {
+  background-color: white;
+  color: black;
+}
+.bg1.white::before {
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
+.bg1::before {
+  z-index: 0;
+  content: "";
+  background-image: url("/static/imgs/header-texture.png");
+  background-repeat: repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 1.2;
+  mix-blend-mode: overlay;
+}
+
 input,
 textarea,
 select {
@@ -430,7 +459,7 @@ input[type=number] {
 .btn,
 button {
   cursor: pointer;
-  width: auto;
+  width: 100%;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -481,6 +510,12 @@ button.with_svg {
   justify-content: center;
   align-items: center;
   gap: 14px;
+}
+@media (min-width: 1024px) {
+  .btn,
+button {
+    width: auto;
+  }
 }
 
 hr {
@@ -1006,10 +1041,10 @@ article p {
   width: 8px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #FAE0C9;
+  background-color: #F3B177;
 }
 .carrusel-slider .dot-control div:hover, .carrusel-slider .dot-control div.active {
-  background-color: #EA8215;
+  background-color: #FAE0C9;
 }
 @media (min-width: 768px) {
   .carrusel-slider .dot-control {
@@ -1134,13 +1169,18 @@ article p {
   gap: 8px;
   height: 8px;
   color: transparent;
+  font-weight: 500;
+  font-size: 12px;
 }
 @media (min-width: 768px) {
   .progres-form .progres-items .progres-item {
     padding: 12px 22px;
+    display: flex;
+    justify-content: center;
     color: #FAE0C9;
     height: auto;
     gap: 0px;
+    font-size: 14px;
   }
   .progres-form .progres-items .progres-item.active {
     color: white;
@@ -1171,8 +1211,44 @@ article p {
   transition: all 0.5s ease-in-out;
 }
 
-.calculadora .steps-form {
+.calculadora .calculadora-title {
+  padding: 1rem;
+}
+.calculadora .calculadora-title > div {
+  height: 350px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.calculadora .calculadora-title > div::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  border-radius: 50%;
+  border: solid green 1px;
+  background-image: url("/static/imgs/header-texture2.png");
+  box-shadow: 0 0 30px 30px white inset;
+  opacity: 0.8;
+}
+.calculadora .calculadora-title > div::before {
+  content: "";
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  mix-blend-mode: overlay;
+}
+.calculadora .calculadora-script .steps-form {
   margin: 4rem 0px;
+  color: black;
   overflow: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -1183,13 +1259,13 @@ article p {
   grid-auto-columns: calc((100% - (var(--grid) - 1) * var(--g)) / var(--grid));
   grid-gap: var(--g);
 }
-.calculadora .steps-form > div {
+.calculadora .calculadora-script .steps-form > div {
   flex-shrink: 0;
   width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-.calculadora #table-personas {
+.calculadora .calculadora-script #table-personas {
   border-collapse: separate;
   border-spacing: 0rem 2rem;
   width: 100%;
@@ -1197,27 +1273,27 @@ article p {
   margin-bottom: 1rem;
   @apply border-separate border-spacing-y-2 w-full mt-9 mb-12;
 }
-.calculadora #step_2 > div label,
-.calculadora #step_3 > div label {
+.calculadora .calculadora-script #step_2 > div label,
+.calculadora .calculadora-script #step_3 > div label {
   padding: 0.82rem 0px;
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.calculadora #step_4 h2 {
+.calculadora .calculadora-script #step_4 h2 {
   margin: 0px;
 }
-.calculadora .content_input_number_calculadora {
+.calculadora .calculadora-script .content_input_number_calculadora {
   display: flex;
   gap: 0.5rem;
 }
-.calculadora .content_input_number_calculadora .input_number_calculadora {
+.calculadora .calculadora-script .content_input_number_calculadora .input_number_calculadora {
   width: 20%;
   border: #FAE0C9 1px solid;
   text-align: center;
   border-radius: 0.5rem;
 }
-.calculadora .content_input_number_calculadora .number_control {
+.calculadora .calculadora-script .content_input_number_calculadora .number_control {
   width: 2.75rem;
   height: 2.75rem;
   background-color: #EA8215;
@@ -1227,17 +1303,17 @@ article p {
   justify-content: center;
   cursor: pointer;
 }
-.calculadora .content_input_number_calculadora .number_control.disable {
+.calculadora .calculadora-script .content_input_number_calculadora .number_control.disable {
   background-color: red;
   pointer-events: none;
   cursor: not-allowed;
 }
-.calculadora .noarrow {
+.calculadora .calculadora-script .noarrow {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
 }
-.calculadora .noarrow::-webkit-outer-spin-button, .calculadora .noarrow::-webkit-inner-spin-button {
+.calculadora .calculadora-script .noarrow::-webkit-outer-spin-button, .calculadora .calculadora-script .noarrow::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1247,6 +1323,7 @@ article p {
   margin-top: 1.25rem;
   display: grid;
   gap: 1rem;
+  color: black;
   grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
 }
 .certificaciones .certificaciones-item {
@@ -1382,7 +1459,6 @@ article p {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 1.2;
   mix-blend-mode: overlay;
 }
 .header .header-title {
@@ -1391,11 +1467,18 @@ article p {
   margin-top: 100px;
 }
 .header .header-title h1 {
-  font-family: "kalamaya";
-  font-weight: 400;
-  font-size: 96px;
-  line-height: 100%;
-  text-transform: capitalize;
+  /* antonio 64 */
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 83px;
+  /* identical to box height */
+  text-align: center;
+  text-transform: uppercase;
+  /* BLANCO */
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
 }
 .header .header-title h1::before, .header .header-title h1::after {
   content: " • ";

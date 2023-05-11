@@ -80,11 +80,11 @@
             width: 8px;
             border-radius: 50%;
             cursor: pointer;
-            background-color: $secondary;
+            background-color: v.$N45;
 
             &:hover,
             &.active {
-                background-color: $primary;
+                background-color: $secondary;
             }
         }
 

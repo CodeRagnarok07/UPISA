@@ -20,19 +20,26 @@
             background-color: v.$N10;
             border-radius: 80px;
             overflow: hidden;
+           
             padding: 0px 22px;
             gap: 8px;
 
             height: 8px;
             color: transparent;
+            font-weight: 500;
+           
+            font-size: 12px;
 
 
             @media (min-width: v.$md) {
-                padding: 12px 22px;
+            padding: 12px 22px;
+
+                display: flex;
+                justify-content: center;
                 color: v.$N20;
                 height: auto;
                 gap: 0px;
-
+                font-size: 14px;
                 &.active {
                     color: white;
 
@@ -72,4 +79,3 @@
     }
 
 }
-

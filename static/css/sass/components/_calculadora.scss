@@ -1,101 +1,147 @@
 .calculadora {
 
-    .steps-form {
-        margin: 4rem 0px;
 
-        overflow: hidden;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
+    .calculadora-title {
+        padding: 1rem;
 
-        --grid: 1;
-        --g: 5px;
-
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: calc((100% - (var(--grid) - 1)*var(--g))/var(--grid));
-        grid-gap: var(--g);
-
-        >div {
-            flex-shrink: 0;
-            width: 100%;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
-        }
-
-        // flex flex-nowrap overflow-hidden scroll-smooth my-16
-    }
-
-    #table-personas {
-        border-collapse: separate;
-        border-spacing: 0rem 2rem;
-        width: 100%;
-        margin-top: 2.25rem;
-        margin-bottom: 1rem;
-        @apply border-separate border-spacing-y-2 w-full mt-9 mb-12
-    }
-
-    #step_2,
-    #step_3 {
-        >div {
-            label {
-                padding: 0.82rem 0px;
-                display: flex;
-                gap: 10px;
-                align-items: center;
-
-            }
-
-        }
-    }
-
-    #step_4 {
-        h2 {
-            margin: 0px;
-        }
-    }
-
-    .content_input_number_calculadora {
-        display: flex;
-        gap: 0.5rem;
-        .input_number_calculadora {
-            width: 20%;
-            // height: 100%;
-            border: v.$N20 1px solid;
-            // padding: 0px 1.5rem;
-            text-align: center;
-            border-radius: 0.5rem;
-        }
         
-        .number_control {
-            width: 2.75rem;
-            height: 2.75rem;
-            background-color: v.$N100;
-            // padding: auto;
-            border-radius: 50%;
+        >div {
+            height: 350px;
+            padding: 2rem;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
+            position: relative;
 
-            &.disable {
-                background-color: red;
-                pointer-events: none;
-                cursor: not-allowed;
+            &::after {
+                content: "";
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                bottom: -10px;
+                left: -10px;
+                border-radius: 50%;
+                border: solid green 1px;
+                background-image: url("/static/imgs/header-texture2.png");
+                box-shadow: 0 0 30px 30px white inset;
+                opacity: 0.8;
+            }
 
+            &::before {
+                content: "";
+                background-size: cover;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                mix-blend-mode: overlay;
             }
         }
 
     }
 
-    .noarrow {
-        -webkit-appearance: textfield;
-        -moz-appearance: textfield;
-        appearance: textfield;
+    .calculadora-script {
 
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+        .steps-form {
+            margin: 4rem 0px;
+            color: black;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+
+            --grid: 1;
+            --g: 5px;
+
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - (var(--grid) - 1)*var(--g))/var(--grid));
+            grid-gap: var(--g);
+
+            >div {
+                flex-shrink: 0;
+                width: 100%;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+            }
+
+            // flex flex-nowrap overflow-hidden scroll-smooth my-16
+        }
+
+        #table-personas {
+            border-collapse: separate;
+            border-spacing: 0rem 2rem;
+            width: 100%;
+            margin-top: 2.25rem;
+            margin-bottom: 1rem;
+            @apply border-separate border-spacing-y-2 w-full mt-9 mb-12
+        }
+
+        #step_2,
+        #step_3 {
+            >div {
+                label {
+                    padding: 0.82rem 0px;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                }
+
+            }
+        }
+
+        #step_4 {
+            h2 {
+                margin: 0px;
+            }
+        }
+
+        .content_input_number_calculadora {
+            display: flex;
+            gap: 0.5rem;
+
+            .input_number_calculadora {
+                width: 20%;
+                // height: 100%;
+                border: v.$N20 1px solid;
+                // padding: 0px 1.5rem;
+                text-align: center;
+                border-radius: 0.5rem;
+            }
+
+            .number_control {
+                width: 2.75rem;
+                height: 2.75rem;
+                background-color: v.$N100;
+                // padding: auto;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                &.disable {
+                    background-color: red;
+                    pointer-events: none;
+                    cursor: not-allowed;
+
+                }
+            }
+
+        }
+
+        .noarrow {
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
         }
     }
 
