@@ -7,7 +7,7 @@
 };
 
 .cont-video{
-    @apply -mt-12 lg:-mt-20 h-[180px] sm:h-[300px] md:h-[450px] lg:h-[600px] xl:h-[700px];
+    @apply pt-12 sm:-mt-20 h-[250px] sm:h-[300px] md:h-[450px] lg:h-[600px] xl:h-[700px];
 };
 
 .title{

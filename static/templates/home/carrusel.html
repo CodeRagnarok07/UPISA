@@ -1,36 +1,13 @@
-<div class="carrusel-slider -mt-[20%]    md:-mt-[12%]">
+<div class="carrusel-slider">
+    
     <div class="slider ">
-        <div class="item-slider relative  ">
+        
+        <picture class="item-slider relative">
+            <source srcset="/static/imgs/lp-carrusel/baner01.png" media="(min-width: 450px)" />
+            <img class="w-full object-cover h-[360px] lg:h[849px] md:h-auto" src="/static/imgs/lp-carrusel/baner01mv.png" alt="">
 
-            <div class="absolute inset-0   ">
-
-                <div class="container flex w-full h-full">
-                    <div class="lg:ml-20 ml-4 flex flex-col justify-center">
-                        <h1 class="title-box slider ">
-                            <div class="text-white">variedad de embutidos</div>
-                            <div class="second text-primary">con sabores únicos</div>
-                        </h1>
-                        <a href="{% url 'recetas' %}" class="btn primary mr-auto ">VER RECETAS</a>
-                    </div>
-                </div>
-            </div>
-            <img class="w-full object-cover h-[360px] lg:h[849px] md:h-auto" src="/static/imgs/lp-carrusel/01.png" alt="">
-
-        </div>
-
-        <div class="item-slider relative ">
-            <div class="absolute  inset-0 w-full h-full flex ">
-                <div class="lg:ml-20 ml-4 flex flex-col justify-center">
-                    <h1 class="title-box slider ">
-                        <div class="text-white">única y Exquisita</div>
-                        <div class="second text-primary">tan real como vos</div>
-                    </h1>
-                    <a href="{% url 'products' %}" class="btn primary md:mr-auto ">VER PRODUCTOS</a>
-                </div>
-            </div>
-
-            <img class="w-full h-full object-contain" src="/static/imgs/lp-carrusel/2.png" alt="">
-        </div>
+        </picture>
+        
 
     </div>
 

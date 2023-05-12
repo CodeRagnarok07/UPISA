@@ -2,4 +2,11 @@
     @media (min-width:$size) {
         @content
     }
+};
+@mixin inset($top:auto,$right:auto,$bottom:auto,$left:auto) {
+    top:$top;
+    right:$right;
+    bottom:$bottom;
+    left:$left;
+   
 }

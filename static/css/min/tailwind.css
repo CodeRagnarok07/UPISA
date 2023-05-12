@@ -633,6 +633,10 @@ video {
   z-index: 50;
 }
 
+.z-20 {
+  z-index: 20;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -777,12 +781,12 @@ video {
   margin-top: -20%;
 }
 
-.ml-4 {
-  margin-left: 1rem;
-}
-
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .mt-\[76px\] {
@@ -1096,6 +1100,10 @@ video {
   --tw-bg-opacity: 0.8;
 }
 
+.bg-\[url\(\'\/static\/imgs\/lp-carrusel\/01\.png\'\)\] {
+  background-image: url('/static/imgs/lp-carrusel/01.png');
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -1191,6 +1199,10 @@ video {
 
 .pt-16 {
   padding-top: 4rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pt-9 {
@@ -1298,12 +1310,13 @@ video {
 }
 
 .cont-video {
-  margin-top: -3rem;
-  height: 180px;
+  height: 250px;
+  padding-top: 3rem;
 }
 
 @media (min-width: 640px) {
   .cont-video {
+    margin-top: -5rem;
     height: 300px;
   }
 }
@@ -1316,7 +1329,6 @@ video {
 
 @media (min-width: 1024px) {
   .cont-video {
-    margin-top: -5rem;
     height: 600px;
   }
 }
@@ -1358,6 +1370,12 @@ br.md {
 
 .file\:cursor-pointer::file-selector-button {
   cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .sm\:pt-0 {
+    padding-top: 0px;
+  }
 }
 
 @media (min-width: 768px) {

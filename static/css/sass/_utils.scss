@@ -142,8 +142,49 @@ img {
         opacity: 1.2;
         mix-blend-mode: overlay;
     }
+}
 
 
+.bg1-movil {
+
+    @media (max-width:1128px) {
+
+        position: relative;
+        background-repeat: repeat;
+        background-color: v.$N100;
+        color: #ffffff;
+        // padding-top: 11px;
+        // padding-bottom: 68px;
+        height: auto;
+    
+        &.white {
+            background-color: white;
+            color: black;
+    
+            &::before {
+                mix-blend-mode: multiply;
+                opacity: 0.8;
+    
+    
+            }
+        }
+    
+    
+        &::before {
+            z-index: 0;
+            content: "";
+            background-image: url("/static/imgs/header-texture.png");
+            background-repeat: repeat;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 1.2;
+            mix-blend-mode: overlay;
+        }
+
+    }
 
 }
 
@@ -182,5 +223,3 @@ img {
         mix-blend-mode: overlay;
     }
 }
-
-

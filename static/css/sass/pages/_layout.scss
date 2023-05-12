@@ -60,7 +60,7 @@
     .header-title {
         text-align: center;
         padding-bottom: 8rem;
-        margin-top: 100px;
+        padding-top: 100px;
 
 
 
@@ -95,7 +95,7 @@
             margin: 0px auto;
             line-height: 24.2px;
 
-            @media (min-width:1000px) {
+            @media (max-width:1128px) {
                 width: 40%;
 
             }
@@ -230,7 +230,7 @@ nav {
 
     }
 
-    .hidden-movil {
+    .hidden-responsive {
         display: none;
 
         @media (min-width: v.$lg ) {
@@ -238,6 +238,207 @@ nav {
         }
     }
 }
+
+
+
+
+.navbar {
+    --bp: 750px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+
+    .container {
+        position: relative;
+    }
+
+
+
+    @media (max-width:1128px) {
+
+
+
+
+        ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            // &:first-child {
+            //     margin-top: 3rem;
+            // }
+
+            a {
+                width: 100%;
+                text-align: center;
+            }
+
+
+            a.logo {
+                width: auto;
+                display: flex;
+                order: -1;
+                position: absolute;
+                @include inset(10%, 0, 0, 0);
+                margin-bottom: 2rem;
+            }
+
+            .left {
+                display: inherit;
+                position: absolute;
+                @include inset(auto, auto, auto, 0);
+
+
+            }
+
+            .right {
+
+                position: absolute;
+                @include inset(auto, 0, auto, auto);
+
+            }
+        }
+
+    }
+
+
+
+    ul {
+        @extend .container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        padding: 1.5rem 0;
+
+
+        .left {
+            padding: 16px;
+
+
+            &:hover {
+                outline: 2px solid v.$primary-light;
+                border-radius: 8px;
+
+            }
+
+            @media (min-width:1128px) {
+                display: none;
+
+            }
+
+        }
+
+        >a {
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 100%;
+            letter-spacing: -0.02em;
+            padding: 16px;
+            color: v.$white;
+            white-space: nowrap;
+
+
+
+            &:hover {
+                outline: 2px solid v.$primary-light;
+                border-radius: 8px;
+
+            }
+
+
+
+            &.logo {
+                min-width: 90px;
+                position: relative;
+                height: 50px;
+
+                img {
+                    transform: scale(1.5);
+                    @include inset(0, 0, 0, 0);
+                    position: absolute;
+                    // background: red;
+                    min-width: 90px;
+
+                    height: 50px;
+                }
+
+
+            }
+
+
+            // @include responsive(1074) {
+            //     display: none;
+
+            //     background-color: red;
+            // }
+
+
+
+        }
+
+        .right {
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: min-content;
+
+
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center
+            }
+
+
+            .code {
+                display: none;
+            }
+
+            .name {
+                display: flex;
+
+            }
+
+            @media (max-width:1128px) {
+                .code {
+                    display: flex;
+                }
+
+                .name {
+                    display: none;
+
+                }
+            }
+
+        }
+
+
+        .hidden-movil {
+            display: none;
+
+            @media (min-width: 1128px) {
+                display: flex;
+            }
+        }
+
+    }
+
+
+
+
+}
+
+
+
 
 footer {
     margin-top: 7.5rem;
