@@ -42,7 +42,7 @@ h1 {
     font-size: 32px;
     line-height: 110%;
     text-transform: uppercase;
-    
+
 
     @media (min-width: v.$lg) {
         font-family: 'Antonio';
@@ -254,8 +254,11 @@ h1.title-box {
     display: flex;
     flex-direction: column;
 
+
+
     &.slider {
         margin: 0;
+
         div {
             font-size: 2rem;
         }
@@ -282,29 +285,29 @@ h1.title-box {
     }
 
 
-    div.second {
-        margin-top: -0.25rem;
-        // margin-left: 2rem;
-        font-family: "kalamaya";
-        // font-style: italic;
-        font-weight: 500;
-        text-transform: none;
-        // color: #FFFFFF;
-        font-size: 4rem;
+    // div.second {
+    //     margin-top: -0.25rem;
+    //     // margin-left: 2rem;
+    //     font-family: "kalamaya";
+    //     // font-style: italic;
+    //     font-weight: 500;
+    //     text-transform: none;
+    //     // color: #FFFFFF;
+    //     font-size: 4rem;
 
-        @media (min-width: v.$lg) {
-            margin-top: -2.5rem;
-            /* identical to box height */
+    //     @media (min-width: v.$lg) {
+    //         margin-top: -2.5rem;
+    //         /* identical to box height */
 
-        }
+    //     }
 
-        &.about {
-            font-size: 5rem;
-            color: v.$N100;
-        }
+    //     &.about {
+    //         font-size: 5rem;
+    //         color: v.$N100;
+    //     }
 
-        // text-white text-[70px] -mt-40 -mr-20
-    }
+    //     // text-white text-[70px] -mt-40 -mr-20
+    // }
 
     &.calculadora {
         &:first-child div {
@@ -321,6 +324,30 @@ h1.title-box {
 
 
 
+    }
+
+    &.h1-primary {
+        @include responsive(1000px){
+            font-size: 42px;
+            line-height: 42px;
+
+
+        }
+        font-size: 32px;
+        line-height: 32px;
+
+        >div {
+
+            color: v.$primary;
+            font-family: 'Antonio';
+            font-style: normal;
+            font-weight: 700;
+
+            margin: 0;
+            padding: 0;
+
+            
+        }
     }
 }
 

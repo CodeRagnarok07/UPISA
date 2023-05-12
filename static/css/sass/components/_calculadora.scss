@@ -4,16 +4,17 @@
     .calculadora-title {
         padding: 1rem;
 
-        
-       >div{
-        height: 350px;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-       }
+
+        .cal-title-cont {
+            height: 100%;
+            width:  100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
 
     }
 
@@ -144,19 +145,19 @@
             background-color: v.$N10;
             border-radius: 80px;
             overflow: hidden;
-           
+
             padding: 0px 22px;
             gap: 8px;
 
             height: 8px;
             color: transparent;
             font-weight: 500;
-           
+
             font-size: 12px;
 
 
             @media (min-width: v.$md) {
-            padding: 12px 22px;
+                padding: 12px 22px;
 
                 display: flex;
                 justify-content: center;
@@ -164,6 +165,7 @@
                 height: auto;
                 gap: 0px;
                 font-size: 14px;
+
                 &.active {
                     color: white;
 
@@ -202,13 +204,13 @@
         }
     }
 
-    .controls{
+    .controls {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1.25rem 0;
 
-        .btn{
+        .btn {
             width: auto;
         }
 
