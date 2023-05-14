@@ -82,9 +82,11 @@ sabor único. ¡Tenés que probarlo!{% endblock pagedescription %}
     </div>
 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 mt-9 md:mt-12 gap-6">
-        {% include '../contact/form.html' %}
+    <div class="grid grid-cols-1 md:grid-cols-2 mt-9 md:mt-12 gap-6 ">
+        <div>
+            {% include '../contact/form.html' %}
 
+        </div>
         <div class="flex flex-col gap-6 w-full">
 
             {% for i in centros %}
@@ -139,10 +141,20 @@ sabor único. ¡Tenés que probarlo!{% endblock pagedescription %}
 
             {% endfor %}
         </div>
+
+
     </div>
 
 </div>
 
-<hr class="mb-[261px]">
+<div class="container">
+
+    
+    <img src="/static/imgs/cerdo.png" alt="" class="md:-mt-[400px] md:w-1/2 relative z-[1] -mb-[8.99rem]">
+</div>
+
+
+<!-- <div class="relative z-20 bg-cover bg-[url('/static/imgs/banner/recetasBG.png')] pt-12 pb-12  "> -->
+
 
 {% endblock cont %}
