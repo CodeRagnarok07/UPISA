@@ -20,7 +20,7 @@ get_language()
 
 env = environ.Env(  # add this
     # set casting, default value
-    DEBUG=(bool, False)         # add this
+    # DEBUG=(bool, False)         # add this
 )
 
 
@@ -38,15 +38,19 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))  # add this
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # env('DEBUG') # env('DEBUG')
+DEBUG = env('DEBUG')
 
+ALLOWED_HOSTS = ['*']
 
 # ALLOWED_HOSTS = ['localhost']
 
-if DEBUG is False:
-    ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
-else:
-    ALLOWED_HOSTS = ['*']
+# if DEBUG is False:
+#     print("hola mundo")
+#     ALLOWED_HOSTS = ['localhost']
+#     print(env('ALLOWED_HOSTS'))
+# else:
+#     ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
+
 
 
 # Application definition
@@ -113,37 +117,42 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 
-import pymysql
-pymysql.install_as_MySQLdb()
+
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 # default  DATABASE_URL='sqlite:///db.sqlite3'
+
 # Feel free to alter this value to suit your needs.
 # default='postgresql://postgres:postgres@localhost:5432/mysite',
 
 
 
-DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.mysql',
-           'NAME': 'django',
-           'USER':'root',
-           'PASSWORD':'',
-           'HOST':'127.0.0.1',
-           'PORT':'3306',
-           'OPTIONS':{
-               'init_command':"SET sql_mode=STRICT_TRANS_TABLES" 
-               }
-            }
-        }
+# DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.mysql',
+#            'NAME': 'django',
+#            'USER':'root',
+#            'PASSWORD':'',
+#            'HOST':'127.0.0.1',
+#            'PORT':'3306',
+#            'OPTIONS':{
+#                'init_command':"SET sql_mode=STRICT_TRANS_TABLES" 
+#                }
+#             }
+#         }
 
+
+DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+
+if(DATABASES['default']['ENGINE'] == "django.db.backends.mysql"):
+    DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
 
 print(DATABASES)
+
 
 
 

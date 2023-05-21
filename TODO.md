@@ -15,8 +15,8 @@ base de datos
 
 
 - [ ] migracion de la base de datos
-  - [ ] descargar la base de datos de produccion
-  - [ ] crear una base de datos mysql local y conectarla
+  - [x] descargar la base de datos de produccion
+  - [x] crear una base de datos mysql local y conectarla
   - [ ] migrar datos de sqlite a mysql
   - [ ] actualizar los requirements
   - [ ] llevar proyecto a produccion y actualizar la base de datos de produccion
