@@ -1,10 +1,13 @@
 //  Carrusel Slider with controls
 (() => {
     const all_carrusel_slider = document.getElementsByClassName("carrusel-slider")
+
     for (const carrusel_slider of all_carrusel_slider) {
 
         //  Select chidrem items and width
         const slider = carrusel_slider.getElementsByClassName("slider")[0]
+        // all_carrusel_slider.parentNode
+        
 
         let current = 0
 
@@ -18,15 +21,18 @@
                 cont_container.textContent = current + 1
             }
         }
+        const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
 
         // dot style
         function setDoct() {
-            console.log(current);
-            for (let dot of dot_control_cont.children) {
-                dot.className = ""
+            if(dot_control_cont){
+
+                for (let dot of dot_control_cont.children) {
+                    dot.className = ""
+                }
+                dot_control_cont.children[current].classList.add("active")
+                renderCurretn()
             }
-            dot_control_cont.children[current].classList.add("active")
-            renderCurretn()
         }
 
 
@@ -37,9 +43,6 @@
             const cols = slider.offsetWidth / widthSlider
 
             const nextwidthSlider  = widthSlider * cols
-
-            console.log(nextwidthSlider);
-
 
             setTimeout(() => {
 
@@ -83,10 +86,7 @@
             left_control.onclick = () => arrowControler(false)
         }
 
-
         // Dot Control
-        const dot_control_cont = carrusel_slider.getElementsByClassName("dot-control")[0]
-
         function indexControler(e, i) {
             const widthSlider = slider.children[0].offsetWidth
             const cols = slider.offsetWidth / widthSlider
@@ -116,5 +116,12 @@
             dot_control_cont.children[0].classList.add("active")
         }
         renderCurretn()
+
+
+        if(slider.parentNode.classList.contains("carrusel-autorun")){
+            setInterval(() => {
+                arrowControler(true)
+            }, 5000);
+        }
     }
 })();
