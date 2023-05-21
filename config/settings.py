@@ -111,16 +111,40 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
+
+
+import pymysql
+pymysql.install_as_MySQLdb()
+
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+# DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 # default  DATABASE_URL='sqlite:///db.sqlite3'
 # Feel free to alter this value to suit your needs.
 # default='postgresql://postgres:postgres@localhost:5432/mysite',
 
-print(ALLOWED_HOSTS)
+
+
+DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.mysql',
+           'NAME': 'django',
+           'USER':'root',
+           'PASSWORD':'',
+           'HOST':'127.0.0.1',
+           'PORT':'3306',
+           'OPTIONS':{
+               'init_command':"SET sql_mode=STRICT_TRANS_TABLES" 
+               }
+            }
+        }
+
+
+print(DATABASES)
+
 
 
 # Password validation

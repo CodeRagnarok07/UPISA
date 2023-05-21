@@ -11,7 +11,20 @@ base de datos
 - [x] link de baner de resetas
 - [ ] carrusel home
   - [x] auto run carrusel 
+
+
+
 - [ ] migracion de la base de datos
+  - [ ] descargar la base de datos de produccion
+  - [ ] crear una base de datos mysql local y conectarla
+  - [ ] migrar datos de sqlite a mysql
+  - [ ] actualizar los requirements
+  - [ ] llevar proyecto a produccion y actualizar la base de datos de produccion
+  - [ ] 
+
+
+
+
 - [ ] contacto
 
 discutir:

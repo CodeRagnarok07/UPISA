@@ -817,6 +817,10 @@ video {
   margin-right: 1.25rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .block {
   display: block;
 }
