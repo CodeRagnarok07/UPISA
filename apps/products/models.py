@@ -2,6 +2,23 @@ from django.db import models
 
 # Create your models here.
 
+from django.core.exceptions import ValidationError
+
+
+
+
+class HomeBanner(models.Model):
+
+    order = models.IntegerField(unique=True)
+    desktop = models.ImageField( help_text="845px de alto  // 1920px de ancho")
+    movil = models.ImageField( help_text="360px de alto // 360px de ancho")
+
+    #  only 1920px x 845
+
+    def __str__(self):
+        return f'banner {self.order}'
+
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=500, unique=True)
     url = models.CharField(max_length=500, unique=True)
@@ -11,7 +28,8 @@ class Categoria(models.Model):
 
 
 class CategoriaSub(models.Model):
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_query_name="sub_categorias", related_name="sub_categorias")
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE,
+                                  related_query_name="sub_categorias", related_name="sub_categorias")
     nombre = models.CharField(max_length=500, unique=True)
     url = models.CharField(max_length=500, unique=True)
 
@@ -28,19 +46,19 @@ class Product(models.Model):
 
     sub_categoria = models.ForeignKey(
         CategoriaSub, on_delete=models.CASCADE, related_query_name="products",  help_text="Busqueda por Categoria superior")
-        
+
     porcion = models.IntegerField(help_text="cantidad", blank=True, null=True)
-    unidad = models.CharField(help_text="unidad de porcion: kg, caja, gr (3 chorizos)", max_length=500,blank=True, null=True)
-    
+    unidad = models.CharField(
+        help_text="unidad de porcion: kg, caja, gr (3 chorizos)", max_length=500, blank=True, null=True)
+
     descripcion = models.TextField()
 
     def __str__(self) -> str:
 
         return self.nombre
+
     class Meta:
         ordering = ['-id']
-
-
 
 
 class ValoresNutricionales(models.Model):

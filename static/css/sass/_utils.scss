@@ -206,10 +206,11 @@ img {
         bottom: -10px;
         left: -10px;
         border-radius: 50%;
-        border: solid green 1px;
+        // border: solid green 1px;
         background-image: url("/static/imgs/header-texture2.png");
-        box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.527) inset;
+        box-shadow: 0 0 30px 30px rgba(245, 245, 245, 0.336) inset;
         opacity: 0.8;
+        
     }
 
     &::before {

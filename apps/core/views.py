@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 # models
-from products.models import Product
+from products.models import Product, HomeBanner
 from receta.models import Receta
 from posts.models import TrucosYConsejos
 
@@ -22,6 +22,7 @@ from django.utils.translation import gettext
 from django.conf import settings
 
 def index(request):
+
 
     if request.method == "GET":
         form = ContactForm()
@@ -41,28 +42,11 @@ def index(request):
     last_recetas = Receta.objects.all()[:5]
     posts = TrucosYConsejos.objects.all()[:2]
 
-    carrusel = [
-        {
-            "titulo1": "Variedades de embutidos",
-            "titulo2": "con sabores unicos",
-            "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
-            "img": "Slider1.png"
-        },
-        {
-            "titulo1": "Variedades de embutidos",
-            "titulo2": "con sabores unicos",
-            "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
-            "img": "Slider1.png"
-        },
-        {
-            "titulo1": "Variedades de embutidos",
-            "titulo2": "con sabores unicos",
-            "descripcion": "Desde nuestros comienzos hemos lanzado al mercado productos elaborados con materias primas seleccionadas y rigurosos controles de calidad.",
-            "img": "Slider1.png"
-        },
 
-    ]
 
+    carrusel = HomeBanner.objects.all().order_by("order")
+
+    print(carrusel)
     centros = [
         {
             "map": '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.220739390427!2d-56.2459115!3d-26.609370399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9459adec63ca8c79%3A0x73d96c1f168187ca!2sUPISA%20SUC.%20SANTA%20ROSA!5e0!3m2!1ses-419!2sve!4v1665867763115!5m2!1ses-419!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',

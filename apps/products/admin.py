@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Product, ValoresNutricionales, Categoria, CategoriaSub, Galeria
+from .models import Product, ValoresNutricionales, Categoria, CategoriaSub, Galeria, HomeBanner
 
 
 @admin.register(Categoria)
@@ -104,3 +104,7 @@ class ProductAdmin(SummernoteModelAdmin):
             'fields': ('descripcion_en', 'descripcion_ru', 'descripcion_zh_hans')
         })
     )
+
+
+
+admin.site.register(HomeBanner)

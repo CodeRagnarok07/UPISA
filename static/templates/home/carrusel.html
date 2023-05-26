@@ -1,27 +1,30 @@
 {% load static %}
 
 <div class="carrusel-slider carrusel-autorun">
-    
+
     <div class="slider ">
-        
+
+        {% if carrusel %}
+        {% for i in carrusel %}
+
         <picture class="item-slider relative">
-            <source srcset="/static/imgs/lp-carrusel/baner01.png" media="(min-width: 450px)" />
-            <img class="w-full object-cover h-[360px] lg:h[849px] md:h-auto" src="{% static 'imgs/lp-carrusel/baner01mv.png' %}" alt="">
+            <source srcset="{{ i.desktop.url }}" media="(min-width: 450px)" />
+            <img class="w-full object-cover h-[360px] lg:h[849px] md:h-auto" src="{{ i.movil.url }}" alt="">
 
         </picture>
 
+        {% endfor %}
+        {% else %}
         <picture class="item-slider relative">
             <source srcset="/static/imgs/banner/calculadoraBG.png" media="(min-width: 450px)" />
-            <img class="w-full object-cover h-[360px] lg:h[849px] md:h-auto" src="{% static 'imgs/lp-carrusel/baner01mv.png' %}" alt="">
-
+            <img class="w-full object-cover h-[360px] lg:h[849px] md:h-auto"
+                src="{% static 'imgs/lp-carrusel/baner01mv.png' %}" alt="">
         </picture>
+        {% endif %}
 
-        <picture class="item-slider relative">
-            <source srcset="/static/imgs/banner/recetasBG.png" media="(min-width: 450px)" />
-            <img class="w-full object-cover h-[360px] lg:h[849px] md:h-auto" src="{% static 'imgs/lp-carrusel/baner01mv.png' %}" alt="">
 
-        </picture>
-        
+
+
 
     </div>
 
