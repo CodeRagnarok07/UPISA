@@ -1612,8 +1612,20 @@ br.md {
     margin-left: 5rem;
   }
 
+  .lg\:-mt-\[400px\] {
+    margin-top: -400px;
+  }
+
   .lg\:-ml-\[6\%\] {
     margin-left: -6%;
+  }
+
+  .lg\:-mt-\[500px\] {
+    margin-top: -500px;
+  }
+
+  .lg\:-mt-\[300px\] {
+    margin-top: -300px;
   }
 
   .lg\:flex {
@@ -1666,5 +1678,13 @@ br.md {
 
   .xl\:row-span-2 {
     grid-row: span 2 / span 2;
+  }
+
+  .xl\:-mt-\[450px\] {
+    margin-top: -450px;
+  }
+
+  .xl\:-mt-\[400px\] {
+    margin-top: -400px;
   }
 }
