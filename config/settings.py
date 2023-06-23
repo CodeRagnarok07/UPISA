@@ -146,10 +146,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         }
 
 
-DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+DATABASES = {'default': dj_database_url.config(conn_max_age=3600)}
 
 if(DATABASES['default']['ENGINE'] == "django.db.backends.mysql"):
     DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
+    # DATABASES['default']['CONN_MAX_AGE'] = 3600
 
 print(DATABASES)
 

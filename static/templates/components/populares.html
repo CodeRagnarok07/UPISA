@@ -31,9 +31,12 @@
                     href="{% url 'product_detail' i.sub_categoria.categoria.url i.url %}">
 
                     <div></div>
-                    <figure class="mt-5 flex-center w-full" id="min_{{i.id}}">
-                        <img class="h-[110px] w-[104px] object-contain" src="{{i.miniatura.url}}" alt="">
+
+                    <figure class="mx-auto h-[110px] w-[104px] md:h-[200px] md:w-[200px] mt-5 flex-center " id="min_{{i.id}}">
+                        <img class="h-full w-full object-contain" src="{{i.miniatura.url}}" alt="">
                     </figure>
+
+
                     <p class="p-4 md:p-9 uppercase text-center font-semibold">
                         {{i.nombre}}
                     </p>
