@@ -11,6 +11,27 @@
 }
 
 
+body{
+        position: relative;
+
+        &::before {
+            z-index: 0;
+            content: "";
+            background-image: url("/static/imgs/header-texture.png");
+            // background-color: v.$primary-light;
+            background-size: contain;
+            background-repeat: repeat;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.20;
+            // mix-blend-mode: overlay;
+        }
+    }
+
+
 
 
 

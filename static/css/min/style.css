@@ -297,6 +297,23 @@ h1.title-box.h1-primary > div {
   }
 }
 
+body {
+  position: relative;
+}
+body::before {
+  z-index: 0;
+  content: "";
+  background-image: url("/static/imgs/header-texture.png");
+  background-size: contain;
+  background-repeat: repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+}
+
 .flex-center, footer span, nav .right, .empresa-ft > div, .pagination .control {
   display: flex;
   justify-content: center;
