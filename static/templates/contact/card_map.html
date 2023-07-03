@@ -1,12 +1,12 @@
 <div class="card map w-full shawdow2">
 
-        {{i.map|safe}}
-    <!-- <iframe class="h-[200px] md:h-[416px]"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1198.8559739776726!2d-80.21045555793297!3d25.7867855336452!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6c0b9eac591%3A0x6b175148e853b9ed!2sSpringHill%20Suites%20by%20Marriott%20Miami%20Downtown%2FMedical%20Center!5e0!3m2!1ses!2sve!4v1663341761820!5m2!1ses!2sve"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+       
+    <iframe class="h-[200px] md:h-[416px]"
+        src="{{i.mapa}}"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="md:p-9" >
 
-        <h2 class="md:text-left md:mb-6 mb-5">{{i.name}}</h2>
+        <h2 class="md:text-left md:mb-6 mb-5">{{i.nombre}}</h2>
         <div class="info">
             <div>
                 <i>
@@ -17,7 +17,7 @@
                     </svg>
 
                 </i>
-                <p>{{i.address}}</p>
+                <p>{{i.direccion}}</p>
             </div>
 
             <div>

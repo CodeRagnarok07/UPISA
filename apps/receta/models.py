@@ -5,7 +5,7 @@ from products.models import Product
 class Receta(models.Model):
     nombre = models.CharField(max_length=500)
     url = models.CharField(max_length=500, unique=True)
-    miniatura = models.ImageField()
+    portada = models.ImageField()
 
 
     tiempo_preparacion = models.CharField(max_length=500)

@@ -2,12 +2,12 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}contacto{% endblock title %}
+{% block title %}{{post.titulo}}{% endblock title %}
 
 {% block header %}
 <div class="header-title pb-16">
     <div class="container ">
-        <h1 class="pb-16">{% trans "Consejo Parrillero" %}</h1>
+        <h1 class="pb-16">{% trans "" %}</h1>
     </div>
 </div>
 
@@ -16,7 +16,21 @@
 
 {% block cont %}
 
-<div class="container">
+{% if post.portada %}
+<!-- -mb-20 h-[250px] 
+md:-mb-28 md:h-[400px] 
+lg:-mb-36 lg:h-[500px]  -->
+<img class="  
+h-[150px] 
+ md:h-[300px] 
+ lg:h-[400px] 
+
+relative z-40 w-full 
+object-cover object-center" src="{{post.portada.url}}" alt="">
+
+{% endif %}
+
+<div class="container relative z-50">
 
     <h2 class="text-left  mt-9 md:mt-16">{{post.titulo}}</h2>
     

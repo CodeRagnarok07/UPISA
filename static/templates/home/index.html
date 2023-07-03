@@ -67,7 +67,7 @@ sabor único. ¡Tenés que probarlo!
             <a>
                 <div class="card map w-full shawdow2">
                     <div class="grid grid-cols-2">
-                        <h3 class="md:text-left my-auto  col-span-1">{{i.name}}</h3>
+                        <h3 class="md:text-left my-auto  col-span-1">{{i.nombre}}</h3>
                         <div class="info  ">
                             <div>
                                 <i>
@@ -79,7 +79,7 @@ sabor único. ¡Tenés que probarlo!
                                     </svg>
 
                                 </i>
-                                <p>{{i.address}}</p>
+                                <p>{{i.direccion}}</p>
                             </div>
 
                             <div>
@@ -91,9 +91,8 @@ sabor único. ¡Tenés que probarlo!
                                             fill="#0B9839" />
                                     </svg>
                                 </i>
-                                {% if i.tlf %}
                                 <p>{{i.tlf}}</p>
-                                {% endif %}
+                               
 
                             </div>
 
@@ -122,7 +121,7 @@ sabor único. ¡Tenés que probarlo!
 </div>
 
 <!-- CERDO -->
-<div class="container">
+<div class="container ">
     <!-- lg:-mt-[300px] xl:-mt-[400px] md:w-1/2 -mb-[8.99rem]  -->
     <img src="{% static 'imgs/cerdo.png' %}" alt="" 
     class="

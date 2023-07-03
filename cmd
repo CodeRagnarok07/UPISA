@@ -3,5 +3,5 @@ source /home/upisacompy/virtualenv/Django_page/3.8/bin/activate && cd /home/upis
 
 python -Xutf8 manage.py dumpdata --exclude=auth --exclude=admin --exclude=sessions  --exclude=contenttypes -o ./db.json
 
-python manage.py loaddata ./db.json
+python -Xutf8 manage.py loaddata ./db.json
 

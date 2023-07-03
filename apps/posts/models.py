@@ -12,7 +12,7 @@ class Tag(models.Model):
 class TrucosYConsejos(models.Model):
     titulo = models.CharField(max_length=500)
     url = models.CharField(max_length=500)
-    miniatura = models.ImageField()
+    portada = models.ImageField()
     contenido = models.TextField()
     tag = models.ManyToManyField(Tag)
 
@@ -24,7 +24,7 @@ class TrucosYConsejos(models.Model):
 class Novedades(models.Model):
     titulo = models.CharField(max_length=500)
     url = models.CharField(max_length=500)
-    miniatura = models.ImageField()
+    portada = models.ImageField()
     contenido = models.TextField()
     publicar = models.DateField('fecha de publicacion',default=date.today, blank=True)
 

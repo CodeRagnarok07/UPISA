@@ -27,6 +27,7 @@ class Categoria(models.Model):
         return self.nombre
 
 
+
 class CategoriaSub(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE,
                                   related_query_name="sub_categorias", related_name="sub_categorias")
