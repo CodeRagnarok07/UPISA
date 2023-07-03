@@ -116,7 +116,7 @@ def index(request):
 
 def about(request):
     ctx = {}
-    return render(request, 'about/index.html', ctx)
+    return render(request, 'empresa/index.html', ctx)
 
 
 def contactView(request):

@@ -30,9 +30,14 @@
                             flex flex-col justify-between"
                     href="{% url 'product_detail' i.sub_categoria.categoria.url i.url %}">
 
-                    <div></div>
 
-                    <figure class="mx-auto h-[110px] w-[104px] md:h-[200px] md:w-[200px] mt-5 flex-center " id="min_{{i.id}}">
+                    <figure class="mx-auto 
+                    h-[90px] w-[90px]   
+
+                    md:h-[150px] md:w-[150px] 
+                    lg:h-[200px] lg:w-[200px] 
+                    
+                    mt-5 flex-center " id="min_{{i.id}}">
                         <img class="h-full w-full object-contain" src="{{i.miniatura.url}}" alt="">
                     </figure>
 

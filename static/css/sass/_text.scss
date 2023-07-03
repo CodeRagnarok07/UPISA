@@ -328,12 +328,13 @@ h1.title-box {
     }
 
     &.h1-primary {
-        @include responsive(1000px){
+        @include responsive(1000px) {
             font-size: 42px;
             line-height: 42px;
 
 
         }
+
         font-size: 32px;
         line-height: 32px;
 
@@ -347,7 +348,7 @@ h1.title-box {
             margin: 0;
             padding: 0;
 
-            
+
         }
     }
 }
@@ -356,7 +357,7 @@ h1.title-box {
 .header-title {
     text-align: center;
     padding-bottom: 8rem;
-    padding-top: 100px;
+    padding-top: 150px;
 
 
 
@@ -379,13 +380,15 @@ h1.title-box {
         margin-bottom: 0.5rem;
 
 
-    
+
 
     }
 
     p {
         width: 80%;
         margin: 0px auto;
+        font-size: 1.2em;
+        margin-top: 10px;
         line-height: 24.2px;
 
         @media (max-width:1128px) {
