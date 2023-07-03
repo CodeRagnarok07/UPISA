@@ -1,16 +1,30 @@
 @use 'vars' as v;
 @import 'mixins';
-@import 'resets';
-@import 'styles';
+@import 'text';
 @import 'utils';
-@import 'elements';
+@import 'btn';
+@import 'inputs';
 @import 'components';
 @import 'pages';
 
 
 
+*,
+html {
+    box-sizing: border-box;
+    transition: all .5s ease;
+    
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
 
 
+
+html,body{
+    overflow-x: hidden;
+}
 
 
 

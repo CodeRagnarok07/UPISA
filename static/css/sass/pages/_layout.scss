@@ -57,62 +57,7 @@
         mix-blend-mode: overlay;
     }
 
-    .header-title {
-        text-align: center;
-        padding-bottom: 8rem;
-        padding-top: 100px;
-
-
-
-        h1 {
-            /* antonio 64 */
-
-            font-family: 'Antonio';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 64px;
-            line-height: 83px;
-            /* identical to box height */
-
-            text-align: center;
-            text-transform: uppercase;
-
-            /* BLANCO */
-
-            color: #FFFFFF;
-            margin-bottom: 0.5rem;
-
-
-            &::before,
-            &::after {
-                content: " • ";
-            }
-
-        }
-
-        p {
-            width: 80%;
-            margin: 0px auto;
-            line-height: 24.2px;
-
-            @media (max-width:1128px) {
-                width: 40%;
-
-            }
-        }
-
-        // &.text-cont {
-
-        //     font-family: 'Inter';
-        //     font-style: normal;
-        //     font-weight: 500;
-        //     font-size: 20px;
-        //     line-height: 30px;
-        //     text-align: center;
-
-
-        // }
-    }
+ 
 
     .carrusel-slider {
 
@@ -441,7 +386,6 @@ nav {
 
 
 footer {
-    margin-top: 7.5rem;
     text-align: left;
     color: white;
 

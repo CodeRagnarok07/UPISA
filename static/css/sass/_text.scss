@@ -249,6 +249,7 @@ p {
 }
 
 
+
 h1.title-box {
     margin-bottom: 3rem;
     display: flex;
@@ -349,6 +350,50 @@ h1.title-box {
             
         }
     }
+}
+
+
+.header-title {
+    text-align: center;
+    padding-bottom: 8rem;
+    padding-top: 100px;
+
+
+
+    h1 {
+        /* antonio 64 */
+
+        font-family: 'Antonio';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 83px;
+        /* identical to box height */
+
+        text-align: center;
+        text-transform: uppercase;
+
+        /* BLANCO */
+
+        color: #FFFFFF;
+        margin-bottom: 0.5rem;
+
+
+    
+
+    }
+
+    p {
+        width: 80%;
+        margin: 0px auto;
+        line-height: 24.2px;
+
+        @media (max-width:1128px) {
+            width: 40%;
+
+        }
+    }
+
 }
 
 
