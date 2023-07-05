@@ -1407,11 +1407,9 @@ article p {
 }
 
 .certificaciones {
-  --grid-cols: 1;
   margin-top: 1.25rem;
-  display: grid;
+  display: flex;
   gap: 1rem;
-  color: black;
   grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
 }
 .certificaciones .certificaciones-item {
@@ -1434,7 +1432,6 @@ article p {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding-bottom: 2rem;
 }
 .certificaciones .certificaciones-item .text-cont h3 {
   text-align: center;
