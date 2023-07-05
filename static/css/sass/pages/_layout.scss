@@ -57,7 +57,7 @@
         mix-blend-mode: overlay;
     }
 
- 
+
 
     .carrusel-slider {
 
@@ -436,6 +436,8 @@ footer {
         }
 
     }
+
+    svg {
+        transform: scale(1.5);
+    }
 }
-
-

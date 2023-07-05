@@ -21,13 +21,25 @@
 {% block cont %}
 
 
-<div class="container pb-72 pt-16 mb-20" >
+<div class="container pb-72 pt-16 mb-20">
 
     <div id="novedades" class="grid grid-cols-1 mt-6 gap-6
-    md:grid-cols-6
-    ">
+    md:grid-cols-6">
+
+
+        <!-- <div class="md:col-span-3">
+            
+            <iframe src="https://www.instagram.com/upisa_frigorifico/" title="iframe Example 1" width="400" height="300">
+              </iframe>
+
+              <iframe width="320" height="440" src="https://www.instagram.com/ang.riera/" frameborder="0">
+                hola mundo
+              </iframe>
+
+        </div> -->
+
         {% for i in page_obj %}
-            {% include './novedades_card.html' %}
+        {% include './novedades_card.html' %}
 
         {% endfor %}
 

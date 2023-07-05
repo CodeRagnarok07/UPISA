@@ -1816,6 +1816,9 @@ footer .feed iframe {
   max-height: 500px;
   max-width: 160px;
 }
+footer svg {
+  transform: scale(1.5);
+}
 
 .tabla-nutricional thead {
   color: white;
