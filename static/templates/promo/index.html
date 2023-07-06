@@ -1,73 +1,40 @@
-{% extends '../base.html' %}
-{% load i18n %}
+<!DOCTYPE html>
 {% load static %}
+{% load i18n %}
+{% get_current_language as lang %}
+<html lang="{{lang}}">
 
-{% block description %}
-Producimos una amplia línea de fiambres y embutidos de alta calidad utilizando la mejor tecnología con la misión y el
-orgullo de hacerlo bien. Desde nuestros inicios, hemos introducido en el mercado productos elaborados con materias
-primas seleccionadas bajo un estricto control de calidad cuyas virtudes no
-contamos, porque ¡tenés que probarlo!
-{% endblock description %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block title %}promo del trabajador{% endblock title %}
+    <link rel="stylesheet" href="{% static '/css/min/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static '/css/min/style.css' %}">
+    <link rel="icon" href="{% static '/imgs/favicon.ico' %}">
 
+    <meta property="og:image" content="{% static '/imgs/logo.png' %}" name="image">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <meta name="description" content="">
+    <title>UPISA promo del dia del trabajador</title>
 
+</head>
 
-{% block header %}
-promo del trabajador
-{% endblock header %}
+<body>
 
+    
 
-
-{% block cont %}
-
-<div class="container mt-[200px]">
-
-    <div class="iframe-cont">
-
-
-        <div class="fb-page" data-href="https://www.facebook.com/UPISAFrigorificoPY" data-tabs="timeline" data-width=""
-            data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false"
-            data-show-facepile="false">
-
-            <blockquote cite="https://www.facebook.com/UPISAFrigorificoPY" class="fb-xfbml-parse-ignore"><a
-                    href="https://www.facebook.com/UPISAFrigorificoPY">UPISA Frigorífico</a></blockquote>
-        </div>
+    {% include './navbar.html' %}
+    {% include './header.html' %}
+    {% include './section.html' %}
 
 
-        <div class="fb-page" data-href="https://www.facebook.com/UPISAFrigorificoPY" data-tabs="timeline" data-width=""
-            data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false"
-            data-show-facepile="false">
+ 
 
-            <blockquote cite="https://www.facebook.com/UPISAFrigorificoPY" class="fb-xfbml-parse-ignore"><a
-                    href="https://www.facebook.com/UPISAFrigorificoPY">UPISA Frigorífico</a></blockquote>
-        </div>
+    {% include './FAQ.html' %}
 
+    {% include '../Layout/footer.html' %}
+</body>
 
-        <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0" nonce="kEYbfwVC"></script>
-
-    </div>
-
-
-
-    <!-- <div class="iframe-cont">
-
-        <div class="iframe-scale">
-            <img height="500px" width="340px" class=" h-[500px] object-cover" src="{% static 'imgs/iframe2.png' %}"
-                alt="">
-        </div>
-
-        <div class="iframe-scale">
-            <img height="500px" width="340px" class=" h-[500px] object-cover" src="{% static 'imgs/iframe2.png' %}"
-                alt="">
-        </div>
-
-    </div> -->
-
-
-
-</div>
-
-
-{% endblock cont %}
+</html>

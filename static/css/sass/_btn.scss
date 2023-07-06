@@ -12,16 +12,28 @@ button {
     padding: 16px 24px;
     border-radius: 8px;
 
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+
     &.rounded-full {
         border-radius: 50%;
     }
 
-    &.primary {
+    &.primary, &.btn-primary {
         color: white;
         background-color: v.$V1;
     }
+    &.btn-primary-light {
+        color: v.$N100;
+        background-color: v.$N20;
+    }
 
-    &.secondary {
+
+
+
+    &.secondary , &.btn-secondary{
         color: white;
         background-color: v.$N100;
 

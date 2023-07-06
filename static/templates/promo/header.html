@@ -1,0 +1,21 @@
+{% load static %}
+<div class="relative container flex-col md:flex-row flex justify-between items-center">
+
+    <div class="flex flex-col items-start w-full mt-6">
+        
+        <img 
+        src="{% static 'imgs/promo/title.png' %}" 
+        srcset="{% static 'imgs/promo/title.svg' %}" 
+        alt="">
+
+        <p class="mb-6">El día del trabajador es tu día y queremos <br> que festejes como corresponde.</p>
+
+        <a href="#" class="btn btn-secondary">¡PARTICIPÁ DE LA PROMO!</a>
+
+    </div>
+    
+    <div class="flex justify-center md:justify-end ml-[-25%] md:m-0 h-[300px] md:h-[605px]">
+        <img class="h-full relative z-10" src="{% static 'imgs/promo/model/02.png' %}" alt="">
+        <img class="h-full ml-[-50%] scale-90 translate-y-8" src="{% static 'imgs/promo/model/01.png' %}" alt="">
+    </div>
+</div>

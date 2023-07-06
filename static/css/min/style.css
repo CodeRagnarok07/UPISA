@@ -490,28 +490,41 @@ button {
   line-height: 100%;
   padding: 16px 24px;
   border-radius: 8px;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 .btn.rounded-full,
 button.rounded-full {
   border-radius: 50%;
 }
-.btn.primary,
-button.primary {
+.btn.primary, .btn.btn-primary,
+button.primary,
+button.btn-primary {
   color: white;
   background-color: #0B9839;
 }
-.btn.secondary,
-button.secondary {
+.btn.btn-primary-light,
+button.btn-primary-light {
+  color: #EA8215;
+  background-color: #FAE0C9;
+}
+.btn.secondary, .btn.btn-secondary,
+button.secondary,
+button.btn-secondary {
   color: white;
   background-color: #EA8215;
 }
-.btn.secondary.white,
-button.secondary.white {
+.btn.secondary.white, .btn.btn-secondary.white,
+button.secondary.white,
+button.btn-secondary.white {
   background-color: #FAE0C9;
   color: #EA8215;
 }
-.btn.secondary.white2,
-button.secondary.white2 {
+.btn.secondary.white2, .btn.btn-secondary.white2,
+button.secondary.white2,
+button.btn-secondary.white2 {
   background-color: #FDF2E8;
   color: #EA8215;
 }
@@ -1930,6 +1943,23 @@ body:nth-child(even) body::before {
   .fb-page > span {
     transform: scale(1);
   }
+}
+
+.boxes3 {
+  height: 175px;
+  width: 153px;
+}
+
+#n img {
+  max-height: none !important;
+  max-width: none !important;
+  background: none !important;
+}
+
+#inst i {
+  max-height: none !important;
+  max-width: none !important;
+  background: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */
