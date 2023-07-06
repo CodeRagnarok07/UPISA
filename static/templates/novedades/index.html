@@ -1,0 +1,74 @@
+{% extends '../base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Novedades{% endblock title %}
+
+{% block header %}
+<div class=" header-title relative">
+    <h1 class="">{% trans "Novedades" %}</h1>
+    <p class="">
+        <!-- {% trans "Prepara los platos más deliciosos y sabrosos con nuestra variedad de productos y disfruta en cada bocado." %} -->
+        {% trans "Redes Sociales / Facebook e Instagram" %}
+    </p>
+</div>
+{% endblock header %}
+
+
+
+{% block cont %}
+
+
+<div class="container pb-72 pt-16 mb-20">
+
+
+    
+    <div class="iframe-cont my-8">
+
+
+        <div class="fb-page" data-href="https://www.facebook.com/UPISAFrigorificoPY" data-tabs="timeline" data-width=""
+            data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false"
+            data-show-facepile="false">
+
+            <blockquote cite="https://www.facebook.com/UPISAFrigorificoPY" class="fb-xfbml-parse-ignore"><a
+                    href="https://www.facebook.com/UPISAFrigorificoPY">UPISA Frigorífico</a></blockquote>
+        </div>
+
+
+        <div class="fb-page" data-href="https://www.facebook.com/UPISAFrigorificoPY" data-tabs="timeline" data-width=""
+            data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false"
+            data-show-facepile="false">
+
+            <blockquote cite="https://www.facebook.com/UPISAFrigorificoPY" class="fb-xfbml-parse-ignore"><a
+                    href="https://www.facebook.com/UPISAFrigorificoPY">UPISA Frigorífico</a></blockquote>
+        </div>
+
+
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0" nonce="kEYbfwVC"></script>
+
+    </div>
+    
+    <div id="novedades" 
+    class="grid grid-cols-1  gap-6 md:grid-cols-6"> 
+
+        {% for i in page_obj %}
+        {% include './card.html' %}
+
+        {% endfor %}
+
+    </div>
+    <!-- <script>
+        (() => {
+            const container = document.getElementById("novedades")
+
+            container.children[0].classList.replace("md:col-span-2", "md:col-span-3")
+            container.children[1].classList.replace("md:col-span-2", "md:col-span-3")
+        })()
+    </script> -->
+
+
+    {% include '../components/pagination.html' %}
+
+</div>
+{% endblock cont %}

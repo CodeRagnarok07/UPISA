@@ -68,9 +68,7 @@ def index(request):
     return render(request, 'home/index.html', ctx)
 
 
-def about(request):
-    ctx = {}
-    return render(request, 'empresa/index.html', ctx)
+
 
 
 def contactView(request):
@@ -104,3 +102,8 @@ def contactView(request):
     }
 
     return render(request, "contact/index.html", ctx)
+
+
+def promo(request):
+    ctx = {}
+    return render(request, 'promo/index.html', ctx)

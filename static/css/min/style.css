@@ -317,23 +317,6 @@ h1.title-box.h1-primary > div {
   }
 }
 
-body {
-  position: relative;
-}
-body::before {
-  z-index: 0;
-  content: "";
-  background-image: url("/static/imgs/header-texture.png");
-  background-size: contain;
-  background-repeat: repeat;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
-}
-
 .flex-center, footer span, nav .right, .empresa-ft > div, .pagination .control {
   display: flex;
   justify-content: center;
@@ -1774,6 +1757,7 @@ nav .hidden-responsive {
 }
 
 footer {
+  margin-top: auto;
   text-align: left;
   color: white;
 }
@@ -1914,8 +1898,38 @@ html::after {
   box-sizing: inherit;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  position: relative;
+}
+body:nth-child(even) body::before {
+  z-index: 0;
+  content: "";
+  background-image: url("/static/imgs/header-texture.png");
+  background-size: contain;
+  background-repeat: repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+}
+
+.fb-page > span {
+  transform: scale(1);
+}
+@media (min-width: 770px) {
+  .fb-page > span {
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

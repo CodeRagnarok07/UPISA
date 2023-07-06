@@ -1,0 +1,77 @@
+{% extends '../base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{post.titulo}}{% endblock title %}
+
+{% block header %}
+<div class="header-title pb-16">
+    <div class="container ">
+        <h1 class="pb-16">{% trans "" %}</h1>
+    </div>
+</div>
+
+{% endblock header %}
+
+
+{% block cont %}
+
+<!-- -mb-20 h-[250px] 
+md:-mb-28 md:h-[400px] 
+lg:-mb-36 lg:h-[500px]  -->
+<!-- <img class="  
+h-[150px] 
+ md:h-[300px] 
+ lg:h-[400px] 
+
+relative z-40 w-full 
+object-cover object-center" src="{{post.portada.url}}" alt=""> -->
+
+
+<div class="container relative z-50 mb-20">
+
+    <h2 class="text-left  mt-9 md:mt-16">{{post.titulo}}</h2>
+    
+    <div class="flex gap-6 mt-5 ">
+        {% for i in post.tag.all %}
+        <div class="flex-center gap-[10px]">
+            <i>{{i.icon |safe}}</i>
+            <p class="">{{i.nombre}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+    {% if post.galeria.all %}
+    <div class="carrusel img-control py-9">
+        <div class="main h-[200px] md:h-[800px]">
+            {% for i in post.galeria.all %}
+            <img src="{{i.imagen.url}}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <article>
+        {{post.contenido|safe}}
+    </article>
+
+
+    <div class="title-cont mt-24 pb-6 ">
+        <h2>
+            {% trans "MÁS CONSEJOS" %}
+        </h2>
+        <p class="mx-auto">
+            {% trans "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología." %}
+        </p>
+    </div>
+    <div class="grid grid-cols-1 gap-6 
+        md:grid-cols-3">
+        {% for i in more %}
+        {% include './card.html' %}
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock cont %}

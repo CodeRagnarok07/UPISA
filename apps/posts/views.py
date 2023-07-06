@@ -35,10 +35,10 @@ def parrilleros(request):
         "page_obj": page_obj
 
     }
-    return render(request, 'blog/parrilleros.html', ctx)
+    return render(request, 'parrilleros/index.html', ctx)
 
 
-def viewDetail(request, url):
+def parrillerosDetail(request, url):
 
     post = get_object_or_404(TrucosYConsejos, url=url)
     similares = list(TrucosYConsejos.objects.all().exclude(url=url))
@@ -48,7 +48,7 @@ def viewDetail(request, url):
         "post": post,
         "more": similares
     }
-    return render(request, 'blog/detail.html', ctx)
+    return render(request, 'parrilleros/detail.html', ctx)
 
 
 def novedades(request):
@@ -61,7 +61,7 @@ def novedades(request):
     ctx = {
         "page_obj": page_obj
     }
-    return render(request, 'blog/novedades.html', ctx)
+    return render(request, 'novedades/index.html', ctx)
 
 
 def novedadesViewDetail(request, url):
@@ -73,4 +73,4 @@ def novedadesViewDetail(request, url):
         "post": post,
         "more": similares
     }
-    return render(request, 'blog/detail.html', ctx)
+    return render(request, 'novedades/detail.html', ctx)
