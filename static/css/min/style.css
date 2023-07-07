@@ -1962,4 +1962,77 @@ body:nth-child(even) body::before {
   background: none !important;
 }
 
+.iframe-container2 {
+  min-height: inherit;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .iframe-container2 {
+    min-height: 104vh;
+  }
+}
+@media (min-width: 1303px) {
+  .iframe-container2 {
+    min-height: 100vh;
+  }
+}
+.iframe-container2 iframe:first-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  --value: 0.6;
+  translate: 35% 25%;
+  scale: calc(1 + var(--value));
+}
+@media (min-width: 1024px) {
+  .iframe-container2 iframe:first-child {
+    translate: 90% 55%;
+    --value: 1.1;
+    scale: calc(1 + var(--value));
+  }
+}
+@media (min-width: 1303px) {
+  .iframe-container2 iframe:first-child {
+    --value: 0.2;
+    scale: calc(1 + var(--value));
+    translate: calc(var(--value) * 50%) calc(var(--value) * 50%);
+    left: 0;
+    right: auto !important;
+    top: 0;
+    bottom: 0;
+  }
+}
+.iframe-container2 .instagram-media {
+  translate: 40% -30%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  --value: 0.5;
+  scale: calc(1 + var(--value));
+}
+@media (min-width: 1024px) {
+  .iframe-container2 .instagram-media {
+    --value: 1.2;
+    translate: 120% 10%;
+    scale: calc(1 + var(--value));
+  }
+}
+@media (min-width: 1303px) {
+  .iframe-container2 .instagram-media {
+    --value: 0.7;
+    scale: calc(1 + var(--value));
+    translate: calc(var(--value) * -50%) calc(var(--value) * 50%);
+    right: 0;
+    left: auto !important;
+    top: 0;
+    bottom: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

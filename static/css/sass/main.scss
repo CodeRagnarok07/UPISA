@@ -34,9 +34,7 @@ body {
 body {
     position: relative;
 
-    &:nth-child(even)
-
-    &::before {
+    &:nth-child(even) &::before {
         z-index: 0;
         content: "";
         background-image: url("/static/imgs/header-texture.png");
@@ -86,4 +84,93 @@ body {
     max-height: none !important;
     max-width: none !important;
     background: none !important
+}
+
+
+
+
+.iframe-container2 {
+
+
+    min-height: inherit;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+
+
+    @media (min-width:1024px) {
+        min-height: 104vh;
+
+    }
+
+    @media (min-width:1303px) {
+        min-height: 100vh;
+
+    }
+
+    iframe:first-child {
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        --value: 0.6;
+
+        translate: 35% 25%;
+        scale: calc(1 + var(--value));
+
+        @media (min-width:1024px) {
+            translate: 90% 55%;
+            --value: 1.1;
+
+            scale: calc(1 + var(--value));
+        }
+
+        @media (min-width:1303px) {
+            --value: 0.2;
+            scale: calc(1 + var(--value));
+            translate: calc(var(--value)*50%) calc(var(--value)*50%);
+            left: 0;
+            right: auto !important;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    .instagram-media {
+
+        translate: 40% -30%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        --value: 0.5;
+        scale: calc(1 + var(--value));
+
+        @media (min-width:1024px) {
+            --value: 1.2;
+            translate: 120% 10%;
+            scale: calc(1 + var(--value));
+        }
+
+        @media (min-width:1303px) {
+            --value: 0.7;
+            scale: calc(1 + var(--value));
+            translate: calc(var(--value)*-50%) calc(var(--value)*50%);
+            right: 0;
+            left: auto !important;
+            top: 0;
+            bottom: 0;
+        }
+
+    }
+
+
+
+
+
+
 }
