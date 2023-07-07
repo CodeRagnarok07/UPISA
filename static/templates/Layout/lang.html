@@ -7,11 +7,13 @@
 {% get_language_info for LANGUAGE_CODE as lang %}
 
 <a class="right">
+
     <div>
         <p class="name">{{ lang.name_local }} </p>
         <p class="code">({{ lang.code }})</p>
     </div>
 
+    <div class="hidden">
 
     <form class="tooltip_options " onchange="this.submit()" action="{% url 'set_language' %}" method="post">
         {% csrf_token %}
@@ -26,5 +28,6 @@
         </label>
         {% endfor %}
     </form>
+</div>
 
 </a>
