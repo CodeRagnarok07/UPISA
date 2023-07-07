@@ -1,4 +1,17 @@
 .calculadora {
+    font-size: 12px;
+
+    h3 {
+        font-size: 20px;
+    }
+
+    @include responsive(750px) {
+        font-size: 16px;
+
+        h3 {
+            font-size: 32px;
+        }
+    }
 
 
     .calculadora-title {
@@ -7,7 +20,7 @@
 
         .cal-title-cont {
             height: 100%;
-            width:  100%;
+            width: 100%;
             padding: 2rem;
             display: flex;
             flex-direction: column;
@@ -68,6 +81,12 @@
             }
         }
 
+        input[type="checkbox"] {
+            // margin: auto 0;
+             width: 4px;
+             height: 4px;
+        }
+
         #step_4 {
             h2 {
                 margin: 0px;
@@ -88,8 +107,11 @@
             }
 
             .number_control {
-                width: 2.75rem;
-                height: 2.75rem;
+
+
+                width: 2rem;
+                height: 2rem;
+
                 background-color: v.$N100;
                 // padding: auto;
                 border-radius: 50%;
@@ -98,12 +120,24 @@
                 justify-content: center;
                 cursor: pointer;
 
+                svg {
+                    width: 50%;
+                    height: 50%;
+                }
+
+
                 &.disable {
                     background-color: red;
                     pointer-events: none;
                     cursor: not-allowed;
 
                 }
+
+                @include responsive(750px) {
+                    width: 2.75rem;
+                    height: 2.75rem;
+                }
+
             }
 
         }

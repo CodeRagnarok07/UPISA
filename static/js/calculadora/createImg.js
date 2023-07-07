@@ -18,14 +18,9 @@ const createImg = (node) => {
     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
     <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
-    
-${node}
-
-
+    ${node}
     </div>
-    
     </foreignObject></svg>`
-
     tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(xtmlImg)
     const targetImg = document.createElement('img')
     body.appendChild(targetImg)

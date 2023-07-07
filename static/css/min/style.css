@@ -275,8 +275,6 @@ h1.title-box.h1-primary > div {
   font-family: "Antonio";
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
-  line-height: 83px;
   /* identical to box height */
   text-align: center;
   text-transform: uppercase;
@@ -284,15 +282,22 @@ h1.title-box.h1-primary > div {
   color: #FFFFFF;
   margin-bottom: 0.5rem;
 }
+@media (min-width: 750px) {
+  .header-title h1 {
+    font-size: 64px;
+    line-height: 83px;
+  }
+}
 .header-title p {
   width: 80%;
   margin: 0px auto;
-  font-size: 1.2em;
-  margin-top: 10px;
+  font-size: 12px;
   line-height: 24.2px;
+  margin-top: 10px;
 }
-@media (max-width: 1128px) {
+@media (min-width: 750px) {
   .header-title p {
+    font-size: 1.2rem;
     width: 40%;
   }
 }
@@ -1246,6 +1251,20 @@ article p {
   box-shadow: 0px 8px 24px -3px rgba(234, 130, 21, 0.36);
 }
 
+.calculadora {
+  font-size: 12px;
+}
+.calculadora h3 {
+  font-size: 20px;
+}
+@media (min-width: 750px) {
+  .calculadora {
+    font-size: 16px;
+  }
+  .calculadora h3 {
+    font-size: 32px;
+  }
+}
 .calculadora .calculadora-title {
   padding: 1rem;
 }
@@ -1293,6 +1312,10 @@ article p {
   gap: 10px;
   align-items: center;
 }
+.calculadora .calculadora-script input[type=checkbox] {
+  width: 4px;
+  height: 4px;
+}
 .calculadora .calculadora-script #step_4 h2 {
   margin: 0px;
 }
@@ -1307,8 +1330,8 @@ article p {
   border-radius: 0.5rem;
 }
 .calculadora .calculadora-script .content_input_number_calculadora .number_control {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2rem;
+  height: 2rem;
   background-color: #EA8215;
   border-radius: 50%;
   display: flex;
@@ -1316,10 +1339,20 @@ article p {
   justify-content: center;
   cursor: pointer;
 }
+.calculadora .calculadora-script .content_input_number_calculadora .number_control svg {
+  width: 50%;
+  height: 50%;
+}
 .calculadora .calculadora-script .content_input_number_calculadora .number_control.disable {
   background-color: red;
   pointer-events: none;
   cursor: not-allowed;
+}
+@media (min-width: 750px) {
+  .calculadora .calculadora-script .content_input_number_calculadora .number_control {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
 }
 .calculadora .calculadora-script .noarrow {
   -webkit-appearance: textfield;
@@ -1422,11 +1455,8 @@ article p {
   margin-bottom: 2rem;
 }
 .certificaciones .certificaciones-item .img-cont img {
-  height: 100%;
-  width: auto;
-}
-.certificaciones .certificaciones-item .img-cont img .h-auto {
   height: auto;
+  width: auto;
 }
 .certificaciones .certificaciones-item .text-cont {
   display: flex;

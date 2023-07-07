@@ -35,6 +35,8 @@ p {
     }
 }
 
+
+
 h1 {
     font-family: 'Bebas Neue';
     font-style: normal;
@@ -367,31 +369,34 @@ h1.title-box {
         font-family: 'Antonio';
         font-style: normal;
         font-weight: 700;
-        font-size: 64px;
-        line-height: 83px;
+
         /* identical to box height */
 
         text-align: center;
         text-transform: uppercase;
-
         /* BLANCO */
-
         color: #FFFFFF;
         margin-bottom: 0.5rem;
 
-
-
-
+        @include responsive(750px) {
+            font-size: 64px;
+            line-height: 83px;
+        }
     }
 
     p {
         width: 80%;
         margin: 0px auto;
-        font-size: 1.2em;
-        margin-top: 10px;
+        font-size: 12px;
         line-height: 24.2px;
 
-        @media (max-width:1128px) {
+        margin-top: 10px;
+
+
+
+        @include responsive(750px) {
+            font-size: 1.2rem;
+
             width: 40%;
 
         }

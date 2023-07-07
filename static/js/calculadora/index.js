@@ -45,7 +45,7 @@ const reRenderAddPerson = () => {
 
             <th class="" key=${i}>
                 <div class=" flex">
-                    <div class="p-4 border border-[#FAE0C9]  flex items-center justify-end rounded-lg">                                            
+                    <div class="p-1 md:p-4 border border-[#FAE0C9]  flex items-center justify-end rounded-lg">                                            
                         <input name="porcion" disabled id="g_value" class="h-full w-max inline items-center" value="${v.porcion}" type="number"/>g
                         <lable for="g_value" onclick="{this.previousElementSibling.disabled = !this.previousElementSibling.disabled, this.previousElementSibling.focus() }" class="h-full px-2 flex-center cursor-pointer">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
@@ -105,6 +105,8 @@ const reRenderAddPerson = () => {
 }
 reRenderAddPerson()
 
+
+// STEP 2
 // function addPerson() {
 //     let newperson = {
 //         tipo: "persona",
@@ -130,7 +132,7 @@ const createListCheckbox = (id_element, state_key) => {
     }
     const render_carnes_list = `${state[state_key].map((v) => (
         `<label class="flex gap-4">
-        <input type="checkbox" name="${v.name}" id="${v.name}">
+        <input type="checkbox" name="${v.name}" id="${v.name} class=""min-h-2 min-w-2">
         ${v.name}
         </label>`
     )).join("")}`
@@ -141,6 +143,8 @@ const createListCheckbox = (id_element, state_key) => {
     }
 }
 createListCheckbox("step_2", "carnes")
+
+// STEP 3
 createListCheckbox("step_3", "embutidos")
 
 
