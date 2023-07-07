@@ -1074,6 +1074,10 @@ video {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .gap-6 {
   gap: 1.5rem;
 }
@@ -1860,6 +1864,10 @@ br.md {
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:justify-around {
+    justify-content: space-around;
   }
 
   .md\:rounded-t-none {

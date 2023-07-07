@@ -34,7 +34,7 @@ body {
 body {
     position: relative;
 
-     &::before {
+    &::before {
         z-index: 0;
         content: "";
         background-image: url("/static/imgs/header-texture.png");
@@ -170,4 +170,32 @@ body {
 
 
 
+}
+
+.iframecontainer {
+
+    iframe:first-child {
+
+        
+    }
+
+    .instagram-media {
+
+    }
+
+
+
+    @media (min-width:725px) {}
+
+
+    @media (min-width:1024px) {}
+
+    @media (min-width:1303px) {}
+
+}
+
+.text-black{
+    .text-white{
+color: black;
+    }
 }
