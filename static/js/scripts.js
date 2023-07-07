@@ -2,6 +2,7 @@
 import "/static/js/carrusel-img.js"
 import "/static/js/carrusel-slider.js"
 import "/static/js/tooltip.js"
+// import "/static/js/calculadora/index.js"
 
 
 /** re render products */

@@ -32,16 +32,16 @@ body {
 }
 
 body {
-    position: relative;
+    // position: relative;
 
     &::before {
-        z-index: 0;
+        z-index: -1;
         content: "";
         background-image: url("/static/imgs/header-texture.png");
         // background-color: v.$primary-light;
-        background-size: contain;
+        background-size: auto;
         background-repeat: repeat;
-        position: fixed;
+        position: absolute;
         inset: 0 0 0 0;
         opacity: 0.6;
         // mix-blend-mode: overlay;

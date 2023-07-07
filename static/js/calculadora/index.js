@@ -5,7 +5,6 @@ import "/static/js/calculadora/handleStep.js"
 import state from "/static/js/calculadora/state.js"
 
 
-
 // STEP 1
 const table_person = document.getElementById("table_person")
 const reRenderAddPerson = () => {
@@ -106,17 +105,17 @@ const reRenderAddPerson = () => {
 }
 reRenderAddPerson()
 
-function addPerson() {
-    let newperson = {
-        tipo: "persona",
-        cantidad: 1,
-        porcion: 250,
-    }
-    state.personas.push(newperson)
-    reRenderAddPerson()
-}
-const add_person = document.getElementById("add_person")
-add_person.onclick = () => addPerson()
+// function addPerson() {
+//     let newperson = {
+//         tipo: "persona",
+//         cantidad: 1,
+//         porcion: 250,
+//     }
+//     state.personas.push(newperson)
+//     reRenderAddPerson()
+// }
+// const add_person = document.getElementById("add_person")
+// add_person.onclick = () => addPerson()
 
 // STEP 2 and 3
 const createListCheckbox = (id_element, state_key) => {
