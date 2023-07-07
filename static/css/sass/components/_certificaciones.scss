@@ -1,42 +1,45 @@
-
-.certificaciones{
+.certificaciones {
     // grid grid-cols-1 md:grid-cols-3  gap-4 mt-6
 
     margin-top: 1.25rem;
     display: flex;
     gap: 1rem;
+    color: black;
 
-    .certificaciones-item{
+    .certificaciones-item {
         background-color: white;
         border-radius: 1rem;
         padding: 2rem;
 
-        .img-cont{
+        .img-cont {
             height: 40%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 2rem;
-            img{
+
+            img {
                 height: 100%;
                 width: auto;
             }
 
         }
 
-        .text-cont{
+        .text-cont {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            h3{
+            color: black;
+
+            h3 {
                 text-align: center;
             }
 
         }
     }
 
-    @include responsive(540px){
-        --grid-cols : 3;
+    @include responsive(540px) {
+        --grid-cols: 3;
 
     }
 

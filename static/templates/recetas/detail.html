@@ -7,7 +7,7 @@
 
 {% block header %}
 <div class="header-title pb-32">
-        <h1>Detalle de Producto</h1>
+        <h1>Receta {{receta.nombre}}</h1>
 </div>
 {% endblock header %}
 
@@ -16,7 +16,7 @@
 
 <div class="container">
 
-    <div class="grid md:grid-cols-2 mt-9 gap-x-[140px] gap-y-6 ">
+    <div class="grid md:grid-cols-2 mt-9 gap-x-[140px] gap-y-6 mb-20">
 
         <div>
             <h2 class="uppercase text-left">{{receta.nombre}}</h2>

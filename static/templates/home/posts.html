@@ -10,7 +10,7 @@
         md:grid-cols-2
         ">
             {% for i in posts %}
-            {% include '../parrilleros/card.html' %}
+                {% include '../novedades/card.html' %}
             {% endfor %}
 
         </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="container mt-16">
 
-        <a href="{% url 'parrilleros' %}">
+        <a href="{% url 'novedades' %}">
             <button class="primary gap-[13.25px] flex-center md:mx-auto">VER TODOS<svg width="7" height="12"
                     viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path

@@ -12,7 +12,7 @@ from .forms import ContactForm
 # models
 from products.models import Product, HomeBanner
 from receta.models import Receta
-from posts.models import TrucosYConsejos
+from posts.models import Novedades
 from .models import Sucursales
 
 # translate
@@ -43,7 +43,7 @@ def index(request):
 
     products_populares = Product.objects.filter(destacado=True)
     last_recetas = Receta.objects.all()[:5]
-    posts = TrucosYConsejos.objects.all()[:2]
+    posts = Novedades.objects.all()[:2]
 
     sucursales = Sucursales.objects.all()
 
