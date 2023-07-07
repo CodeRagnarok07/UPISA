@@ -2,9 +2,12 @@
 {% load i18n %}
 {% load static %}
 
-{% block description %}
+{% block pagedescription %}
 Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frigorífico líder en Paraguay.
-{% endblock description %}
+{% endblock pagedescription %}
+
+
+
 
 {% block title %}La Empresa{% endblock title %}
 
@@ -22,12 +25,12 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
 {% block cont %}
 
 
-{% include '../components/video.html' %}
 
 
 
 
 <div class="container mb-20">
+    <!-- {% include '../components/video.html' %} -->
 
 
 
@@ -142,16 +145,16 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
     </div> -->
 
 
-    <img class="mt-20" src="{% static 'imgs/banner/exports.png' %}" alt="">
+    <img class="my-20" src="{% static 'imgs/banner/exports.png' %}" alt="">
 
 
     <!-- confianza -->
-    <div class="flex-center flex-col lg:flex-row mt-12 mb-24">
+    <!-- <div class="flex-center flex-col lg:flex-row mt-12 mb-24"> -->
 
-        <h1 class="title-box h1-primary">
+        <!-- <h1 class="title-box h1-primary">
             <div class=""> {% trans "todo esto se traduce en una palabra:" %}</div>
             <div class="second about text-center mt-4"> {% trans "Confianza" %} </div>
-        </h1>
+        </h1> -->
 
         <!-- <h3 class="">   {% trans ":" %}
         </h3>
@@ -160,7 +163,7 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
         <h2 class="kalamaya  mt-4 mb-0 pl-5 ">
             {% trans "" %} 
         </h2> -->
-    </div>
+    <!-- </div> -->
     <div class="gap-12 flex flex-col ">
 
         <!-- card1 -->

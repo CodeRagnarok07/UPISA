@@ -6,6 +6,8 @@
 {% block pagedescription %}
 UPISA - Variedades de embutidos con sabores únicos
 {% endblock pagedescription %}
+
+
 {% block title %}Variedades de embutidos con sabores únicos{% endblock title %}
 <!-- head -->
 
@@ -20,7 +22,11 @@ UPISA - Variedades de embutidos con sabores únicos
 
 <div class="bg1 sm:pt-0">
 
-    {% include '../components/video.html' %}
+    <div class="container relative cont-video z-50 ">
+        <iframe class="rounded-xl  h-full w-full"
+            src="https://drive.google.com/file/d/1E5qbD3NhY2VYfUpk5ORbGm99cdGOCMWh/preview" allow="autoplay">
+        </iframe>
+    </div>
 
 
     <!-- <iframe src="https://drive.google.com/file/d/1E5qbD3NhY2VYfUpk5ORbGm99cdGOCMWh/preview" width="640" height="480" allow="autoplay"></iframe> -->
@@ -39,7 +45,6 @@ UPISA - Variedades de embutidos con sabores únicos
 <!-- RESETAS -->
 {% include './resetas_slider.html' %}
 
-<!--TRUCOS Y CONSEJOS "./resetas.html" -->
 {% include './posts.html' %}
 
 <!-- CONTACTO -->

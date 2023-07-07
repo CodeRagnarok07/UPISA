@@ -1735,7 +1735,6 @@ nav .hidden-responsive {
   left: 0;
   position: absolute;
   min-width: 90px;
-  height: 50px;
 }
 .navbar ul .right {
   display: flex;
