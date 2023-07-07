@@ -2,14 +2,12 @@
 {% load i18n %}
 {% load static %}
 
-{% block pagedescription %}
-Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frigorífico líder en Paraguay.
-{% endblock pagedescription %}
+{% block pagedescription %}Descubre nuestra pasión por la calidad y la tradición en el frigorífico líder en Paraguay.{% endblock pagedescription %}
 
 
 
 
-{% block title %}La Empresa{% endblock title %}
+{% block title %}Sobre{% endblock title %}
 
 
 
@@ -46,17 +44,30 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
         <div class="flex-col gap-16">
             <div class="mb-6 flex flex-col lg:flex-row gap-10">
                 <div class="w-full">
-                    <img class="rounded-xl" src="{% static 'imgs/about/1.jpg' %}" alt="">                 
+                    <img class="rounded-xl" src="{% static 'imgs/about/1.jpg' %}" alt="">
                 </div>
                 <div class="w-full justify-center ">
                     <!-- <h1 class="title-box h1-primary">
                         <div class=""> {% trans "Garantía de calidad para " %}</div>
                         <div class="second about"> {% trans "El Consumidor" %} </div>
                     </h1> -->
-                    <p class="mt-4 mb-6">
+                    <p class="mt-4 mb-6 text-[19px]">
                         <!-- {% trans "Nacimos el 22 de enero del año 2000 en la ciudad de Fram, Itapúa, por productores y cooperativas agropecuarias, que se unieron con el objetivo de poder desarrollar, comercializar su producción y reducir los intermediarios, lo que significa mejores precios y garantía de calidad para el consumidor final." %} -->
-                        {% trans "UPISA nace el 22 de Enero del año 2000 en la Ciudad de Fram, del pujante departamento de Itapua, fue fundada por productores de cerdos y cooperativas agropecuarias a fin de lograr el desarrollo y la comercialización de su producción, disminuir las intermediaciones y garantizar la calidad para el consumidor final. Se encuentra organizada como un ‘cluster’ de producción que integra a diferentes cadenas de valor, desde la producción de granos, desarrollo genético, engorde, industrialización, comercialización local y exportación. Es realmente un modelo de negocios único en el país.  Y desde ese entonces, viene transformándose en una marca confiable, transparente y ofreciendo sabrosos productos de calidad y variedad para todas las ocasiones de consumo." %}<br><br>
-                        {% trans " La planta industrial se encuentra en la cuidad de Fram, y está conformada por equipos de primer nivel en cuanto a tecnología y seguridad, donde se cumplen estrictos controles de calidad, presididas por las normas de HACCP, las cuales certifican totalmente la trazabilidad de toda la producción, procesos de mejora continua de sus productos y de sus recursos humanos, los cuales desde siempre estan comprometidos con la seguridad alimentaria de todos los productos fabricados. " %}<br><br>
+                        {% trans "UPISA nace el 22 de Enero del año 2000 en la Ciudad de Fram, del pujante departamento
+                        de Itapua, fue fundada por productores de cerdos y cooperativas agropecuarias a fin de lograr el
+                        desarrollo y la comercialización de su producción, disminuir las intermediaciones y garantizar
+                        la calidad para el consumidor final. Se encuentra organizada como un ‘cluster’ de producción que
+                        integra a diferentes cadenas de valor, desde la producción de granos, desarrollo genético,
+                        engorde, industrialización, comercialización local y exportación. Es realmente un modelo de
+                        negocios único en el país. Y desde ese entonces, viene transformándose en una marca confiable,
+                        transparente y ofreciendo sabrosos productos de calidad y variedad para todas las ocasiones de
+                        consumo." %}<br><br>
+                        {% trans " La planta industrial se encuentra en la cuidad de Fram, y está conformada por equipos
+                        de primer nivel en cuanto a tecnología y seguridad, donde se cumplen estrictos controles de
+                        calidad, presididas por las normas de HACCP, las cuales certifican totalmente la trazabilidad de
+                        toda la producción, procesos de mejora continua de sus productos y de sus recursos humanos, los
+                        cuales desde siempre estan comprometidos con la seguridad alimentaria de todos los productos
+                        fabricados. " %}<br><br>
                     </p>
                 </div>
             </div>
@@ -64,18 +75,23 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
             <div class="mb-6 flex flex-col lg:flex-row-reverse  gap-10">
                 <div class="w-full">
                     <img class="rounded-xl" src="{% static 'imgs/about/2.jpg' %}" alt="">
-                  
+
                 </div>
                 <div class="w-full justify-center ">
                     <!-- <h1 class="title-box h1-primary">
                         <div class=""> {% trans "Compromiso con la" %}</div>
                         <div class="second about"> {% trans "Seguridad alimentaria" %} </div>
                     </h1> -->
-                    <p class="mt-4 mb-6">                        
-                        {% trans "Desde allí, se procesan y envasan todos los productos para consumo nacional e internacional. En sus inicios, la planta industrial contaba con una capacidad de faenar 90 cerdos/día, hoy se encuentra faenando 1500 cerdos/día con una capacidad de procesamiento de embutidos embutidos de 160.000 kg/día." %}<br><br>
-                       UPISA es el único frigorífico del país habilitado para la exportación de cortes porcinos y cuenta además con el reconocimiento de la
-                         <span class="font-bold">Marca País Paraguay</span>
-                         , porque es una empresa que representa al país en el mundo, por la calidad, transparencia, sustentabilidad, innovación e integridad en sus operaciones comerciales.<br><br>
+                    <p class="mt-4 mb-6  text-[19px]">
+                        {% trans "Desde allí, se procesan y envasan todos los productos para consumo nacional e
+                        internacional. En sus inicios, la planta industrial contaba con una capacidad de faenar 90
+                        cerdos/día, hoy se encuentra faenando 1500 cerdos/día con una capacidad de procesamiento de
+                        embutidos embutidos de 160.000 kg/día." %}<br><br>
+                        UPISA es el único frigorífico del país habilitado para la exportación de cortes porcinos y
+                        cuenta además con el reconocimiento de la
+                        <span class="font-bold">Marca País Paraguay</span>
+                        , porque es una empresa que representa al país en el mundo, por la calidad, transparencia,
+                        sustentabilidad, innovación e integridad en sus operaciones comerciales.<br><br>
                         {% trans "Todo esto, permite a UPISA entregar productos de calidad excepcional." %}<br><br>
                     </p>
                 </div>
@@ -151,12 +167,12 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
     <!-- confianza -->
     <!-- <div class="flex-center flex-col lg:flex-row mt-12 mb-24"> -->
 
-        <!-- <h1 class="title-box h1-primary">
+    <!-- <h1 class="title-box h1-primary">
             <div class=""> {% trans "todo esto se traduce en una palabra:" %}</div>
             <div class="second about text-center mt-4"> {% trans "Confianza" %} </div>
         </h1> -->
 
-        <!-- <h3 class="">   {% trans ":" %}
+    <!-- <h3 class="">   {% trans ":" %}
         </h3>
 
 
@@ -228,7 +244,7 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
     <div class="carrusel img-control mt-16">
 
         <div class="main ">
-            <!-- <img src="{% static 'imgs/about/Carrusel/0.jpg' %}" alt="">
+       <!-- <img src="{% static 'imgs/about/Carrusel/0.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/1.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/2.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/3.jpg' %}" alt="">
@@ -248,27 +264,30 @@ Sobre UPISA - Descubre nuestra pasión por la calidad y la tradición en el frig
             <img src="{% static 'imgs/about/Carrusel/17.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/18.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/19.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/20.jpg' %}" alt=""> -->
-            <img src="{% static 'imgs/about/Carrusel/21.jpg' %}" alt="">
-            <!-- <img src="{% static 'imgs/about/Carrusel/22.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/20.jpg' %}" alt=""> 
+            <img src="{% static 'imgs/about/Carrusel/22.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/23.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/24.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/25.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/26.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/27.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/28.jpg' %}" alt=""> -->
-            <img src="{% static 'imgs/about/Carrusel/29.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/30.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/31.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/32.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/33.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/b01.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/b03.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/b04.jpg' %}" alt="">
-            <img src="{% static 'imgs/about/Carrusel/b05.jpg' %}" alt="">
-            <!-- <img src="{% static 'imgs/about/Carrusel/34.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/28.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/34.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/35.jpg' %}" alt="">
             <img src="{% static 'imgs/about/Carrusel/36.jpg' %}" alt=""> -->
+
+
+
+            <img src="{% static 'imgs/about/Carrusel/b05.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/b04.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/b03.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/b01.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/31.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/33.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/32.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/30.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/29.jpg' %}" alt="">
+            <img src="{% static 'imgs/about/Carrusel/21.jpg' %}" alt="">
 
         </div>
     </div>

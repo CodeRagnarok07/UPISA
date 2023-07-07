@@ -1425,6 +1425,9 @@ article p {
   height: 100%;
   width: auto;
 }
+.certificaciones .certificaciones-item .img-cont img .h-auto {
+  height: auto;
+}
 .certificaciones .certificaciones-item .text-cont {
   display: flex;
   flex-direction: column;
@@ -1923,18 +1926,15 @@ body {
 body {
   position: relative;
 }
-body:nth-child(even) body::before {
+body::before {
   z-index: 0;
   content: "";
   background-image: url("/static/imgs/header-texture.png");
   background-size: contain;
   background-repeat: repeat;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
+  position: fixed;
+  inset: 0 0 0 0;
+  opacity: 0.6;
 }
 
 .fb-page > span {
