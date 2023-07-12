@@ -41,17 +41,16 @@ def index(request):
                 return HttpResponse("Invalid header found.")
             return redirect("contacto")
 
-    products_populares = Product.objects.filter(destacado=True)
-    last_recetas = Receta.objects.all()[:5]
-    posts = Novedades.objects.all()[:2]
 
+    carrusel = HomeBanner.objects.all().order_by("order")
+    last_recetas = Receta.objects.all()[:5]
+    products_populares = Product.objects.filter(destacado=True)
+    posts = Novedades.objects.all()[:2]
     sucursales = Sucursales.objects.all()
 
 
 
-    carrusel = HomeBanner.objects.all().order_by("order")
 
-    print(carrusel)
 
     ingredientes = Product.objects.all()
 

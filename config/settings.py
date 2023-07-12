@@ -40,9 +40,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 
-# ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), '127.0.0.1', 'localhost']
 
 # if DEBUG is False:
 #     print("hola mundo")
