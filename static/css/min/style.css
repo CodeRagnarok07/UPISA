@@ -313,13 +313,8 @@ h1.title-box.h1-primary > div {
 .container, .navbar ul, nav {
   margin-left: auto;
   margin-right: auto;
-  width: 88.2%;
+  width: 80%;
   position: relative;
-}
-@media (min-width: 1024px) {
-  .container, .navbar ul, nav {
-    width: 1360px;
-  }
 }
 
 .flex-center, footer span, nav .right, .empresa-ft > div, .pagination .control {
