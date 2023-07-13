@@ -1,0 +1,13 @@
+html,
+body,
+#root {
+    height: 100%;
+
+}
+
+body {
+
+    opacity: 0.05999999865889549;
+    background: url(<path-to-image>), lightgray 0% 0% / 100px 100px repeat;
+    mix-blend-mode: color-burn;
+}
