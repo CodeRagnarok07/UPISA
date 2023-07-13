@@ -24,6 +24,15 @@ env = environ.Env(  # add this
 )
 
 
+import socket
+def get_ipaddress(): 
+    
+   host_name = socket.gethostname()
+   ip_address = socket.gethostbyname(host_name) 
+   return "http://"+ip_address+":4200"
+
+print(get_ipaddress())
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +52,10 @@ DEBUG = env('DEBUG')
 # ALLOWED_HOSTS = ['*']
 
 ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), '127.0.0.1', 'localhost']
+
+
+CSRF_TRUSTED_ORIGINS = [f"https://{ALLOWED_HOSTS}"]
+
 
 # if DEBUG is False:
 #     print("hola mundo")
