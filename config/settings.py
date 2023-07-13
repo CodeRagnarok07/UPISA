@@ -135,7 +135,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 # default  DATABASE_URL='sqlite:///db.sqlite3'
-DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+DATABASES = {'default': dj_database_url.config(conn_max_age=600, )}
 
 if(DATABASES['default']['ENGINE'] == "django.db.backends.mysql"):
     DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
