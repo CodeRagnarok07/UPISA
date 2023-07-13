@@ -1,0 +1,10 @@
+h1 {
+    font-family: Antonio;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 41px;
+    @include bp(750px) {
+        font-size: 64px;
+        line-height: 83px;
+    }
+}

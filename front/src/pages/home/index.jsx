@@ -1,6 +1,10 @@
-const MyApp =()=>{
+const MyApp = () => {
     return (
         <div>
+            
+
+            
+
             home page
         </div>
     )

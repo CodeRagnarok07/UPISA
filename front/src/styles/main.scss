@@ -1,22 +1,29 @@
 @import 'utils';
 @import 'mixin';
+@import 'text';
 
 html,
 body,
 #root {
-    height: 100%;
     overflow-x: hidden;
+    height: 100%;
 }
 
 #root {
     display: flex;
     flex-direction: column;
-
+    min-height: 100vh;
 }
 
 
-.container {
+.cont {
+    width: 95%;
+
     margin: 0 auto;
     padding: 0 1rem;
+    @include bp(750px) {
+        width: 80%;
+
+    }
 }
 

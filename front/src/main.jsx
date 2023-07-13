@@ -14,6 +14,7 @@ const queryClient = new QueryClient()
 
 
 import './styles/tailwind.css'
+import './styles/main.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 

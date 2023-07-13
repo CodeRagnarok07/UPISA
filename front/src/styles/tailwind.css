@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+    --primary: #EA8215;
+}
+
+.bg-primary{
+
+    background: var(--primary);
+
+}
