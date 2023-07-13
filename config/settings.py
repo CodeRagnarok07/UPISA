@@ -134,37 +134,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
 # default  DATABASE_URL='sqlite:///db.sqlite3'
-
-# Feel free to alter this value to suit your needs.
-# default='postgresql://postgres:postgres@localhost:5432/mysite',
-
-
-
-# DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.mysql',
-#            'NAME': 'django',
-#            'USER':'root',
-#            'PASSWORD':'',
-#            'HOST':'127.0.0.1',
-#            'PORT':'3306',
-#            'OPTIONS':{
-#                'init_command':"SET sql_mode=STRICT_TRANS_TABLES" 
-#                }
-#             }
-#         }
-
-
-DATABASES = {'default': dj_database_url.config(conn_max_age=3600)}
+DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 if(DATABASES['default']['ENGINE'] == "django.db.backends.mysql"):
     DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
     # DATABASES['default']['CONN_MAX_AGE'] = 3600
-
-print(DATABASES)
-
 
 
 
@@ -205,13 +180,9 @@ LOCALE_PATHS = (
 
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -219,40 +190,35 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # mail sttings
 # if DEBUG is False:
 #     EMAIL_BACKEND = env('EMAIL_BACKEND')
 #     DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 #     DEFAULT_TO_EMAIL = env('DEFAULT_TO_EMAIL')
-
 #     EMAIL_HOST = env('EMAIL_HOST')
 #     EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 #     EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-
 # else:
 #     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
 #     DEFAULT_FROM_EMAIL = "will@wsvincent.com"
 #     DEFAULT_TO_EMAIL = "angelriera1796@gmail.com"
-
 #     EMAIL_HOST = "smtp.sendgrid.net"  # new
 #     EMAIL_HOST_USER = "apikey"  # new
 #     EMAIL_HOST_PASSWORD = "<sendgrid_password>"  # new
 
-EMAIL_USE_TLS = True  # new
-EMAIL_PORT = 587  # new
+
+EMAIL_USE_TLS = True  
+EMAIL_PORT = 587  
