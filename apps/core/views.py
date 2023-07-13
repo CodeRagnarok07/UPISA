@@ -66,10 +66,6 @@ def index(request):
 
     return render(request, 'home/index.html', ctx)
 
-
-
-
-
 def contactView(request):
 
     sucursales = Sucursales.objects.filter(es_central=False)
@@ -101,7 +97,6 @@ def contactView(request):
     }
 
     return render(request, "contact/index.html", ctx)
-
 
 def promo(request):
     ctx = {}
