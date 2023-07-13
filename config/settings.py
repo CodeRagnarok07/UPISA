@@ -52,9 +52,9 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), '127.0.0.1', 'localhost']
 
 
-CSRF_TRUSTED_ORIGINS = [env('CSRF_TRUSTED_ORIGINS'), f"https://{ALLOWED_HOSTS}", "https://upisa-production.up.railway.app" ]
+CSRF_TRUSTED_ORIGINS = [env('CSRF_TRUSTED_ORIGINS'), f"https://{env('ALLOWED_HOSTS')}", "https://upisa-production.up.railway.app" ]
 
-
+print(CSRF_TRUSTED_ORIGINS)
 # if DEBUG is False:
 #     print("hola mundo")
 #     ALLOWED_HOSTS = ['localhost']
