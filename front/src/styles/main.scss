@@ -1,4 +1,5 @@
 @import 'mixin';
+@import 'bg';
 @import 'utils';
 @import 'text';
 
@@ -15,35 +16,4 @@ body,
     min-height: 100vh;
 }
 
-
-
-body {
-    position: relative;
-    background-repeat: repeat;
-
-    &::before {
-        z-index: -1;
-        content: "";
-        background-image: url("../assets/header-texture.png");
-        background-repeat: repeat;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.6;
-        background-color: #FDF2E8;
-        mix-blend-mode: color-burn;
-    }
-
-}
-
-
-footer{
-    .bg-texture{
-        &::before{
-            z-index: 0;
-        }
-    }
-}
 

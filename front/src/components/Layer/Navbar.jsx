@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
 
@@ -14,13 +15,13 @@ const Navbar = () => {
 
 
     return (
-        <nav className="cont relative z-30 lg:mb-[-9.5%] text-white  ">
+        <nav className=" z-30  text-white  ">
 
 
 
 
             <ul ref={liRef}
-                className="
+                className="cont relative
              flex w-full justify-between items-center flex-col lg:flex-row gap-4 lg:gap-0  
              [&>li]:whitespace-nowrap
              [&>li]:rounded-lg
@@ -37,8 +38,11 @@ const Navbar = () => {
              [&>li]:border
              [&>li]:border-transparent
              [&>lang]:flex
+             pt-16
+             lg:pt-0
              ">
 
+                 {/* absolute inset-x-0 mx-0 z-50 */}
                 <div
                     onClick={handleClick}
                     className="flex lg:hidden items-center border p-2 rounded-lg cursor-pointer absolute top-0 left-4" >
@@ -48,22 +52,25 @@ const Navbar = () => {
                 </div>
 
 
-                <li className="hover:border-white">INICIO</li>
-                <li className="hover:border-white">LA EMPRESA</li>
-                <li className="hover:border-white">PRODUCTOS</li>
-                <li className="hover:border-white">PARRILLEROS</li>
-                <img className="w-auto h-14 lg:h-24 absolute lg:relative -top-1 mx-auto lg:mx-0" src="src/assets/Logo.png" alt="logo upisa" />
-                <li className="hover:border-white">NOVEDADES</li>
-                <li className="hover:border-white">RECETAS</li>
-                <li className="hover:border-white">CONTACTO</li>
+                <li className="hover:border-white"><NavLink to={"/"}>INICIO</NavLink></li>
+                <li className="hover:border-white"><NavLink to={"/empresa"}>LA EMPRESA</NavLink></li>
+                <li className="hover:border-white"><NavLink to={"/productos"}>PRODUCTOS</NavLink></li>
+                <li className="hover:border-white"><NavLink to={"/parrilleros"}>PARRILLEROS</NavLink></li>
+
+                <NavLink className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} to={"/"}>
+                    <img className="w-auto h-14 lg:h-24 " src="src/assets/Logo.png" alt="logo upisa" />
+                    </NavLink>
+                <li className="hover:border-white"><NavLink to={"/novedades"}>NOVEDADES</NavLink></li>
+                <li className="hover:border-white"><NavLink to={"/recetas"}>RECETAS</NavLink></li>
+                <li className="hover:border-white"><NavLink to={"/contacto"}>CONTACTO</NavLink></li>
 
                 <li style={{ display: "flex", width: "auto" }}
 
                     className="
                 
                 border border-transparent hover:border-white
-                ml-2 flex lg:relative items-center  p-2 rounded-lg cursor-pointer absolute top-0 right-4"
-
+                ml-2 flex lg:relative items-center  p-2 rounded-lg cursor-pointer absolute top-0 right-4
+                "
                 >
                     <span className="flex xl:hidden">ES</span>
                     <span className="xl:flex hidden">ESPAÑOL</span>

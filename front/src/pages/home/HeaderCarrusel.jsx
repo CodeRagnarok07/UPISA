@@ -9,7 +9,7 @@ const HeaderCarrusel = () => {
     ]
 
     return (
-        <div className="-mb-10">
+        <div className="-mb-10 -mt-24">
 
             <div className="carrusel-slider ">
 

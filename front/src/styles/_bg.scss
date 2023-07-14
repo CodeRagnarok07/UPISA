@@ -1,0 +1,66 @@
+.bg-texture {
+    position: relative;
+    background-repeat: repeat;
+    z-index: 1;
+
+    &::before {
+        z-index: 0;
+
+        content: "";
+        background-image: url("../assets/header-texture.png");
+        background-repeat: repeat;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 1.2;
+        mix-blend-mode: overlay;
+    }
+}
+
+.bg-texture-rounded{
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        border-radius: 50%;
+        background-image: url("src/assets/header-texture2.png");
+        box-shadow: 0 0 30px 30px rgba(245, 245, 245, 0.336) inset;
+        opacity: 0.8;
+    }
+}
+
+body {
+    position: relative;
+    background-repeat: repeat;
+
+    &::before {
+        z-index: -1;
+        content: "";
+        background-image: url("../assets/header-texture.png");
+        background-repeat: repeat;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.6;
+        background-color: var(--primary-light);
+        mix-blend-mode: color-burn;
+    }
+
+}
+
+
+footer{
+    .bg-texture{
+        &::before{
+            z-index: 0;
+        }
+    }
+}

@@ -1,7 +1,7 @@
-import Calculadora from "components/Calculadora"
-
+import Banner from "./Banner"
 import Pagination from "components/Pagination"
-const MyApp =()=>{
+
+const MyApp = () => {
     const source = [
         {
             movil: "src/assets/homeCarrusel/banner-movil.png",
@@ -15,22 +15,13 @@ const MyApp =()=>{
         {
             movil: "src/assets/homeCarrusel/banner-movil.png",
         },
-    
-
-
     ]
     return (
-        <div>
-            <Calculadora/>
+        <>
+            <Banner />
 
-            <div className="cont  my-20">
-                <div className="text-center">
-                    <h3>TRUCOS Y CONSEJOS</h3>
-
-                </div>
-
-
-                <div className="grid grid-cols-1 mt-6 gap-6 md:grid-cols-2  my-10">
+            <div className="cont my-20">
+                <div className="grid grid-cols-1 mt-6 gap-6 md:grid-cols-3  my-10">
                     {source.map((v, k) => (
                         <a className="bg-white flex flex-col  rounded-lg text-black w-auto  "
                             href="#">
@@ -38,9 +29,9 @@ const MyApp =()=>{
                                 <img className="rounded-t-xl max-h-80  h-full w-full object-cover" src={v.movil} alt="" />
                             </div>
 
-                            <div className="p-5 md:p-9 mt-auto">
+                            <div className="p-3 lg:p-9 mt-auto">
 
-                                <h3 className="uppercase">Exportador del año</h3>
+                                <h4 className="uppercase">Exportador del año</h4>
                                 <div className="flex gap-6 mt-5 ">
 
                                     <div className="flex items-center gap-3">
@@ -59,14 +50,10 @@ const MyApp =()=>{
                         </a>
                     ))}
                 </div>
-
-                <Pagination/>
-
-
-
+                <Pagination />
             </div>
+            </>
 
-        </div>
     )
 }
 
