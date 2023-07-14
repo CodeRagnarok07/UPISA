@@ -1,20 +1,25 @@
 
 import Navbar from './Navbar'
 import Footer from './Footer'
-const Layer = ({ children }) => {
+const Layer = ({ children, header }) => {
 
 
     return (
         <>
-            <header className="bg-primary pt-6 md:pt-0">
-                <Navbar />
-                <div className="cont text-center text-white">
-                    <h1 className='uppercase'>
-                        titulo
-                    </h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae necessitatibus ullam dicta laudantium? Asperiores ab sequi iure commodi vel officiis dolor quidem vero esse. Nobis mollitia blanditiis assumenda magni excepturi.</p>
-                </div>
-            </header>
+
+            <Navbar />
+
+            {header &&
+                <header className="bg-primary bg-texture flex flex-col  pt-5 lg:pt-32 pb-24">
+                    <div className="cont text-center text-white w-auto">
+                        <h1 className='uppercase mb-4'>
+                            {header.title}
+                        </h1>
+                        <p>{header.text}</p>
+                    </div>
+                </header>
+            
+            }
 
             {children}
             <Footer />

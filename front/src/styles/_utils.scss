@@ -1,21 +1,5 @@
 /* ##########   utils   ########### */
 
-.slider-flex {
-    width: auto;
-    display: flex;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
- 
-    >* {
-        width: 100%;
-        flex-shrink: 0;
-    
-    }
-    
-
-}
-
 
 .loader-cont {
     position: relative;
@@ -116,3 +100,39 @@
 
 
 }
+
+
+.cont {
+    width: 95%;
+
+    margin-left: auto;
+    margin-right: auto;
+    @include bp(750px) {
+        width: 75%;
+
+    }
+}
+
+
+.bg-texture {
+    position: relative;
+    background-repeat: repeat;
+    &::before {
+        z-index: -1;
+
+        content: "";
+        background-image: url("../assets/header-texture.png");
+        background-repeat: repeat;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 1.2;
+        mix-blend-mode: overlay;
+    }
+}
+
+
+
+
