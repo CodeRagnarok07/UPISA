@@ -6,17 +6,17 @@ const VideCont = () => {
         {
             name: "ASPAGRAN",
             text: "Es una asociación científica/gremial conformada por licenciados graduados en nutrición. Su función es avalar aquellos productos necesarios para una dieta balanceada.",
-            img: "src/assets/certificaciones/0.png"
+            img: "assets/certificaciones/0.png"
         },
         {
             name: "HACCP",
             text: "Es un sistema de seguridad alimentaria global para evaluar, prevenir y mitigar los riesgos en todas las etapas de la producción de alimentos garantizando la inocuidad de los mismos.",
-            img: "src/assets/certificaciones/1.png"
+            img: "assets/certificaciones/1.png"
         },
         {
             name: "MARCA PAÍS",
             text: "Es un sello que obtienen las empresas a través de la calidad y que ayuda al país a posicionarse en el mundo con el objetivo de incrementar la inversión extranjera.",
-            img: "src/assets/certificaciones/2.png"
+            img: "assets/certificaciones/2.png"
         }
     ]
 

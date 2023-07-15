@@ -64,7 +64,7 @@ const MyApp = () => {
                     md:h-[150px]  
                     lg:h-[200px]  
                     mt-12 flex-center" >
-                        <img class="h-full w-full object-contain" src="src/assets/homeCarrusel/banner-movil.png" alt="" />
+                        <img class="h-full w-full object-contain" src="assets/homeCarrusel/banner-movil.png" alt="" />
                     </figure>
 
 
@@ -84,7 +84,7 @@ const MyApp = () => {
 
                 <img class="md:w-1/2 rounded-t-xl md:rounded-t-none md:rounded-r-xl"
 
-                    src="src/assets/contact_link.png" alt="" />
+                    src="assets/contact_link.png" alt="" />
 
                 <div class="md:w-1/2 m-5 md:m-12 md:flex md:flex-col md:items-start md:justify-center">
 

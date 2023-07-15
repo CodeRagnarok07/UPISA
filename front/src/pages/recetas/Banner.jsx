@@ -3,7 +3,7 @@
 export default function Banner() {
 
     return (
-        <div class="relative z-20 bg-cover bg-[url('src/assets/banner/recetasBG.png')] py-12  ">
+        <div class="relative z-20 bg-cover bg-[url('assets/banner/recetasBG.png')] py-12  ">
 
 
             <div class="cont bg-texture-rounded bg-white bg-opacity-90 flex flex-col md:flex-row rounded-xl ">

@@ -4,12 +4,12 @@ const LaCocina = () => {
 
     const source = [
         {
-            desktop: "src/assets/homeCarrusel/banner-desktop.png",
-            movil: "src/assets/homeCarrusel/banner-movil.png",
+            desktop: "assets/homeCarrusel/banner-desktop.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
         },
         {
-            desktop: "src/assets/homeCarrusel/banner-desktop.png",
-            movil: "src/assets/homeCarrusel/banner-movil.png",
+            desktop: "assets/homeCarrusel/banner-desktop.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
         },
 
     ]

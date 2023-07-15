@@ -4,8 +4,8 @@ const LaCocina = () => {
 
     const source = [
         {
-            desktop: "src/assets/homeCarrusel/banner-desktop.png",
-            movil: "src/assets/homeCarrusel/banner-movil.png",
+            desktop: "assets/homeCarrusel/banner-desktop.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
         },
 
     ]
@@ -38,7 +38,7 @@ const LaCocina = () => {
                     lg:m-0 lg:w-4/5 
                     ">
                                 <img className="w-full h-full object-contain rounded-t-2xl lg:rounded-2xl" 
-                                src="src/assets/homeCarrusel/banner-movil.png"
+                                src="assets/homeCarrusel/banner-movil.png"
                                     alt="" />
                             </div>
 

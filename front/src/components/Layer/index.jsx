@@ -19,8 +19,7 @@ const Layer = ({ children, header, meta }) => {
             </Helmet>
 
             <header
-                className="bg-primary bg-texture flex flex-col  
-                 " >
+                className={`flex flex-col ${header && "bg-primary bg-texture"}`} >
                 <Navbar />
 
                 {header &&

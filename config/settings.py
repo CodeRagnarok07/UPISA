@@ -109,7 +109,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['static/templates/'],
+        'DIRS': ['static/templates/','front/dist/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -187,12 +187,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+    os.path.join(BASE_DIR, "front/dist/assets"),
+
 ]
+
+STATIC_URL = '/static/'
+STATIC_URL = "/assets/"
+
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
@@ -222,3 +228,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_USE_TLS = True  
 EMAIL_PORT = 587  
+
+
+

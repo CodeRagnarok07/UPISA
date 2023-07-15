@@ -4,16 +4,16 @@ import Pagination from "components/Pagination"
 const MyApp = () => {
     const source = [
         {
-            movil: "src/assets/homeCarrusel/banner-movil.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
         },
         {
-            movil: "src/assets/homeCarrusel/banner-movil.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
         },
         {
-            movil: "src/assets/homeCarrusel/banner-movil.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
         },
         {
-            movil: "src/assets/homeCarrusel/banner-movil.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
         },
     ]
     return (

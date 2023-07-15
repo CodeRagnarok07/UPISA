@@ -20,6 +20,11 @@ from django.utils.translation import gettext_lazy
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.views.generic import TemplateView
+
+
+
+
 
 urlpatterns = [
     path(gettext_lazy('admin/'), admin.site.urls),
@@ -33,13 +38,32 @@ urlpatterns += i18n_patterns(
     path('recetas/', include('receta.urls')),
     path('posts/', include('posts.urls')),
 )
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += [
         re_path(r'^rosetta/', include('rosetta.urls'))
     ]
+
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+newFrontUrlpatterns = [
+    path("", TemplateView.as_view(template_name="index.html")),
+    path("productos/", TemplateView.as_view(template_name="index.html")),
+    path("recetas/", TemplateView.as_view(template_name="index.html")),
+    path("novedades/", TemplateView.as_view(template_name="index.html")),
+]
+
+urlpatterns +=[
+    path('', include(newFrontUrlpatterns)),
+
+]
+
+#  Front vite
+
+
+
 
 

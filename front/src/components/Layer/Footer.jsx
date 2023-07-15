@@ -8,7 +8,7 @@ const Footer = () => {
 
                 <div className="flex w-full justify-center translate-y-[-75%] relative z-[200]">
                     <a classname=""  href="#">
-                        <img className="w-[136px] md:w-[206px] " src="src/assets/Logo.png" alt="" />
+                        <img className="w-[136px] md:w-[206px] " src="assets/Logo.png" alt="" />
                     </a>
                 </div>
 

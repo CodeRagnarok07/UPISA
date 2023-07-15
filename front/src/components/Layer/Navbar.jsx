@@ -58,7 +58,7 @@ const Navbar = () => {
                 <li className="hover:border-white"><NavLink to={"/parrilleros"}>PARRILLEROS</NavLink></li>
 
                 <NavLink className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} to={"/"}>
-                    <img className="w-auto h-14 lg:h-24 " src="src/assets/Logo.png" alt="logo upisa" />
+                    <img className="w-auto h-14 lg:h-24 " src="assets/Logo.png" alt="logo upisa" />
                     </NavLink>
                 <li className="hover:border-white"><NavLink to={"/novedades"}>NOVEDADES</NavLink></li>
                 <li className="hover:border-white"><NavLink to={"/recetas"}>RECETAS</NavLink></li>
