@@ -49,7 +49,7 @@ DEBUG = env('DEBUG')
 
 # ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS') ]
 
 
 CSRF_TRUSTED_ORIGINS = [f"https://{env('ALLOWED_HOSTS')}"]
