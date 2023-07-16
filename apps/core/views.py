@@ -10,10 +10,10 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 # models
-from products.models import Product, HomeBanner
+from products.models import Product
 from receta.models import Receta
 from posts.models import Novedades
-from .models import Sucursales
+from .models import Sucursales, HomeBanner
 
 # translate
 from django.utils.translation import gettext

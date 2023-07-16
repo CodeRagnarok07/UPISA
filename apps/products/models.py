@@ -7,17 +7,6 @@ from django.core.exceptions import ValidationError
 
 
 
-class HomeBanner(models.Model):
-
-    order = models.IntegerField(unique=True)
-    desktop = models.ImageField( help_text="845px de alto  // 1920px de ancho")
-    movil = models.ImageField( help_text="360px de alto // 360px de ancho")
-
-    #  only 1920px x 845
-
-    def __str__(self):
-        return f'banner {self.order}'
-
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=500, unique=True)
@@ -42,7 +31,7 @@ class Product(models.Model):
     nombre = models.CharField(max_length=500, unique=True)
     url = models.CharField(max_length=500, unique=True)
 
-    miniatura = models.ImageField()
+    miniatura = models.ImageField(upload_to="productos")
     destacado = models.BooleanField(default=True)
 
     sub_categoria = models.ForeignKey(
@@ -93,7 +82,6 @@ class ValoresNutricionales(models.Model):
 
 
 class Galeria(models.Model):
-
-    imagen = models.ImageField()
     product = models.ForeignKey(
         Product, blank=True, null=True, on_delete=models.CASCADE, related_query_name="galeria", related_name="galeria")
+    imagen = models.ImageField(upload_to="productos/galeria")
