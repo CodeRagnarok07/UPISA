@@ -25,5 +25,16 @@ class Sucursales(models.Model):
         super(Sucursales, self).save(*args, **kwargs)
 
 
+class HomeBanner(models.Model):
+    order = models.IntegerField(unique=True)
+    desktop = models.ImageField( help_text="845px de alto  // 1920px de ancho", upload_to="banners")
+    movil = models.ImageField( help_text="360px de alto // 360px de ancho", upload_to="banners")
+
+    #  only 1920px x 845
+
+    def __str__(self):
+        return f'banner {self.order}'
+
+
     
 
