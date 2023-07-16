@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./static/css/tailwind.scss -o ./static/css/min/tailwind.css --watch",
-    "scss": "sass --watch ./static/css/style.scss ./static/css/min/style.css",
-    "dev": "concurrently \"npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/min/tailwind.css --watch\" \"sass --watch ./static/css/sass/main.scss ./static/css/min/style.css\""
+    "build": "npx tailwindcss -i ./css/tailwind.scss -o ./css/min/tailwind.css --watch",
+    "scss": "sass --watch ./css/style.scss ./css/min/style.css",
+    "dev": "concurrently \"npx tailwindcss -i ./css/tailwind.css -o ./css/min/tailwind.css --watch\" \"sass --watch ./css/sass/main.scss ./css/min/style.css\""
   },
   "repository": {
     "type": "git",
