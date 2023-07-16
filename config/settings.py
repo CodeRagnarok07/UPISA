@@ -84,6 +84,7 @@ INSTALLED_APPS = [
 
     # packages
     'django_summernote',
+    'rest_framework',
 
     # apps
     'core',
@@ -162,6 +163,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -228,6 +235,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_USE_TLS = True  
 EMAIL_PORT = 587  
+
 
 
 

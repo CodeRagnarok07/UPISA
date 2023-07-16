@@ -19,12 +19,12 @@ from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import gettext_lazy
 from django.conf import settings
 from django.conf.urls.static import static
-
 from django.views.generic import TemplateView
 
-
-
-
+# if 'rosetta' in settings.INSTALLED_APPS:
+#     urlpatterns += [
+#         re_path(r'^rosetta/', include('rosetta.urls'))
+#     ]
 
 urlpatterns = [
     path(gettext_lazy('admin/'), admin.site.urls),
@@ -32,23 +32,13 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('summernote/', include('django_summernote.urls')),
 ]
-urlpatterns += i18n_patterns(
-    path('', include('core.urls')),
-    path('productos/', include('products.urls')),
-    path('recetas/', include('receta.urls')),
-    path('posts/', include('posts.urls')),
-)
-if 'rosetta' in settings.INSTALLED_APPS:
-    urlpatterns += [
-        re_path(r'^rosetta/', include('rosetta.urls'))
-    ]
-
-
-
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+# /es /en /fr /zh
 
+
+# NewFrontVite
 newFrontUrlpatterns = [
     path("", TemplateView.as_view(template_name="index.html")),
     path("productos/", TemplateView.as_view(template_name="index.html")),
@@ -56,10 +46,23 @@ newFrontUrlpatterns = [
     path("novedades/", TemplateView.as_view(template_name="index.html")),
 ]
 
+# Api
+apiUrlpatterns = [
+    path('', include('core.api.router')),
+]
+
+
 urlpatterns +=[
     path('', include(newFrontUrlpatterns)),
-
+    path('api/', include(apiUrlpatterns)),
 ]
+
+urlpatterns +=i18n_patterns(
+    path('', include('core.urls')),
+    path('productos/', include('products.urls')),
+    path('recetas/', include('receta.urls')),
+    path('posts/', include('posts.urls')),
+)
 
 #  Front vite
 
