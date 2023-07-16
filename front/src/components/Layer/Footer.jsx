@@ -2,7 +2,7 @@ const Footer = () => {
     return (
 
         <footer className="relative mt-auto">
-            <div className="bg-primary bg-texture py-10 "
+            <div className="bg-primary lg:bg-[var(--primary)] bg-texture py-10 "
             style={{":before":""}}
             >
 

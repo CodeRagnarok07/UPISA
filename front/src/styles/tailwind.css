@@ -5,38 +5,27 @@
 :root {
     --primary: #EA8215;
     --primary-light: #FDF2E8;
+    --primary-gray: #F3B177;
     --white: #ffffff;
     --success: #0B9839
 }
 
-.bg-primary {
+
+.bg-primary-movil {
     background: var(--primary);
     color: var(--white);
+
+    @apply lg:bg-transparent
 }
 
-.bg-success {
-    background: var(--success);
-    color: var(--white);
-}
+
 
 
 
 .btn {
     padding: 0.75rem 1.25rem;
-    border-radius: 0.75rem;
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
+    @apply md:px-5 md:py-4 cursor-pointer flex justify-center items-center gap-4 w-full rounded-xl
 }
 
 
-@media (min-width:750px) {
-    .btn {
-        padding: 1rem 1.25rem;
-        width: auto;
-
-    }
-
-}
+@media (min-width:750px) {}

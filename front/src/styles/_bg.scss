@@ -1,10 +1,10 @@
 .bg-texture {
     position: relative;
     background-repeat: repeat;
-    z-index: 1;
+    z-index: 2;
 
     &::before {
-        z-index: 0;
+        z-index: -1;
 
         content: "";
         background-image: url("../assets/header-texture.png");
@@ -35,6 +35,19 @@
     }
 }
 
+.bg-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.bg-success {
+    background: var(--success);
+    color: var(--white);
+}
+
+
+
+
 body {
     position: relative;
     background-repeat: repeat;
@@ -42,7 +55,7 @@ body {
     &::before {
         z-index: -1;
         content: "";
-        background-image: url("../assets/header-texture.png");
+        background-image: url("assets/header-texture.png");
         background-repeat: repeat;
         position: absolute;
         top: 0px;
@@ -64,3 +77,4 @@ footer{
         }
     }
 }
+

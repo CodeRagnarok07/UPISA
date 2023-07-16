@@ -46,34 +46,45 @@ const router = createBrowserRouter([
         path: "/productos",
         element: <Layer
         meta={{title:"productos", description:"asd"}}
-        header={{title:"PRODUCTOS", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo!
-        
-        Elegí lo mejor, elegí sabor.` }}
+        header={{title:"PRODUCTOS", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
         ><Productos /> </Layer>,
       },
  
       {
-        path: "/parrilleros",
-        element: <Layer><Parrilleros /> </Layer>,
+        path: "/parrilleros",        
+        element: <Layer
+        header={{title:"Parrilleros", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        
+        ><Parrilleros /> </Layer>,
       },
  
       {
-        path: "/novedades",
-        element: <Layer><Novedades /> </Layer>,
+        path: "/novedades",    
+        element: <Layer
+        header={{title:"novedades", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        ><Novedades /> </Layer>,
       },
  
       {
         path: "/recetas",
-        element: <Layer><Recetas /> </Layer>,
+        element: <Layer
+        header={{title:"novedades", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        
+        ><Recetas /> </Layer>,
       },
  
       {
         path: "/promo",
-        element: <Layer><Promo /> </Layer>,
+        element: <Layer
+        header={{title:"novedades", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        ><Promo /> </Layer>,
       },
       {
         path: "/cerdo",
-        element: <Layer><Cerdo /> </Layer>,
+        element: <Layer
+        header={{title:"novedades", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        
+        ><Cerdo /> </Layer>,
       },
  
  

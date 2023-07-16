@@ -1,5 +1,5 @@
 import Pagination from 'components/Pagination'
-
+import Item from './Item'
 const MyApp = () => {
     return (
         <div className="cont h-screen mb-52">
@@ -53,27 +53,10 @@ const MyApp = () => {
 
             </ul>
 
-            <div id="products" class="grid grid-cols-2 md:grid-cols-4 mt-9 gap-6">
-
-
-                <a class="z-50 rounded-xl w-full bg-white text-black flex flex-col justify-between" href="#">
-
-
-                    <figure class="mx-auto 
-                    h-[90px] w-full  
-                    md:h-[150px]  
-                    lg:h-[200px]  
-                    mt-12 flex-center" >
-                        <img class="h-full w-full object-contain" src="assets/homeCarrusel/banner-movil.png" alt="" />
-                    </figure>
-
-
-                    <h5 class="p-4 md:p-9  text-center font-semibold">
-                        nombre producto
-                    </h5>
-
-                </a>
+            <div class="grid grid-cols-2 md:grid-cols-4 mt-9 gap-6">
+                <Item />
             </div>
+            
 
 
             <Pagination />

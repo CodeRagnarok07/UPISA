@@ -1,27 +1,55 @@
 
+import useCarrusel from "src/utils/useCarrusel";
 
 
-export default function(){
+export default function () {
+
+    const [CarruselRef, arrowControler, current, dotControlerRef] = useCarrusel()
+
+    const imgData = [ 
+        "b05", "b04"
+        , "b03"
+        , "b01"
+        , "31"
+        , "33"
+        , "32"
+        , "30"
+        , "29"
+        , "21"
+    ]
+
     return (
-        <div class="carrusel img-control mt-16">
+        <div className="cont">
 
-        <div class="main ">
-            <img src="assets/about/Carrusel/b05.jpg" alt="" class=""/>
-            <img src="assets/about/Carrusel/b04.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/b03.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/b01.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/31.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/33.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/32.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/30.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/29.jpg" alt="" class="hidden"/>
-            <img src="assets/about/Carrusel/21.jpg" alt="" class="hidden"/>
+            <div className="carrusel-slider mb-40">
+
+                <div ref={CarruselRef} className="slider slider-grid " style={{ "--grid": "1", "--grid-md": "1" }}>
+
+                    {imgData.map((v,k)=>(
+                    <img src={`assets/about/Carrusel/${v}.jpg`} alt="" 
+                    class="item-grid 
+                    max-h-[50rem]
+                    h-[11.25rem]
+                    sm:h-[20rem]
+                    md:h-[28rem]
+                    lg:h-[32rem]
+                    xl:h-[50remrem]
+                    w-full
+                    " />
+                    ))}
+
+                    
+                </div>
+
+
+                <div ref={dotControlerRef} className="dot-control mt-3 ">
+                    <div></div>
+                </div>
+
+            </div>
+
+
         </div>
-        
-    <div class="control-contain">
-        <div class="control">
-            <img src="assets/about/Carrusel/b05.jpg" alt="" class="selected"/>
-                
-                </div></div></div>
+
     )
 }

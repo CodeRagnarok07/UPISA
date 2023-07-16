@@ -4,13 +4,8 @@ export default function Banner() {
 
     return (
         <div class="relative z-20 bg-cover bg-[url('assets/banner/recetasBG.png')] py-12  ">
-
-
             <div class="cont bg-texture-rounded bg-white bg-opacity-90 flex flex-col md:flex-row rounded-xl ">
-
-
                 <div class="w-full text-black text-upercase font-extrabold  flex flex-col justify-center items-center my-12 gap-6">
-
                     <h1 class="text-6xl ">conoce los beneficios de</h1>
                     <h1 class="text-6xl text-right">La Carne de Cerdo</h1>
 

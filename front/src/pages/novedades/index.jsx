@@ -1,4 +1,6 @@
 import Pagination from "components/Pagination"
+import IframeCont from './IframeCont'
+
 
 const MyApp = () => {
     const source = [
@@ -16,7 +18,9 @@ const MyApp = () => {
         },
     ]
     return (
-        <div className="cont mb-20">
+        <div className="cont my-20">
+
+            <IframeCont/>
             <div className="grid grid-cols-1 mt-6 gap-6 md:grid-cols-3  my-10">
                 {source.map((v, k) => (
                     <a className="bg-white flex flex-col  rounded-lg text-black w-auto  "

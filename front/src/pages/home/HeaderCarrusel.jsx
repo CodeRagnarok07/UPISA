@@ -5,11 +5,15 @@ const HeaderCarrusel = () => {
             desktop: "assets/homeCarrusel/banner-desktop.png",
             movil: "assets/homeCarrusel/banner-movil.png",
         },
+        {
+            desktop: "assets/homeCarrusel/banner-desktop.png",
+            movil: "assets/homeCarrusel/banner-movil.png",
+        },
 
     ]
 
     return (
-        <div className="-mb-10 -mt-24">
+        <div className="relative z-0 -mb-10 -mt-24">
 
             <div className="carrusel-slider ">
 

@@ -4,7 +4,7 @@
 .loader-cont {
     position: relative;
     // background-color: rgba(0, 0, 0, 0.589);
-    inset : 0 0 0 0;
+    inset: 0 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,19 +101,17 @@
 
 }
 
-
 .cont {
     width: 95%;
 
     margin-left: auto;
     margin-right: auto;
+
     @include bp(750px) {
-        width: 75%;
+        width: 70%;
 
     }
 }
-
-
 
 
 .pagination {
@@ -121,7 +119,7 @@
     justify-content: center;
     padding-top: 36px;
 
-    @media (min-width: 750px ) {
+    @media (min-width: 750px) {
         a {
             padding: 12px 20px;
         }
@@ -137,7 +135,7 @@
         border-radius: 8px;
 
         &.current {
-            background-color:  var(--primary-light);
+            background-color: var(--primary-light);
             color: var(--primary);
             font-weight: 700;
         }
@@ -157,5 +155,178 @@
     }
 }
 
+.progres-form {
+
+    .progres-bar {
+        width: 100%;
+        position: relative;
+
+        .progres-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3%;
 
 
+            .progres-item {
+                z-index: 50;
+                border: solid 2px var(--primary-light);
+                background-color: var(--white);
+                border-radius: 80px;
+                overflow: hidden;
+
+                padding: 0px 22px;
+                gap: 8px;
+
+                height: 8px;
+                color: transparent;
+                font-weight: 500;
+                font-size: 12px;
+
+
+                @media (min-width: 750px) {
+                    padding: 8px 16px;
+                    display: flex;
+                    justify-content: center;
+                    color: var(--primary-light);
+                    height: auto;
+                    gap: 0px;
+                    font-size: 14px;
+
+                    &.active {
+                        color: white;
+                    }
+                }
+
+                @media (min-width: 1220px) {
+                    padding: 12px 22px;
+
+                    display: flex;
+                    justify-content: center;
+                    color: var(--primary-light);
+                    height: auto;
+                    gap: 0px;
+                    font-size: 14px;
+
+                    &.active {
+                        color: white;
+
+                    }
+                }
+
+                &.active {
+                    background-color: var(--success);
+                    border: none;
+
+
+                }
+            }
+        }
+
+        progress {
+            position: absolute;
+            transition: 1s;
+            height: 3px;
+            width: 100%;
+            left: 0;
+            right: 0;
+            bottom: 50%;
+            appearance: none;
+            background: none;
+            -webkit-appearance: none;
+            will-change: contents;
+
+            &::-webkit-progress-bar {
+                background-color: var(--primary-light);
+            }
+
+            &::-webkit-progress-value {
+                background-color: var(--success);
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+    }
+
+
+
+
+}
+
+
+input,
+textarea,
+select {
+    background-color: transparent;
+    outline: none;
+    border-radius: 8px;
+
+    &::selection,
+    &:active,
+    &:focus {
+        background-color: transparent;
+        outline: none;
+
+    }
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: inherit;
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    min-width: 1.15em;
+    min-height: 1.15em;
+    border: 0.15em solid var(--primary-gray);
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+
+    &::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        /* Windows High Contrast Mode */
+        background-color: white;
+
+    }
+
+    &:checked {
+        background-color: var(--primary);
+
+        &::before {
+            transform: scale(1);
+        }
+
+    }
+}
+
+input[type="number"] {
+    text-align: center;
+    width: 60px;
+
+    &.noarrow {
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+    }
+
+}

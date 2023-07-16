@@ -2,7 +2,7 @@
 import Calculadora from "components/Calculadora"
 import VideCont from "components/core/VideCont"
 import Certificaciones from "components/core/Certificaciones"
-import Destacados from "components/core/Destacados"
+import Destacados from "../productos/Destacados"
 
 
 import Contact from "./Contact"
