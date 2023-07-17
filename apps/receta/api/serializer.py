@@ -14,11 +14,11 @@ class GaleriaRecetaSerializer(serializers.HyperlinkedModelSerializer):
 class RecetaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Receta
-        fields = ["url", "titulo", "portada", "publicar"]
+        fields = ["url", "nombre", "portada", "tiempo_preparacion", "porcion_personas"]
 
 class DetailRecetaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Receta
-        fields = ["url", "titulo", "portada", "publicar", "galeria", "contenido"]
+        fields = ["url", "nombre", "portada",  "galeria", "contenido"]
     galeria = GaleriaRecetaSerializer(many=True)
 

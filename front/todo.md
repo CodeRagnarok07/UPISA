@@ -1,11 +1,5 @@
 # - [ ] backend
 
-- [ ] home
-  - [ ] baners
-  - [ ] prodcutos destacados
-  - [ ] card contact
-
-
 - [ ] paginacion + filtro productos
 
 - [ ] paginacion 
@@ -16,5 +10,5 @@
 
 - [ ]  frontend
   - [ ]  todos los headers
+  - [ ]  metadatos
   - [ ]  contacto
-  - [ ]  

@@ -40,7 +40,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/contacto",
-        element: <Layer><Contacto /> </Layer>,
+        element: <Layer
+        meta={{title:"Contacto", description:"Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible."}}
+        header={{title:"Contacto", text:"Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible." }}
+        ><Contacto /> </Layer>,
       },
  
       {
@@ -54,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: "/parrilleros",        
         element: <Layer
-        header={{title:"Parrilleros", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        header={{title:"Parrilleros", text:`Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!` }}
         
         ><Parrilleros /> </Layer>,
       },

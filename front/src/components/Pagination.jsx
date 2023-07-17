@@ -25,13 +25,7 @@ const Pagination = () => {
                 3
             </a>
 
-            <a href="?page=4">
-                4
-            </a>
-
-            <a href="?page=5">
-                5
-            </a>
+     
 
             <a href="?page=2" class="control able">
                 <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">

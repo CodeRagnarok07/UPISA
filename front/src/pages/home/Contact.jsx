@@ -1,19 +1,30 @@
 
 import Form from '../contacto/Form'
+import useQueryFetcher from 'src/utils/useQueryFetcher'
 
 const Contact = () => {
+
+    const usequery = useQueryFetcher('api/core/sucursales/')
+
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-9 md:mt-12 gap-6 ">
+        <div className="cont">
 
-            <Form />
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-9 md:mt-12 gap-6 ">
 
-            <div className="flex flex-col gap-6 w-full">
+                <div>
+                    <Form />
+                </div>
 
-                <a>
-                    <div className="card map w-full shawdow2">
-                        <div className="grid grid-cols-2">
-                            <h3 className="md:text-left my-auto  col-span-1">sa dsad as</h3>
-                            <div className="info  ">
+                <div className="flex flex-col gap-6 w-full">
+                    {usequery.data?.map((v, k) => (
+                        <div className="w-full flex justify-between bg-white p-5 flex-col gap-4 rounded-xl lg:p-10 lg:flex-row ">
+
+                            <h3 className="md:text-left my-auto w-full">{v.nombre}</h3>
+                            <div
+                                className="w-full  flex flex-col justify-between gap-3  
+                            [&>div]:flex [&>div]:items-center  [&>div]:gap-3
+                            ">
 
                                 <div>
                                     <i>
@@ -24,7 +35,7 @@ const Contact = () => {
                                                 fill="#EA8215" />
                                         </svg>
                                     </i>
-                                    <p>sad asdasd</p>
+                                    <p>{v.direccion}</p>
                                 </div>
 
                                 <div>
@@ -36,9 +47,9 @@ const Contact = () => {
                                                 fill="#0B9839" />
                                         </svg>
                                     </i>
-                                    <p>+57asd5sad454</p>
-                                </div>
+                                    <p>{v.tlf}</p>
 
+                                </div>
 
                                 <div>
                                     <i>
@@ -49,18 +60,20 @@ const Contact = () => {
                                                 fill="#4688C3" />
                                         </svg>
                                     </i>
-                                    <p>asdsad@gamil.com</p>
+                                    <p>{v.email}</p>
+
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                </a>
+                    ))
+                    }
+
+                </div>
+
 
             </div>
-
-
         </div>
+
     )
 }
 

@@ -1,13 +1,15 @@
 import Item from "./Item"
 import useCarrusel from "src/utils/useCarrusel";
+import useQueryFetcher from 'src/utils/useQueryFetcher'
+
 
 const Destacados = () => {
-
-
     const [CarruselRef, arrowControler, current, dotControlerRef] = useCarrusel()
 
+    const usequery = useQueryFetcher('api/posts/products/?limit=16')
+
     return (
-        <div className="cont pb-4">
+        <div className="cont pb-4 pt-12">
             <div className="text-center">
                 <h2 className="uppercase text-white">DESTACADOS DE UPISA</h2>
                 <p className="lg:text-xl">
@@ -18,22 +20,10 @@ const Destacados = () => {
             <div className="carrusel-slider mt-12">
 
                 <div ref={CarruselRef} className="slider slider-grid" style={{ "--grid": "2", "--grid-md": "4" }}>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
-                    <div className="item-grid px-2  "><Item /></div>
+                    {usequery?.data?.results.map((v,k)=>(
+                        <div key={k} className="item-grid px-2  "><Item data={v} /></div>
+                    ))}
+                   
                 </div>
 
 

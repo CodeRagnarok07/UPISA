@@ -1,3 +1,6 @@
+import logo from 'src/assets/Logo.png'
+
+
 const Footer = () => {
     return (
 
@@ -8,7 +11,7 @@ const Footer = () => {
 
                 <div className="flex w-full justify-center translate-y-[-75%] relative z-[200]">
                     <a classname=""  href="#">
-                        <img className="w-[136px] md:w-[206px] " src="assets/Logo.png" alt="" />
+                        <img className="w-[136px] md:w-[206px] "  src={logo} alt="" />
                     </a>
                 </div>
 
@@ -59,19 +62,17 @@ const Footer = () => {
              [&>span]:justify-center
             ">
 
-                <span className="bg-[var(--success)] w-full">
+                <span className="bg-[var(--success)] w-full text-center">
                     <p>
                         © 2022 Frigorífico UPISA. <br className="md:hidden" />
                         Todos los derechos reservados.
                     </p>
                 </span>
-                <span className="bg-[#4688C3] w-full">
-                    <a target="_blank" href="https://arsisteam.com/">
+                    <a  className="bg-[#4688C3] w-full" target="_blank" href="https://arsisteam.com/">
                         <p>
                             Desarrollado por Arsis
                         </p>
                     </a>
-                </span>
             </div>
         </footer>
     )

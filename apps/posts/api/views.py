@@ -31,9 +31,9 @@ class TrucosYConsejosListView(APIView, PaginationHandlerMixinApiView):
 
         page = self.paginate_queryset(queryset)
         if page is not None:
-            serializer = self.get_paginated_response(self.serializer_class(page, many=True).data)
+            serializer = self.get_paginated_response(self.serializer_class(page, many=True, context={'request': request}).data)
         else:
-            serializer = self.serializer_class(queryset, many=True)
+            serializer = self.serializer_class(queryset, many=True, context={'request': request})
 
         return Response(serializer.data)
 
@@ -44,7 +44,7 @@ class DetailTrucosYConsejosListView(APIView):
     def get(self, request, url):
         print(url)
         queryset = TrucosYConsejos.objects.filter(url=url)
-        serializer = self.serializer_class(queryset, many=True)
+        serializer = self.serializer_class(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
 
@@ -69,9 +69,9 @@ class NovedadesListView(APIView, PaginationHandlerMixinApiView):
 
         page = self.paginate_queryset(queryset)
         if page is not None:
-            serializer = self.get_paginated_response(self.serializer_class(page, many=True).data)
+            serializer = self.get_paginated_response(self.serializer_class(page, many=True, context={'request': request}).data)
         else:
-            serializer = self.serializer_class(queryset, many=True)
+            serializer = self.serializer_class(queryset, many=True, context={'request': request})
 
         return Response(serializer.data)
 
@@ -82,6 +82,6 @@ class DetailNovedadesListView(APIView):
     def get(self, request, url):
         print(url)
         queryset = Novedades.objects.filter(url=url)
-        serializer = self.serializer_class(queryset, many=True)
+        serializer = self.serializer_class(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 

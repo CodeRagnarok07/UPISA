@@ -1,8 +1,15 @@
 import Pagination from 'components/Pagination'
 import Item from './Item'
+
+
+import useQueryFetcher from 'src/utils/useQueryFetcher'
+
 const MyApp = () => {
+
+    const usequery = useQueryFetcher('api/posts/products/?limit=16')
+
     return (
-        <div className="cont h-screen mb-52">
+        <div className="cont  mb-20">
 
             <ul class="
             mt-20
@@ -54,13 +61,15 @@ const MyApp = () => {
             </ul>
 
             <div class="grid grid-cols-2 md:grid-cols-4 mt-9 gap-6">
-                <Item />
+                {usequery.data?.results.map((v,k)=>(
+
+                     <Item data={v} />
+                ))}
             </div>
             
 
 
             <Pagination />
-
 
 
             <div class="flex flex-col w-full rounded-xl mt-20 mb-40 bg-white md:flex-row-reverse md:justify-between ">

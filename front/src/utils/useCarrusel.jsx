@@ -19,6 +19,8 @@ const useCarrusel = () => {
         const cols = slider.offsetWidth / widthSlider
         const nextwidthSlider = widthSlider * cols
         setCurrent(current + 1)
+        console.log("hace algo");
+        console.log(current);
         if (bol == true) {
             if (current + 1 >= Math.round(slider.children.length / cols)) {
                 slider.scrollLeft = 0
@@ -42,53 +44,56 @@ const useCarrusel = () => {
 
 
 
+
     useEffect(() => {
-        const slider = CarruselRef.current
-        const widthSlider = slider.children[0].offsetWidth
-        const cols = slider.offsetWidth / widthSlider
-        const n_childs = CarruselRef.current.children.length / cols
+        if (CarruselRef.current.children[0]) {
+
+            const slider = CarruselRef.current
+            const widthSlider = slider.children[0].offsetWidth
+            const cols = slider.offsetWidth / widthSlider
+            const n_childs = CarruselRef.current.children.length / cols
 
 
-        function indexControler(e, i) {
-            slider.scrollLeft = widthSlider * i * cols
-            const oldActive = dotControlerRef.current.querySelector(".active")
-            if (oldActive) {
-                oldActive.className = ""
+            function indexControler(e, i) {
+                slider.scrollLeft = widthSlider * i * cols
+                const oldActive = dotControlerRef.current.querySelector(".active")
+                if (oldActive) {
+                    oldActive.className = ""
+                }
+                // console.log(dotControlerRef.current.getElementsByClassName("active"));
+                e.className = "active"
+
             }
-            // console.log(dotControlerRef.current.getElementsByClassName("active"));
-            e.className = "active"
-
-        }
 
 
-        if (dotControlerRef.current) {
-            const firstChild = dotControlerRef.current.children[0]
-            dotControlerRef.current.innerHTML = firstChild.outerHTML
+            if (dotControlerRef.current && dotControlerRef.current.children[0]) {
+                const firstChild = dotControlerRef.current.children[0]
+                if(firstChild) dotControlerRef.current.innerHTML = firstChild.outerHTML
 
-            for (let index = 0; index < n_childs; index++) {
+                for (let index = 0; index < n_childs; index++) {
+                    if (slider.children[index].src) {
+                        const newChild = document.createElement("img")
+                        newChild.src = slider.children[index].src
+                        newChild.onclick = (e) => indexControler(e.target, index);
 
-                if (slider.children[index].src) {
-
-                    const newChild = document.createElement("img")
-                    newChild.src = slider.children[index].src
-                    newChild.onclick = (e) => indexControler(e.target, index);
-
-                    dotControlerRef.current.appendChild(newChild)
+                        dotControlerRef.current.appendChild(newChild)
 
 
-                } else {
+                    } else {
 
-                    const newChild = firstChild.cloneNode()
-                    newChild.onclick = (e) => indexControler(e.target, index);
-                    dotControlerRef.current.appendChild(newChild)
+                        const newChild = firstChild.cloneNode()
+                        newChild.onclick = (e) => indexControler(e.target, index);
+                        dotControlerRef.current.appendChild(newChild)
+                    }
+
                 }
 
+                dotControlerRef.current.removeChild(dotControlerRef.current.children[0])
+
+
             }
-
-            dotControlerRef.current.removeChild(dotControlerRef.current.children[0])
-
-
         }
+
     }, [dotControlerRef.current])
 
 

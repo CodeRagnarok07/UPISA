@@ -1,16 +1,17 @@
 import { useRef } from "react"
 import { NavLink } from "react-router-dom"
 
+import logo from 'src/assets/Logo.png'
 const Navbar = () => {
 
     const liRef = useRef()
     const handleClick = () => {
 
-        liRef.current.classList.toggle("[&>li]:hidden")
-        liRef.current.parentElement.classList.toggle("bg-primary-movil") 
+        liRef.current.classList.toggle("[&>a]:hidden")
+        liRef.current.parentElement.classList.toggle("bg-primary-movil")
         // liRef.current.parentElement.classList.toggle(" bg-texture")
         // document.getElementById().parentElement
-        
+
         // for (const achor of botones) {
         //     console.log(achor);
         // }
@@ -19,7 +20,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className=" z-30  text-white  ">
+        <nav className=" z-30   text-white  ">
 
 
 
@@ -27,18 +28,18 @@ const Navbar = () => {
             <ul ref={liRef}
                 className="cont relative
              flex w-full justify-between items-center flex-col lg:flex-row gap-4 lg:gap-0  
-             [&>li]:whitespace-nowrap
-             [&>li]:rounded-lg
-             [&>li]:cursor-pointer
-             [&>li]:w-full
-             [&>li]:lg:w-auto
-             [&>li]:text-center
-             [&>li]:lg:flex
-             [&>li]:text-[12px]
-             [&>li]:xl:p-3
-             [&>li]:xl:text-[16px]
-             [&>li]:hidden
-             [&>li]:border    
+             [&>a]:whitespace-nowrap
+             [&>a]:rounded-lg
+             [&>a]:cursor-pointer
+             [&>a]:w-full
+             [&>a]:lg:w-auto
+             [&>a]:text-center
+             [&>a]:lg:flex
+             [&>a]:text-[12px]
+             [&>a]:xl:p-3
+             [&>a]:xl:text-[16px]
+             [&>a]:hidden
+             [&>a]:border    
              [&>lang]:flex
              pt-24
              lg:pt-0
@@ -50,8 +51,8 @@ const Navbar = () => {
                 <div
                     onClick={handleClick}
                     className="flex lg:hidden items-center border p-2 rounded-lg cursor-pointer absolute 
-                    top-4 left-4" 
-                    >
+                    top-4 left-4"
+                >
 
 
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,19 +61,22 @@ const Navbar = () => {
                 </div>
 
 
-                <li className="hover:border-white p-2 border-transparent"><NavLink to={"/"}>INICIO</NavLink></li>
-                <li className="hover:border-white p-2 border-transparent"><NavLink to={"/empresa"}>LA EMPRESA</NavLink></li>
-                <li className="hover:border-white p-2 border-transparent"><NavLink to={"/productos"}>PRODUCTOS</NavLink></li>
-                <li className="hover:border-white p-2 border-transparent"><NavLink to={"/parrilleros"}>PARRILLEROS</NavLink></li>
+                <NavLink className="hover:border-white p-2 border-transparent" to={"/"}><li >INICIO</li></NavLink>
+                <NavLink className="hover:border-white p-2 border-transparent" to={"/empresa"}><li >LA EMPRESA</li></NavLink>
+                <NavLink className="hover:border-white p-2 border-transparent" to={"/productos"}><li >PRODUCTOS</li></NavLink>
+                <NavLink className="hover:border-white p-2 border-transparent" to={"/parrilleros"}><li >PARRILLEROS</li></NavLink>
 
-                <NavLink className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} to={"/"}>
-                    <img className="w-auto h-20 sm:h-24 " src="assets/Logo.png" alt="logo upisa" />
+                <div className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} >
+
+                <NavLink to={"/"}>
+                    <img className="w-auto h-20 sm:h-24 " src={logo} alt="logo upisa" />
                 </NavLink>
+                </div>
 
 
-                <li className="hover:border-white p-2 border-transparent"><NavLink to={"/novedades"}>NOVEDADES</NavLink></li>
-                <li className="hover:border-white p-2 border-transparent"><NavLink to={"/recetas"}>RECETAS</NavLink></li>
-                <li className="hover:border-white p-2 border-transparent"><NavLink to={"/contacto"}>CONTACTO</NavLink></li>
+                <NavLink className="hover:border-white p-2 border-transparent" to={"/novedades"}><li >NOVEDADES</li></NavLink>
+                <NavLink className="hover:border-white p-2 border-transparent" to={"/recetas"}><li >RECETAS</li></NavLink>
+                <NavLink className="hover:border-white p-2 border-transparent" to={"/contacto"}><li >CONTACTO</li></NavLink>
 
                 <li style={{ display: "flex", width: "auto" }}
 

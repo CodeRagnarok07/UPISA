@@ -7,7 +7,6 @@ class Receta(models.Model):
     url = models.CharField(max_length=500, unique=True)
     portada = models.ImageField()
 
-
     tiempo_preparacion = models.CharField(max_length=500)
     porcion_personas = models.IntegerField(default=1)
 

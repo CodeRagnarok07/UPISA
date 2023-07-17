@@ -5,7 +5,7 @@ from rest_framework import serializers
 class SucursalesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Sucursales
-        fields = ('__all__')
+        fields = ("nombre", "mapa", "direccion", "tlf", "email", "es_central")
 
 class HomeBannerSerializer(serializers.HyperlinkedModelSerializer):
    

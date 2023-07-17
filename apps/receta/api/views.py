@@ -24,9 +24,9 @@ class RecetaListView(APIView, PaginationHandlerMixinApiView):
         queryset = Receta.objects.all()
         page = self.paginate_queryset(queryset)
         if page is not None:
-            serializer = self.get_paginated_response(self.serializer_class(page, many=True).data)
+            serializer = self.get_paginated_response(self.serializer_class(page, many=True, context={'request': request}).data)
         else:
-            serializer = self.serializer_class(queryset, many=True)
+            serializer = self.serializer_class(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
 class DetailRecetaListView(APIView):
@@ -35,7 +35,7 @@ class DetailRecetaListView(APIView):
 
     def get(self, request, url):
         queryset = Receta.objects.filter(url=url)
-        serializer = self.serializer_class(queryset, many=True)
+        serializer = self.serializer_class(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
 

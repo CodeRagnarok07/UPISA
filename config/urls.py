@@ -51,7 +51,7 @@ apiUrlpatterns = [
     path('core/', include('core.api.router')),
     path('posts/', include('posts.api.router')),
     path('posts/', include('receta.api.router')),
-    path('products/', include('receta.api.router')),
+    path('posts/products/', include('products.api.router')),
 ]
 
 

@@ -10,18 +10,18 @@ from core.pagination import CustomPagination, PaginationHandlerMixinApiView
 from django.db.models import Q
 
 
-from posts.models import TrucosYConsejos, Novedades
-from .serializer import TrucosYConsejosSerializer, NovedadesSerializer, DetailTrucosYConsejosSerializer, DetailNovedadesSerializer
+from products.models import Product
+from .serializer import ProductSerializer ,DetailProductSerializer
 
 
 
-class NovedadesListView(APIView, PaginationHandlerMixinApiView):
-    queryset = Novedades.objects.all()
-    serializer_class = NovedadesSerializer
+class ProductListView(APIView, PaginationHandlerMixinApiView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
     pagination_class = CustomPagination
 
     def get(self, request, format=None, *args, **kwargs):
-        queryset = Novedades.objects.all()
+        queryset = Product.objects.all()
 
         search = request.GET.get('search', '')
         year = request.GET.get('year', '')
@@ -32,19 +32,19 @@ class NovedadesListView(APIView, PaginationHandlerMixinApiView):
 
         page = self.paginate_queryset(queryset)
         if page is not None:
-            serializer = self.get_paginated_response(self.serializer_class(page, many=True).data)
+            serializer = self.get_paginated_response(self.serializer_class(page, many=True, context={'request': request}).data)
         else:
-            serializer = self.serializer_class(queryset, many=True)
+            serializer = self.serializer_class(queryset, many=True, context={'request': request})
 
         return Response(serializer.data)
 
-class DetailNovedadesListView(APIView):
-    queryset = Novedades.objects.all()
-    serializer_class = DetailNovedadesSerializer
+class DetailProductListView(APIView):
+    queryset = Product.objects.all()
+    serializer_class = DetailProductSerializer
 
     def get(self, request, url):
         print(url)
-        queryset = Novedades.objects.filter(url=url)
-        serializer = self.serializer_class(queryset, many=True)
+        queryset = Product.objects.filter(url=url)
+        serializer = self.serializer_class(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 

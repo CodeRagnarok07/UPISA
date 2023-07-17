@@ -2,6 +2,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 
 
+# querys api/?page=4?limit=100&offset=400
 class CustomPagination(PageNumberPagination):
     page_size = 4
     page_size_query_param = 'limit'

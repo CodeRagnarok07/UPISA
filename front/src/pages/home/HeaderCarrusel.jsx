@@ -4,9 +4,8 @@ import useQueryFetcher from 'src/utils/useQueryFetcher'
 const HeaderCarrusel = () => {
 
     const usequery = useQueryFetcher('api/core/banners/')
-    console.log(usequery.data);
 
-
+    // console.log(usequery);
 
     return (
         <div className="relative z-0 -mb-10 -mt-24">
@@ -14,12 +13,11 @@ const HeaderCarrusel = () => {
             <div className="carrusel-slider ">
 
                 <div className="slider ">
-                {usequery.data.map((v, k) => (
+                {usequery.data && usequery.data.map((v, k) => (
 
                         <picture className="item-slider relative">
                             <source srcset={v.desktop} media="(min-width: 750px)" />
                             <img className="w-full object-cover h-[22.5rem] lg:h[849px] md:h-auto" src={v.movil} alt="" />
-
                         </picture>
                 ))}
                 </div>
