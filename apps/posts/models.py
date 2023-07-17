@@ -8,7 +8,6 @@ class Tag(models.Model):
     def __str__(self):
         return self.nombre
 
-
 class TrucosYConsejos(models.Model):
     titulo = models.CharField(max_length=500)
     url = models.CharField(max_length=500)

@@ -48,7 +48,10 @@ newFrontUrlpatterns = [
 
 # Api
 apiUrlpatterns = [
-    path('', include('core.api.router')),
+    path('core/', include('core.api.router')),
+    path('posts/', include('posts.api.router')),
+    path('posts/', include('receta.api.router')),
+    path('products/', include('receta.api.router')),
 ]
 
 

@@ -4,22 +4,24 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
-from core.models import Sucursales, HomeBanner
-from .serializer import SucursalesSerializer , HomeBannerSerializer
+
 
 from core.pagination import CustomPagination, PaginationHandlerMixinApiView
 from django.db.models import Q
 
 
+from posts.models import TrucosYConsejos, Novedades
+from .serializer import TrucosYConsejosSerializer, NovedadesSerializer, DetailTrucosYConsejosSerializer, DetailNovedadesSerializer
 
-class SucursalesListView(APIView, PaginationHandlerMixinApiView):
-  
-    queryset = Sucursales.objects.all()
-    serializer_class = SucursalesSerializer
+
+
+class NovedadesListView(APIView, PaginationHandlerMixinApiView):
+    queryset = Novedades.objects.all()
+    serializer_class = NovedadesSerializer
     pagination_class = CustomPagination
 
     def get(self, request, format=None, *args, **kwargs):
-        queryset = Sucursales.objects.all()
+        queryset = Novedades.objects.all()
 
         search = request.GET.get('search', '')
         year = request.GET.get('year', '')
@@ -36,16 +38,13 @@ class SucursalesListView(APIView, PaginationHandlerMixinApiView):
 
         return Response(serializer.data)
 
+class DetailNovedadesListView(APIView):
+    queryset = Novedades.objects.all()
+    serializer_class = DetailNovedadesSerializer
 
-
-class HomeBannerListView(APIView, PaginationHandlerMixinApiView):
-  
-    queryset = HomeBanner.objects.all().order_by("-order")
-    serializer_class = HomeBannerSerializer
-
-    def get(self, request, format=None, *args, **kwargs):
-
-        queryset = HomeBanner.objects.all().order_by("order")
-
-        serializer = self.serializer_class(queryset, many=True, context={'request': request})
+    def get(self, request, url):
+        print(url)
+        queryset = Novedades.objects.filter(url=url)
+        serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)
+

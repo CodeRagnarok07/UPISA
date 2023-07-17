@@ -18,8 +18,7 @@ class Categoria(models.Model):
 
 
 class CategoriaSub(models.Model):
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE,
-                                  related_query_name="sub_categorias", related_name="sub_categorias")
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_query_name="sub_categorias", related_name="sub_categorias")
     nombre = models.CharField(max_length=500, unique=True)
     url = models.CharField(max_length=500, unique=True)
 
