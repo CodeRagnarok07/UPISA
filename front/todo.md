@@ -6,9 +6,15 @@
   - [ ] recetas
   - [ ] trucos y consejos
   - [ ] novedades
+- [ ] details
+  - [ ] productos
+  - [ ] novedades
+  - [ ] trucos y consejos
+  - [ ] recetas
 
 
-- [ ]  frontend
-  - [ ]  todos los headers
-  - [ ]  metadatos
-  - [ ]  contacto
+- [x]  frontend
+  - [x] todos los headers
+  - [x] metadatos
+  - [x] contacto
+  <!-- - [ ] cerdo // url  -->

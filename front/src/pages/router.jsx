@@ -26,30 +26,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Layer><Home /> </Layer>,
+        element: <Layer
+        meta={{title:"UPISA ", description:"Variedades de embutidos con sabores únicos"}}
+        
+        ><Home /> </Layer>,
       },
       {
         path: "/empresa",
         element: 
         <Layer 
-        meta={{title:"la empresa", description:"asd"}}
+        meta={{title:"Sobre UPISA", description:"Descubre nuestra pasión por la calidad y la tradición en el frigorífico líder en Paraguay."}}
         header={{title:"La empresa", text:"" }}
         >
           <Empresa />  
           </Layer>,
       },
-      {
-        path: "/contacto",
-        element: <Layer
-        meta={{title:"Contacto", description:"Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible."}}
-        header={{title:"Contacto", text:"Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible." }}
-        ><Contacto /> </Layer>,
-      },
+   
  
       {
         path: "/productos",
         element: <Layer
-        meta={{title:"productos", description:"asd"}}
+        meta={{title:"Productos UPISA", description:"Explora nuestro completo catálogo de productos de primera calidad, elaborados con dedicación y tradición desde Paraguay."}}
         header={{title:"PRODUCTOS", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
         ><Productos /> </Layer>,
       },
@@ -57,6 +54,7 @@ const router = createBrowserRouter([
       {
         path: "/parrilleros",        
         element: <Layer
+        meta={{title:"Consejos para parrilleros UPISA", description:"Descubre nuestros consejos y secretos para lograr el asado perfecto."}}
         header={{title:"Parrilleros", text:`Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!` }}
         
         ><Parrilleros /> </Layer>,
@@ -65,16 +63,25 @@ const router = createBrowserRouter([
       {
         path: "/novedades",    
         element: <Layer
-        header={{title:"novedades", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        meta={{title:"Novedades UPISA", description:"Mantente al día con las últimas novedades y noticias de nuestro frigorífico."}}
+        header={{title:"novedades", text:`Redes Sociales / Facebook e Instagram` }}
         ><Novedades /> </Layer>,
       },
  
       {
         path: "/recetas",
         element: <Layer
-        header={{title:"novedades", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        meta={{title:"Recetas UPISA", description:"Descubre una deliciosa variedad de recetas que destacan la versatilidad y el sabor excepcional de la carne de cerdo y los embutidos."}}
+        header={{title:"RECETAS", text:`Prepara los platos más deliciosos y sabrosos con nuestra variedad de productos y disfruta en cada bocado.` }}
         
         ><Recetas /> </Layer>,
+      },
+      {
+        path: "/contacto",
+        element: <Layer
+        meta={{title:"Contacto UPISA", description:"¡Ponte en contacto con nosotros en cualquier momento! Nuestra página de información de contacto te brinda todos los detalles necesarios para conectarte con nuestro frigorífico desde cualquier parte del mundo."}}
+        header={{title:"Contacto", text:"Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible." }}
+        ><Contacto /> </Layer>,
       },
  
       {

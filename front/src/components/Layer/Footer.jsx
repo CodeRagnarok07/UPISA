@@ -5,11 +5,11 @@ const Footer = () => {
     return (
 
         <footer className="relative mt-auto">
-            <div className="bg-primary lg:bg-[var(--primary)] bg-texture py-10 "
+            <div className="bg-primary lg:bg-[var(--primary)] bg-texture pb-24 "
             style={{":before":""}}
             >
 
-                <div className="flex w-full justify-center translate-y-[-75%] relative z-[200]">
+                <div className="flex w-full justify-center translate-y-[-50%] relative z-[200]">
                     <a classname=""  href="#">
                         <img className="w-[136px] md:w-[206px] "  src={logo} alt="" />
                     </a>
@@ -68,8 +68,11 @@ const Footer = () => {
                         Todos los derechos reservados.
                     </p>
                 </span>
-                    <a  className="bg-[#4688C3] w-full" target="_blank" href="https://arsisteam.com/">
-                        <p>
+                    <a  className="bg-[#4688C3] hover:bg-[#3c6e9b] group
+                    w-full flex justify-center items-center transition-all ease-out delay-100 duration-500 " 
+                    
+                    target="_blank" href="https://arsisteam.com/">
+                        <p className=''>
                             Desarrollado por Arsis
                         </p>
                     </a>
