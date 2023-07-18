@@ -4,7 +4,7 @@ import useQueryFetcher from 'src/utils/useQueryFetcher'
 import Card from './Card'
 
 const MyApp = () => {
-    const usequery = useQueryFetcher('api/posts/receta/')
+    const usequery = useQueryFetcher(["recetas"],'api/posts/receta/')
 
     return (
         <>

@@ -7,7 +7,7 @@ import Card from './Card'
 
 const MyApp =()=>{
 
-    const usequery = useQueryFetcher('api/posts/trucos/')
+    const usequery = useQueryFetcher(["trucos"],'api/posts/trucos/')
 
  
     return (

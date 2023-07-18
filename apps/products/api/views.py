@@ -10,8 +10,8 @@ from core.pagination import CustomPagination, PaginationHandlerMixinApiView
 from django.db.models import Q
 
 
-from products.models import Product
-from .serializer import ProductSerializer ,DetailProductSerializer
+from products.models import Product, Categoria, CategoriaSub
+from .serializer import ProductSerializer ,DetailProductSerializer, CategoriaSerializer, CategoriaSubSerializer
 
 
 
@@ -21,14 +21,11 @@ class ProductListView(APIView, PaginationHandlerMixinApiView):
     pagination_class = CustomPagination
 
     def get(self, request, format=None, *args, **kwargs):
-        queryset = Product.objects.all()
-
-        search = request.GET.get('search', '')
-        year = request.GET.get('year', '')
-        if year:
-            queryset = queryset.filter(fecha__year=year)
-        if search:
-            queryset = queryset.filter(Q(titulo__icontains=search))
+        destacados = request.GET.get('destacados', '')
+        if destacados:
+            queryset = Product.objects.filter(destacado=True)
+        else:
+            queryset = Product.objects.all()
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -48,3 +45,14 @@ class DetailProductListView(APIView):
         serializer = self.serializer_class(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
+
+class categoryListView(APIView, PaginationHandlerMixinApiView):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+    def get(self, request, format=None, *args, **kwargs):
+     
+        queryset = Categoria.objects.all()
+        serializer = self.serializer_class(queryset, many=True, context={'request': request})
+
+        return Response(serializer.data)

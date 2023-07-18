@@ -20,7 +20,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className=" z-30   text-white  ">
+        <nav className=" z-30 pt-4  text-white  ">
 
 
 
@@ -68,8 +68,8 @@ const Navbar = () => {
 
                 <div className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} >
 
-                <NavLink to={"/"}>
-                    <img className="w-auto h-20 sm:h-24 " src={logo} alt="logo upisa" />
+                <NavLink to={"/"} className={"flex w-20 h-auto sm:w-32 pt-4 sm:pt-0"}>
+                    <img className="w-full h-full" src={logo} alt="logo upisa" />
                 </NavLink>
                 </div>
 

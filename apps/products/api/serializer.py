@@ -3,21 +3,31 @@ from products.models import Categoria, CategoriaSub, Product, ValoresNutricional
 from rest_framework import serializers
 
 # i18n Accept-Language: es-es
-class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = ("__all__",)
 
 class CategoriaSubSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CategoriaSub
-        fields = ("nombre", "url")
+        fields = ( "nombre", "url", "id")
     # categoria = CategoriaSerializer(many=True)
+
+class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
+
+    # sub_categorias = serializers.HyperlinkedIdentityField(view_name="get_sub_categorias")
+    # sub_categorias = CategoriaSubSerializer(many=True)
+
+    class Meta:
+        model = Categoria
+        fields = ("nombre", "url", "sub_categorias")
+    sub_categorias = CategoriaSubSerializer(many=True)
+    
+
+
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
         fields = [ "nombre" ,"url" ,"miniatura" ,"destacado"  ,"porcion" ,"unidad" ,"descripcion" ] 
+
         
     # sub_categoria = CategoriaSubSerializer(many=True)
     

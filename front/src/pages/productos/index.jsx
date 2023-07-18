@@ -3,11 +3,36 @@ import Item from './Item'
 
 
 import useQueryFetcher from 'src/utils/useQueryFetcher'
+import { useEffect, useState } from 'react'
 
 const MyApp = () => {
 
-    const usequery = useQueryFetcher('api/posts/products/?limit=16')
+    const [filter, setFilter] = useState()
+    const [page, setPage] = useState(1)
+    const [url, setUrl] = useState(`api/posts/products/producto/?limit=16${page && `&page=${page}`}`)
+    // console.log(page.length == true);
 
+
+    const usequery = useQueryFetcher(["products"], url)
+
+    useEffect(() => {
+        setUrl(`api/posts/products/producto/?limit=16${page && `&page=${page}`}`)
+    }, [page])
+    useEffect(() => {
+        usequery.refetch()
+    }, [url])
+
+    // Filter
+
+
+    const usequeryFilters = useQueryFetcher(["products-filters"],"api/posts/products/categorias/")
+    console.log(usequeryFilters.data);
+
+
+
+    const handleSet = (v) => {
+        setPage(v)
+    }
     return (
         <div className="cont  mb-20">
 
@@ -30,7 +55,6 @@ const MyApp = () => {
 
                     "
 
-
             >
                 <li className="hover:bg-[var(--primary)] hover:text-white" >
                     TODOS
@@ -52,24 +76,22 @@ const MyApp = () => {
                 </li>
 
 
-                <li className="hover:bg-[var(--primary)] hover:text-white">
-                    test
-                </li>
 
 
 
             </ul>
 
             <div class="grid grid-cols-2 md:grid-cols-4 mt-9 gap-6">
-                {usequery.data?.results.map((v,k)=>(
-
-                     <Item data={v} />
+                {usequery.data?.results?.map((v, k) => (
+                    <Item key={k} data={v} />
                 ))}
             </div>
-            
 
 
-            <Pagination />
+            {usequery?.data &&
+
+                <Pagination data={usequery.data} set={handleSet} current={page} />
+            }
 
 
             <div class="flex flex-col w-full rounded-xl mt-20 mb-40 bg-white md:flex-row-reverse md:justify-between ">

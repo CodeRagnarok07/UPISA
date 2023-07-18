@@ -3,12 +3,12 @@ import useQueryFetcher from 'src/utils/useQueryFetcher'
 
 const HeaderCarrusel = () => {
 
-    const usequery = useQueryFetcher('api/core/banners/')
+    const usequery = useQueryFetcher(["banners-home"],'api/core/banners/')
 
     // console.log(usequery);
 
     return (
-        <div className="relative z-0 -mb-10 -mt-24">
+        <div className="relative z-0 -mb-10 -mt-28">
 
             <div className="carrusel-slider ">
 

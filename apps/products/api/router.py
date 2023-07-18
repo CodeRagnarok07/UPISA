@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from .views import ProductListView, DetailProductListView
+from .views import ProductListView, DetailProductListView, categoryListView
 
 
 
@@ -12,8 +12,10 @@ from .views import ProductListView, DetailProductListView
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('',  ProductListView.as_view()),
-    path('<str:url>/',  DetailProductListView.as_view()),
+    path('producto/',  ProductListView.as_view()),
+    path('producto/<str:url>/',  DetailProductListView.as_view()),
+    path('categorias/',  categoryListView.as_view(),  ),
+    # path('subCategorias/',  ProductListView.as_view()),
 
 
    

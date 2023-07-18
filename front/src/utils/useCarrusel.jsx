@@ -19,8 +19,6 @@ const useCarrusel = () => {
         const cols = slider.offsetWidth / widthSlider
         const nextwidthSlider = widthSlider * cols
         setCurrent(current + 1)
-        console.log("hace algo");
-        console.log(current);
         if (bol == true) {
             if (current + 1 >= Math.round(slider.children.length / cols)) {
                 slider.scrollLeft = 0

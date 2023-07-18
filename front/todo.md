@@ -1,11 +1,13 @@
 # - [ ] backend
 
 - [ ] paginacion + filtro productos
+  - [x] paginacion
 
 - [ ] paginacion 
   - [ ] recetas
   - [ ] trucos y consejos
   - [ ] novedades
+
 - [ ] details
   - [ ] productos
   - [ ] novedades

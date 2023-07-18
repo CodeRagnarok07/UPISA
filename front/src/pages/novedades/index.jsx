@@ -4,7 +4,7 @@ import IframeCont from './IframeCont'
 import useQueryFetcher from 'src/utils/useQueryFetcher'
 
 const MyApp = () => {
-    const usequery = useQueryFetcher('api/posts/novedades/')
+    const usequery = useQueryFetcher(["novedades"],'api/posts/novedades/')
   
     return (
         <div className="cont my-20">

@@ -43,11 +43,13 @@ newFrontUrlpatterns = [
     path("", TemplateView.as_view(template_name="index.html")),
     path("empresa/", TemplateView.as_view(template_name="index.html")),
     path("productos/", TemplateView.as_view(template_name="index.html")),
+    path("productos/<str:url>/", TemplateView.as_view(template_name="index.html")),
     path("parrilleros/", TemplateView.as_view(template_name="index.html")),
     path("novedades/", TemplateView.as_view(template_name="index.html")),
     path("recetas/", TemplateView.as_view(template_name="index.html")),
     path("contacto/", TemplateView.as_view(template_name="index.html")),
 ]
+
 
 # Api
 apiUrlpatterns = [

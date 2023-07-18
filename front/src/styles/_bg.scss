@@ -7,7 +7,7 @@
         z-index: -1;
 
         content: "";
-        background-image: url("../assets/header-texture.png");
+        background-image: url("src/assets/header-texture.png");
         background-repeat: repeat;
         position: absolute;
         top: 0px;
@@ -22,6 +22,8 @@
 .bg-texture-rounded{
     position: relative;
     &::after {
+        z-index: -1;
+
         content: "";
         position: absolute;
         top: 10px;
@@ -29,7 +31,7 @@
         bottom: 10px;
         left: 10px;
         border-radius: 50%;
-        background-image: url("assets/header-texture2.png");
+        background-image: url("src/assets/header-texture2.png");
         box-shadow: 0 0 30px 30px rgba(245, 245, 245, 0.336) inset;
         opacity: 0.8;
     }
@@ -55,7 +57,7 @@ body {
     &::before {
         z-index: -1;
         content: "";
-        background-image: url("assets/header-texture.png");
+        background-image: url("src/assets/header-texture.png");
         background-repeat: repeat;
         position: absolute;
         top: 0px;

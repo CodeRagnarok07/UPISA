@@ -5,7 +5,7 @@ import useQueryFetcher from 'src/utils/useQueryFetcher'
 
 const MyApp = () => {
 
-    const usequery = useQueryFetcher('api/core/sucursales/')
+    const usequery = useQueryFetcher(["contact"],'api/core/sucursales/')
 
     const data = usequery.data?.filter(v => !v.es_central)
     console.log(data);

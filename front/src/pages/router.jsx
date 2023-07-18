@@ -93,7 +93,7 @@ const router = createBrowserRouter([
       {
         path: "/cerdo",
         element: <Layer
-        header={{title:"novedades", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
+        header={{title:"BENEFICIOS DE LA CARNE DE CERDO", text:`` }}
         
         ><Cerdo /> </Layer>,
       },
