@@ -53,11 +53,7 @@ const MyApp = () => {
 
             <div className="container ">
                 <img src="assets/cerdo.png" alt="" className="
-    md:w-1/2 md:-mb-[1.7%] md:-mt-[25%]
-    -mb-[3.4%]
-    relative z-[100] 
-
-    "/>
+    lg:w-1/2 lg:-mb-[1.7%] lg:-mt-[25%] -mb-[3.4%] relative z-[100] "/>
             </div>
 
         </div>

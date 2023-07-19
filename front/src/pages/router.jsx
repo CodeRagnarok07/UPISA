@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Layer
+        cerdo={true}
         meta={{title:"UPISA ", description:"Variedades de embutidos con sabores únicos"}}
         
         ><Home /> </Layer>,

@@ -15,7 +15,7 @@ export default function(){
         <div class="flex-col gap-16">
             <div class="mb-6 flex flex-col xl:flex-row gap-10">
                 <div class="w-full">
-                    <img class=" w-auto object-cover rounded-xl" src="assets/about/1.jpg" alt=""/>
+                    <img class=" w-auto object-cover rounded-xl" src="assets/about/empresa01.jpg" alt=""/>
                 </div>
                 <div class="w-full justify-center ">
             
@@ -43,7 +43,7 @@ export default function(){
 
             <div class="mb-6 flex flex-col xl:flex-row-reverse  gap-10">
                 <div class="w-full">
-                    <img class=" w-auto object-cover rounded-xl" src="assets/about/2.jpg" alt=""/>
+                    <img class=" w-auto object-cover rounded-xl" src="assets/about/empresa02.jpg" alt=""/>
 
                 </div>
                 <div class="w-full justify-center ">

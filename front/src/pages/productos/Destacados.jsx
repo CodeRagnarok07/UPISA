@@ -6,7 +6,7 @@ import useQueryFetcher from 'src/utils/useQueryFetcher'
 const Destacados = () => {
     const [CarruselRef, arrowControler, current, dotControlerRef] = useCarrusel()
 
-    const usequery = useQueryFetcher(["destacados"],'api/posts/products/producto/?limit=50&destacados=True')
+    const usequery = useQueryFetcher(["destacados"],'api/posts/products/producto/?limit=16&destacados=True')
 
     return (
         <div className="cont pb-4 pt-12">

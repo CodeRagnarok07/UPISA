@@ -10,7 +10,7 @@ const Contact = () => {
     return (
         <div className="cont">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 mt-9 md:mt-12 gap-6 ">
+            <div className="grid grid-cols-1 lg:grid-cols-2 mt-9 md:mt-12 gap-6 ">
 
                 <div>
                     <Form />
@@ -23,7 +23,10 @@ const Contact = () => {
                             <h3 className="md:text-left my-auto w-full">{v.nombre}</h3>
                             <div
                                 className="w-full  flex flex-col justify-between gap-3  
-                            [&>div]:flex [&>div]:items-center  [&>div]:gap-3
+                            [&>div]:flex 
+                            [&>div]:items-center  
+                         
+                            [&>div]:gap-3
                             ">
 
                                 <div>

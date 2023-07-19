@@ -1,4 +1,10 @@
 const MyApp = () => {
+
+    const personas  = [
+        "adultos",
+        "niños"
+    ]
+
     return (
         <div id="step_1" className="flex flex-col gap-y-6">
             <div class="flex justify-between       mb-10">
@@ -6,8 +12,9 @@ const MyApp = () => {
                 <h4>PORCIÓN</h4>
             </div>
 
+            {personas.map((v,k)=>(
 
-            <div className="flex  items-center 
+            <div key={k} className="flex  items-center 
             flex-wrap 
             xl:flex-nowrap
       
@@ -16,7 +23,7 @@ const MyApp = () => {
             ">
 
                 <span className="uppercase font-bold  ">
-                    adultos
+                    {v}
                 </span>
 
                 <div className="flex w-full    justify-between">
@@ -72,6 +79,7 @@ const MyApp = () => {
                 </div>
             </div>
           
+          ))}
 
 
 
