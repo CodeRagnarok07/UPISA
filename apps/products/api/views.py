@@ -10,8 +10,8 @@ from core.pagination import CustomPagination, PaginationHandlerMixinApiView
 from django.db.models import Q
 
 
-from products.models import Product, Categoria, CategoriaSub
-from .serializer import ProductSerializer ,DetailProductSerializer, CategoriaSerializer, CategoriaSubSerializer
+from products.models import Product, Categoria, CategoriaSub, ValoresNutricionales
+from .serializer import ProductSerializer ,DetailProductSerializer, CategoriaSerializer, CategoriaSubSerializer, ValoresNutricionalesSerializer
 
 
 
@@ -40,10 +40,10 @@ class DetailProductListView(APIView):
     serializer_class = DetailProductSerializer
 
     def get(self, request, url):
-        print(url)
+
         queryset = Product.objects.filter(url=url)
         serializer = self.serializer_class(queryset, many=True, context={'request': request})
-        return Response(serializer.data)
+        return Response(serializer.data[0])
 
 
 class categoryListView(APIView, PaginationHandlerMixinApiView):

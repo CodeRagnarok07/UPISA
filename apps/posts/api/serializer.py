@@ -48,6 +48,6 @@ class NovedadesSerializer(serializers.HyperlinkedModelSerializer):
 class DetailNovedadesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Novedades
-        fields = ["url", "titulo", "portada", "publicar", "galeria", "contenido"]
+        fields = ["url", "titulo", "portada", "publicar",  "galeria", "contenido"]
     galeria = GaleriaNovedadesSerializer(many=True)
 

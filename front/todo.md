@@ -1,22 +1,22 @@
 # - [ ] backend
 
-- [ ] paginacion + filtro productos
-  - [x] paginacion
 
+
+
+
+# - [ ] por deplyo
+  - [ ] recetas
+  - [ ] Calculadora
+
+
+
+
+# - [ ] Procrastinado
 - [ ] paginacion 
   - [ ] recetas
   - [ ] trucos y consejos
   - [ ] novedades
 
-- [ ] details
-  - [ ] productos
-  - [ ] novedades
-  - [ ] trucos y consejos
-  - [ ] recetas
-
-
-- [x]  frontend
-  - [x] todos los headers
-  - [x] metadatos
-  - [x] contacto
-  <!-- - [ ] cerdo // url  -->
+- [ ] PRODUCTOS paginacion + filtro 
+  - [x] paginacion
+  - [ ] filtro

@@ -16,9 +16,14 @@ class RecetaSerializer(serializers.HyperlinkedModelSerializer):
         model = Receta
         fields = ["url", "nombre", "portada", "tiempo_preparacion", "porcion_personas"]
 
+from products.api.serializer import ProductSerializer
 class DetailRecetaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Receta
-        fields = ["url", "nombre", "portada",  "galeria", "contenido"]
+        fields = ["nombre", "url", "portada", "tiempo_preparacion", "porcion_personas", "descripcion", "ingredientes", "galeria", "preparacion", "productos_sugeridos"]
+        
+
     galeria = GaleriaRecetaSerializer(many=True)
+    productos_sugeridos= ProductSerializer(many=True)
+    # "preparacion", "productos_sugeridos", 
 

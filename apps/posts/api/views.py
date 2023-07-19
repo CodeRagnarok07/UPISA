@@ -13,6 +13,8 @@ from django.db.models import Q
 from posts.models import TrucosYConsejos, Novedades
 from .serializer import TrucosYConsejosSerializer, NovedadesSerializer, DetailTrucosYConsejosSerializer, DetailNovedadesSerializer
 
+import random
+
 
 class TrucosYConsejosListView(APIView, PaginationHandlerMixinApiView):
     queryset = TrucosYConsejos.objects.all()
@@ -39,13 +41,23 @@ class TrucosYConsejosListView(APIView, PaginationHandlerMixinApiView):
 
 class DetailTrucosYConsejosListView(APIView):
     queryset = TrucosYConsejos.objects.all()
+
     serializer_class = DetailTrucosYConsejosSerializer
 
+    serializer_more = TrucosYConsejosSerializer
+
     def get(self, request, url):
-        print(url)
         queryset = TrucosYConsejos.objects.filter(url=url)
         serializer = self.serializer_class(queryset, many=True, context={'request': request})
-        return Response(serializer.data)
+        similares = list(TrucosYConsejos.objects.all().exclude(url=url))
+        if len(similares) > 2:
+            similares = random.sample(similares, 3)
+        serializer_more = self.serializer_more(similares, many=True, context={'request': request})
+
+        return Response({
+            "current":serializer.data[0],
+            "more": serializer_more.data
+        })
 
 
 
@@ -75,13 +87,26 @@ class NovedadesListView(APIView, PaginationHandlerMixinApiView):
 
         return Response(serializer.data)
 
+
 class DetailNovedadesListView(APIView):
     queryset = Novedades.objects.all()
+
     serializer_class = DetailNovedadesSerializer
 
+    serializer_more = NovedadesSerializer
+
     def get(self, request, url):
-        print(url)
         queryset = Novedades.objects.filter(url=url)
         serializer = self.serializer_class(queryset, many=True, context={'request': request})
-        return Response(serializer.data)
+
+        similares = list(Novedades.objects.all().exclude(url=url))
+        if len(similares) > 2:
+            similares = random.sample(similares, 3)
+
+        serializer_more = self.serializer_more(similares, many=True, context={'request': request})
+
+        return Response({
+            "current":serializer.data[0],
+            "more": serializer_more.data
+        })
 

@@ -29,13 +29,28 @@ class RecetaListView(APIView, PaginationHandlerMixinApiView):
             serializer = self.serializer_class(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
+import random
+
 class DetailRecetaListView(APIView):
     queryset = Receta.objects.all()
     serializer_class = DetailRecetaSerializer
+    serializer_more = RecetaSerializer
 
     def get(self, request, url):
         queryset = Receta.objects.filter(url=url)
         serializer = self.serializer_class(queryset, many=True, context={'request': request})
-        return Response(serializer.data)
+
+
+        similares = list(Receta.objects.all().exclude(url=url))
+        if len(similares) > 2:
+            similares = random.sample(similares, 3)
+
+        serializer_more = self.serializer_more(similares, many=True, context={'request': request})
+
+        return Response({
+            "current":serializer.data[0],
+            "more": serializer_more.data
+        })
+
 
 

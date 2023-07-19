@@ -1,10 +1,11 @@
+import { NavLink } from "react-router-dom"
 
 
 const Item = ({data}) => {
     // console.log(data);
     return (
 
-        <a class="z-50 rounded-xl w-full bg-white text-black flex flex-col justify-between" href="#">
+        <NavLink to={`/productos/${data.url}`} className="z-50 rounded-xl w-full bg-white text-black flex flex-col justify-between" href="#">
             <figure class="
             flex justify-center
             mx-auto mt-4 lg:mt-12
@@ -14,7 +15,7 @@ const Item = ({data}) => {
             <h5 class="p-3 sm:p-4 lg:p-9  text-center font-semibold">
                 {data.nombre}
             </h5>
-        </a>
+        </NavLink>
     )
 }
 

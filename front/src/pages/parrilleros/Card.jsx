@@ -1,9 +1,10 @@
+import { NavLink } from "react-router-dom"
 
 
 const Card = ({ data }) => {
     return (
-        <a className="bg-white flex flex-col  rounded-lg text-black w-auto  "
-            href="#">
+        <NavLink className="bg-white flex flex-col  rounded-lg text-black w-auto  "
+            to={data.url}>
                 <img className="rounded-t-xl max-h-80  h-full w-full object-cover" src={data.portada} alt="" />
 
             <div className="p-5 md:p-9 mt-auto">
@@ -24,7 +25,7 @@ const Card = ({ data }) => {
 
             </div>
 
-        </a>
+        </NavLink>
     )
 }
 

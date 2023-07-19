@@ -8,7 +8,7 @@ const HeaderCarrusel = () => {
     // console.log(usequery);
 
     return (
-        <div className="relative z-0 -mb-10 -mt-28">
+        <div className="relative z-0 -mb-10 -mt-28 lg:-mt-36">
 
             <div className="carrusel-slider ">
 

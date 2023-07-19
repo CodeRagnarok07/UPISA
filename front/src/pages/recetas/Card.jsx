@@ -1,14 +1,15 @@
+import { NavLink } from "react-router-dom"
 
 
 const Card = ({ data }) => {
     return (
-        <a className="bg-white flex flex-col  rounded-lg text-black w-auto  "
-            href="#">
+        <NavLink className="bg-white flex flex-col  rounded-lg text-black w-auto  "
+            to={"/recetas/"+data.url}>
             <img className="rounded-t-xl max-h-80  h-full w-full object-cover" src={data.portada} alt="" />
 
             <div className="p-5 md:p-9 mt-auto">
 
-                <h3 className="uppercase">{data.titulo}</h3>
+                <h3 className="uppercase">{data.nombre}</h3>
                 <div className="flex gap-6 mt-5 ">
 
                     <div class="flex gap-6 mt-5 ">
@@ -38,7 +39,7 @@ const Card = ({ data }) => {
 
             </div>
 
-        </a>
+        </NavLink>
     )
 }
 

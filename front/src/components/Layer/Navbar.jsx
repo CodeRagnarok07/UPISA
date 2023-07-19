@@ -68,7 +68,7 @@ const Navbar = () => {
 
                 <div className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} >
 
-                <NavLink to={"/"} className={"flex w-20 h-auto sm:w-32 pt-4 sm:pt-0"}>
+                <NavLink to={"/"} className={"flex w-28 pt-2 h-auto md:w-32 xl:w-44  md:pt-0"}>
                     <img className="w-full h-full" src={logo} alt="logo upisa" />
                 </NavLink>
                 </div>

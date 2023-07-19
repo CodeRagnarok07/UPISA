@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from .views import NovedadesListView, TrucosYConsejosListView, DetailTrucosYConsejosListView, DetailTrucosYConsejosListView
+from .views import NovedadesListView, TrucosYConsejosListView, DetailTrucosYConsejosListView, DetailNovedadesListView
 
 
 
@@ -13,7 +13,7 @@ from .views import NovedadesListView, TrucosYConsejosListView, DetailTrucosYCons
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('novedades/',  NovedadesListView.as_view()),
-    path('novedades/<str:url>/',  DetailTrucosYConsejosListView.as_view()),
+    path('novedades/<str:url>/',  DetailNovedadesListView.as_view()),
     path('trucos/',  TrucosYConsejosListView.as_view()),
     path('trucos/<str:url>/',  DetailTrucosYConsejosListView.as_view()),
 

@@ -7,14 +7,11 @@ const LaCocina = () => {
 
     const usequery = useQueryFetcher(["recetas-home"], 'api/posts/receta/?limit=5')
 
-    const source = [1, 2, 3, 4, 5]
 
 
     const [CarruselRef, arrowControler, current, dotControlerRef] = useCarrusel()
-
     return (
         <div className="cont my-20">
-
             <div className="text-center">
                 <h2 className="uppercase ">LA cocina de UPISA</h2>
                 <p className="">
@@ -117,7 +114,7 @@ const LaCocina = () => {
                         </button>
 
                         <div className="w-max ">
-                            {current.state + 1} / {usequery.data?.count}
+                            {current.state + 1} / {usequery.data?.results.length}
                         </div>
 
                         <button onClick={() => arrowControler(true)} className="right-control">

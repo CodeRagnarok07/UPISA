@@ -19,8 +19,6 @@ class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
         model = Categoria
         fields = ("nombre", "url", "sub_categorias")
     sub_categorias = CategoriaSubSerializer(many=True)
-    
-
 
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
@@ -42,13 +40,15 @@ class GaleriaSerializer(serializers.HyperlinkedModelSerializer):
 class ValoresNutricionalesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ValoresNutricionales
-        fields = ("__all__",)
+        fields = ["energetico", "vd_energetico", "carbohidratos", "vd_carbohidratos", "proteinas", "vd_proteinas", "grasas", "vd_grasas", "grasas_saturadas", "vd_grasas_saturadas", "grasas_trans", "vd_grasas_trans", "fibra", "vd_fibra", "sodio", "vd_sodio", ]
 
 
 class DetailProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
-        fields = ["url", "titulo", "portada",  "galeria", "contenido", "valores_nutricionales"]
+        fields = [ "nombre" ,"url" ,"miniatura" ,"destacado"  ,"porcion" ,"unidad" ,"descripcion", "descripcion", "valores_nutricionales", "galeria" ] 
+    
+    valores_nutricionales = ValoresNutricionalesSerializer()
     galeria = GaleriaSerializer(many=True)
-    valores_nutricionales= ValoresNutricionalesSerializer(many=True)
+    # valores_nutricionales= ValoresNutricionalesSerializer(many=True)
 

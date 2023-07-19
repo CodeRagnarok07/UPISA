@@ -13,9 +13,12 @@ import Promo from './promo'
 
 
 
+import ProductDetail from './productos/Detail'
+import RecetaDetail from './recetas/Detail'
 
 
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import Article from 'src/components/Article'
 
 
 const router = createBrowserRouter([
@@ -48,16 +51,27 @@ const router = createBrowserRouter([
         element: <Layer
         meta={{title:"Productos UPISA", description:"Explora nuestro completo catálogo de productos de primera calidad, elaborados con dedicación y tradición desde Paraguay."}}
         header={{title:"PRODUCTOS", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
-        ><Productos /> </Layer>,
+        ><Productos /> </Layer>,       
+
       },
+      {
+        path: "/productos/:urlProduct",
+        element: <ProductDetail />,
+      },
+
  
       {
         path: "/parrilleros",        
         element: <Layer
         meta={{title:"Consejos para parrilleros UPISA", description:"Descubre nuestros consejos y secretos para lograr el asado perfecto."}}
         header={{title:"Parrilleros", text:`Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!` }}
-        
         ><Parrilleros /> </Layer>,
+      },
+      {
+        path: "/parrilleros/:url",
+        element: <Article 
+        pathApi={"api/posts/trucos/"} name={"Trucos y consejos"}  internal_url="/parrilleros/"
+        />,
       },
  
       {
@@ -67,7 +81,13 @@ const router = createBrowserRouter([
         header={{title:"novedades", text:`Redes Sociales / Facebook e Instagram` }}
         ><Novedades /> </Layer>,
       },
- 
+      {
+
+        path: "/novedades/:url",
+        element: <Article 
+        pathApi={"api/posts/novedades/"} name={"novedades"}  internal_url="/novedades/"/>
+        
+      },
       {
         path: "/recetas",
         element: <Layer
@@ -76,6 +96,12 @@ const router = createBrowserRouter([
         
         ><Recetas /> </Layer>,
       },
+      {
+        path: "/recetas/:url",
+        element: <RecetaDetail/>
+        
+      },
+
       {
         path: "/contacto",
         element: <Layer
