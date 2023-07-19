@@ -30,7 +30,7 @@ env8/
 todo/
 build/
 develop-eggs/
-dist/
+# dist/
 downloads/
 eggs/
 .eggs/

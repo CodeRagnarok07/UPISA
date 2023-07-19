@@ -19,8 +19,8 @@ const LaCocina = () => {
 
                     {usequery.data?.results.map((v, k) => (
 
-                        <a className="bg-white flex flex-col  rounded-lg text-black w-auto lg:w-[40rem] "
-                            href="#">
+                        <NavLink className="bg-white flex flex-col  rounded-lg text-black w-auto lg:w-[40rem] "
+                            to={"/novedades/"+v.url}>
                             <div className="">
                                 <img className="rounded-t-xl max-h-80  h-full w-full object-cover" src={v.portada} alt="" />
                             </div>
@@ -43,7 +43,7 @@ const LaCocina = () => {
 
                             </div>
 
-                        </a>
+                        </NavLink>
                     ))}
 
 

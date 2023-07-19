@@ -48,7 +48,7 @@ const LaCocina = () => {
                                 <div className="bg-white rounded-lg  text-black p-5 h-min lg:-ml-[6%] lg:z-20 ">
                                     <h3 className="uppercase">{v.nombre}</h3>
 
-                                    <p className="mb-5">Se puede servir como entrada o plato principal.</p>
+                                    <p className="my-5">Se puede servir como entrada o plato principal.</p>
 
                                     <div className="flex gap-6 mb-6 ">
 
@@ -80,8 +80,9 @@ const LaCocina = () => {
                                     </div>
 
 
-                                    <a href="{% url 'receta_detail' i.url %}" className="">
-                                        <button className="secondary with_svg">
+                                <div className="flex">
+
+                                    <NavLink to={"/recetas/"+v.url} className="btn bg-primary">
                                             VER RECETA
 
                                             <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
@@ -91,8 +92,9 @@ const LaCocina = () => {
                                                     fill="white" />
                                             </svg>
 
-                                        </button>
-                                    </a>
+                                    </NavLink>
+                                </div>
+
                                 </div>
                             </div>
                         </div>

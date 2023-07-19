@@ -5,8 +5,8 @@
 
 
 # - [ ] por deplyo
-- [ ] link de novedades home
-- [ ] link de current receta home
+- [x] link de novedades home
+- [x] link de current receta home
 - [ ] productos / baner contacto
   - [ ] crear baner reusable
 
