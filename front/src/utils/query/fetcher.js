@@ -10,6 +10,7 @@ const Fetcher = async (path) => {
   }
 
   const urlFetch = backend + path
+  console.log(urlFetch);
 
   try {
     const response = await fetch(urlFetch, {

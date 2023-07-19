@@ -49,12 +49,14 @@ DEBUG = env('DEBUG')
 
 # ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = [env('ALLOWED_HOSTS') ]
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), env('ALLOWED_HOSTS2')]
 
-
-CSRF_TRUSTED_ORIGINS = [f"https://{env('ALLOWED_HOSTS')}"]
-
+CSRF_TRUSTED_ORIGINS = [f"https://{env('ALLOWED_HOSTS')}", f"https://{env('ALLOWED_HOSTS2')}"]
+print(ALLOWED_HOSTS)
 print(CSRF_TRUSTED_ORIGINS)
+
+
+
 # if DEBUG is False:
 #     print("hola mundo")
 #     ALLOWED_HOSTS = ['localhost']

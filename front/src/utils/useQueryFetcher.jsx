@@ -7,7 +7,6 @@ const useQueryFetcher = (key,path) => {
 
     // const update = (page) => fetcher(page)
 
-
     const query = useQuery({ 
         queryKey: key, 
         queryFn: () => fetcher(path),
