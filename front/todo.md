@@ -5,13 +5,16 @@
 
 
 # - [ ] por deplyo
-  - [ ] recetas
-  - [ ] Calculadora
+- [ ] link de novedades home
+- [ ] link de current receta home
+- [ ] productos / baner contacto
+  - [ ] crear baner reusable
 
 
 
 
 # - [ ] Procrastinado
+- [ ] Calculadora
 - [ ] paginacion 
   - [ ] recetas
   - [ ] trucos y consejos

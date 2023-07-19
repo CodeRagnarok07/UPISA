@@ -1,11 +1,18 @@
 import useCarrusel from "src/utils/useCarrusel";
 
-import Step1 from './step1'
+import Personas from './Personas'
+import ListCheckbox from "./ListCheckbox";
 
 
 
 const MyApp = () => {
     const [CarruselRef, arrowControler, current, dotControlerRef] = useCarrusel()
+
+
+
+
+    const carnes = ["Bondiola", "tapa cuadril", "costilla", "asado americano", "bife de chorizo", "matambrito",]
+    const embutidos = ["toscana tradicional", "toscana con finas hierbas", "toscana con ajo", "toscana picante", "chorizo de viena", "parrillero con y sin picante",]
 
     return (
 
@@ -21,11 +28,12 @@ const MyApp = () => {
                 <progress class="lg:flex hidden " max="100" value="0"></progress>
             </div>
 
-            <div className="carrusel-slider mb-40">
+            <div className="carrusel-slider">
 
                 <div ref={CarruselRef} className="slider slider-grid " style={{ "--grid": "1", "--grid-md": "1" }}>
-                   <Step1/>
-                  <div></div>
+                    <Personas />
+                    <ListCheckbox data={carnes} cols={1} />
+                    <ListCheckbox data={embutidos} cols={2} />
                 </div>
 
 
@@ -37,12 +45,20 @@ const MyApp = () => {
 
 
             <div class=" gap-4 flex flex-row justify-between items-center py-6 border-t border-t-[#FDF2E8]">
-                <div onClick={() => arrowControler(false)} class="btn bg-primary white w-auto  ">ATRÁS</div>
-                <div onClick={() => arrowControler(true)} id="next_step" class="btn bg-primary w-auto">SIGUIENTE</div>
+
+                {current?.state != 0 &&
+                    < div onClick={() => arrowControler(false)} class="btn bg-primary white w-auto mr-auto ">ATRÁS</div>
+                }
+
+                {current?.state != CarruselRef.current?.children.length - 1 ?
+                    <div onClick={() => arrowControler(true)} id="next_step" class="btn bg-primary w-auto ml-auto">SIGUIENTE</div>
+                    :
+                    ""
+                }
 
             </div>
 
-        </form>
+        </form >
     )
 }
 
