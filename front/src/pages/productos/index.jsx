@@ -27,10 +27,7 @@ const MyApp = () => {
 
     // Filter
 
-    const handleSet = (v) => {
-        setPage(v)
-    }
-
+ 
 
     const usequeryFilters = useQueryFetcher(["products-filters"], "api/posts/products/categorias/")
     // console.log(usequeryFilters.data);
@@ -81,10 +78,7 @@ const MyApp = () => {
             </div>
 
 
-            {usequery?.data &&
-
-                <Pagination data={usequery.data} set={handleSet} current={page} />
-            }
+            {usequery?.data && <Pagination data={usequery.data} set={setPage} current={page} />}
 
 
            <BanerContact/>

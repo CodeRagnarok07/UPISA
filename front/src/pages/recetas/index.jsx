@@ -4,8 +4,19 @@ import useQueryFetcher from 'src/utils/useQueryFetcher'
 import Card from './Card'
 
 const MyApp = () => {
-    const usequery = useQueryFetcher(["recetas"],'api/posts/receta/')
+    const [page, setPage] = useState(1)
+    const [url, setUrl] = useState(`api/posts/receta/?limit=9${page && `&page=${page}`}`)
+    // console.log(page.length == true);
 
+
+    const usequery = useQueryFetcher(["receta"], url)
+
+    useEffect(() => {
+        setUrl(`api/posts/receta/?limit=9${page && `&page=${page}`}`)
+    }, [page])
+    useEffect(() => {
+        usequery.refetch()
+    }, [url])
     return (
         <>
             <Banner />
@@ -16,7 +27,8 @@ const MyApp = () => {
                       <Card data={v}/>
                     ))}
                 </div>
-                <Pagination />
+                {usequery?.data && <Pagination data={usequery.data} set={setPage} current={page} />}
+
             </div>
         </>
 

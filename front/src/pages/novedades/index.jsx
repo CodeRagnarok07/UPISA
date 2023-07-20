@@ -3,19 +3,34 @@ import IframeCont from './IframeCont'
 
 import useQueryFetcher from 'src/utils/useQueryFetcher'
 import { NavLink } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const MyApp = () => {
-    const usequery = useQueryFetcher(["novedades"],'api/posts/novedades/')
-  
+
+
+    const [page, setPage] = useState(1)
+    const [url, setUrl] = useState(`api/posts/novedades/?limit=6${page && `&page=${page}`}`)
+    // console.log(page.length == true);
+
+
+    const usequery = useQueryFetcher(["novedades"], url)
+
+    useEffect(() => {
+        setUrl(`api/posts/novedades/?limit=6${page && `&page=${page}`}`)
+    }, [page])
+    useEffect(() => {
+        usequery.refetch()
+    }, [url])
+
     return (
         <div className="cont my-20">
 
             <IframeCont />
             <div className="grid grid-cols-1 mt-6 gap-6 md:grid-cols-3  my-10">
                 {usequery.data?.results.map((v, k) => (
-                    <NavLink className="bg-white flex flex-col  rounded-lg text-black w-auto  " 
+                    <NavLink className="bg-white flex flex-col  rounded-lg text-black w-auto  "
                         to={v.url}>
-                            <img className="rounded-t-xl max-h-80  h-full w-full object-cover" src={v.portada} alt="" />
+                        <img className="rounded-t-xl max-h-80  h-full w-full object-cover" src={v.portada} alt="" />
 
                         <div className="p-5 md:p-9 mt-auto">
 
@@ -38,7 +53,8 @@ const MyApp = () => {
                     </NavLink>
                 ))}
             </div>
-            <Pagination />
+            {usequery?.data && <Pagination data={usequery.data} set={setPage} current={page} />}
+
         </div>
     )
 }

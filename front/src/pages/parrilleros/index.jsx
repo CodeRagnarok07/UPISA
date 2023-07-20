@@ -3,13 +3,25 @@ import Pagination from "components/Pagination"
 
 import useQueryFetcher from 'src/utils/useQueryFetcher'
 import Card from './Card'
+import { useEffect, useState } from "react"
 
 
 const MyApp =()=>{
 
-    const usequery = useQueryFetcher(["trucos"],'api/posts/trucos/')
 
- 
+    const [page, setPage] = useState(1)
+    const [url, setUrl] = useState(`api/posts/trucos/?limit=4${page && `&page=${page}`}`)
+    // console.log(page.length == true);
+
+
+    const usequery = useQueryFetcher(["trucos"], url)
+
+    useEffect(() => {
+        setUrl(`api/posts/trucos/?limit=4${page && `&page=${page}`}`)
+    }, [page])
+    useEffect(() => {
+        usequery.refetch()
+    }, [url])
     return (
         <div>
             <Calculadora/>
@@ -27,7 +39,8 @@ const MyApp =()=>{
                     ))}
                 </div>
 
-                <Pagination/>
+                {usequery?.data && <Pagination data={usequery.data} set={setPage} current={page} />}
+
 
 
 

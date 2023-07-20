@@ -2,6 +2,7 @@ import useCarrusel from "src/utils/useCarrusel";
 
 import Personas from './Personas'
 import ListCheckbox from "./ListCheckbox";
+import { useRef, useState } from "react";
 
 
 
@@ -14,9 +15,35 @@ const MyApp = () => {
     const carnes = ["Bondiola", "tapa cuadril", "costilla", "asado americano", "bife de chorizo", "matambrito",]
     const embutidos = ["toscana tradicional", "toscana con finas hierbas", "toscana con ajo", "toscana picante", "chorizo de viena", "parrillero con y sin picante",]
 
+
+    const [formData, setFormData] = useState({
+        personas:{
+            Adultos:{
+                cantidad:5,
+                porcion:500
+            },
+            Niños:{
+                cantidad:5,
+                porcion:500
+            },
+        },
+        carnes:[],
+        embutidos:[]
+
+    })
+
+    const formRef = useRef()
+
+    const handleSubmit =(e)=>{
+        arrowControler(true)
+    }
+
+
     return (
 
-        <form method="POST" action="" className="text-black">
+        <form
+        ref={formRef}
+        method="POST" action="" className="text-black">
 
             <div class="progres-bar mb-4 lg:mb-8">
                 <div class="progres-items">
@@ -31,9 +58,9 @@ const MyApp = () => {
             <div className="carrusel-slider">
 
                 <div ref={CarruselRef} className="slider slider-grid " style={{ "--grid": "1", "--grid-md": "1" }}>
-                    <Personas />
-                    <ListCheckbox data={carnes} cols={1} />
-                    <ListCheckbox data={embutidos} cols={2} />
+                    <ListCheckbox data={carnes} dataName={"carnes"} cols={1} state={formData} setState={setFormData}  />
+                    <Personas state={formData} setState={setFormData}  />
+                    <ListCheckbox data={embutidos} dataName={"embutidos"} cols={2}  state={formData} setState={setFormData} />
                 </div>
 
 
@@ -51,7 +78,7 @@ const MyApp = () => {
                 }
 
                 {current?.state != CarruselRef.current?.children.length - 1 ?
-                    <div onClick={() => arrowControler(true)} id="next_step" class="btn bg-primary w-auto ml-auto">SIGUIENTE</div>
+                    <div onClick={(e) => handleSubmit(e)} id="next_step" class="btn bg-primary w-auto ml-auto">SIGUIENTE</div>
                     :
                     ""
                 }

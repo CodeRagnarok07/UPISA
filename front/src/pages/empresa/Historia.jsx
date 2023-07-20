@@ -19,7 +19,7 @@ export default function(){
                 </div>
                 <div class="w-full justify-center ">
             
-                    <p class="mt-4 mb-6 text-[19px] ">                    
+                    <p class="mt-4 mb-6 text-[19px] leading-5 ">                    
                         UPISA nace el 22 de Enero del año 2000 en la Ciudad de Fram, del pujante departamento
                         de Itapua, fue fundada por productores de cerdos y cooperativas agropecuarias a fin de lograr el
                         desarrollo y la comercialización de su producción, disminuir las intermediaciones y garantizar
@@ -48,7 +48,7 @@ export default function(){
                 </div>
                 <div class="w-full justify-center ">
                    
-                    <p class="mt-4 mb-6  text-[19px] ">
+                    <p class="mt-4 mb-6  text-[19px] leading-5 ">
                         Desde allí, se procesan y envasan todos los productos para consumo nacional e
                         internacional. En sus inicios, la planta industrial contaba con una capacidad de faenar 90
                         cerdos/día, hoy se encuentra faenando 1500 cerdos/día con una capacidad de procesamiento de
