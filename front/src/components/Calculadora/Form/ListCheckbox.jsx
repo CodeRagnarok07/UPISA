@@ -13,7 +13,7 @@ const ListCheckbox = ({data,cols , dataName, state, setState}) => {
 
     return (
         <div>
-            <h4>SELECCIONAR CARNES</h4>
+            <h4 className="uppercase">SELECCIONAR {dataName}</h4>
 
             <div className={`grid grid-cols-1 lg:grid-cols-${cols} my-12  gap-7`}>
 

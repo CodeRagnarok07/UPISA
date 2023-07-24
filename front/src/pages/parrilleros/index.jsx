@@ -14,7 +14,7 @@ const MyApp =()=>{
     // console.log(page.length == true);
 
 
-    const usequery = useQueryFetcher(["trucos"], url)
+    const usequery = useQueryFetcher(["trucos", "parrilleros"], url)
 
     useEffect(() => {
         setUrl(`api/posts/trucos/?limit=4${page && `&page=${page}`}`)

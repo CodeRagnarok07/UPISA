@@ -3,6 +3,7 @@ import useCarrusel from "src/utils/useCarrusel";
 import Personas from './Personas'
 import ListCheckbox from "./ListCheckbox";
 import { useRef, useState } from "react";
+import Result from "./Result";
 
 
 
@@ -17,50 +18,60 @@ const MyApp = () => {
 
 
     const [formData, setFormData] = useState({
-        personas:{
-            Adultos:{
-                cantidad:5,
-                porcion:500
+        personas: {
+            Adultos: {
+                cantidad: 5,
+                porcion: 500
             },
-            Niños:{
-                cantidad:5,
-                porcion:500
+            Niños: {
+                cantidad: 5,
+                porcion: 500
             },
         },
-        carnes:[],
-        embutidos:[]
+        carnes: [],
+        embutidos: []
 
     })
 
     const formRef = useRef()
 
-    const handleSubmit =(e)=>{
+    const handleSubmit = (e) => {
         arrowControler(true)
     }
+
+    console.log(
+        CarruselRef.current?.children?.length
+        
+        )
 
 
     return (
 
         <form
-        ref={formRef}
-        method="POST" action="" className="text-black">
+            ref={formRef}
+            method="POST" action="" className="text-black">
 
             <div class="progres-bar mb-4 lg:mb-8">
                 <div class="progres-items">
-                    <div class="progres-item active  "> PERSONAS</div>
-                    <div class="progres-item">CARNES</div>
-                    <div class="progres-item">EMBUTIDOS</div>
-                    <div class="progres-item">RESULTADO </div>
+                    <div class="progres-item active"> PERSONAS</div>
+                    <div className={`progres-item ${current.state > 0 && "active"}`}> CARNES</div>
+                    <div className={`progres-item ${current.state > 1 && "active"}`}> EMBUTIDOS</div>
+                    <div className={`progres-item ${current.state > 2 && "active"}`}> RESULTADO</div>
+
+
+                   
                 </div>
-                <progress class="lg:flex hidden " max="100" value="0"></progress>
+                <progress class="lg:flex hidden " max="100" value={current.state*25}></progress>
+                {console.log(current.state*25)}
             </div>
 
             <div className="carrusel-slider">
 
                 <div ref={CarruselRef} className="slider slider-grid " style={{ "--grid": "1", "--grid-md": "1" }}>
-                    <ListCheckbox data={carnes} dataName={"carnes"} cols={1} state={formData} setState={setFormData}  />
-                    <Personas state={formData} setState={setFormData}  />
-                    <ListCheckbox data={embutidos} dataName={"embutidos"} cols={2}  state={formData} setState={setFormData} />
+                    <Personas state={formData} setState={setFormData} />
+                    <ListCheckbox data={carnes} dataName={"carnes"} cols={1} state={formData} setState={setFormData} />
+                    <ListCheckbox data={embutidos} dataName={"embutidos"} cols={2} state={formData} setState={setFormData} />
+                    <Result data={formData}/>
                 </div>
 
 

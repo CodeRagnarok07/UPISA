@@ -10,21 +10,21 @@ const MyApp = ({ state, setState }) => {
     const handleClick = (value, bold) => {
         const nameState = value[0]
         const obj = state.personas
-        if ( bold) obj[nameState].cantidad += 1; else obj[nameState].cantidad -= 1
+        if (bold) obj[nameState].cantidad += 1; else obj[nameState].cantidad -= 1
         setState({ ...state, personas: obj })
     }
 
-    const handleDisable =(e)=>{
-        const input = e.currentTarget.previousElementSibling      
+    const handleDisable = (e) => {
+        const input = e.currentTarget.previousElementSibling
         input.disabled = !input.disabled
-        input.focus()    
+        input.focus()
     }
 
     const handleChange = (value, input) => {
         const nameState = value[0]
         const obj = state.personas
         obj[nameState].porcion = input.currentTarget.value
-        
+
         setState({ ...state, personas: obj })
     }
 
@@ -39,14 +39,16 @@ const MyApp = ({ state, setState }) => {
 
             {Object.entries(state.personas).map((v, k) => (
 
-                <div key={k} className="flex  items-center flex-wrap  xl:flex-nowrap gap-x-8 gap-y-4">
+                <div key={k} className="flex w-full justify-between  items-center  gap-x-8 gap-y-4">
+                    
+                    
+                    <div className="flex flex-wrap items-center xl:flex-nowrap justify-start w-full mr-auto">
 
-                    <span className="uppercase font-bold  ">
+                        <span className="uppercase font-bold   mr-auto">
 
-                        {v[0]}
-                    </span>
+                            {v[0]}
+                        </span>
 
-                    <div className="flex w-full justify-between">
                         {/* CANTIDAD  */}
                         <div class="flex items-center gap-1 lg:gap-4" >
 
@@ -59,7 +61,7 @@ const MyApp = ({ state, setState }) => {
                             </div>
                             <div className="border border-[#FAE0C9] bg-white flex h-full rounded-lg w-min">
                                 <input
-                                readOnly={true}
+                                    readOnly={true}
                                     disabled={false}
                                     name="porcion"
                                     value={v[1].cantidad}
@@ -74,36 +76,36 @@ const MyApp = ({ state, setState }) => {
                             </div>
 
                         </div>
+                    </div>
 
 
-                        {/* PORCION */}
+                    {/* PORCION */}
 
-                        <div class=" border bg-white border-[#FAE0C9] 
+                    <div class=" border bg-white border-[#FAE0C9] 
                         
                         flex items-center justify-center rounded-lg"
 
-                        >
-                            <input
-                                name="porcion"
-                                disabled={true}
-                                onChange={(thi)=>handleChange(v,thi)}
-                                class="h-full w-8 sm:w-12 inline items-center noarrow"
-                                value={v[1].porcion}
-                                type="number"
+                    >
+                        <input
+                            name="porcion"
+                            disabled={true}
+                            onChange={(thi) => handleChange(v, thi)}
+                            class="h-full w-8 sm:w-12 inline items-center noarrow"
+                            value={v[1].porcion}
+                            type="number"
 
-                            />g
+                        />g
 
-                            <lable 
-                                onClick={(e)=>handleDisable(e)}
-                                class="h-full px-2 flex items-center cursor-pointer">
-                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16.1641 3.33592L13.6641 0.83592C13.577 0.74852 13.4735 0.679173 13.3595 0.631855C13.2456 0.584538 13.1234 0.560181 13 0.560181C12.8766 0.560181 12.7544 0.584538 12.6405 0.631855C12.5265 0.679173 12.423 0.74852 12.3359 0.83592L4.83594 8.33592C4.7486 8.42295 4.67945 8.52648 4.63251 8.64048C4.58557 8.75449 4.56177 8.87669 4.5625 8.99998V11.5C4.5625 11.7486 4.66127 11.9871 4.83709 12.1629C5.0129 12.3387 5.25136 12.4375 5.5 12.4375H8C8.24837 12.4356 8.48637 12.3376 8.66406 12.164L16.1641 4.66405C16.2515 4.57695 16.3208 4.47345 16.3681 4.3595C16.4154 4.24555 16.4398 4.12337 16.4398 3.99998C16.4398 3.87659 16.4154 3.75442 16.3681 3.64047C16.3208 3.52651 16.2515 3.42302 16.1641 3.33592ZM13 2.82811L14.1719 3.99998L13.3125 4.85936L12.1406 3.68748L13 2.82811ZM7.60938 10.5625H6.4375V9.39061L10.8125 5.01561L11.9844 6.18748L7.60938 10.5625ZM15.8125 9.04686V15.25C15.8104 15.6638 15.6452 16.06 15.3526 16.3526C15.06 16.6451 14.6638 16.8104 14.25 16.8125H1.75C1.33623 16.8104 0.939996 16.6451 0.647415 16.3526C0.354833 16.06 0.189553 15.6638 0.1875 15.25V2.74998C0.189553 2.33621 0.354833 1.93998 0.647415 1.6474C0.939996 1.35482 1.33623 1.18954 1.75 1.18748H7.95312C8.20177 1.18748 8.44022 1.28625 8.61604 1.46207C8.79185 1.63789 8.89062 1.87634 8.89062 2.12498C8.89062 2.37362 8.79185 2.61208 8.61604 2.7879C8.44022 2.96371 8.20177 3.06248 7.95312 3.06248H2.0625V14.9375H13.9375V9.04686C13.9375 8.79822 14.0363 8.55976 14.2121 8.38394C14.3879 8.20813 14.6264 8.10936 14.875 8.10936C15.1236 8.10936 15.3621 8.20813 15.5379 8.38394C15.7137 8.55976 15.8125 8.79822 15.8125 9.04686Z" fill="#EA8215"></path>
-                                </svg>
-                            </lable>
-                        </div>
-
-
+                        <lable
+                            onClick={(e) => handleDisable(e)}
+                            class="h-full px-2 flex items-center cursor-pointer">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1641 3.33592L13.6641 0.83592C13.577 0.74852 13.4735 0.679173 13.3595 0.631855C13.2456 0.584538 13.1234 0.560181 13 0.560181C12.8766 0.560181 12.7544 0.584538 12.6405 0.631855C12.5265 0.679173 12.423 0.74852 12.3359 0.83592L4.83594 8.33592C4.7486 8.42295 4.67945 8.52648 4.63251 8.64048C4.58557 8.75449 4.56177 8.87669 4.5625 8.99998V11.5C4.5625 11.7486 4.66127 11.9871 4.83709 12.1629C5.0129 12.3387 5.25136 12.4375 5.5 12.4375H8C8.24837 12.4356 8.48637 12.3376 8.66406 12.164L16.1641 4.66405C16.2515 4.57695 16.3208 4.47345 16.3681 4.3595C16.4154 4.24555 16.4398 4.12337 16.4398 3.99998C16.4398 3.87659 16.4154 3.75442 16.3681 3.64047C16.3208 3.52651 16.2515 3.42302 16.1641 3.33592ZM13 2.82811L14.1719 3.99998L13.3125 4.85936L12.1406 3.68748L13 2.82811ZM7.60938 10.5625H6.4375V9.39061L10.8125 5.01561L11.9844 6.18748L7.60938 10.5625ZM15.8125 9.04686V15.25C15.8104 15.6638 15.6452 16.06 15.3526 16.3526C15.06 16.6451 14.6638 16.8104 14.25 16.8125H1.75C1.33623 16.8104 0.939996 16.6451 0.647415 16.3526C0.354833 16.06 0.189553 15.6638 0.1875 15.25V2.74998C0.189553 2.33621 0.354833 1.93998 0.647415 1.6474C0.939996 1.35482 1.33623 1.18954 1.75 1.18748H7.95312C8.20177 1.18748 8.44022 1.28625 8.61604 1.46207C8.79185 1.63789 8.89062 1.87634 8.89062 2.12498C8.89062 2.37362 8.79185 2.61208 8.61604 2.7879C8.44022 2.96371 8.20177 3.06248 7.95312 3.06248H2.0625V14.9375H13.9375V9.04686C13.9375 8.79822 14.0363 8.55976 14.2121 8.38394C14.3879 8.20813 14.6264 8.10936 14.875 8.10936C15.1236 8.10936 15.3621 8.20813 15.5379 8.38394C15.7137 8.55976 15.8125 8.79822 15.8125 9.04686Z" fill="#EA8215"></path>
+                            </svg>
+                        </lable>
                     </div>
+
+
                 </div>
 
             ))}

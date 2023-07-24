@@ -1,4 +1,6 @@
 import Form from './Form'
+
+
 const Calculadora = () => {
     return (
 
@@ -6,7 +8,7 @@ const Calculadora = () => {
             <div class="progres-form cont  
             bg-white bg-opacity-90 
              rounded-xl
-             grid grid-cols-1 sm:grid-cols-2
+             grid grid-cols-1 md:grid-cols-2
             
             ">
 
