@@ -24,10 +24,10 @@ class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
-        fields = [ "nombre" ,"url" ,"miniatura" ,"destacado"  ,"porcion" ,"unidad" ,"descripcion" ] 
+        fields = [ "nombre" ,"url" ,"miniatura" ,"destacado"  ,"porcion" ,"unidad" ,"descripcion", "sub_categoria" ] 
 
         
-    # sub_categoria = CategoriaSubSerializer(many=True)
+    sub_categoria = CategoriaSubSerializer()
     
 
 

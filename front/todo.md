@@ -7,15 +7,15 @@
 # - [ ] por deplyo
 - [x] link de novedades home
 - [x] link de current receta home
-- [ ] productos / baner contacto
+- [x] productos / baner contacto
   - [ ] crear baner reusable
 
 
 
 
 # - [ ] Procrastinado
-- [ ] Calculadora
-- [ ] paginacion 
+- [x] Calculadora
+- [x] paginacion 
   - [ ] recetas
   - [ ] trucos y consejos
   - [ ] novedades

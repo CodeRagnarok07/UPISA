@@ -40,11 +40,11 @@ const MyApp = ({ state, setState }) => {
             {Object.entries(state.personas).map((v, k) => (
 
                 <div key={k} className="flex w-full justify-between  items-center  gap-x-8 gap-y-4">
-                    
-                    
-                    <div className="flex flex-wrap items-center xl:flex-nowrap justify-start w-full mr-auto">
 
-                        <span className="uppercase font-bold   mr-auto">
+
+                    <div className="mr-auto flex flex-wrap items-center xl:flex-nowrap justify-start gap-5 w-full ">
+
+                        <span className="uppercase font-bold min-w-[78px]  ">
 
                             {v[0]}
                         </span>

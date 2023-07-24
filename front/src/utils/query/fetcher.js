@@ -12,7 +12,6 @@ const Fetcher = async (path) => {
   const urlFetch = backend + path
   console.log(urlFetch);
 
-  try {
     const response = await fetch(urlFetch, {
       method: "GET",
       headers: headersList
@@ -20,11 +19,7 @@ const Fetcher = async (path) => {
     const data = await response.json();
     return data
     
-  } catch (error) {
-    console.log(urlFetch);
-    console.log(error);
-    
-  }
+  
 }
 
 export default Fetcher

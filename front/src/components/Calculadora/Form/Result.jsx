@@ -15,10 +15,10 @@ const Result = ({ data }) => {
     return (
         <div className="p-6 flex flex-col whitespace-nowrap">
 
-            <div className="flex gap-6">
+            <div className="flex gap-6 flex-wrap">
                 {Object.entries(data.personas).map((persona, key) => (
 
-                    <div key={key} className="flex gap-2 w-full justify-between">
+                    <div key={key} className="flex  gap-2  justify-between">
                         <h4 className="uppercase">{persona[1].cantidad} {persona[0]}</h4>
                         <div className="px-3 py-2.5 bg-[#FDF2E8]  justify-center items-center gap-2 inline-flex">
                             <div className="text-center text-neutral-900">

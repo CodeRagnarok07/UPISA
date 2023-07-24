@@ -22,13 +22,20 @@ class ProductListView(APIView, PaginationHandlerMixinApiView):
 
     def get(self, request, format=None, *args, **kwargs):
         destacados = request.GET.get('destacados', '')
+        filter = request.GET.get('filter', '')
+
+        # querysetFilter = CategoriaSub.objects.filter(categoria__url=filter)
+
         if destacados:
             queryset = Product.objects.filter(destacado=True)
+        elif filter:
+            queryset = Product.objects.all().filter(sub_categoria__categoria__url=filter)
+            print(queryset)
         else:
             queryset = Product.objects.all()
 
         page = self.paginate_queryset(queryset)
-        if page is not None:
+        if page is not None and len(queryset)>0:
             serializer = self.get_paginated_response(self.serializer_class(page, many=True, context={'request': request}).data)
         else:
             serializer = self.serializer_class(queryset, many=True, context={'request': request})
