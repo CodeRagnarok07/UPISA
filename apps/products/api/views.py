@@ -13,6 +13,7 @@ from django.db.models import Q
 from products.models import Product, Categoria, CategoriaSub, ValoresNutricionales
 from .serializer import ProductSerializer ,DetailProductSerializer, CategoriaSerializer, CategoriaSubSerializer, ValoresNutricionalesSerializer
 
+from django.db.models import Q
 
 
 class ProductListView(APIView, PaginationHandlerMixinApiView):
@@ -23,14 +24,25 @@ class ProductListView(APIView, PaginationHandlerMixinApiView):
     def get(self, request, format=None, *args, **kwargs):
         destacados = request.GET.get('destacados', '')
         filter = request.GET.get('filter', '')
+        subfilter = request.GET.get('Subfilter', '')
+
+
+
+        print(subfilter.split(","))
+        listsubfilter = subfilter.split(",")
+
 
         # querysetFilter = CategoriaSub.objects.filter(categoria__url=filter)
 
         if destacados:
             queryset = Product.objects.filter(destacado=True)
-        elif filter:
-            queryset = Product.objects.all().filter(sub_categoria__categoria__url=filter)
+        elif subfilter:
+            queryset = Product.objects.filter(sub_categoria__url__in=listsubfilter)
             print(queryset)
+        elif filter:
+            queryset = Product.objects.filter(sub_categoria__categoria__url=filter)
+            
+
         else:
             queryset = Product.objects.all()
 

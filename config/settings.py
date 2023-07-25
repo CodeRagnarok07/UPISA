@@ -54,7 +54,7 @@ ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), env('ALLOWED_HOSTS2')]
 CSRF_TRUSTED_ORIGINS = [f"https://{env('ALLOWED_HOSTS')}", f"https://{env('ALLOWED_HOSTS2')}"]
 
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:8000", "http://127.0.0.1:3000", "http://localhost:3000",]
+# CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:8000", "http://127.0.0.1:3000", "http://localhost:3000",]
 
 
 
@@ -90,7 +90,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'rest_framework',
 
-    "corsheaders",
+    # "corsheaders",
 
     # apps
     'core',
@@ -104,7 +104,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    "corsheaders.middleware.CorsMiddleware", #cors
+    # "corsheaders.middleware.CorsMiddleware", #cors
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

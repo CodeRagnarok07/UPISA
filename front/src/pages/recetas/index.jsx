@@ -2,6 +2,7 @@ import Banner from "./Banner"
 import Pagination from "components/Pagination"
 import useQueryFetcher from 'src/utils/useQueryFetcher'
 import Card from './Card'
+import { useEffect, useState } from "react"
 
 const MyApp = () => {
     const [page, setPage] = useState(1)

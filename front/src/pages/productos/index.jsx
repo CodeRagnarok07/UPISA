@@ -9,17 +9,20 @@ import { useEffect, useState } from 'react'
 import BanerContact from "./BannerContact"
 
 const MyApp = () => {
+    const pageLimit = 16
 
     const [filter, setFilter] = useState()
+    const [subFilter, setSubFilter] = useState([])
     const [page, setPage] = useState(1)
-    const [url, setUrl] = useState(`api/posts/products/producto/?limit=1${page && `&page=${page}`}`)
+    const [url, setUrl] = useState(`api/posts/products/producto/?limit=${pageLimit}${page && `&page=${page}`}`)
     // console.log(page.length == true);
 
 
     const usequery = useQueryFetcher(["products"], url)
 
+
     useEffect(() => {
-        setUrl(`api/posts/products/producto/?limit=1${filter !== undefined ? `&filter=${filter.url}` : ""}${page && `&page=${page}`}`)
+        setUrl(`api/posts/products/producto/?limit=${pageLimit}${filter !== undefined ? `&filter=${filter.url}` : ""}${page && `&page=${page}`}`)
     }, [page])
     useEffect(() => {
         usequery.refetch(["products"])
@@ -29,11 +32,17 @@ const MyApp = () => {
 
     useEffect(() => {
         if (filter !== undefined) {
-            setUrl(`api/posts/products/producto/?limit=1${filter !== undefined ? `&filter=${filter.url}` : ""}`)
-            
-        
+            setUrl(`api/posts/products/producto/?limit=${pageLimit}${filter !== undefined ? `&filter=${filter.url}` : ""}`)
         }
     }, [filter])
+    useEffect(() => {
+
+        if (subFilter?.length !== 0) {
+            setUrl(`api/posts/products/producto/?limit=${pageLimit}${`&filter=${filter.url}`}${`&Subfilter=${subFilter.map(v=>`${v}`)}`}`)
+        }else{
+            setUrl(`api/posts/products/producto/?limit=${pageLimit}${filter !== undefined ? `&filter=${filter.url}` : ""}`)
+        }
+    }, [subFilter])
 
 
 
@@ -70,6 +79,7 @@ const MyApp = () => {
                     onClick={() => {
                         setPage(1)
                         setFilter(undefined)
+                        setSubFilter([])
 
                     }}
                     className="hover:bg-[var(--primary)] hover:text-white" >
@@ -81,6 +91,8 @@ const MyApp = () => {
                         onClick={() => {
                             setPage(1)
                             setFilter(v)
+                            setSubFilter([])
+
                         }}
                         className="hover:bg-[var(--primary)] hover:text-white" >
                         {v.nombre}
@@ -88,8 +100,8 @@ const MyApp = () => {
                 ))}
             </ul>
 
-            {false && filter &&
-                <div class="flex flex-start relative z-[1000]">
+            { filter &&
+                <div class="flex flex-start relative z-[1000] mt-10">
 
                     
                     <div 
@@ -111,10 +123,17 @@ const MyApp = () => {
                     
                     className="hidden absolute top-[100%] py-3 z-100 rounded-lg border bg-white border-[var(--primary-gray)]">
                         {filter.sub_categorias.map((v, k) => (
-
                             <label class="flex items-center p-3 gap-3" >
-                                <input type="checkbox" name="filter" value={v.nombre}  />
+                                <input
+                                
+                                onClick={()=>
+                                    !subFilter.includes(v.url) ? setSubFilter([...subFilter, v.url]) : setSubFilter((oldarray) => oldarray.filter((e) => e !== v.url))
+                                
+                                }
+                                checked={subFilter.includes(v.url)}
+                                type="checkbox" name="filter" value={v.nombre}  />
                                     {v.nombre}
+
                             </label>
                         ))}
                     </form>
