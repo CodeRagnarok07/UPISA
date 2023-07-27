@@ -1,10 +1,11 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { NavLink } from "react-router-dom"
 
 import logo from 'src/assets/Logo.png'
 
 import LangList from 'src/locale/lang.json'
-
+import navTextList from 'src/locale/navbar.json'
+import queryClient from 'src/queryClient'
 
 const Navbar = () => {
     const liRef = useRef()
@@ -13,7 +14,17 @@ const Navbar = () => {
         liRef.current.parentElement.classList.toggle("bg-primary-movil")
     }
 
+    const [userLang, setUserLang] = useState(localStorage.userlang)
 
+    useEffect(() => {
+    }, [userLang])
+
+    const setStoreUserLang = (v) => {
+        setUserLang(v)
+        localStorage.userlang = v
+
+        queryClient.refetchQueries()
+    }
 
 
 
@@ -25,22 +36,22 @@ const Navbar = () => {
 
             <ul ref={liRef}
                 className="cont relative
-             flex w-full justify-between items-center flex-col lg:flex-row gap-4 lg:gap-0  
+             flex w-full justify-between items-center flex-col xl:flex-row  xl:gap-0  
              [&>a]:whitespace-nowrap
              [&>a]:rounded-lg
              [&>a]:cursor-pointer
              [&>a]:w-full
-             [&>a]:lg:w-auto
+             [&>a]:xl:w-auto
              [&>a]:text-center
-             [&>a]:lg:flex
+             [&>a]:xl:flex
              [&>a]:text-[12px]
-             [&>a]:xl:p-3
-             [&>a]:xl:text-[16px]
+             [&>a]:2xl:text-[16px]
              [&>a]:hidden
-             [&>a]:border    
-             [&>lang]:flex
+             [&>a]:border   
+          
+             
              pt-24
-             lg:pt-0
+             xl:pt-0
 
 
              ">
@@ -48,7 +59,7 @@ const Navbar = () => {
                 {/* absolute inset-x-0 mx-0 z-50 */}
                 <div
                     onClick={handleClick}
-                    className="flex lg:hidden items-center border p-2 rounded-lg cursor-pointer absolute 
+                    className="flex xl:hidden items-center border p-2 rounded-lg cursor-pointer absolute 
                     top-4 left-4"
                 >
 
@@ -59,46 +70,80 @@ const Navbar = () => {
                 </div>
 
 
-                <NavLink className="hover:border-white p-2 border-transparent" to={"/"}><li >INICIO</li></NavLink>
-                <NavLink className="hover:border-white p-2 border-transparent" to={"/empresa"}><li >LA EMPRESA</li></NavLink>
-                <NavLink className="hover:border-white p-2 border-transparent" to={"/productos"}><li >PRODUCTOS</li></NavLink>
-                <NavLink className="hover:border-white p-2 border-transparent" to={"/parrilleros"}><li >PARRILLEROS</li></NavLink>
-
-                <div className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} >
-
-                    <NavLink to={"/"} className={"flex w-28 pt-2 h-auto md:w-32 xl:w-44  md:pt-0"}>
-                        <img className="w-full h-full" src={logo} alt="logo upisa" />
-                    </NavLink>
-                </div>
 
 
-                <NavLink className="hover:border-white p-2 border-transparent" to={"/novedades"}><li >NOVEDADES</li></NavLink>
-                <NavLink className="hover:border-white p-2 border-transparent" to={"/recetas"}><li >RECETAS</li></NavLink>
-                <NavLink className="hover:border-white p-2 border-transparent" to={"/contacto"}><li >CONTACTO</li></NavLink>
+                {navTextList.map((v, k) => (
+                    
+                        v.path == "/#"
+                            ?
+                            <div className={"absolute xl:relative -top-1 mx-auto xl:mx-0 "} >
+                                <NavLink to={"/"} className={"flex w-28 pt-2 h-auto md:w-32 xl:w-44  md:pt-0"}>
+                                    <img className="w-full h-full" src={logo} alt="logo upisa" />
+                                </NavLink>
+                            </div>
+                            :
+                            <NavLink key={k} className={`hover:border-white p-2 border-transparent `} to={v.path}>
+
+                                <li >
+                                    {v[userLang]}
+                                </li>
+                            </NavLink>
+                    
+                ))}
 
 
 
                 <li style={{ display: "flex", width: "auto" }}
+                    className="order-10 border xl:border-transparent hover:border-white ml-2 flex 
+                    items-center rounded-lg cursor-pointer xl:relative absolute p-3 xl:p-2 top-5 right-4 xl:top-0 
+                    
+                    ">
 
-                    className=" border lg:border-transparent hover:border-white ml-2 flex items-center rounded-lg cursor-pointer lg:relative absolute p-3 lg:p-2 top-5 right-4 lg:top-0 ">
-                    <select name="" id="">
+                    <div
+                        className="flex gap-1 "
+                        onClick={(e) => {
+                            e.currentTarget.nextElementSibling.classList.toggle("hidden")
+                            e.currentTarget.children[1].classList.toggle("rotate-180")
+                        }}
+                    >
+                        <div className="uppercase text-[12px] 2xl:text-[16px] mt-[2px] xl:mt-0">
 
-                        {LangList[localStorage.userlang].map((v, k) => (
+                            <span className="flex xl:hidden">{userLang}</span>
 
-                            <option value={v.code}>
-                                <span className="flex xl:hidden">{v.code}</span> - 
-                                <span className="xl:flex hidden">{v.name}</span>
-                            </option>
+                            <span className="xl:flex hidden">{LangList[userLang]?.filter(v => v.code == userLang)[0].name}</span>
+                        </div>
+
+                        <svg className="h-full rotate-180" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.25 13.4376C16.0014 13.4365 15.7632 13.3384 15.5859 13.1642L9.99998 7.57823L4.41404 13.1642C4.23792 13.3403 3.99905 13.4392 3.74998 13.4392C3.50091 13.4392 3.26204 13.3403 3.08592 13.1642C2.9098 12.988 2.81085 12.7492 2.81085 12.5001C2.81085 12.251 2.9098 12.0122 3.08592 11.836L9.33592 5.58604C9.42301 5.49864 9.52651 5.42929 9.64046 5.38198C9.75442 5.33466 9.87659 5.3103 9.99998 5.3103C10.1234 5.3103 10.2455 5.33466 10.3595 5.38198C10.4735 5.42929 10.5769 5.49864 10.664 5.58604L16.914 11.836C17.0014 11.9231 17.0708 12.0266 17.1181 12.1406C17.1654 12.2545 17.1898 12.3767 17.1898 12.5001C17.1898 12.6235 17.1654 12.7457 17.1181 12.8596C17.0708 12.9736 17.0014 13.0771 16.914 13.1642C16.7368 13.3384 16.4985 13.4365 16.25 13.4376Z" fill="#fff" />
+                        </svg>
+
+
+                    </div>
+
+
+
+                    <div className="text-black hidden absolute right-0 top-[100%] py-3 z-100 rounded-lg border bg-white border-[var(--primary-gray)]">
+
+                        {LangList[userLang]?.map((v, k) => (
+                            <div
+
+                                onClick={() => setStoreUserLang(v.code)}
+                                className="px-4 py-2 hover:bg-[var(--primary)]">
+                                <span className="flex md:hidden">{v.code}</span>
+                                <span className="md:flex hidden">{v.name}</span>
+                            </div>
                         ))}
-
-                    </select>
+                    </div>
 
 
                 </li>
+
+
+
             </ul>
 
 
-        </nav>
+        </nav >
     )
 }
 

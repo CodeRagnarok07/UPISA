@@ -1,0 +1,66 @@
+[
+    {
+        "path": "/",
+        "es": "INICIO",
+        "en": "HOME",
+        "ru": "ДОМ",
+        "zh": "主页"
+    },
+    {
+        "path": "/empresa",
+        "es": "LA EMPRESA",
+        "en": "COMPANY",
+        "ru": "КОМПАНИЯ",
+        "zh": "企业"
+    },
+    {
+        "path": "/productos",
+        "es": "PRODUCTOS",
+        "en": "PRODUCTS",
+        "ru": "ПРОДУКТЫ",
+        "zh": "产品"
+    },
+    {
+        "path": "/parrilleros",
+        "es": "PARRILLEROS",
+        "en": "GRILLERS",
+        "ru": "ГРИЛЛЕРЫ",
+        "zh": "烧烤炉"
+    },
+    {
+        "path": "/#",
+        "es": "img",
+        "en": "img",
+        "ru": "img",
+        "zh": "img"
+    },
+    {
+        "path": "/novedades",
+        "es": "NOVEDADES",
+        "en": "NEWS",
+        "ru": "НОВОСТИ",
+        "zh": "新闻"
+    },
+    {
+        "path": "/recetas",
+        "es": "RECETAS",
+        "en": "RECIPES",
+        "ru": "РЕЦЕПТЫ",
+        "zh": "食谱"
+    },
+    {
+        "path": "/contacto",
+        "es": "CONTACTO",
+        "en": "CONTACT",
+        "ru": "KOHTAKT",
+        "zh": "联系我们"
+    }
+
+  
+
+]
+
+
+
+
+

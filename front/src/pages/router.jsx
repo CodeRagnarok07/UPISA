@@ -33,22 +33,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/empresa",
-        element: 
-        <Layer 
-        meta={{title:"Sobre UPISA", description:"Descubre nuestra pasión por la calidad y la tradición en el frigorífico líder en Paraguay."}}
-        header={{title:"La empresa", text:"" }}
-        >
-          <Empresa />  
-          </Layer>,
+        element: <Empresa />  
+
+       ,
       },
    
  
       {
         path: "/productos",
-        element: <Layer
-        meta={{title:"Productos UPISA", description:"Explora nuestro completo catálogo de productos de primera calidad, elaborados con dedicación y tradición desde Paraguay."}}
-        header={{title:"PRODUCTOS", text:`Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.` }}
-        ><Productos /> </Layer>,       
+        element:
+        <Productos />
+        
+       ,       
 
       },
       {
@@ -59,10 +55,7 @@ const router = createBrowserRouter([
  
       {
         path: "/parrilleros",        
-        element: <Layer
-        meta={{title:"Consejos para parrilleros UPISA", description:"Descubre nuestros consejos y secretos para lograr el asado perfecto."}}
-        header={{title:"Parrilleros", text:`Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!` }}
-        ><Parrilleros /> </Layer>,
+        element: <Parrilleros />,
       },
       {
         path: "/parrilleros/:url",

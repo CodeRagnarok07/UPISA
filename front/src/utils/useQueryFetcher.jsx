@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import fetcher from './query/fetcher'
+import fetcher from './fetcher'
 
 const useQueryFetcher = (key,path) => {
 

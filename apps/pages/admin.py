@@ -14,12 +14,12 @@ class ContenidoInline(admin.StackedInline):
             'classes': ('extrapretty',),
             'fields': (('titulo'),)
         }),
-        ("Titulo", {
+        ("TRADUCCIONES DE TITULO", {
             'classes': ('extrapretty', 'collapse'),
             'fields': ('titulo_es', 'titulo_en', 'titulo_ru', 'titulo_zh_hans')
         }),
 
-        ("Texto", {
+        ("TRADUCCIONES DE TEXTO", {
             'classes': ('extrapretty', 'collapse'),
             'fields': ('text_es', 'text_en', 'text_ru', 'text_zh_hans')
         }),
@@ -60,20 +60,20 @@ class PageAdmin(admin.ModelAdmin):
     inlines = [SeccionInline]
 
     fieldsets = (
-        ("Header titulo ", {
+        ("TITULO HEADER", {
             'classes': ('extrapretty',),
             'fields': ('titulo_es', )
         }),
-        ("traducciones", {
+        ("TRADUCCIONES DE TITULO", {
             'classes': ('extrapretty', 'collapse'),
             'fields': (('titulo_en', 'titulo_ru', 'titulo_zh_hans'),)
         }),
 
-        ("Header texto", {
+        ("TEXTO HEADER", {
             'classes': ('extrapretty',),
             'fields': ('text_es',)
         }),
-        ("traducciones de texto", {
+        ("TRADUCCIONES DE TEXTO HEADER", {
             'classes': ('extrapretty', 'collapse'),
             'fields': ('text_en', 'text_ru', 'text_zh_hans')
         })
@@ -83,7 +83,8 @@ class PageAdmin(admin.ModelAdmin):
 @admin.register(Seccion)
 class SectionAdmin(admin.ModelAdmin):
     search_fields = ['titulo_es']
-    # list_display = ('titulo_es',)
+    list_display = ('titulo_es',)
+    list_filter = ('pagina__titulo',)
 
     inlines = [ContenidoInline]
 
@@ -92,7 +93,7 @@ class SectionAdmin(admin.ModelAdmin):
             'classes': ('extrapretty',),
             'fields': ('titulo_es', )
         }),
-        ("traducciones", {
+        ("TRADUCCIONES DE TITULO", {
             'classes': ('extrapretty', 'collapse'),
             'fields': (('titulo_en', 'titulo_ru', 'titulo_zh_hans'),)
         }),
@@ -101,7 +102,7 @@ class SectionAdmin(admin.ModelAdmin):
             'classes': ('extrapretty',),
             'fields': ('text_es',)
         }),
-        ("traducciones de texto", {
+        ("TRADUCCIONES DE CONTENIDO DE TEXTO", {
             'classes': ('extrapretty', 'collapse'),
             'fields': ('text_en', 'text_ru', 'text_zh_hans')
         })

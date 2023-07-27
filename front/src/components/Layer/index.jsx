@@ -4,13 +4,13 @@ import Footer from './Footer'
 
 
 import { Helmet } from "react-helmet";
-import { useState } from 'react';
 
 
 const Layer = ({ children, header, meta }) => {
 
-    const userLocale = navigator.languages && navigator.languages.length ? navigator.languages[0].split("-")[0] : navigator.language;
-    localStorage.setItem("userlang",userLocale)
+    if(!localStorage.userlang){
+        localStorage.setItem("userlang", navigator.languages && navigator.languages.length ? navigator.languages[0].split("-")[0] : navigator.language)
+    }
 
     return (
 

@@ -7,7 +7,7 @@ const HeaderCarrusel = () => {
 
 
     return (
-        <div className="relative z-0 -mb-10 -mt-28 lg:-mt-36">
+        <div className="relative z-0 -mb-10 -mt-28 xl:-mt-36">
 
             <div className="carrusel-slider ">
 
@@ -16,7 +16,7 @@ const HeaderCarrusel = () => {
 
                         <picture className="item-slider relative">
                             <source srcset={v.desktop} media="(min-width: 750px)" />
-                            <img className="w-full object-cover h-[22.5rem] lg:h[849px] md:h-auto" src={v.movil} alt="" />
+                            <img className="w-full object-cover h-[22.5rem] xl:h[849px] md:h-auto" src={v.movil} alt="" />
                         </picture>
                 ))}
                 </div>

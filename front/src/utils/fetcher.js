@@ -1,12 +1,13 @@
 
 const backend = import.meta.env.VITE_BACKEND_URL
 
+
 const Fetcher = async (path) => {
 
   let headersList = {
     "Accept": "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-    "Accept-Language": "es"
+    "Accept-Language": localStorage.userlang
   }
 
   const urlFetch = backend + path

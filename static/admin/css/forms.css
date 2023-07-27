@@ -401,6 +401,7 @@ body.popup .submit-row {
 }
 
 .inline-related {
+    border-bottom: 2px solid var(--body-bg);
     position: relative;
     margin: 12px 0px;
 }
@@ -537,12 +538,9 @@ form .related-widget-wrapper ul {
 .inline-related h3 {
     margin: 0;
     color: var(--body-quiet-color);
-    padding: 5px;
+    padding: 0;
     font-size: 1.3rem;
-    background-color:transparent;
-    /* dita */
-    border-top: 1px solid var(--hairline-color);
-    border-bottom: 1px solid var(--hairline-color);
+    background-color: transparent;
 }
 
 

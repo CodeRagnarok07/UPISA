@@ -22,7 +22,7 @@ const Footer = () => {
                             <div className="scale-125">
                                 <h4 className="text-center">SEGUINOS</h4>
 
-                                <div className="flex gap-9 items-center mt-8 ">
+                                <div className="flex gap-9 items-center mt-8 justify-center">
                                     <a href="https://www.facebook.com/UPISAFrigorificoPY" target="_blank">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd"

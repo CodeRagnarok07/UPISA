@@ -5,6 +5,7 @@ import useQueryFetcher from 'src/utils/useQueryFetcher'
 
 const VideCont = () => {
     const {data} = useQueryFetcher(["sec", 1],'api/page/sec/1/')
+    // console.log(data);
 
     return (
 
