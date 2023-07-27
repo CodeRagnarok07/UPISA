@@ -39,10 +39,7 @@ const MyApp = () => {
         arrowControler(true)
     }
 
-    console.log(
-        CarruselRef.current?.children?.length
-        
-        )
+
 
 
     return (
@@ -62,7 +59,6 @@ const MyApp = () => {
                    
                 </div>
                 <progress class="lg:flex hidden " max="100" value={current.state*25}></progress>
-                {console.log(current.state*25)}
             </div>
 
             <div className="carrusel-slider">

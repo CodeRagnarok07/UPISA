@@ -8,12 +8,14 @@ const Destacados = () => {
 
     const usequery = useQueryFetcher(["destacados"],'api/posts/products/producto/?limit=16&destacados=True')
 
+    const {data} = useQueryFetcher(["sec", 2],'api/page/sec/2/')
+
     return (
         <div className="cont pb-4 pt-12">
             <div className="text-center">
-                <h2 className="uppercase ">DESTACADOS DE UPISA</h2>
+                <h2 className="uppercase ">{data?.titulo}</h2>
                 <p className="lg:text-xl">
-                    ¡Conoce lo bueno que UPISA tiene para vos! Salchicha con queso, línea parrilla, toscanas.
+                    {data?.text}
                 </p>
             </div>
 
@@ -29,7 +31,6 @@ const Destacados = () => {
 
 
                 <div className="controls-side lg:pb-6">
-
                     <button onClick={() => arrowControler(false)} className="left-control">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -37,7 +38,6 @@ const Destacados = () => {
                                 fill="white" />
                         </svg>
                     </button>
-
                     <button onClick={() => arrowControler(true)} className="right-control">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -45,19 +45,13 @@ const Destacados = () => {
                                 fill="white" />
                         </svg>
                     </button>
-
                 </div>
-
                 <div className="py-6 ">
                     <div ref={dotControlerRef} className="dot-control  ">
                         <div></div>
                     </div>
                 </div>
-
             </div>
-
-
-
         </div>
     )
 }

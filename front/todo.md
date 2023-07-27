@@ -4,22 +4,16 @@
 
 
 
-# - [ ] por deplyo
 - [x] link de novedades home
 - [x] link de current receta home
 - [x] productos / baner contacto
-  - [ ] crear baner reusable
-
-
-
-
-# - [ ] Procrastinado
+# - [x] Procrastinado
 - [x] Calculadora
 - [x] paginacion 
-  - [ ] recetas
-  - [ ] trucos y consejos
-  - [ ] novedades
+  - [x] recetas
+  - [x] trucos y consejos
+  - [x] novedades
 
-- [ ] PRODUCTOS paginacion + filtro 
+- [x] PRODUCTOS paginacion + filtro 
   - [x] paginacion
-  - [ ] filtro
+  - [x] filtro

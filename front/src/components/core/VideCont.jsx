@@ -2,7 +2,7 @@
 
 const VideCont = () => {
     return (
-        <div className="cont relative z-50 translate-y-[-10%]">
+        <div className="cont relative z-50 py-20">
 
             <iframe className="
             rounded-xl

@@ -3,19 +3,18 @@ import useCarrusel from "src/utils/useCarrusel";
 import useQueryFetcher from 'src/utils/useQueryFetcher'
 
 
-const LaCocina = () => {
+const LaCocina = ({ data }) => {
 
     const usequery = useQueryFetcher(["recetas-home"], 'api/posts/receta/?limit=5')
-
-
-
     const [CarruselRef, arrowControler, current, dotControlerRef] = useCarrusel()
+
+
     return (
         <div className="cont my-20">
             <div className="text-center">
-                <h2 className="uppercase ">LA cocina de UPISA</h2>
+                <h2 className="uppercase ">{data?.titulo}</h2>
                 <p className="">
-                    Anímate a probar todo lo que podés hacer con estas recetas sencillas y sabrosas.
+                    {data?.text}
                 </p>
             </div>
 
@@ -80,9 +79,9 @@ const LaCocina = () => {
                                     </div>
 
 
-                                <div className="flex">
+                                    <div className="flex">
 
-                                    <NavLink to={"/recetas/"+v.url} className="btn bg-primary">
+                                        <NavLink to={"/recetas/" + v.url} className="btn bg-primary">
                                             VER RECETA
 
                                             <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
@@ -92,8 +91,8 @@ const LaCocina = () => {
                                                     fill="white" />
                                             </svg>
 
-                                    </NavLink>
-                                </div>
+                                        </NavLink>
+                                    </div>
 
                                 </div>
                             </div>

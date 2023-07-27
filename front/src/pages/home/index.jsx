@@ -13,15 +13,18 @@ import Eventos from './Eventos'
 import { NavLink } from "react-router-dom"
 
 
+import useQueryFetcher from 'src/utils/useQueryFetcher'
+import Layer from "src/components/Layer"
 
 
 const MyApp = () => {
+    const {data} = useQueryFetcher(["page", 1],'api/page/pag/1/')
     return (
-        <div>
-
-
-
-
+        <Layer
+        cerdo={true}
+        meta={{title:"UPISA ", description:"Variedades de embutidos con sabores únicos"}}
+        
+        >
             <HeaderCarrusel />
 
             <div className="bg-primary bg-texture">
@@ -29,7 +32,7 @@ const MyApp = () => {
                 <VideCont />
                 <Certificaciones />
                 <Calculadora />
-                <Destacados />
+                <Destacados data={data?.seccion[1]} />
 
                 <div className="cont  pb-8">
                     <div className="lg:mx-auto lg:flex justify-center ">
@@ -46,8 +49,8 @@ const MyApp = () => {
                 </div>
 
             </div>
-            <LaCocina />
-            <Eventos />
+            <LaCocina data={data?.seccion[2]} />
+            <Eventos data={data?.seccion[3]}/>
             <Contact />
 
 
@@ -56,7 +59,7 @@ const MyApp = () => {
     lg:w-1/2 lg:-mb-[1.7%] lg:-mt-[25%] -mb-[3.4%] relative z-[100] "/>
             </div>
 
-        </div>
+        </Layer>
     )
 }
 

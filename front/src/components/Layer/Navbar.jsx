@@ -2,21 +2,19 @@ import { useRef } from "react"
 import { NavLink } from "react-router-dom"
 
 import logo from 'src/assets/Logo.png'
-const Navbar = () => {
 
+import LangList from 'src/locale/lang.json'
+
+
+const Navbar = () => {
     const liRef = useRef()
     const handleClick = () => {
-
         liRef.current.classList.toggle("[&>a]:hidden")
         liRef.current.parentElement.classList.toggle("bg-primary-movil")
-        // liRef.current.parentElement.classList.toggle(" bg-texture")
-        // document.getElementById().parentElement
-
-        // for (const achor of botones) {
-        //     console.log(achor);
-        // }
-
     }
+
+
+
 
 
     return (
@@ -68,9 +66,9 @@ const Navbar = () => {
 
                 <div className={"absolute lg:relative -top-1 mx-auto lg:mx-0"} >
 
-                <NavLink to={"/"} className={"flex w-28 pt-2 h-auto md:w-32 xl:w-44  md:pt-0"}>
-                    <img className="w-full h-full" src={logo} alt="logo upisa" />
-                </NavLink>
+                    <NavLink to={"/"} className={"flex w-28 pt-2 h-auto md:w-32 xl:w-44  md:pt-0"}>
+                        <img className="w-full h-full" src={logo} alt="logo upisa" />
+                    </NavLink>
                 </div>
 
 
@@ -78,24 +76,24 @@ const Navbar = () => {
                 <NavLink className="hover:border-white p-2 border-transparent" to={"/recetas"}><li >RECETAS</li></NavLink>
                 <NavLink className="hover:border-white p-2 border-transparent" to={"/contacto"}><li >CONTACTO</li></NavLink>
 
+
+
                 <li style={{ display: "flex", width: "auto" }}
 
-                    className="
-                
-                border lg:border-transparent hover:border-white 
-                ml-2 flex 
-                items-center  rounded-lg cursor-pointer 
+                    className=" border lg:border-transparent hover:border-white ml-2 flex items-center rounded-lg cursor-pointer lg:relative absolute p-3 lg:p-2 top-5 right-4 lg:top-0 ">
+                    <select name="" id="">
 
-                lg:relative 
-                absolute
-                p-3 
-                lg:p-2
-                top-5 right-4
-                lg:top-0
-                "
-                >
-                    <span className="flex xl:hidden">ES</span>
-                    <span className="xl:flex hidden">ESPAÑOL</span>
+                        {LangList[localStorage.userlang].map((v, k) => (
+
+                            <option value={v.code}>
+                                <span className="flex xl:hidden">{v.code}</span> - 
+                                <span className="xl:flex hidden">{v.name}</span>
+                            </option>
+                        ))}
+
+                    </select>
+
+
                 </li>
             </ul>
 

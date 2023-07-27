@@ -538,7 +538,7 @@ form .related-widget-wrapper ul {
     margin: 0;
     color: var(--body-quiet-color);
     padding: 5px;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     background-color:transparent;
     /* dita */
     border-top: 1px solid var(--hairline-color);

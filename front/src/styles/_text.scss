@@ -6,7 +6,7 @@
     src: url('./kamalaya/kalamaya-Regular.otf') format("truetype");
     src: url('./kamalaya/kalamaya-Regular.ttf') format("truetype");
     font-family: 'Antonio', sans-serif;
-font-family: 'Inter', sans-serif
+    font-family: 'Inter', sans-serif
 }
 
 ;
@@ -18,13 +18,13 @@ body {
     font-size: 0.75rem;
 
 
-    
+
     font-weight: 500;
-    line-height: 0.75rem;
-    
+    line-height: 1.2em;
+
     @include bp(750px) {
         font-size: 1rem;
-        line-height: 1rem;
+        line-height: 1.2em;
     }
 
 }

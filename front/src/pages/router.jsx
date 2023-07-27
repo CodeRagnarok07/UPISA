@@ -29,11 +29,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Layer
-        cerdo={true}
-        meta={{title:"UPISA ", description:"Variedades de embutidos con sabores únicos"}}
-        
-        ><Home /> </Layer>,
+        element: <Home /> 
       },
       {
         path: "/empresa",
