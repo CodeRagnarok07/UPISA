@@ -1,0 +1,4 @@
+{
+    "es": [ "Nombre y apellido", "Email", "Telefono celular", "Mensaje", "ENVIAR MENSAJE"],
+    "en": ["Name and last name","E-mail","Phone","Message","SUBMIT"]
+}

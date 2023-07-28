@@ -18,12 +18,16 @@ import Layer from "src/components/Layer"
 
 
 const MyApp = () => {
-    const {data} = useQueryFetcher(["page", 1],'api/page/pag/1/')
+    const { data } = useQueryFetcher(["page", 1], 'api/page/pag/1/')
+
+
+
+
     return (
         <Layer
-        cerdo={true}
-        meta={{title:"UPISA ", description:"Variedades de embutidos con sabores únicos"}}
-        
+            cerdo={true}
+            meta={{ title: "UPISA ", description: "Variedades de embutidos con sabores únicos" }}
+
         >
             <HeaderCarrusel />
 
@@ -32,8 +36,10 @@ const MyApp = () => {
                 <VideCont />
                 <Certificaciones />
                 <Calculadora />
-                <Destacados data={data?.seccion[1]} />
 
+                {localStorage.userlang == "es" &&
+                <>
+                <Destacados data={data?.seccion[1]} />
                 <div className="cont  pb-8">
                     <div className="lg:mx-auto lg:flex justify-center ">
                         <NavLink to={"/productos"} className="btn bg-success w-auto" href="#">
@@ -47,10 +53,14 @@ const MyApp = () => {
                         </NavLink>
                     </div>
                 </div>
+                </>}
 
             </div>
+            {localStorage.userlang == "es" &&
+                <>
             <LaCocina data={data?.seccion[2]} />
-            <Eventos data={data?.seccion[3]}/>
+            <Eventos data={data?.seccion[3]} />
+            </>}
             <Contact />
 
 

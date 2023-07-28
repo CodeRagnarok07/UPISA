@@ -31,15 +31,13 @@ const MyApp = () => {
     return (
         <Layer
             meta={{ title: "Consejos para parrilleros UPISA", description: "Descubre nuestros consejos y secretos para lograr el asado perfecto." }}
-            header={{ title: pageCont.titulo, text: pageCont.text}}
+            header={{ title: pageCont?.titulo, text: pageCont?.text}}
             
          >
             <Calculadora />
 
             <div className="cont  my-20">
-                <div className="text-center">
-                    <h3>{pageCont.seccion[0].titulo}</h3>
-
+                <div className="text-center"> <h3>{pageCont?.seccion[0].titulo}</h3>
                 </div>
 
 

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate,useLocation } from "react-router-dom"
 
 import logo from 'src/assets/Logo.png'
 
@@ -16,7 +16,24 @@ const Navbar = () => {
 
     const [userLang, setUserLang] = useState(localStorage.userlang)
 
+
+    const navigate = useNavigate();
+    const currentRoute = useLocation()
+
+
+    const en_routes = ["/", "/empresa", "/contacto"]
     useEffect(() => {
+
+        if(userLang !== "es"){
+            if(en_routes.includes(currentRoute.pathname)){
+
+            }else{
+                navigate("/")
+            }
+           
+        }
+        
+
     }, [userLang])
 
     const setStoreUserLang = (v) => {
@@ -36,7 +53,10 @@ const Navbar = () => {
 
             <ul ref={liRef}
                 className="cont relative
-             flex w-full justify-between items-center flex-col xl:flex-row  xl:gap-0  
+             flex w-full 
+             justify-between
+            items-center flex-col xl:flex-row  xl:gap-0  
+              
              [&>a]:whitespace-nowrap
              [&>a]:rounded-lg
              [&>a]:cursor-pointer
@@ -73,22 +93,23 @@ const Navbar = () => {
 
 
                 {navTextList.map((v, k) => (
-                    
-                        v.path == "/#"
-                            ?
-                            <div className={"absolute xl:relative -top-1 mx-auto xl:mx-0 "} >
-                                <NavLink to={"/"} className={"flex w-28 pt-2 h-auto md:w-32 xl:w-44  md:pt-0"}>
-                                    <img className="w-full h-full" src={logo} alt="logo upisa" />
-                                </NavLink>
-                            </div>
-                            :
-                            <NavLink key={k} className={`hover:border-white p-2 border-transparent `} to={v.path}>
 
-                                <li >
-                                    {v[userLang]}
-                                </li>
+                    v.path == "/#"
+                        ?
+                        <div key={k}  className={"absolute xl:relative -top-1 mx-auto xl:mx-0 "} >
+                            <NavLink to={"/"} className={"flex w-28 pt-2 h-auto md:w-32 xl:w-44  md:pt-0"}>
+                                <img className="w-full h-full" src={logo} alt="logo upisa" />
                             </NavLink>
-                    
+                        </div>
+                        :
+                        v[userLang] &&
+                        <NavLink key={k} className={`hover:border-white p-2 border-transparent `} to={v.path}>
+
+                            <li >
+                                {v[userLang]}
+                            </li>
+                        </NavLink>
+
                 ))}
 
 

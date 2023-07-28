@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import BanerContact from "./BannerContact"
 import Layer from "../../components/Layer"
 
-const MyApp = () => {
+const Products = () => {
     const pageLimit = 16
 
     const [filter, setFilter] = useState()
@@ -47,7 +47,6 @@ const MyApp = () => {
 
     const pagecont = 3
     const { data:pageCont } = useQueryFetcher(["page", pagecont], `api/page/pag/${pagecont}/`)
-    console.log(pageCont);
 
     const usequeryFilters = useQueryFetcher(["products-filters"], "api/posts/products/categorias/")
     // console.log(usequeryFilters.data);
@@ -57,7 +56,7 @@ const MyApp = () => {
     return (
         <Layer
             meta={{ title: "Productos UPISA", description: "Explora nuestro completo catálogo de productos de primera calidad, elaborados con dedicación y tradición desde Paraguay." }}
-            header={{ title: pageCont.titulo, text: pageCont.text}}
+            header={{ title: pageCont?.titulo, text: pageCont?.text}}
         >
             <div className="cont  mb-20">
 
@@ -165,4 +164,4 @@ const MyApp = () => {
     )
 }
 
-export default MyApp
+export default Products

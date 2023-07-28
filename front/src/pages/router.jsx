@@ -17,7 +17,7 @@ import ProductDetail from './productos/Detail'
 import RecetaDetail from './recetas/Detail'
 
 
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter, Outlet, redirect } from "react-router-dom";
 import Article from 'src/components/Article'
 
 
@@ -41,8 +41,7 @@ const router = createBrowserRouter([
  
       {
         path: "/productos",
-        element:
-        <Productos />
+        element: <Productos/>
         
        ,       
 
@@ -94,10 +93,8 @@ const router = createBrowserRouter([
 
       {
         path: "/contacto",
-        element: <Layer
-        meta={{title:"Contacto UPISA", description:"¡Ponte en contacto con nosotros en cualquier momento! Nuestra página de información de contacto te brinda todos los detalles necesarios para conectarte con nuestro frigorífico desde cualquier parte del mundo."}}
-        header={{title:"Contacto", text:"Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible." }}
-        ><Contacto /> </Layer>,
+        element: <Contacto /> 
+        ,
       },
  
       {

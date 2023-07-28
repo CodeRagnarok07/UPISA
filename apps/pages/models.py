@@ -15,7 +15,7 @@ class Pagina(models.Model):
     text = models.TextField(max_length=500, blank=True,null=True)
 
     def __str__(self):
-        return f" {self.titulo}"
+        return f"{self.id} {self.titulo}"
 
 
 class Seccion(models.Model):
@@ -24,7 +24,7 @@ class Seccion(models.Model):
     text = models.TextField(blank=True,null=True)
     pagina = models.ForeignKey(Pagina, on_delete=models.CASCADE, related_name="seccion")
     def __str__(self):
-        return f'# {self.titulo}  {self.pagina.titulo}'
+        return f'#{self.id} {self.titulo}  {self.pagina.titulo}'
 
 class Contenido(models.Model):
     """representa los h3 de cada seccion de pagina"""
@@ -33,6 +33,6 @@ class Contenido(models.Model):
     imagen = models.ImageField(blank=True,null=True, upload_to=upload_path)
     seccion = models.ForeignKey(Seccion, on_delete=models.CASCADE, related_name="contenido")
     def __str__(self):
-        return f'#{self.titulo} {self.seccion.titulo}'
+        return f'#{self.id} {self.titulo} {self.seccion.titulo}'
 
 

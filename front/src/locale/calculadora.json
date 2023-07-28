@@ -1,0 +1,23 @@
+{
+    "es": {
+        "title": [ "CALCULADORA", "DE ASADOS"],
+        "progres_bar": [ "PERSONAS", "CARNES", "EMBUTIDOS","RESULTADO"],
+        "controls": ["SIGUIENTE","ATRÁS"],
+        "steps":
+        {
+            "Personas": {
+                "cant": [ "CANTIDAD DE PERSONAS","PORCIÓN" ],
+                "personas": [ "ADULTOS","NIÑOS"]
+            },
+
+            "carnes":{
+
+            },
+            "embutidos":{
+
+            },
+            "result":[ ]
+        }
+    }
+ 
+}

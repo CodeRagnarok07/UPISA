@@ -16,11 +16,11 @@ const Empresa = () => {
     return (
         <Layer
             meta={{ title: "Sobre UPISA", description: "Descubre nuestra pasión por la calidad y la tradición en el frigorífico líder en Paraguay." }}
-            header={{ title: data.titulo, text: "" }}
+            header={{ title: data?.titulo, text: "" }}
         >
             {/* <VideCont /> */}
             <div className="cont my-20">
-                <Historia data={data.seccion[0]}/>
+                <Historia data={data?.seccion[0]}/>
                 <img className="my-20" src="assets/banner/exports.png" alt="" />
 
                 <div className="gap-12 flex flex-col ">

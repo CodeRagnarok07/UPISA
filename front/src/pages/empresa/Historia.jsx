@@ -10,13 +10,13 @@ export default function({data}){
         <div class="title mb-4">
 
             <h2 class="uppercase">
-                {data.titulo}
+                {data?.titulo}
             </h2>
         </div>
 
         <div class="flex-col gap-16">
 
-        {data.contenido.map((v,k)=>(
+        {data?.contenido.map((v,k)=>(
 
             <div className={k == 0 ? "mb-6 flex flex-col xl:flex-row gap-10": "mb-6 flex flex-col xl:flex-row-reverse gap-10"}>
                 <div class="w-full">
@@ -24,7 +24,7 @@ export default function({data}){
                 </div>
                 <div class="w-full justify-center ">
             
-                    <p class="mt-4 mb-6 text-[19px] leading-5 " dangerouslySetInnerHTML={{__html: v.text.toString().replaceAll(".", `. <br/> `)}}>                    
+                    <p class="mt-4 mb-6 text-[19px] leading-5 " dangerouslySetInnerHTML={{__html: v.text}}>                    
                         
 
                     </p>

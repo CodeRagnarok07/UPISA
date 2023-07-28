@@ -1,7 +1,9 @@
 import logo from 'src/assets/Logo.png'
-
+import texts from 'src/locale/footer.json'
 
 const Footer = () => {
+    const text = texts[localStorage.userlang]
+    
     return (
         <>
 
@@ -20,7 +22,7 @@ const Footer = () => {
                     <div className="cont ">
                         <div className="relative flex justify-center">
                             <div className="scale-125">
-                                <h4 className="text-center">SEGUINOS</h4>
+                                <h4 className="text-center">{text[0]}</h4>
 
                                 <div className="flex gap-9 items-center mt-8 justify-center">
                                     <a href="https://www.facebook.com/UPISAFrigorificoPY" target="_blank">
@@ -61,8 +63,7 @@ const Footer = () => {
 
                     <span className="bg-[var(--success)] w-full text-center">
                         <p>
-                            © 2022 Frigorífico UPISA. <br className="md:hidden" />
-                            Todos los derechos reservados.
+                            {text[1]}
                         </p>
                     </span>
                     <a className="bg-[#4688C3] hover:bg-[#3c6e9b] group
@@ -70,7 +71,7 @@ const Footer = () => {
 
                         target="_blank" href="https://arsisteam.com/">
                         <p className=''>
-                            Desarrollado por Arsis
+                            {text[2]}
                         </p>
                     </a>
                 </div>
