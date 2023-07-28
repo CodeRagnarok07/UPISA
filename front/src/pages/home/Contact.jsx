@@ -18,7 +18,9 @@ const Contact = () => {
 
                 <div className="flex flex-col gap-6 w-full">
                     {usequery.data?.map((v, k) => (
-                        <div className="w-full flex justify-between bg-white p-5 flex-col gap-4 rounded-xl lg:p-10 xl:flex-row ">
+                        <div
+                        key={k}
+                        className="w-full flex justify-between bg-white p-5 flex-col gap-4 rounded-xl lg:p-10 xl:flex-row ">
 
                             <h3 className="md:text-left my-auto w-full">{v.nombre}</h3>
                             <div

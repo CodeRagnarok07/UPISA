@@ -14,8 +14,10 @@ const HeaderCarrusel = () => {
                 <div className="slider ">
                 {usequery.data && usequery.data.map((v, k) => (
 
-                        <picture className="item-slider relative">
-                            <source srcset={v.desktop} media="(min-width: 750px)" />
+                        <picture
+                        key={k}
+                        className="item-slider relative">
+                            <source srcSet={v.desktop} media="(min-width: 750px)" />
                             <img className="w-full object-cover h-[22.5rem] xl:h[849px] md:h-auto" src={v.movil} alt="" />
                         </picture>
                 ))}

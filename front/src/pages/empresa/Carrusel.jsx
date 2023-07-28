@@ -26,7 +26,9 @@ export default function () {
                 <div ref={CarruselRef} className="slider slider-grid " style={{ "--grid": "1", "--grid-md": "1" }}>
 
                     {imgData.map((v,k)=>(
-                    <img src={`assets/about/Carrusel/${v}.jpg`} alt="" 
+                    <img 
+                    key={k}
+                    src={`assets/about/Carrusel/${v}.jpg`} alt="" 
                     class="item-grid 
                     max-h-[50rem]
                     h-[11.25rem]

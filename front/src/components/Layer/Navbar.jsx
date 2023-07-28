@@ -16,18 +16,16 @@ const Navbar = () => {
 
     const [userLang, setUserLang] = useState(localStorage.userlang)
 
-
+    // redirect
     const navigate = useNavigate();
     const currentRoute = useLocation()
-
-
     const en_routes = ["/", "/empresa", "/contacto"]
+
     useEffect(() => {
 
         if(userLang !== "es"){
-            if(en_routes.includes(currentRoute.pathname)){
 
-            }else{
+            if(!en_routes.includes(currentRoute.pathname)){
                 navigate("/")
             }
            

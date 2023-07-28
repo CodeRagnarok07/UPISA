@@ -27,7 +27,7 @@ const LaCocina = ({ data }) => {
 
                     {usequery?.data?.results?.map((v, k) => (
 
-                        <div className="item-slider ">
+                        <div key={k} className="item-slider ">
 
                             <div className=" h-full w-full flex flex-col lg:flex-row lg:items-center">
 

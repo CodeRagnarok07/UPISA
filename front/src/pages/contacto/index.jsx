@@ -4,7 +4,7 @@ import Card from './Card'
 import useQueryFetcher from 'src/utils/useQueryFetcher'
 import Layer from "src/components/Layer"
 
-const MyApp = () => {
+const Contacto = () => {
 
     const usequery = useQueryFetcher(["contact"], 'api/core/sucursales/')
 
@@ -12,6 +12,7 @@ const MyApp = () => {
 
     const { data: text } = useQueryFetcher(["page", 7], 'api/page/pag/7/')
 
+    console.log(text?.seccion[0].titulo);
     return (
         <Layer
             meta={{ title: "Contacto UPISA", description: "¡Ponte en contacto con nosotros en cualquier momento! Nuestra página de información de contacto te brinda todos los detalles necesarios para conectarte con nuestro frigorífico desde cualquier parte del mundo." }}
@@ -41,7 +42,7 @@ const MyApp = () => {
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {data?.map((v, k) => (
-                        <Card data={v} />
+                        <Card key={k} data={v} />
                     ))}
 
                 </div>
@@ -51,4 +52,4 @@ const MyApp = () => {
     )
 }
 
-export default MyApp
+export default Contacto

@@ -12,7 +12,7 @@ const Card = ({data}) => {
             lg:h-[32rem] 
             
             
-            w-full object-contain rounded-t-xl" src={data.mapa} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            w-full object-contain rounded-t-xl" src={data.mapa} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             <div class="md:p-9">
                 <h2 class="md:text-left md:mb-6 mb-5">{data.nombre}</h2>
 

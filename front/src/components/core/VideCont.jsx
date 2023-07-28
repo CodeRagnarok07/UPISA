@@ -13,7 +13,9 @@ const VideCont = () => {
             lg:h-[35.25rem] 
             xl:h-[43rem]             
             "
-                src="https://drive.google.com/file/d/1E5qbD3NhY2VYfUpk5ORbGm99cdGOCMWh/preview" allow="autoplay">
+                src="https://drive.google.com/file/d/1E5qbD3NhY2VYfUpk5ORbGm99cdGOCMWh/preview" 
+            
+                >
             </iframe>
 
         </div>
