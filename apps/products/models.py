@@ -30,7 +30,7 @@ class Product(models.Model):
     nombre = models.CharField(max_length=500, unique=True)
     url = models.CharField(max_length=500, unique=True)
 
-    miniatura = models.ImageField(upload_to="productos")
+    miniatura = models.ImageField()
     destacado = models.BooleanField(default=True)
 
     sub_categoria = models.ForeignKey(
@@ -83,4 +83,4 @@ class ValoresNutricionales(models.Model):
 class Galeria(models.Model):
     product = models.ForeignKey(
         Product, blank=True, null=True, on_delete=models.CASCADE, related_query_name="galeria", related_name="galeria")
-    imagen = models.ImageField(upload_to="productos/galeria")
+    imagen = models.ImageField()
