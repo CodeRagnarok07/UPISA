@@ -1,0 +1,393 @@
+[
+    {
+        "model": "pages.pagina",
+        "pk": 1,
+        "fields": {
+            "titulo": "inicio",
+            "titulo_es": "inicio",
+            "titulo_en": "inicio",
+            "titulo_ru": "inicio",
+            "titulo_zh_hans": "inicio",
+            "text": null,
+            "text_es": null,
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null
+        }
+    },
+    {
+        "model": "pages.pagina",
+        "pk": 2,
+        "fields": {
+            "titulo": "LA EMPRESA",
+            "titulo_es": "LA EMPRESA",
+            "titulo_en": "About Us",
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": null,
+            "text_es": null,
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null
+        }
+    },
+    {
+        "model": "pages.pagina",
+        "pk": 3,
+        "fields": {
+            "titulo": "PRODUCTOS",
+            "titulo_es": "PRODUCTOS",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.",
+            "text_es": "Conocé la amplia línea de fiambres y embutidos frescos que tenemos para vos, con calidad y sabor único. ¡Tenés que probarlo! Elegí lo mejor, elegí sabor.",
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null
+        }
+    },
+    {
+        "model": "pages.pagina",
+        "pk": 4,
+        "fields": {
+            "titulo": "PARRILLEROS",
+            "titulo_es": "PARRILLEROS",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!",
+            "text_es": "Te compartimos los mejores secretos que todo parrillero debe saber para sorprender a todos con el mejor asado!",
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null
+        }
+    },
+    {
+        "model": "pages.pagina",
+        "pk": 5,
+        "fields": {
+            "titulo": "NOVEDADES",
+            "titulo_es": "NOVEDADES",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Redes Sociales / Facebook e Instagram",
+            "text_es": "Redes Sociales / Facebook e Instagram",
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null
+        }
+    },
+    {
+        "model": "pages.pagina",
+        "pk": 6,
+        "fields": {
+            "titulo": "RECETAS",
+            "titulo_es": "RECETAS",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Prepara los platos más deliciosos y sabrosos con nuestra variedad de productos y disfruta en cada bocado.",
+            "text_es": "Prepara los platos más deliciosos y sabrosos con nuestra variedad de productos y disfruta en cada bocado.",
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null
+        }
+    },
+    {
+        "model": "pages.pagina",
+        "pk": 7,
+        "fields": {
+            "titulo": "CONTACTO",
+            "titulo_es": "CONTACTO",
+            "titulo_en": "CONTACT US",
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible.",
+            "text_es": "Para más información y/o dudas dejanos tus datos y nos comunicaremos contigo en la brevedad posible.",
+            "text_en": "For more information and/or in case you have any doubts, leave us your information and we will reach out to you as soon as possible.",
+            "text_ru": null,
+            "text_zh_hans": null
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 1,
+        "fields": {
+            "titulo": "CERTIFICACIONES",
+            "titulo_es": "CERTIFICACIONES",
+            "titulo_en": "CERTIFICATIONS",
+            "titulo_ru": "СЕРТИФИКАТЫ",
+            "titulo_zh_hans": "认证",
+            "text": "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con la certificación HACCP y ASPAGRAN, siendo una empresa con máximo control del proceso sobre el análisis del producto final.",
+            "text_es": "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con la certificación HACCP y ASPAGRAN, siendo una empresa con máximo control del proceso sobre el análisis del producto final.",
+            "text_en": "We have a real commitment to food safety through excellence in processes, the implementation of state-of-the-art technology and verifiable traceability, being a company with maximum process control over the analysis of the final product.",
+            "text_ru": "Мы действительно заботимся о безопасности пищевых продуктов благодаря качеству, совершенству и технологиям, имея сертификаты HACCP и ASPAGRAN, являясь компанией с максимальным контролем процесса анализа конечного продукта.",
+            "text_zh_hans": "通过 HACCP 和 ASPAGRAN 认证，我们对质量、卓越和技术方面的食品安全做出了真正的承诺，是一家对最终产品的分析过程进行最大程度控制的公司。",
+            "pagina": 1
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 2,
+        "fields": {
+            "titulo": "DESTACADOS DE UPISA",
+            "titulo_es": "DESTACADOS DE UPISA",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "¡Conoce lo bueno que UPISA tiene para vos! Salchicha con queso, línea parrilla, toscanas.",
+            "text_es": "¡Conoce lo bueno que UPISA tiene para vos! Salchicha con queso, línea parrilla, toscanas.",
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 1
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 3,
+        "fields": {
+            "titulo": "LA COCINA DE UPISA",
+            "titulo_es": "LA COCINA DE UPISA",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Anímate a probar todo lo que podés hacer con estas recetas sencillas y sabrosas.",
+            "text_es": "Anímate a probar todo lo que podés hacer con estas recetas sencillas y sabrosas.",
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 1
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 4,
+        "fields": {
+            "titulo": "EVENTOS Y NOTICIAS",
+            "titulo_es": "EVENTOS Y NOTICIAS",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": null,
+            "text_es": null,
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 1
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 5,
+        "fields": {
+            "titulo": "UN POCO DE HISTORIA",
+            "titulo_es": "UN POCO DE HISTORIA",
+            "titulo_en": "A bit of history",
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": null,
+            "text_es": null,
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 2
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 6,
+        "fields": {
+            "titulo": "LA EMPRESA y SUS PRODUCTOS",
+            "titulo_es": "LA EMPRESA y SUS PRODUCTOS",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": null,
+            "text_es": null,
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 2
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 7,
+        "fields": {
+            "titulo": "TRUCOS Y CONSEJOS",
+            "titulo_es": "TRUCOS Y CONSEJOS",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": null,
+            "text_es": null,
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 4
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 8,
+        "fields": {
+            "titulo": "conoce los beneficios de La Carne de Cerdo",
+            "titulo_es": "conoce los beneficios de La Carne de Cerdo",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "LEER",
+            "text_es": "LEER",
+            "text_en": null,
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 6
+        }
+    },
+    {
+        "model": "pages.seccion",
+        "pk": 9,
+        "fields": {
+            "titulo": "CENTROS DE DISTRIBUCIÓN",
+            "titulo_es": "CENTROS DE DISTRIBUCIÓN",
+            "titulo_en": "DISTRIBUTION CENTERS",
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología.",
+            "text_es": "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología.",
+            "text_en": "We have a real commitment to food safety through quality, excellence and technology.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "pagina": 7
+        }
+    },
+    {
+        "model": "pages.contenido",
+        "pk": 1,
+        "fields": {
+            "titulo": "aspagran",
+            "titulo_es": "aspagran",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con la certificación HACCP, siendo una empresa con máximo control del proceso sobre el análisis del producto final.",
+            "text_es": "Tenemos un compromiso real con la seguridad alimentaria a través de la calidad, la excelencia y tecnología con la certificación HACCP, siendo una empresa con máximo control del proceso sobre el análisis del producto final.",
+            "text_en": "The Paraguayan Association of Nutrition Graduates (ASPAGRAN.) is a scientific/union association made up of nutrition graduates. Its purpose is to endorse those products necessary for a balanced diet.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "imagen": "page/inicio/certificacion1_l6ReLoe.png",
+            "seccion": 1
+        }
+    },
+    {
+        "model": "pages.contenido",
+        "pk": 2,
+        "fields": {
+            "titulo": "HACCP",
+            "titulo_es": "HACCP",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "HACCP es un requisito de seguridad alimentaria global para evaluar, mitigar y controlar los peligros de seguridad alimentaria en todo el espectro de la producción de alimentos.",
+            "text_es": "HACCP es un requisito de seguridad alimentaria global para evaluar, mitigar y controlar los peligros de seguridad alimentaria en todo el espectro de la producción de alimentos.",
+            "text_en": "Hazard Analysis Critical Control Point (HACCP) is a global food safety system that assesses, prevents and mitigates risks at all stages of food production, guaranteeing their safety.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "imagen": "page/inicio/certificacion2.png",
+            "seccion": 1
+        }
+    },
+    {
+        "model": "pages.contenido",
+        "pk": 3,
+        "fields": {
+            "titulo": "MARCA PAÍS",
+            "titulo_es": "MARCA PAÍS",
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Es un sello que obtienen las empresas a través de la calidad y que ayuda al país a posicionarse en el mundo con el objetivo de incrementar la inversión extranjera.",
+            "text_es": "Es un sello que obtienen las empresas a través de la calidad y que ayuda al país a posicionarse en el mundo con el objetivo de incrementar la inversión extranjera.",
+            "text_en": "Marca País (Country Brand) is a seal that companies get through quality which helps the country to position itself in the world to increase foreign investment.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "imagen": "page/inicio/Logo-Marca-Pais-UPISA.png",
+            "seccion": 1
+        }
+    },
+    {
+        "model": "pages.contenido",
+        "pk": 4,
+        "fields": {
+            "titulo": null,
+            "titulo_es": null,
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "UPISA nace el 22 de Enero del año 2000 en la Ciudad de Fram, del pujante departamento de Itapua, fue fundada por productores de cerdos y cooperativas agropecuarias a fin de lograr el desarrollo y la comercialización de su producción, disminuir las intermediaciones y garantizar la calidad para el consumidor final. Se encuentra organizada como un ‘cluster’ de producción que integra a diferentes cadenas de valor, desde la producción de granos, desarrollo genético, engorde, industrialización, comercialización local y exportación. Es realmente un modelo de negocios único en el país. Y desde ese entonces, viene transformándose en una marca confiable, transparente y ofreciendo sabrosos productos de calidad y variedad para todas las ocasiones de consumo.\r\n<br/> <br/>\r\nLa planta industrial se encuentra en la cuidad de Fram, y está conformada por equipos de primer nivel en cuanto a tecnología y seguridad, donde se cumplen estrictos controles de calidad, presididas por las normas de HACCP, las cuales certifican totalmente la trazabilidad de toda la producción, procesos de mejora continua de sus productos y de sus recursos humanos, los cuales desde siempre estan comprometidos con la seguridad alimentaria de todos los productos fabricados.",
+            "text_es": "UPISA nace el 22 de Enero del año 2000 en la Ciudad de Fram, del pujante departamento de Itapua, fue fundada por productores de cerdos y cooperativas agropecuarias a fin de lograr el desarrollo y la comercialización de su producción, disminuir las intermediaciones y garantizar la calidad para el consumidor final. Se encuentra organizada como un ‘cluster’ de producción que integra a diferentes cadenas de valor, desde la producción de granos, desarrollo genético, engorde, industrialización, comercialización local y exportación. Es realmente un modelo de negocios único en el país. Y desde ese entonces, viene transformándose en una marca confiable, transparente y ofreciendo sabrosos productos de calidad y variedad para todas las ocasiones de consumo.\r\n<br/> <br/>\r\nLa planta industrial se encuentra en la cuidad de Fram, y está conformada por equipos de primer nivel en cuanto a tecnología y seguridad, donde se cumplen estrictos controles de calidad, presididas por las normas de HACCP, las cuales certifican totalmente la trazabilidad de toda la producción, procesos de mejora continua de sus productos y de sus recursos humanos, los cuales desde siempre estan comprometidos con la seguridad alimentaria de todos los productos fabricados.",
+            "text_en": "UPISA was born on January 22, 2000 in the City of Fram, in the thriving department of Itapúa, it was founded by pig producers and agricultural cooperatives in order to achieve the development and commercialization of their production, reduce intermediations and guarantee quality for the end consumer. It is organized as a production cluster that integrates different value chains such as grain production, genetic development, fattening, industrialization, local marketing, and export. It is truly a unique business model in the country. And since then, it has been transforming itself into a reliable, transparent brand that offers tasty quality products with a variety for every occasion of consumption.\r\n<br/> <br/>\r\nThe industrial plant is located in the city of Fram and is made up of top-level teams in terms of technology and safety, where strict quality controls are met, chaired by the HACCP standards, which fully certify the traceability of all the production, processes of continuous improvement of its products and its human resources, which have always been committed to the food safety of all manufactured products.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "imagen": "page/LA EMPRESA/empresa01.jpg",
+            "seccion": 5
+        }
+    },
+    {
+        "model": "pages.contenido",
+        "pk": 5,
+        "fields": {
+            "titulo": null,
+            "titulo_es": null,
+            "titulo_en": null,
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Desde allí, se procesan y envasan todos los productos para consumo nacional e internacional. En sus inicios, la planta industrial contaba con una capacidad de faenar 90 cerdos/día, hoy se encuentra faenando 1500 cerdos/día con una capacidad de procesamiento de embutidos embutidos de 160.000 kg/día.\r\n<br/> <br/>\r\nUPISA es el único frigorífico del país habilitado para la exportación de cortes porcinos y cuenta además con el reconocimiento de la Marca País Paraguay, porque es una empresa que representa al país en el mundo, por la calidad, transparencia, sustentabilidad, innovación e integridad en sus operaciones comerciales.\r\n<br/> <br/>\r\nTodo esto, permite a UPISA entregar productos de calidad excepcional.",
+            "text_es": "Desde allí, se procesan y envasan todos los productos para consumo nacional e internacional. En sus inicios, la planta industrial contaba con una capacidad de faenar 90 cerdos/día, hoy se encuentra faenando 1500 cerdos/día con una capacidad de procesamiento de embutidos embutidos de 160.000 kg/día.\r\n<br/> <br/>\r\nUPISA es el único frigorífico del país habilitado para la exportación de cortes porcinos y cuenta además con el reconocimiento de la Marca País Paraguay, porque es una empresa que representa al país en el mundo, por la calidad, transparencia, sustentabilidad, innovación e integridad en sus operaciones comerciales.\r\n<br/> <br/>\r\nTodo esto, permite a UPISA entregar productos de calidad excepcional.",
+            "text_en": "From there, all products for national and international consumption are processed and packaged. In its beginnings, the industrial plant had a capacity to slaughter 90 pigs/day, today it is slaughtering 1,500 pigs/day with a sausage processing capacity of 160,000 kg/day.\r\n<br/> <br/>\r\nUPISA is the only meat processing plant in the country authorized to export pork cuts which also has the recognition of the Paraguay Country Brand, because it is a company that represents the country in the world for the quality, transparency, sustainability, innovation, and integrity of its business operations.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "imagen": "page/LA EMPRESA/empresa-02.jpg",
+            "seccion": 5
+        }
+    },
+    {
+        "model": "pages.contenido",
+        "pk": 6,
+        "fields": {
+            "titulo": "LA EMPRESA",
+            "titulo_es": "LA EMPRESA",
+            "titulo_en": "THE COMPANY",
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "UPISA cuenta con una planta industrial operada con tecnología de punta y manejada bajo estrictos controles de calidad, donde se procesan y envasan todos los productos para consumo nacional e internacional. La planta faenadora tiene una capacidad de 1.800 cerdos por día, lo que permite a su vez una producción de embutidos de 100.000 kg/día y de cortes de 124.000 kg/día. La gran variedad de productos es distribuida por una flota de camiones equipados para resguardar la cadena de frio y a través de las 6 sucursales habilitadas llega a clientes y consumidores de todo el país.",
+            "text_es": "UPISA cuenta con una planta industrial operada con tecnología de punta y manejada bajo estrictos controles de calidad, donde se procesan y envasan todos los productos para consumo nacional e internacional. La planta faenadora tiene una capacidad de 1.800 cerdos por día, lo que permite a su vez una producción de embutidos de 100.000 kg/día y de cortes de 124.000 kg/día. La gran variedad de productos es distribuida por una flota de camiones equipados para resguardar la cadena de frio y a través de las 6 sucursales habilitadas llega a clientes y consumidores de todo el país.",
+            "text_en": "UPISA has an industrial plant operated with state-of-the-art technology and managed under strict quality controls, where all products for national and international consumption are processed and packaged. The slaughter plant has a capacity of 1,800 pigs per day, which in turn allows a production of sausages of 100,000 kg/day and cuts of 124,000 kg/day. The great variety of products is distributed by a fleet of trucks equipped to protect the cold chain and through the 6 authorized branches it reaches customers and consumers throughout the country.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "imagen": "page/LA EMPRESA/3.jpg",
+            "seccion": 6
+        }
+    },
+    {
+        "model": "pages.contenido",
+        "pk": 7,
+        "fields": {
+            "titulo": "SUS PRODUCTOS",
+            "titulo_es": "SUS PRODUCTOS",
+            "titulo_en": "PRODUCTS",
+            "titulo_ru": null,
+            "titulo_zh_hans": null,
+            "text": "Para estar presentes en todas las comidas y ocasiones de consumo UPISA ofrece una gran variedad de productos de calidad, convenientes, sanos y sabrosos de alto valor agregado. Cuenta con una amplia variedad de fiambres y jamones, hamburguesas, embutidos, cortes de cerdo frescos y ahumados.",
+            "text_es": "Para estar presentes en todas las comidas y ocasiones de consumo UPISA ofrece una gran variedad de productos de calidad, convenientes, sanos y sabrosos de alto valor agregado. Cuenta con una amplia variedad de fiambres y jamones, hamburguesas, embutidos, cortes de cerdo frescos y ahumados.",
+            "text_en": "To be in every meal and consumption occasion, UPISA offers a wide variety of quality, convenient, healthy and tasty products with high added value. It has a wide variety of cold cuts and hams, hamburgers, sausages, fresh and smoked pork cuts.",
+            "text_ru": null,
+            "text_zh_hans": null,
+            "imagen": "page/LA EMPRESA/4.jpg",
+            "seccion": 6
+        }
+    }
+]
