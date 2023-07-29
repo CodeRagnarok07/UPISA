@@ -1,6 +1,6 @@
 
 
-const Result = ({ data }) => {
+const Result = ({ data, text }) => {
 
 
 
@@ -11,18 +11,18 @@ const Result = ({ data }) => {
         total += element[1].cantidad * element[1].porcion
     }
 
+    console.log(text);
 
     return (
         <div className="p-6 flex flex-col whitespace-nowrap">
 
             <div className="flex gap-6 flex-wrap">
                 {Object.entries(data.personas).map((persona, key) => (
-
                     <div key={key} className="flex  gap-2  justify-between">
-                        <h4 className="uppercase">{persona[1].cantidad} {persona[0]}</h4>
+                        <h4 className="uppercase">{persona[1].cantidad} {text.personas[key]}</h4>
                         <div className="px-3 py-2.5 bg-[#FDF2E8]  justify-center items-center gap-2 inline-flex">
                             <div className="text-center text-neutral-900">
-                                Porción: <span className="font-semibold ">{persona[1].cantidad * persona[1].porcion} g</span>
+                                {text.personas[2]}: <span className="font-semibold ">{persona[1].cantidad * persona[1].porcion} g</span>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const Result = ({ data }) => {
                         </svg>
 
 
-                        CARNES
+                        {text.carnes}
 
                     </div>
 
@@ -72,7 +72,7 @@ const Result = ({ data }) => {
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M17.5 4.80834C17.375 4.70834 17.2666 4.625 17.1583 4.54167L17.1833 4.50834C17.8333 3.85834 17.8333 2.80834 17.1833 2.15834C16.5333 1.50834 15.4833 1.50834 14.825 2.15834L14.2083 2.775C13.6511 2.35298 12.9597 2.14742 12.2624 2.19646C11.5651 2.2455 10.9093 2.54581 10.4166 3.04167L3.04163 10.4167C2.54578 10.9093 2.24546 11.5652 2.19643 12.2624C2.14739 12.9597 2.35295 13.6511 2.77497 14.2083L2.1583 14.825C1.49997 15.4833 1.49997 16.5333 2.1583 17.1833C2.8083 17.8333 3.8583 17.8333 4.5083 17.1833L4.54163 17.1583C4.62497 17.2667 4.7083 17.375 4.8083 17.5C5.94163 18.6167 7.79163 18.6167 8.9333 17.5L17.475 8.93334C18.0209 8.38729 18.3297 7.6481 18.3344 6.87597C18.339 6.10383 18.0392 5.36096 17.5 4.80834ZM3.97497 13.0083C3.86271 12.775 3.82567 12.5126 3.86896 12.2574C3.91225 12.0021 4.03374 11.7666 4.21663 11.5833L11.5833 4.21667C11.7666 4.03377 12.0021 3.91229 12.2573 3.869C12.5126 3.82571 12.775 3.86275 13.0083 3.975L3.97497 13.0083ZM16.3 7.75L7.74997 16.3C7.26663 16.7917 6.47497 16.7917 5.9833 16.3C5.49997 15.8333 5.49997 15 5.9833 14.5333L14.5333 5.98334C15 5.5 15.8333 5.5 16.3 5.98334C16.7916 6.475 16.7916 7.26667 16.3 7.75Z" fill="#4688C3" />
                         </svg>
-                        EMBUTIDOS
+                        {text.embutidos}
 
                     </div>
 

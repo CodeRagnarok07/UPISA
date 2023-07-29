@@ -1,4 +1,4 @@
-const personas = ({ state, setState }) => {
+const personas = ({ state, setState, text }) => {
 
 
     // onclick="this.nextElementSibling.stepDown()"
@@ -28,13 +28,13 @@ const personas = ({ state, setState }) => {
         setState({ ...state, personas: obj })
     }
 
-
+    console.log(text);
 
     return (
         <div id="step_1" className="flex flex-col gap-y-6">
             <div class="flex justify-between mb-10">
-                <h4>CANTIDAD DE PERSONAS</h4>
-                <h4>PORCIÓN</h4>
+                <h4>{text.cant[0]}</h4>
+                <h4>{text.cant[1]}</h4>
             </div>
 
             {Object.entries(state.personas).map((v, k) => (
@@ -45,8 +45,7 @@ const personas = ({ state, setState }) => {
                     <div className="mr-auto flex flex-wrap items-center xl:flex-nowrap justify-start gap-5 w-full ">
 
                         <span className="uppercase font-bold min-w-[78px]  ">
-
-                            {v[0]}
+                            {text.personas[k]}
                         </span>
 
                         {/* CANTIDAD  */}

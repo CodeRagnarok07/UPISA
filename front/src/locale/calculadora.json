@@ -2,22 +2,67 @@
     "es": {
         "title": [ "CALCULADORA", "DE ASADOS"],
         "progres_bar": [ "PERSONAS", "CARNES", "EMBUTIDOS","RESULTADO"],
-        "controls": ["SIGUIENTE","ATRÁS"],
+        "controls": ["ATRÁS","SIGUIENTE"],
         "steps":
         {
-            "Personas": {
+            "personas": {
                 "cant": [ "CANTIDAD DE PERSONAS","PORCIÓN" ],
                 "personas": [ "ADULTOS","NIÑOS"]
             },
-
-            "carnes":{
-
+            "carnes": {
+                "title": "Select meat",
+                "elements":["Bondiola", "tapa cuadril", "costilla", "asado americano", "bife de chorizo", "matambrito"]
             },
-            "embutidos":{
-
+            "embutidos": {
+                "title": "Select Sausages",
+                "elements":["toscana tradicional", "toscana con finas hierbas", "toscana con ajo", "toscana picante", "chorizo de viena", "parrillero con y sin picante"]
             },
-            "result":[ ]
+            
+            "result":{
+                "personas": [ "ADULTOS","NIÑOS", "PORCIÓN"],
+                "carnes":"carnes",
+                "embutidos":"embutidos"
+
+            }
+        }
+    },
+    "en": {
+         
+        "title": [ "BARBECUE", "CALCULATOR"],
+        "progres_bar": [ "PEOPLE", "meat", "Sausages","Results"],
+        "controls": ["Back","Next"],
+        "steps":
+        {
+            "personas": {
+                "cant": [ "QUANTITY OF PEOPLE","SHARE" ],
+                "personas": [ "Adults","Children"]
+            },
+            "carnes": {
+                "title": "Select meat",
+                "elements":["Bondiola ", "Rump sirloin ", "Ribs ", "American Barbecue ", "Beefsteak (Bife de Chorizo) ", "Thin flank steak"]
+                
+            },
+            "embutidos": {
+                "title": "Select Sausages",
+                "elements":["Traditional Tuscan Sausage " , "Tuscan Sausage with Fine Herbs" , "Tuscan Sausage with Garlic" , "Tuscan Quick Sausage with Spices" , "Vienne Sausage" , "Barbeque Sausage with and without Spices" ]
+            },
+            
+            
+            "result":{
+                "personas": [ "Adults","Children", "share"],
+                "carnes":"meat",
+                "embutidos":"Sausages"
+
+            }
         }
     }
+
+
  
 }
+
+
+
+
+
+

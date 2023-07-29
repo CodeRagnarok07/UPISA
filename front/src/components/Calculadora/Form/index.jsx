@@ -7,14 +7,9 @@ import Result from "./Result";
 
 
 
-const MyApp = () => {
+const Form = ({ text }) => {
     const [CarruselRef, arrowControler, current, dotControlerRef] = useCarrusel()
 
-
-
-
-    const carnes = ["Bondiola", "tapa cuadril", "costilla", "asado americano", "bife de chorizo", "matambrito",]
-    const embutidos = ["toscana tradicional", "toscana con finas hierbas", "toscana con ajo", "toscana picante", "chorizo de viena", "parrillero con y sin picante",]
 
 
     const [formData, setFormData] = useState({
@@ -50,24 +45,25 @@ const MyApp = () => {
 
             <div class="progres-bar mb-4 lg:mb-8">
                 <div class="progres-items">
-                    <div class="progres-item active"> PERSONAS</div>
-                    <div className={`progres-item ${current.state > 0 && "active"}`}> CARNES</div>
-                    <div className={`progres-item ${current.state > 1 && "active"}`}> EMBUTIDOS</div>
-                    <div className={`progres-item ${current.state > 2 && "active"}`}> RESULTADO</div>
+                    {text.progres_bar.map((v,k)=>(
+                        <div className={`progres-item ${current.state >= k && "active"}`}> {v}</div>
+                    ))}
+
+                    
 
 
-                   
+
                 </div>
-                <progress class="lg:flex hidden " max="100" value={current.state*25}></progress>
+                <progress class="lg:flex hidden " max="100" value={current.state * 33   }></progress>
             </div>
 
             <div className="carrusel-slider">
 
                 <div ref={CarruselRef} className="slider slider-grid " style={{ "--grid": "1", "--grid-md": "1" }}>
-                    <Personas state={formData} setState={setFormData} />
-                    <ListCheckbox data={carnes} dataName={"carnes"} cols={1} state={formData} setState={setFormData} />
-                    <ListCheckbox data={embutidos} dataName={"embutidos"} cols={2} state={formData} setState={setFormData} />
-                    <Result data={formData}/>
+                    <Personas text={text.steps.personas} state={formData} setState={setFormData} />
+                    <ListCheckbox text={text.steps.carnes}  dataName={"carnes"} cols={1} state={formData} setState={setFormData} />
+                    <ListCheckbox  text={text.steps.embutidos} dataName={"embutidos"} cols={2} state={formData} setState={setFormData} />
+                    <Result text={text.steps.result} data={formData} />
                 </div>
 
 
@@ -78,14 +74,18 @@ const MyApp = () => {
 
 
 
-            <div class=" gap-4 flex flex-row justify-between items-center py-6 border-t border-t-[#FDF2E8]">
+            <div class="uppercase gap-4 flex flex-row justify-between items-center py-6 border-t border-t-[#FDF2E8]">
 
                 {current?.state != 0 &&
-                    < div onClick={() => arrowControler(false)} class="btn bg-primary white w-auto mr-auto ">ATRÁS</div>
+                    < div onClick={() => arrowControler(false)} class="btn bg-primary white w-auto mr-auto ">
+                        {text.controls[0]}
+                    </div>
                 }
 
                 {current?.state != CarruselRef.current?.children.length - 1 ?
-                    <div onClick={(e) => handleSubmit(e)} id="next_step" class="btn bg-primary w-auto ml-auto">SIGUIENTE</div>
+                    <div onClick={(e) => handleSubmit(e)} id="next_step" class="btn bg-primary w-auto ml-auto">
+                        {text.controls[1]}
+                    </div>
                     :
                     ""
                 }
@@ -96,4 +96,4 @@ const MyApp = () => {
     )
 }
 
-export default MyApp
+export default Form

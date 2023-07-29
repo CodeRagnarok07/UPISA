@@ -54,7 +54,7 @@ ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), env('ALLOWED_HOSTS2')]
 CSRF_TRUSTED_ORIGINS = [f"https://{env('ALLOWED_HOSTS')}", f"https://{env('ALLOWED_HOSTS2')}"]
 
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:8000", "http://127.0.0.1:3000", "http://localhost:3000",]
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:8000", f"https://{env('ALLOWED_HOSTS')}", f"https://{env('ALLOWED_HOSTS2')}",]
 
 
 

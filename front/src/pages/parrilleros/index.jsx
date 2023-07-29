@@ -27,7 +27,6 @@ const MyApp = () => {
 
     const pagecont = 4
     const { data:pageCont } = useQueryFetcher(["page", pagecont], `api/page/pag/${pagecont}/`)
-    console.log(pageCont);
     return (
         <Layer
             meta={{ title: "Consejos para parrilleros UPISA", description: "Descubre nuestros consejos y secretos para lograr el asado perfecto." }}

@@ -1,7 +1,13 @@
 import Form from './Form'
 
+import texts from 'src/locale/calculadora.json'
+
+
 
 const Calculadora = () => {
+
+    const text = texts[localStorage.userlang]
+
     return (
 
         <div class="relative z-20 bg-cover bg-[url('src/assets/banner/calculadoraBG.png')] py-12  ">
@@ -14,14 +20,14 @@ const Calculadora = () => {
 
                 <div class="bg-texture-rounded w-full min-h-[20rem] text-black text-upercase font-extrabold  flex flex-col justify-center items-center ">
                     <h1 className="text-5xl 2xl:text-7xl uppercase">
-                        calculadora <br />
-                        de asados
+                        {text.title[0]} <br />
+                        {text.title[1]} 
                     </h1>
                 </div>
 
                 <div className="p-8 lg:p-9 w-full h-full">
 
-                    <Form />
+                    <Form text={text}/>
                 </div>
 
 
