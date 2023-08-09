@@ -18,7 +18,7 @@ class HomeBannerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = HomeBanner
-        fields = ( "movil", "desktop" )
+        fields = ( "text_cont_img", "movil", "desktop" )
 
 
 

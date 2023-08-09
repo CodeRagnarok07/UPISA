@@ -27,6 +27,7 @@ class Sucursales(models.Model):
 
 class HomeBanner(models.Model):
     order = models.IntegerField(unique=True)
+    text_cont_img = models.ImageField(upload_to="banners")
     desktop = models.ImageField( help_text="845px de alto  // 1920px de ancho", upload_to="banners")
     movil = models.ImageField( help_text="360px de alto // 360px de ancho", upload_to="banners")
 

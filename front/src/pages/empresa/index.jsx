@@ -21,7 +21,7 @@ const Empresa = () => {
             {/* <VideCont /> */}
             <div className="cont my-20">
                 <Historia data={data?.seccion[0]}/>
-                <img className="my-20" src="assets/banner/exports.png" alt="" />
+                <img className="my-20" src={`assets/banner/${"es"}/exports.png`} alt="" />
 
                 <div className="gap-12 flex flex-col ">
 
@@ -29,11 +29,10 @@ const Empresa = () => {
 
                         <div key={k} className={k == 0 ? "flex-row-reverse lg:flex items-center" : " lg:flex items-center"}>
 
-                            <div
-                                className={k == 0 ? "w-full lg:w-[65%] -mb-8 lg:mb-0 lg:-ml-[15%]" : "w-full lg:w-[65%] -mb-8 lg:mb-0 lg:-mr-[15%]"}
-                            >
+                            <div className={k == 0 ? "w-full lg:w-[65%] -mb-8 lg:mb-0 lg:-ml-[15%]" : "w-full lg:w-[65%] -mb-8 lg:mb-0 lg:-mr-[15%]"}>
                                 <img className="rounded-xl" src={v.imagen} alt={v.titulo} />
                             </div>
+
 
                             <div className="bg-white rounded-lg w-5/6 mx-auto z-50 p-5 lg:mx-0 lg:w-[440px] relative">
                                 <div className="flex items-center gap-4 mb-3">

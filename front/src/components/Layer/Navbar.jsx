@@ -71,6 +71,7 @@ const Navbar = () => {
              pt-24
              xl:pt-0
 
+                uppercase
 
              ">
 
@@ -119,7 +120,7 @@ const Navbar = () => {
                     ">
 
                     <div
-                        className="flex gap-1 "
+                        className="flex gap-1 items-center "
                         onClick={(e) => {
                             e.currentTarget.nextElementSibling.classList.toggle("hidden")
                             e.currentTarget.children[1].classList.toggle("rotate-180")

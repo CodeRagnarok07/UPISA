@@ -106,9 +106,7 @@ const router = createBrowserRouter([
       {
         path: "/cerdo",
         element: <Layer
-        header={{title:"BENEFICIOS DE LA CARNE DE CERDO", text:`` }}
-        
-        ><Cerdo /> </Layer>,
+        header={{title:"BENEFICIOS DE LA CARNE DE CERDO", text:`` }}> <Cerdo/> </Layer>,
       },
  
  
