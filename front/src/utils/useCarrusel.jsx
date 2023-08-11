@@ -15,28 +15,29 @@ const useCarrusel = () => {
 
     function arrowControler(bol) {
         const slider = CarruselRef.current
-        const widthSlider = slider.children[0].offsetWidth
-        const cols = slider.offsetWidth / widthSlider
-        const nextwidthSlider = widthSlider * cols
-        setCurrent(current + 1)
-        if (bol == true) {
-            if (current + 1 >= Math.round(slider.children.length / cols)) {
-                slider.scrollLeft = 0
-                setCurrent(0)
+
+            const widthSlider = slider.children[0].offsetWidth
+            const cols = slider.offsetWidth / widthSlider
+            const nextwidthSlider = widthSlider * cols
+            setCurrent(current + 1)
+            if (bol == true) {
+                if (current + 1 >= Math.round(slider.children.length / cols)) {
+                    slider.scrollLeft = 0
+                    setCurrent(0)
+                } else {
+                    slider.scrollLeft += nextwidthSlider
+                }
             } else {
-                slider.scrollLeft += nextwidthSlider
-            }
-        } else {
-            if (current < 1) {
-                slider.scrollLeft = slider.children.length * nextwidthSlider
-                setCurrent(Math.round(slider.children.length / cols) - 1)
-            } else {
-                slider.scrollLeft -= nextwidthSlider
-                setCurrent(current - 1)
+                if (current < 1) {
+                    slider.scrollLeft = slider.children.length * nextwidthSlider
+                    setCurrent(Math.round(slider.children.length / cols) - 1)
+                } else {
+                    slider.scrollLeft -= nextwidthSlider
+                    setCurrent(current - 1)
 
 
+                }
             }
-        }
 
     }
 
@@ -66,7 +67,7 @@ const useCarrusel = () => {
 
             if (dotControlerRef.current && dotControlerRef.current.children[0]) {
                 const firstChild = dotControlerRef.current.children[0]
-                if(firstChild) dotControlerRef.current.innerHTML = firstChild.outerHTML
+                if (firstChild) dotControlerRef.current.innerHTML = firstChild.outerHTML
 
                 for (let index = 0; index < n_childs; index++) {
                     if (slider.children[index].src) {

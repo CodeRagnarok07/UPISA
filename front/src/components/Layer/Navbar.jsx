@@ -30,6 +30,7 @@ const Navbar = () => {
             }
            
         }
+        queryClient.refetchQueries()
         
 
     }, [userLang])
@@ -37,7 +38,6 @@ const Navbar = () => {
     const setStoreUserLang = (v) => {
         setUserLang(v)
         localStorage.userlang = v
-
         queryClient.refetchQueries()
     }
 
@@ -110,15 +110,9 @@ const Navbar = () => {
                         </NavLink>
 
                 ))}
-
-
-
                 <li style={{ display: "flex", width: "auto" }}
                     className="order-10 border xl:border-transparent hover:border-white ml-2 flex 
-                    items-center rounded-lg cursor-pointer xl:relative absolute p-3 xl:p-2 top-5 right-4 xl:top-0 
-                    
-                    ">
-
+                    items-center rounded-lg cursor-pointer xl:relative absolute p-2 xl:p-2 top-5 right-4 xl:top-0">
                     <div
                         className="flex gap-1 items-center "
                         onClick={(e) => {
@@ -140,13 +134,11 @@ const Navbar = () => {
 
                     </div>
 
-
-
-                    <div className="text-black hidden absolute right-0 top-[100%] py-3 z-100 rounded-lg border bg-white border-[var(--primary-gray)]">
+                    <div className="text-black hidden absolute right-0 top-[100%] 
+                    py-2 z-100 rounded-lg border bg-white border-[var(--primary-gray)]">
 
                         {LangList[userLang]?.map((v, k) => (
                             <div
-
                                 onClick={() => setStoreUserLang(v.code)}
                                 className="px-4 py-2 hover:bg-[var(--primary)]">
                                 <span className="flex md:hidden">{v.code}</span>
