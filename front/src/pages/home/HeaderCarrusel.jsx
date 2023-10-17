@@ -13,7 +13,6 @@ const HeaderCarrusel = () => {
 
 
         const interval = setInterval(() => {
-            console.log("interval");
             arrowControler(true)
         }, 5000)
 

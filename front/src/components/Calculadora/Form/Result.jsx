@@ -11,7 +11,6 @@ const Result = ({ data, text }) => {
         total += element[1].cantidad * element[1].porcion
     }
 
-    console.log(text);
 
     return (
         <div className="p-6 flex flex-col whitespace-nowrap">

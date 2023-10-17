@@ -16,19 +16,18 @@ const VideCont = () => {
                 <p>{data?.text}</p>
             </div>
 
-            <div className="certificaciones flex flex-col md:flex-row  justify-between gap-4">
+            <div className="certificaciones grid grid-cols-1 md:grid-cols-3  justify-between gap-4">
 
 
                 {data?.contenido.map((v, k) => (
 
-                    <div className="bg-white rounded-xl p-5 flex flex-col justify-center items-center text-black">
+                    <div className="bg-white rounded-xl p-5 flex flex-col justify-between  text-black">
 
-                        <div className="img-cont">
-                            <img className="" src={v.imagen} alt="" />
-
+                        <div className="img-cont flex justify-center">
+                            <img className="lg:h-[8rem]" src={v.imagen} alt="" />
                         </div>
 
-                        <div className="text-center">
+                        <div className="text-center h-full mt-auto">
                             <h4 className="mb-4 uppercase">{v.titulo}</h4>
                             <p className="">{v.text}</p>
                         </div>

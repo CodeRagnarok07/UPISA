@@ -2,7 +2,6 @@ import contactFormText from 'src/locale/contactForm.json'
 
 const FormContact = () => {
     const text = contactFormText[localStorage.userlang]
-    console.log(text);
    
     return (
 
