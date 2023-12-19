@@ -23,10 +23,10 @@ const HeaderCarrusel = () => {
     return (
         <div className="relative z-1 -mb-10 -mt-28 xl:-mt-36">
 
-            <a href='https://upisa.com.py/' target='_blank' className="carrusel-slider ">
+            <a href='https://upisa.com.py/' className="carrusel-slider ">
                 <div ref={CarruselRef} className="slider">
                     {usequery.data && usequery.data.map((v, k) => (
-                        <picture onClick={()=>arrowControler(true)} key={k} className="item-slider relative ">
+                        <picture onClick={() => arrowControler(true)} key={k} className="item-slider relative ">
 
                             <div className="cont !h-full absolute inset-0 flex items-end justify-start pb-[1rem] pt-[6rem] md:pt-[8rem] lg:pt-[10rem]">
                                 <div className='h-full w-auto md:w-1/3'>
